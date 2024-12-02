@@ -1,0 +1,591 @@
+<style>
+  #{{ section.id }}-event-coupons {
+    font-family: Outfit-Regular;
+    width: 100%;
+    padding-top: calc(8000vw / var(--base-width));
+    padding-bottom: calc(2000vw / var(--base-width));
+    background: {{ section.settings.background_color }};
+  }
+
+  #{{ section.id }}-event-coupons .title-container {
+    display: flex;
+    flex-direction: column;
+    gap: calc(2000vw / var(--base-width));
+    margin: 0 auto;
+    align-items: center;
+    margin-bottom: calc(3000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-event-coupons .title-container .title {
+    max-width: calc(91600vw / var(--base-width));
+    color: {{ section.settings.title_color }};
+    text-align: center;
+    font-size: calc(8000vw / var(--base-width));
+    font-weight: 600;
+    line-height: 1.1;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #{{ section.id }}-event-coupons .title-container .title .special {
+    color: {{ section.settings.title_color_special }};
+  } 
+
+  #{{ section.id }}-event-coupons .title-container .sub-title {
+    max-width: calc(91600vw / var(--base-width));
+    color: {{ section.settings.title_color }};
+    text-align: center;
+    font-size: calc(2400vw / var(--base-width));
+    line-height: 1.5;
+    opacity: 0.8;
+  }
+
+  #{{ section.id }}-event-coupons .main-image {
+    width: 100%;
+  }
+
+  #{{ section.id }}-event-coupons .bg-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  #{{ section.id }}-event-coupons .bg-container picture{
+    width:100%;
+  }
+  #{{ section.id }}-event-coupons .main-link {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    padding: calc(1600vw / var(--base-width)) calc(4000vw / var(--base-width));
+    gap: calc(1200vw / var(--base-width));
+    text-decoration: none;
+    border: 1px solid {{ section.settings.top_link_color }};
+    border-radius: calc(2900vw / var(--base-width));
+    overflow: hidden;
+  }
+
+  #{{ section.id }}-event-coupons .main-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: {{ section.settings.top_button_bg }};
+    transition: width 0.2s ease-in;
+    z-index: -1;
+  }
+ 
+  #{{ section.id }}-event-coupons .main-link:hover::before {
+    width: 100%;
+  }
+  #{{ section.id }}-event-coupons .main-link:hover .icon{
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in;
+  }
+
+  #{{ section.id }}-event-coupons .main-link .title {
+    color: {{ section.settings.top_link_color }};
+    font-size: calc(2400vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1.08;
+  }
+
+  #{{ section.id }}-event-coupons .main-link .icon {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease-in;
+    width: calc(1700vw / var(--base-width));
+  }
+ #{{ section.id }}-event-coupons .main-link:hover{
+    border-color: transparent;
+  }
+
+  #{{ section.id }}-event-coupons .bottom-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: {{ section.settings.bottom_button_bg }};
+    transition: width 0.2s ease-in;
+    z-index: -1;
+   
+  }
+  #{{ section.id }}-event-coupons .bottom-link:hover::before {
+    width: 100%;
+  }
+  #{{ section.id }}-event-coupons .bottom-link:hover{
+    background-color: transparent;
+    border-color: {{ section.settings.bottom_link_color }};
+  }
+  #{{ section.id }}-event-coupons .bottom-link:hover .icon{
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in;
+  }
+  #{{ section.id }}-event-coupons .bottom-link {
+    display: flex;
+    align-items: center;
+    padding: calc(1600vw / var(--base-width)) calc(4000vw / var(--base-width));
+    gap: calc(1200vw / var(--base-width));
+    text-decoration: none;
+    border-radius: calc(2900vw / var(--base-width));
+    background-color: {{ section.settings.bottom_link_bg_color }};
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: calc(7000vw / var(--base-width));
+    position: relative;
+    border-radius: calc(2900vw / var(--base-width));
+    border: 1px solid transparent;
+  }
+
+  #{{ section.id }}-event-coupons .bottom-link .title {
+    color: {{ section.settings.bottom_link_color }};
+    font-size: calc(2400vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1.08;
+  }
+
+  #{{ section.id }}-event-coupons .bottom-link .icon {
+    display: flex;
+    align-items: center;
+  }
+
+  #{{ section.id }}-event-coupons .coupons-container {
+    width: calc(100vw - 12.5vw);
+    margin: 0 auto;
+    background-color: {{ section.settings.middle_bg_color }};
+    border-radius: calc(3000vw / var(--base-width));
+    padding: calc(8000vw / var(--base-width)) calc(6800vw / var(--base-width)) calc(6500vw / var(--base-width));
+    position: relative;
+  }
+
+  #{{ section.id }}-event-coupons .top-box {
+    max-width: 50%;
+  }
+
+  #{{ section.id }}-event-coupons .top-box .title-box {
+    color: {{ section.settings.middle_text_color }};
+    display: flex;
+    flex-direction: column;
+    gap: calc(1800vw / var(--base-width));
+    margin-bottom: calc(5000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-event-coupons .top-box .title {
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: clamp(12px, calc(10000vw / var(--base-width)), 100px);
+  }
+
+  #{{ section.id }}-event-coupons .top-box .sub-title {
+    font-size: calc(2400vw / var(--base-width));
+    line-height: 1.25;
+    max-width: 83%;
+  }
+
+  #{{ section.id }}-event-coupons .top-box .top-box-img {
+    width: 27%;
+    position: absolute;
+    right: calc(6700vw / var(--base-width));
+    top: -4%; 
+  }
+
+  #{{ section.id }}-event-coupons .coupons-box {
+    width: 100%;
+    display: flex;
+    gap: calc(7700vw / var(--base-width));
+    align-items: center;
+  }
+
+  #{{ section.id }}-event-coupons .coupons-item {
+    flex: 1;
+  }
+
+  #{{ section.id }}-event-coupons .coupons-item .coupons-image {
+    width: 100%;
+  }
+
+@media(max-width:1500px){
+  #{{ section.id }}-event-coupons .top-box {
+    max-width: 53%;
+  }
+  #{{ section.id }}-event-coupons .top-box .top-box-img {
+      width:30%;
+  }
+}
+
+
+  @media (max-width: 1280px) {
+    #{{ section.id }}-event-coupons .top-box .title {
+      font-size: clamp(12px, calc(8000vw / var(--base-width)), 100px);
+    }
+
+    #{{ section.id }}-event-coupons .top-box .sub-title {
+      font-size: calc(2000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .bottom-link .title {
+      font-size: calc(2000vw / var(--base-width));
+    }
+  }
+
+  @media (max-width: 1200px) {
+    #{{ section.id }}-event-coupons .top-box .title {
+      font-size: clamp(12px, calc(6000vw / var(--base-width)), 100px);
+    }
+
+    #{{ section.id }}-event-coupons .top-box .sub-title {
+      font-size: calc(1800vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .bottom-link .title {
+      font-size: calc(1800vw / var(--base-width));
+    }
+  }
+
+  @media (max-width: 768px) {
+    #{{ section.id }}-event-coupons {
+      width: 100%;
+      padding-top: calc(3500vw / var(--base-width));
+      padding-bottom: 0;
+    }
+
+    #{{ section.id }}-event-coupons .title-container {
+      gap: calc(1000vw / var(--base-width));
+      margin-bottom: calc(1500vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .title-container .title {
+      max-width: 87%;
+      font-size: calc(3000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .title-container .sub-title {
+      max-width: 72%;
+      font-size: calc(1500vw / var(--base-width));
+      line-height: 1.2;
+    }
+    #{{ section.id }}-event-coupons .bg-container {
+      margin-top: calc(5700vw / var(--base-width));
+      margin-bottom: calc(18200vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .main-link {
+      top: calc(-4200vw / var(--base-width));
+      padding: calc(800vw / var(--base-width)) calc(1800vw / var(--base-width));
+      gap: calc(1000vw / var(--base-width));
+      border-radius: calc(2500vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .main-link .title {
+      font-size: calc(1300vw / var(--base-width));
+      line-height: 1;
+    }
+
+    #{{ section.id }}-event-coupons .main-link .icon {
+      width: calc(1000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .coupons-container {
+      width: 93%;
+      border-radius: calc(1500vw / var(--base-width));
+      padding: calc(11700vw / var(--base-width)) calc(2500vw / var(--base-width)) calc(6000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .top-box {
+      max-width: 100%;
+    }
+
+    #{{ section.id }}-event-coupons .top-box .title-box {
+      width: 100%;
+      gap: calc(1200vw / var(--base-width));
+      margin-bottom: calc(2000vw / var(--base-width));
+      align-items: center;
+    }
+
+    #{{ section.id }}-event-coupons .top-box .title {
+      max-width: 100%;
+      font-size: clamp(12px, calc(3500vw / var(--base-width)), 50px);
+      line-height: 1.08;
+      max-width: calc(25800vw / var(--base-width));
+      text-align: center;
+    }
+
+    #{{ section.id }}-event-coupons .top-box .sub-title {
+      font-size: calc(1200vw / var(--base-width));
+      line-height: 1.25;
+      max-width: calc(25800vw / var(--base-width));
+      text-align: center;
+    }
+
+    #{{ section.id }}-event-coupons .top-box .top-box-img {
+      width: 84%;
+      left: 50%;
+      transform: translateX(-50%);
+      right: auto;
+      top: calc(-17000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .coupons-box {
+      gap: calc(800vw / var(--base-width));
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    #{{ section.id }}-event-coupons .coupons-item {
+      flex: initial;
+      width: calc((100% - calc(800vw / var(--base-width)))/2);
+    }
+
+    #{{ section.id }}-event-coupons .bottom-link {
+      padding: calc(800vw / var(--base-width)) calc(4000vw / var(--base-width));
+      gap: calc(900vw / var(--base-width));
+      border-radius: calc(2500vw / var(--base-width));
+      margin-top: calc(2500vw / var(--base-width));
+    }
+
+    #{{ section.id }}-event-coupons .bottom-link .title {
+      font-size: calc(1300vw / var(--base-width));
+      line-height: 1;
+    }
+  }
+</style>
+
+<div id="{{ section.id }}-event-coupons">
+  <div class="title-container">
+    <h2 class="title">
+      <span class="normal">{{ section.settings.title }}</span>
+      {% if section.settings.title_special != blank %}
+        <span class="special">{{ section.settings.title_special }}</span>
+      {% endif %}
+    </h2>
+    <div class="sub-title">{{ section.settings.sub_title }}</div>
+  </div>
+  <div class="bg-container">
+    {% comment %} <img
+      class="main-image"
+      src="{{ section.settings.mian_img |  image_url }}"
+      alt="{{ section.settings.mian_img.alt }}"
+    > {% endcomment %}
+    <picture>
+      <source
+        media="(max-width: 768px)"
+        srcset="{{ section.settings.main_img_mobile | image_url }}"
+      >
+      <img
+        class="main-image"
+        src="{{ section.settings.mian_img |  image_url }}"
+        alt="{{ section.settings.mian_img.alt }}"
+        loading="lazy"
+      >
+    </picture>
+    {% if section.settings.top_button_link_text != blank %}
+      <a href="{{ section.settings.top_button_link }}" class="main-link">
+        <div class="title">{{ section.settings.top_button_link_text }}</div>
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M1.65685 2.34315H13.6777M13.6777 2.34315V14.364M13.6777 2.34315L2.01041 14.0104" stroke="white"
+              stroke-width="3" stroke-linecap="round" />
+          </svg>
+        </div>
+      </a>
+    {% endif %}
+  </div>
+  <div class="coupons-container">
+    <div class="top-box">
+      <div class="title-box">
+        <div class="title">{{ section.settings.middle_title }}</div>
+        <div class="sub-title">{{ section.settings.middle_sub_title }}</div>
+      </div>
+      <img
+        class="top-box-img"
+        src="{{ section.settings.middle_img |  image_url }}"
+        alt="{{ section.settings.middle_img.alt }}"
+      >
+    </div>
+    <div class="coupons-box">
+      {% for block in section.blocks %}
+        {% if forloop.index < 4 %}
+          <div class="coupons-item">
+            <img
+              class="coupons-image"
+              src="{{ block.settings.coupons_item |  image_url }}"
+              alt="{{ block.settings.coupons_item.alt }}"
+            >
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {% if section.settings.bottom_button_link_text != blank %}
+    <a href="{{ section.settings.bottom_button_link }}" class="bottom-link">
+      <div class="title">{{ section.settings.bottom_button_link_text }}</div>
+      <div class="icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M1.65685 2.34315H13.6777M13.6777 2.34315V14.364M13.6777 2.34315L2.01041 14.0104" stroke="white"
+            stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </div>
+    </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Event Coupons",
+  "class": "event-coupcons",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Exclusive Black Friday Savings - "
+    },
+    {
+      "type": "text",
+      "id": "title_special",
+      "label": "Title Special",
+      "default": "Limited Time"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "Real Feedback, Real Playtime Magic"
+    },
+    {
+      "type": "image_picker",
+      "id": "mian_img",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_img_mobile",
+      "label": "Main Image Mobile"
+    },
+    {
+      "type": "url",
+      "id": "top_button_link",
+      "label": "Top Button link"
+    },
+    {
+      "type": "text",
+      "id": "top_button_link_text",
+      "label": "Top Button link Text",
+      "default": "Discover Your Deals"
+    },
+    {
+      "type": "color",
+      "id": "top_button_bg",
+      "label": "Top Button Background",
+      "default": "#ff5f00"
+    },
+    {
+      "type": "color",
+      "id": "bottom_button_bg",
+      "label": "Bottom Button Background",
+      "default": "transparent"
+    },
+    {
+      "type": "text",
+      "id": "middle_title",
+      "label": "Middle Title",
+      "default": "Shop More, Save More"
+    },
+    {
+      "type": "text",
+      "id": "middle_sub_title",
+      "label": "Middle Sub Title",
+      "default": "Get extra discounts when you shop! You can apply the code for your instant savings."
+    },
+    {
+      "type": "image_picker",
+      "id": "middle_img",
+      "label": "Middle Image"
+    },
+    {
+      "type": "url",
+      "id": "bottom_button_link",
+      "label": "Bottom Button link"
+    },
+    {
+      "type": "text",
+      "id": "bottom_button_link_text",
+      "label": "Bottom Button link Text",
+      "default": "Get Started"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#141414"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title_color_special",
+      "label": "Title Color Special",
+      "default": "#ff5f00"
+    },
+    {
+      "type": "color",
+      "id": "top_link_color",
+      "label": "Top Link Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "middle_bg_color",
+      "label": "Middle Background Color",
+      "default": "#1861e0"
+    },
+    {
+      "type": "color",
+      "id": "middle_text_color",
+      "label": "Middle Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "bottom_link_bg_color",
+      "label": "Bottom Link Background Color",
+      "default": "#ff5f00"
+    },
+    {
+      "type": "color",
+      "id": "bottom_link_color",
+      "label": "Bottom Link Color",
+      "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "coupons_item",
+          "label": "Coupons Item"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Event Coupons"
+    }
+  ]
+}
+{% endschema %}

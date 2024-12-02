@@ -1,0 +1,231 @@
+<style>	
+	.shane-about{
+		width: 100%; color:#fff; background-color: #006DE5; height: 76vw;
+	}
+	.shane-about>div{
+		 position: relative; width: 100%; height: 100%;
+	}
+	.shane-about #line{
+		width: 40vw; height: 12vw; position:absolute;transform: rotate(150deg); left: 30vw; top: 15vw;
+	}
+	.shane-about .svg-line1{
+		stroke-width: 1px;
+		stroke: #ffffff;
+		fill:none;
+		stroke-dasharray: 1600;
+		stroke-dashoffset: 1600;
+		animation: svgmove01 2s infinite;
+	}
+	@keyframes svgmove01 {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+	.shane-about .about-01{
+		z-index: 2; font-family: Outfit-Bold; font-size: 11.5vw; position: absolute; left: 18vw; top:13vw; line-height: 9vw;
+	}
+	.shane-about .about-02{
+		z-index: 2; font-family: Outfit-Bold; font-size: 11.5vw; position: absolute; left: 48.3vw; top:23vw; line-height: 9vw;
+	}
+	.shane-about .about-img1{
+		width: 35vw; position: absolute; left: 8%; bottom: 0;
+	}
+	.shane-about .about-img2{
+		width: 26vw; position: absolute; right: 5%; top: 12vw;
+	}
+	.shane-about .about-img3{
+		width: 11.1vw; position: absolute; left: 7%; top: 19.5vw;
+	}
+	.shane-about .context{
+		width:40vw; position: absolute; left: 48.3vw; top: 42vw;
+	}
+	.shane-about h1{
+		font-size:3.4vw; line-height:3.6vw;
+	}
+	.shane-about .subtitle{
+		font-size: 2vw; font-family: Outfit-Bold;
+	}
+	.shane-about .text{
+		font-size: 1.2vw; margin-top: 1.5vw; opacity: 0.7;
+	}
+	.about-img4, .about-img5, .about-img6{
+		position: absolute; width: 2vw;
+	}
+	.about-img4{
+		top: 13vw; left: 16vw; animation: moveabout1 1s ease-in-out infinite;
+	}
+	.about-img5{
+		top: 29vw; left: 28vw; animation: moveabout2 1s ease-in-out infinite;
+	}
+	.about-img6{
+		top: 21vw; left: 65vw; animation: moveabout3 1s ease-in-out infinite;
+	}
+	@keyframes moveabout1 {
+		0% {
+			top: 13vw;
+		}
+		50% {
+			top: 12.8vw;
+		}
+		100% {
+			top: 13vw;
+		}
+	}
+	@keyframes moveabout2 {
+		0% {
+			top: 28;
+		}
+		50% {
+			top: 28.5vw;
+		}
+		100% {
+			top: 28;
+		}
+	}
+	@keyframes moveabout3 {
+		0% {
+			top: 21vw;
+		}
+		50% {
+			top: 20vw;
+		}
+		100% {
+			top: 21vw;
+		}
+	}
+@media (max-width: 768px){
+  	.shane-about{
+		height: 200vw;
+	}
+    .shane-about .about-01{
+		z-index: 12;font-size: 18vw;left: 20vw; top:30vw; line-height: 9vw;
+	}
+	.shane-about .about-02{
+		z-index: 12;font-size: 18vw; position: absolute; left: 66.8vw; top:45vw; line-height: 9vw;
+	}
+    .shane-about .about-img1{
+		width: 60vw; left:5%; bottom: auto; top:50vw;
+	}
+	.shane-about .about-img2{
+		width: 36vw; right: 2%; top: 12vw;
+	}
+	.shane-about .about-img3{
+		width: 17vw;left: 3%; top: 40vw;
+	}
+    .shane-about #line{
+  		width: 60vw; height: 20vw; left: 38vw; top: 30vw; z-index: 10;
+  	}
+  	.shane-about .svg-line1{
+  		stroke-dasharray: 1600;
+  		stroke-dashoffset: 1600;
+  	}
+    .about-img4, .about-img5, .about-img6{
+		width: 3.6vw;
+	}
+    .about-img4{
+		top: 30vw; left: 16vw;
+	}
+	.about-img5{
+		top: 47vw; left: 35vw;
+	}
+	.about-img6{
+		top: 40vw; left: 90vw;
+	}
+	@keyframes moveabout1 {
+		0% {
+			top: 30vw;
+		}
+		50% {
+			top: 29vw;
+		}
+		100% {
+			top: 30vw;
+		}
+	}
+	@keyframes moveabout2 {
+		0% {
+			top: 47vw;
+		}
+		50% {
+			top: 48vw;
+		}
+		100% {
+			top: 47vw;
+		}
+	}
+	@keyframes moveabout3 {
+		0% {
+			top: 40vw;
+		}
+		50% {
+			top: 41vw;
+		}
+		100% {
+			top: 40vw;
+		}
+	}
+    .shane-about .context{
+		width:100vw; left: 0; top: 110vw; padding: 10vw 5vw; text-align: center;  background: linear-gradient(#006DE500 0%, #006DE5 20%); 
+	}
+	.shane-about h1{
+		font-size: 10vw; line-height:10vw;
+	}
+	.shane-about .subtitle{
+		font-size: 5.2vw;
+	}
+	.shane-about .text{
+		font-size: 3.6vw; margin-top: 3vw;
+	}
+}
+</style>
+<section class="shane-about">
+	<div>
+		<div class="about-01">ABOUT</div>
+		<div class="about-02">US</div>
+		<svg id="line" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<ellipse ry="5.5vw" rx="19vw" cy="50%" cx="50%" class="svg-line1 pc_show" />
+			<ellipse ry="7vw" rx="28vw" cy="50%" cx="50%" class="svg-line1 mobile_show" />
+		</svg>
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/about01.png?v=1706175284" class="about-img1" alt="About Blokees Transformer Toys Information">
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/about02.png?v=1706175325" class="about-img2" alt="About Blokees Transformer Toys">
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/about03.png?v=1706175325" class="about-img3">
+		<div class="context">
+			<h1>{{ section.settings.title }}</h1>
+			<div class="subtitle"> {{ section.settings.subtitle }}</div>
+			<div class="text">{{ section.settings.text }}</div>
+		</div>
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/star-icon03.png?v=1706175325" class="about-img4">
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/star-icon03.png?v=1706175325" class="about-img5">
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/star-icon03.png?v=1706175325" class="about-img6">
+	</div>	
+</section>
+{% schema %}
+  {
+    "name": "Shane About",
+    "settings": [
+       {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "With The Mission"
+	  },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Info.",
+        "default": "“Explore The Fun Of Building”"
+	  },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "text",
+        "default": "Blokees believes that the power of “Building” can enlighten endless creation. Blokees is dedicated to creating delicate model figures and collectible items in different sizes for all age groups. Working with famous brands like Disney, Hasbro, Pokemon, Ultraman, Transformers, Etc., We help you build your favorite original characters in the most authentic way. We delight in bringing these playful products full of imagination to global consumers."
+	  }
+    ],
+    "presets": [
+       {
+        "name": "Shane About"          
+       }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,132 @@
+<style>
+	.shane-yourlike{
+		background-color: #F4F0E6; width: 100%; padding-top: 7vw; padding-bottom: 7vw; color: #FF5F00;
+	}
+	.shane-yourlike>div{
+		width:94%; margin: auto;
+	}
+	.shane-yourlike h2{
+		font-family: Outfit-Bold; font-size: 2.2vw; margin: 0; color:#FF5F00;
+	}
+	.shane-yourlike .text{
+		width: 60%; font-size: 1.2vw;
+	}
+	.like-pro{
+		width: 100%; display: flex; justify-content: space-between; align-items: flex-start; position: relative; margin-top: 2vw;
+	}
+    .like-pro>div{
+		width:24.4%; position: relative;
+	}
+    {% if section.blocks.size < 4 %}
+     .like-pro{
+    	justify-content: flex-start;
+    }
+    .like-pro>div{
+		margin-right:20px;
+	}
+    {% endif %}	
+	.like-pro img{
+		width:100%;
+	}
+	.pro-info{
+		width: 80%; position: absolute; left: 10%; bottom: 1vw; display: flex; justify-content: space-between; align-items: center;
+	}
+	.pro-info .pro-name{
+		font-size: 1vw;
+	}
+	.pro-info .pro-name span{
+		display:block; font-family: Outfit-Bold;
+	}
+	.pro-info .pro-price{
+		font-family: Outfit-Bold; font-size: 2.4vw;
+	}
+@media (max-width: 768px){
+	.shane-yourlike h2{
+		font-size: 6vw; margin-bottom: 3vw;
+	}
+	.like-pro{
+		justify-content: space-between; flex-wrap: wrap;
+	}
+	.like-pro>div{
+		width:49%; margin-bottom: 2vw; margin-right:0;
+	}
+	.pro-info{
+		width: 90%; left: 5%;
+	}
+	.pro-info .pro-name{
+		font-size: 2.6vw;
+	}
+	.pro-info .pro-price{
+		font-size: 5vw;
+	}
+}
+</style>
+	<div>
+		<h2>{{ section.settings.heading }}</h2>
+		<div class="like-pro">
+            {%- for block in section.blocks -%}
+			<div>
+				<a href="{{ block.settings.link }}"><img src="{{ block.settings.block_image | image_url }}" alt="{{ block.settings.block_image.alt }}"></a>
+				<div class="pro-info">
+				  <div class="pro-name">{{ block.settings.block_subtitle }}<span>{{ block.settings.block_title }}</span></div>
+					<div class="pro-price">{{ block.settings.block_price }}</div>
+				</div>
+			</div>
+            {%- endfor -%}
+		</div>
+	</div>
+
+{% schema %}
+  {
+    "name": "Shane Like",
+    "class": "shane-yourlike",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  }
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+            {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "text",
+              "id": "block_subtitle",
+              "label": "Subtitle"
+			},
+           {
+              "type": "text",
+              "id": "block_price",
+              "label": "Price"
+			},
+           {
+              "id": "link",
+              "type": "url",
+              "label": "link",
+              "info": "Adds a link"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image"
+            }
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Shane Like"
+          
+       }
+    ]
+  }
+{% endschema %}

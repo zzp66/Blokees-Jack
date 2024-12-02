@@ -1,0 +1,423 @@
+{%- liquid
+	assign read_more = 'blogs.article.read_more' | t
+	assign ratio = 1
+	assign article_content_alignment = settings.article_content_alignment
+	assign info_spacing = true
+	assign article_card_border = settings.article_card_border
+	assign article_card_shadow = settings.article_card_shadow
+	assign article_card_shadow_class = 'has-shadow--' | append: article_card_shadow
+
+	case image_ratio
+		when 'adapt'
+			assign image_sizes = '320x0,640x0'
+			if article.image
+				assign ratio = article.image.aspect_ratio
+			endif
+		when 'square'
+			assign image_sizes = '320x320,640x640'
+			assign ratio = 1
+		when 'landscape'
+			assign image_sizes = '320x200,640x400'
+			assign ratio = 1.6
+		when 'portrait'
+			assign image_sizes = '320x400,640x800'
+			assign ratio = 0.8
+	endcase
+
+	assign color_body_bg = settings.color_body_bg | downcase
+	assign color_article_card_bg = settings.color_article_card_bg | downcase
+
+	if color_body_bg == color_article_card_bg or color_article_card_bg == 'transparent' or color_article_card_bg == 'rgba(0,0,0,0)'
+		unless article_card_border
+			assign info_spacing = false
+		endunless
+		if article_card_shadow
+			assign info_spacing = true
+		endif
+	endif
+
+-%}
+<style>
+	
+	#aspect-ratio-id{
+		--ratio-percent: calc(100vw* 296/ 1920);
+	}
+	.blog-post .post-excerpt p{
+		     line-height: calc(100vw* 20/ 1920);
+	}
+	#pro-columns-link-id{
+		margin: 0;
+	}
+	
+	.blog-post-info-top-content1{
+		display: flex;
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 12/ 1920);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		align-items: center;
+
+
+	}
+	.blog-post-info-top-content1 div{
+		width: calc(100vw* 8/ 1920);
+		height: calc(100vw* 8/ 1920);
+		flex-shrink: 0;
+		border-radius: calc(100vw* 6/ 1920);
+		margin-right: calc(100vw* 8/ 1920);
+		background: #FF5F00;
+	}
+	.blog-post-info-top{
+		display: flex;
+		align-items: center;
+		align-content: center;
+		justify-content: space-between;
+	}
+	.blog-post .post-meta{
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 12/ 1920);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		opacity: 0.5;
+	}
+	.blog-post--content-spacing-true .blog-post-info{
+		padding-top:  calc(100vw* 13/ 1920);
+		/* padding-left:0 ; */
+	}
+	.blog-post h5{
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 22/ 1920);
+		font-style: normal;
+		font-weight: 700;
+		line-height: calc(100vw* 26/ 1920); /* 118.182% */
+		text-transform: uppercase;
+		margin-bottom: calc(100vw* 15/ 1920);
+		margin-bottom: calc(100vw* 16/ 1920);
+
+	}
+	.blog-post h5 a{
+		color: #FF5F00;
+
+	}
+	.blog-post .post-excerpt{
+		/* width: calc(100vw* 629/ 1920); */
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 16/ 1920);
+		font-style: normal;
+		font-weight: 300;
+		line-height: calc(100vw* 20/ 1920); /* 114.286% */
+		opacity: 0.8;
+		margin-bottom: calc(100vw* 24/ 1920);
+	}
+
+	.blog-post .post-excerpt.post_excerpt-ls{
+		margin-bottom: calc(100vw* 34/ 1920);
+
+	}
+	.blog-post-info-bottom{
+		display: flex;
+		align-items: center;
+		align-content: center;
+		justify-content: space-between;
+	}
+	.blog-post-info-bottom-author{
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 14/ 1920);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+	#shane-button-02-id{
+		width: calc(100vw* 174/ 1920);
+		height: calc(100vw* 45.17/ 1920);
+		font-size: calc(100vw* 20/ 1920);
+
+	}
+	.blog-post-read-more{
+		display: flex;
+		width: calc(100vw* 174/ 1920);
+		height: calc(100vw* 45.17/ 1920);
+		border-radius: calc(100vw* 30/ 1920);
+		border: calc(100vw* 1/ 1920) solid #FF5F00;
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 20/ 1920);
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		margin-right: calc(100vw* 70/ 1920);
+		/* justify-content: center;
+		align-items: center; */
+	}
+	.blog-post-read-more:hover{
+		color: #FF5F00;
+
+	}
+	.blog-post-read-more div{
+		margin-left: calc(100vw* 21/ 1920);
+		margin-top: calc(100vw* 7.9/ 1920);
+	}
+	.blog-post-read-more svg{
+		width: calc(100vw* 19/ 1920);
+		height: calc(100vw* 26/ 1920);
+		
+		margin-left: calc(100vw* 16/ 1920);
+		margin-top: calc(100vw* 9.9/ 1920);
+	}
+	
+	@media (max-width: 768px){
+		.blog-post .post-excerpt p{
+			font-size: calc(100vw* 18/ 430);
+		     line-height: calc(100vw* 24 /  430);
+	}
+		#pro-columns-link-id{
+		margin: 0;
+	}
+		#aspect-ratio-id{
+			--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;
+		}
+		.blog-post-info-top-content1{
+		display: flex;
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 12/ 430);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		align-items: center;
+
+
+	}
+	.blog-post-info-top-content1 div{
+		width: calc(100vw* 8/ 430);
+		height: calc(100vw* 8/ 430);
+		flex-shrink: 0;
+		border-radius: calc(100vw* 6/ 430);
+		margin-right: calc(100vw* 8/ 430);
+		background: #FF5F00;
+	}
+	.blog-post-info-top{
+		display: flex;
+		align-items: center;
+		align-content: center;
+		justify-content: space-between;
+	}
+	.blog-post .post-meta{
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 12/ 430);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		opacity: 0.5;
+	}
+	.blog-post--content-spacing-true .blog-post-info{
+		padding-top:  calc(100vw* 13/ 430);
+		/* padding-left:0 ; */
+	}
+	.blog-post h5{
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 22/ 430);
+		font-style: normal;
+		font-weight: 700;
+		line-height: calc(100vw* 26/ 430); /* 118.182% */
+		text-transform: uppercase;
+		margin-bottom: calc(100vw* 15/ 430);
+		margin-bottom: calc(100vw* 16/ 430);
+
+	}
+	.blog-post h5 a{
+		color: #FF5F00;
+
+	}
+	.blog-post .post-excerpt{
+		/* width: calc(100vw* 629/ 430); */
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 14/ 430);
+		font-style: normal;
+		font-weight: 300;
+		line-height: calc(100vw* 16/ 430); /* 114.286% */
+		opacity: 0.8;
+		margin-bottom: calc(100vw* 24/ 430);
+	}
+
+	.blog-post .post-excerpt.post_excerpt-ls{
+		margin-bottom: calc(100vw* 34/ 430);
+
+	}
+	.blog-post-info-bottom{
+		display: flex;
+		align-items: center;
+		align-content: center;
+		justify-content: space-between;
+	}
+	.blog-post-info-bottom-author{
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 14/ 430);
+		font-style: normal;
+		font-weight: 400;
+		line-height: normal;
+		text-transform: uppercase;
+	}
+	#blog-post-read-more-id{
+		display: flex;
+		width: calc(100vw* 174/ 430);
+		height: calc(100vw* 45.17/ 430);
+		border-radius: calc(100vw* 30/ 430);
+		border: calc(100vw* 1/ 430) solid #FF5F00;
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 20/ 430);
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+	}
+	#shane-button-02-id{
+		width: calc(100vw* 174/ 430);
+		height: calc(100vw* 45.17/ 430);
+		font-size: calc(100vw* 20 / 430);
+
+	}
+	.blog-post-read-more{
+		display: flex;
+		width: calc(100vw* 174/ 430);
+		height: calc(100vw* 45.17/ 430);
+		border-radius: calc(100vw* 30/ 430);
+		border: calc(100vw* 1/ 430) solid #FF5F00;
+		color: #FF5F00;
+		font-family: Outfit;
+		font-size: calc(100vw* 20/ 430);
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+		/* margin-right: calc(100vw* 70/ 430); */
+		/* justify-content: center;
+		align-items: center; */
+	}
+	.blog-post-read-more:hover{
+		color: #FF5F00;
+
+	}
+	.blog-post-read-more div{
+		margin-left: calc(100vw* 21/ 430);
+		margin-top: calc(100vw* 7.9/ 430);
+	}
+	.blog-post-read-more svg{
+		width: calc(100vw* 19/ 430);
+		height: calc(100vw* 26/ 430);
+		
+		margin-left: calc(100vw* 16/ 430);
+		margin-top: calc(100vw* 9.9/ 430);
+	}
+		
+	}
+</style>
+{%- if article -%}
+<div class="blog-post text-{{ article_content_alignment }} blog-post--content-spacing-{{ info_spacing }} blog-post--border-{{ article_card_border }} {{ article_card_shadow_class }}">
+	<figure class="featured-image">
+		{% comment %}  style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;" {% endcomment %}
+		<div class="aspect-ratio" id="aspect-ratio-id">
+			<a href="{{ article.url }}" class="featured-image-link" title="{{ article.title | escape }}">
+				{%- if article.image -%}
+					{%- render 'responsive-image', image: article.image, sizes: image_sizes -%}
+				{%- endif -%}
+			</a>
+		</div>
+	</figure>
+	<div class="blog-post-info">
+		{% assign blog_index = index | minus: 1%}
+		{% assign blog_index_modulo = blog_index | modulo:7%}
+		{% if blog_index_modulo == 0 %}
+			{% assign post_excerpt_ls = "post_excerpt-ls" %}
+			{% assign show_read_more_disabo = true %}
+		{% endif %}
+		{% if show_date %}
+			<div class="blog-post-info-top">
+				<div class="blog-post-info-top-content1">
+					<div></div>
+					Blokees
+				</div>
+				<aside class="post-meta">
+					{{ article.published_at | date: "%B %d %Y" }}
+				</aside>
+			</div>
+		{% comment %} <aside class="post-meta">
+			{{ article.published_at | date: "%B %d %Y" }}
+		</aside> {% endcomment %}
+		{% endif %}
+		<h5><a href="{{ article.url }}" title="{{ article.title | escape }}">{{ article.title }}</a></h5>
+		{% if show_excerpt %}
+		<div class="post-excerpt {{ post_excerpt_ls }}">
+			<p>{{ article.excerpt_or_content | strip_html | truncatewords: 20 }}</p>
+		</div>
+		{% endif %}
+		<div class="blog-post-info-bottom">
+			<div class="blog-post-info-bottom-author">
+				{{ article.author }}
+			</div>
+			{% if show_read_more_disabo %}
+				{% comment %} <a href="{{article.url}}" class="blog-post-read-more">
+					<div>Read More</div>
+					<svg xmlns="http://www.w3.org/2000/svg" width="19" height="26" viewBox="0 0 19 26" fill="none">
+					<path d="M14.1046 7.31189L5.53906 19.3555" stroke="#FF5F00" stroke-width="2"/>
+					<path d="M5.23438 6.88184H14.4117V19.7857" stroke="#FF5F00" stroke-width="2"/>
+					</svg>
+				</a> {% endcomment %}
+
+				<div class="pro-columns-link " id="pro-columns-link-id">
+				<a class="shane-button-02" id="shane-button-02-id" href="{{article.url}}">
+					<div class="btn__bg"></div>
+					<div class="btn__label-02">Read More</div>
+					<div class="btn__circle-02">
+						<span class="fa fa-arrow-up"></span>
+					</div>
+				</a>
+			</div>
+			{% endif %}
+			{% if show_read_more %}
+				{% render 'text-button', url: article.url, title: read_more, class: 'read-more' %}
+			{% endif %}
+		</div>
+		
+	</div>
+</div>
+{%- else -%}
+<div class="blog-post text-{{ article_content_alignment }} blog-post--content-spacing-{{ info_spacing }} blog-post--border-{{ article_card_border }} {{ article_card_shadow_class }}">
+	<figure class="featured-image">
+		<div class="aspect-ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+			<a href="{{ article.url }}" class="featured-image-link" title="{{ article.title | escape }}">
+				<div class="thb-placeholder">
+					{{ 'image' | placeholder_svg_tag }}
+				</div>
+			</a>
+		</div>
+	</figure>
+	<div class="blog-post-info">
+		{% if show_date %}
+		<aside class="post-meta">
+			{{ "today" | date: "%B %d %Y" }}
+		</aside>
+		{% endif %}
+		<h5><a role="link" aria-disabled="true">{{ 'sections.featured_blog.onboarding_title' | t }}</a></h5>
+		{% if show_excerpt %}
+		<div class="post-excerpt">
+			<p>{{ 'sections.featured_blog.onboarding_content' | t }}</p>
+		</div>
+		{% endif %}
+		{% if show_read_more %}
+		{% render 'text-button', url: article.url, title: read_more, class: 'read-more', disabled: true %}
+		{% endif %}
+	</div>
+</div>
+{%- endif -%}

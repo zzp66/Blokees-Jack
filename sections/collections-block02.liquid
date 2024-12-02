@@ -1,0 +1,180 @@
+<style>
+	.shane-collections-block02{
+		width: 100%;color: #fff;
+	}
+	.shane-collections-block02 .text-list{
+		width: 100%; height: 14vw; background-color: #006DE5; padding: 1vw 4vw; display: flex; justify-content: space-between; align-items: center; overflow: hidden;
+	}
+	.shane-collections-block02 .text-list:first-child{
+		background-color: #FF5F00;
+	}
+	.shane-collections-block02 .text-list:last-child{
+		background-color: #D21517;
+	}
+	.shane-collections-block02>div h2{
+		font-size: 12vw; line-height: 10vw;
+	}
+	.shane-collections-block02>div .right{
+		width: 50%; height: 100%; display: flex; justify-content: flex-start; align-content: flex-end; flex-wrap: wrap;
+	}
+	.shane-collections-block02 .text-list .right>div{
+		width: 65%;
+	}
+	.shane-collections-block02 .right .title{
+		font-size: 1.6vw; font-family: Outfit-Bold; line-height: 1.8vw; margin-bottom: 0;
+	}
+	.shane-collections-block02 .right .subtitle{
+		font-size: 1vw; margin-bottom: 0;
+	}
+	.shane-collections-block02 .right .text{
+		font-size: 0.9vw; display: none; margin-bottom: 0;
+	}	
+	.shane-collections-block02 .active .title{
+		display: none;
+	}
+	.shane-collections-block02 .active .subtitle{
+		display: none;
+	}
+	.shane-collections-block02 .active .text{
+		display: block; animation: moveadvantage 0.4s ease-out;
+	}
+	@keyframes moveadvantage {
+	  from {
+		margin-bottom: -120px;
+	  }
+	  to {
+		margin-top: 0;
+	  }
+	}
+@media (max-width: 768px){
+	.shane-collections-block02 .text-list{
+		height: auto; padding: 10vw 3vw; align-items: flex-start;
+	}
+	.shane-collections-block02>div h2{
+		font-size: 16vw;
+	}
+	.shane-collections-block02>div .right{
+		width: 70%;
+	}
+	.shane-collections-block02 .text-list .right>div{
+		width: 100%;
+	}
+	.shane-collections-block02 .right .title{
+		font-size: 4vw; line-height: 5vw; margin-bottom: 1vw;
+	}
+	.shane-collections-block02 .right .subtitle{
+		font-size: 3.4vw; margin-bottom: 2vw;
+	}
+	.shane-collections-block02 .active .title{
+		display: block;
+	}
+	.shane-collections-block02 .active .subtitle{
+		display: block;
+	}
+	.shane-collections-block02 .right .text{
+		font-size: 3vw; display: block; animation:none;
+	}
+	
+}
+</style>
+    <div class="text-list active" style="background-color: #FF5F00;">
+		<h2>01</h2>
+		<div class="right">
+            <div class="title">{{ section.settings.heading1 }}</div>
+    		<div class="subtitle">{{ section.settings.subheading1 }}</div>
+			<div class="text">{{ section.settings.text1 }}</div>
+		</div>
+	</div>
+	<div class="text-list">
+		<h2>02</h2>
+		<div class="right">
+			<div class="title">{{ section.settings.heading2 }}</div>
+    		<div class="subtitle">{{ section.settings.subheading2 }}</div>
+			<div class="text">{{ section.settings.text2 }}</div>
+		</div>
+	</div>
+	<div class="text-list" style="background-color: #D21517;">
+		<h2>03</h2>
+		<div class="right">
+			<div class="title">{{ section.settings.heading3 }}</div>
+    		<div class="subtitle">{{ section.settings.subheading3 }}</div>
+			<div class="text">{{ section.settings.text3 }}</div>
+		</div>
+	</div>
+
+{% schema %}
+  {
+    "name": "collections block02",
+    "class": "shane-collections-block02",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading1",
+        "label": "Heading 1",
+        "default": "Build Your Heroes, No Mess Required!"
+	  },
+      {
+        "type": "text",
+        "id": "subheading1",
+        "label": "Subheading 1",
+        "default": "DIY Assemble Kit Toy – Pure Creative Joy for Ages 12 and Up"
+	  },
+      {
+        "type": "textarea",
+        "id": "text1",
+        "label": "Text 1",
+        "default": "Experience the thrill of assembling your favorite Ultraman heroes with Blokees DIY Assemble Kit Toy. No messy glue, brushes, or cutters needed—just pure, simple assembly. This kit, designed for ages 12 and older, features 20 moveable joints for dynamic poses straight from the action-packed Ultraman universe. Immerse yourself in the joy of creation without the fuss, and let your creativity shine."
+      },
+      {
+        "type": "text",
+        "id": "heading2",
+        "label": "Headin 2g",
+        "default": "Officially Licensed Excellence - Blokees Ultraman Collection"
+	  },
+      {
+        "type": "text",
+        "id": "subheading2",
+        "label": "Subheading 2",
+        "default": "Unleash the Power of Authenticity and Quality"
+	  },
+      {
+        "type": "textarea",
+        "id": "text2",
+        "label": "Text 2",
+        "default": "Discover the universe of Ultraman with confidence, as Blokees proudly presents the officially licensed Ultraman Galaxy Versions 01-06 collection. Our commitment to quality and safety is unwavering, ensuring each figure meets the highest standards in material excellence. Crafted with precision from premium ABS materials, these figures stand as a testament to our dedication to providing a secure and authentic Ultraman experience."
+      },
+      {
+        "type": "text",
+        "id": "heading3",
+        "label": "Heading 3",
+        "default": "Galaxy Versions 01-06: Level Up Your Ultraman Collection"
+	  },
+      {
+        "type": "text",
+        "id": "subheading3",
+        "label": "Subheading 3",
+        "default": "Collectors and Fans, Assemble! Secure the Complete Set Now"
+	  },
+      {
+        "type": "textarea",
+        "id": "text3",
+        "label": "Text 3",
+        "default": "Attention, Ultra-obsessed collectors! Elevate your fandom to warp speed with the MUST-HAVE Galaxy Versions 01-06 collection. These aren't just action figures, they're gateway portals to epic adventures and coveted Ultraman glory. "
+      }
+    ],
+    "presets": [
+       {
+        "name": "collections block02"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+$(document).ready(function() {
+	$(".shane-collections-block02 .text-list").mouseenter(function(){
+		$(".shane-collections-block02 .text-list").removeClass("active");
+		$(this).addClass("active");			
+	});
+})
+</script>

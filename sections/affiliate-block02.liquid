@@ -1,0 +1,268 @@
+<style>
+	.shane-affiliate-block02{
+		background-color: #D21517;
+		min-height: 40vw;
+		color: #fff;
+		font-family: Outfit-Regular;
+		padding: 5.7vw 3vw;
+      width:100%;
+	}
+	.aff-b2-1{
+		display: flex; justify-content: space-between; align-items: stretch;
+	}
+	.b2-1-left{
+		width: 65%; position: relative;
+	}
+	.b2-1-left img{
+		width: 100%; margin-left: -2vw;
+	}
+	.b2-1-left h2{
+		position:absolute; font-size: 4.2vw; left: 50%; margin: 0; line-height: 5vw; top: 5%;
+	}
+	.b2-1-left a{
+		display: flex; justify-content: center; align-items: center; color: #fff; font-size: 1.6vw; width: 12vw; height: 3.6vw; border:1px solid #fff; border-radius: 2.5vw; position: absolute; right: 2.5vw; bottom: 0; font-family: Outfit-Bold;
+	}
+	.b2-1-left a span{
+		display:block; font-size: 1.2vw; margin-left: 1vw;
+	}
+	.b2-1-right{
+		width:35%; display: flex; flex-wrap: wrap; justify-content: flex-start; align-content: space-between; padding-top: 2vw;
+	}
+	.b2-1-right>div{
+		width: 100%;
+	}
+	.b2-1-right .title{
+		text-align: right; font-size: 3.55vw; line-height: 4.5vw; text-transform: uppercase;
+	}
+	.b2-1-right .text{
+		padding-left: 4vw; font-size: 1.1vw; line-height: 1.4vw; opacity: 0.8;
+	}
+	.aff-b2-2{
+		display: flex; justify-content: space-between; align-items: flex-end; margin-top: 5vw; margin-bottom: 8vw;
+	}
+	.b2-2-left{
+		width:26%;
+	}
+	.aff-b2-2 h3{
+		font-family: Outfit-Bold; margin: 0; font-size: 4.2vw; line-height: 4.4vw; text-transform: uppercase; margin-bottom: 1.4vw;
+	}
+	.b2-2-left>span{
+		font-size:1.2vw; line-height: 1.6vw;
+	}
+    .b2-2-left a{
+		display: none; justify-content: center; align-items: center; color: #fff; font-size: 1vw; width: 10vw; height: 2.6vw; border:1px solid #fff; border-radius: 2.5vw; font-family: Outfit-Bold; margin-top: 1vw;
+	}
+	.b2-2-left a span{
+		display:block; font-size: 1vw; margin-left: 1vw;
+	}
+	.b2-2-right{
+		width:70%;
+	}
+	.affb2Swiper .swiper-wrapper{
+		align-items: flex-end;
+	}
+	.affb2Swiper .swiper-slide{
+		position: relative;
+	}
+	.affb2Swiper .swiper-slide img{
+		width: 100%;
+	}
+	.swiper-slide>div{
+		position: absolute; bottom: 10%; left: 5%; width: 75%; font-size: 1.3vw; line-height: 1.8vw;
+	}
+	.swiper-slide>div span{
+		font-weight: 600; font-size: 1.5vw;
+	}
+    .aff-b2-3{
+        width:100%; overflow: hidden;
+    }
+	.aff-b2-3 .title{
+		width: 40%; margin: auto; text-align: center; font-family: Outfit-Bold; font-size: 4.2vw; line-height: 4.4vw; text-transform: uppercase; margin-bottom: 2vw; position: relative;
+	}
+	.aff-b2-3 .title::after{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 88px;
+		height: 16px;
+		top: 50%; left: -88px;
+		margin-top: -8px;
+		background-image: url(https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b2-5.png?v=1711007775);
+		background-size: 100%;
+	}
+	.aff-b2-3 .title::before{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 88px;
+		height: 16px;
+		top: 50%; right: -88px;
+		margin-top: -8px;
+		background-image: url(https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b2-5.png?v=1711007775);
+		background-size: 100%;
+	}
+	.aff-b2-3 .text{
+		width: 60%; margin: auto; text-align: center; font-size: 1.8vw; line-height: 2.2vw;
+	}
+@media (max-width: 1200px){
+	.b2-1-right .text{
+		font-size: 1.4vw;
+    	line-height: 1.8vw;
+	}
+	.b2-2-left span {
+		font-size: 1.6vw;
+		line-height: 1.8vw;
+	}
+	.swiper-slide>div {
+		font-size: 1.6vw;
+		line-height: 2vw;
+	}
+	.swiper-slide>div span {
+		font-size: 1.8vw;
+	}
+	.aff-b2-3 .text {
+		font-size: 2.2vw;
+		line-height: 2.4vw;
+	}
+}
+@media (max-width: 768px){
+	.shane-affiliate-block02{
+		padding: 20vw 3vw 10vw;
+	}
+	.aff-b2-1{
+		display: block;
+	}
+	.b2-1-left{
+		width: 100%;
+	}
+	.b2-1-left img{
+		margin-left: 0;
+	}
+	.b2-1-left h2{
+		font-size: 10vw; left: 25%; line-height: 12vw; top: -18%;
+	}
+	.b2-1-left a{
+		font-size: 3vw; width: 20vw; height: 7vw; border-radius: 3.5vw; right: 0;
+	}
+	.b2-1-left a span{
+		font-size: 2.2vw; margin-left: 1vw;
+	}
+	.b2-1-right{
+		width:100%; padding-top: 5vw;
+	}
+	.b2-1-right .title{
+		text-align: left; font-size: 7.6vw; line-height: 8.6vw; margin-bottom: 4vw;
+	}
+	.b2-1-right .text{
+		padding-left: 0; font-size: 3.4vw; line-height: 4.4vw;
+	}
+	.aff-b2-2{
+		display: block;  margin-top: 15vw; margin-bottom: 18vw;
+	}
+	.b2-2-left{
+		width:100%;
+	}
+	.aff-b2-2 h3{
+		font-size: 10vw; line-height: 11vw; margin-bottom: 1.4vw;
+	}
+	.b2-2-left>span{
+		font-size:3.6vw; line-height: 4.6vw; display: block; width: 70%;
+	}
+	.b2-2-left a{
+		font-size: 3vw; width: 28vw; height: 7vw; border-radius: 3.5vw;
+	}
+	.b2-2-left a span{
+		font-size: 2.2vw; margin-left: 1vw;
+	}
+	.b2-2-right{
+		width:100%; margin-top: 2vw;
+	}
+	.swiper-slide>div{
+		font-size: 3.4vw; line-height: 4.4vw;
+	}
+	.swiper-slide>div span{
+		font-size: 3.8vw;
+	}
+	.aff-b2-3 .title{
+		width: 70%; font-size: 8vw; line-height: 9vw; margin-bottom: 3vw;
+	}
+	.aff-b2-3 .text{
+		width: 95%; margin: auto; text-align: center; font-size: 4.6vw; line-height: 5.4vw;
+	}
+}
+</style>
+	<div class="aff-b2-1">
+		<div class="b2-1-left">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b2-1.png?v=1711007778" alt="Blokees Transformer Toys Affiliate Program">
+			<h2>About Us</h2>
+			<a href="https://www.shareasale.com/shareasale.cfm?merchantID=154618"><div>Join Us</div><span class="fa fa-arrow-right"></span></a>
+		</div>
+		<div class="b2-1-right">
+			<div class="title"> With The Mission “Explore The Fun Of Building”</div>
+			<div class="text">Blokees believes that building can fuel endless creation and drive imagination. Blokees is dedicated to creating highly-detailed model figures, kits, and collectibles for all age groups—from younger kids to the experienced collector. We work with famous brands like Disney, Hasbro, Pokemon, Ultraman, Transformers, etc., to bring your favorite characters to life with amazing detail and functionality. We’re here to bring amazing collectibles to consumers worldwide.</div>
+		</div>
+	</div>
+	<div class="aff-b2-2">
+		<div class="b2-2-left">
+			<h3>Program Benefits</h3>
+			<span>Join the Blokees Affiliate Program today and unlock a world of opportunities with these exclusive benefits:</span>
+            <a href="#"><div>Sign Up Now</div><span class="fa fa-arrow-right"></span></a>
+		</div>
+		<div class="b2-2-right">
+			<div class="swiper affb2Swiper">
+				<div class="swiper-wrapper">
+				  <div class="swiper-slide">
+				  	<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b2-2.png?v=1711007776" alt="Blokees Transformer Toys Affiliate Comission Offer">
+				  	<div>Competitive order-based commissions starting at <span>6%</span></div>
+				  </div>
+				   <div class="swiper-slide">
+				  	<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b2-3.png?v=1711007776" alt="Blokees Transformer Toys Refferal Program">
+				  	<div> A Generous <span>30-Day</span> tracking cookie to maximize your earnings</div>
+				  </div>
+				   <div class="swiper-slide">
+				  	<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b2-4.png?v=1711007776" alt="Blokees Transformer Toys Refferal Program">
+				  	<div>Access to private commission rates and special <span>consumer offers</span></div>
+				  </div>
+				</div>
+		  	</div>
+		</div>
+	</div>
+	<div class="aff-b2-3">
+		<div class="title">Keep It Simple</div>
+		<div class="text">The Blokees Affiliate Program has been streamlined to focus on the essentials, allowing you to seamlessly turn your passion for Blokees into hard-earned cash.</div>
+	</div>
+<script>
+var swiper = new Swiper(".affb2Swiper", {
+  slidesPerView: 1.2,
+  spaceBetween: 10,
+  speed:200,
+  breakpoints: {
+	540: {
+	  slidesPerView: 1.6,
+	  spaceBetween: 10,
+	},
+	768: {
+	  slidesPerView: 2.4,
+	  spaceBetween: 10,
+	},
+	1300: {
+	  slidesPerView: 3,
+	  spaceBetween: 10,
+	},
+  },
+});
+</script>
+{% schema %}
+  {
+    "name": "Affiliate block02",
+    "class": "shane-affiliate-block02",
+    "settings": [
+    ],
+    "presets": [
+       {
+        "name": "Affiliate block02"
+          
+       }
+    ]
+  }
+{% endschema %}

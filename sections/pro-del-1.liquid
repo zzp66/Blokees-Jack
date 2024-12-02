@@ -1,0 +1,610 @@
+<style>
+  #{{ section.id }}-hero-detail {
+    font-family: Outfit-Regular;
+    width: 100%;
+    background: {{ section.settings.background_color }};
+    margin-top: -1px;
+    padding: calc(8000vw / var(--base-width)) calc(12000vw / var(--base-width)) calc(10000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail .container {
+    width: 100%;
+    position: relative;
+    padding: 0;
+  }
+
+  #{{ section.id }}-hero-detail .mian-img {
+    width: 100%;
+  }
+
+  #{{ section.id }}-hero-detail .title-container {
+    color: {{ section.settings.title_font_color }};
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: calc(1000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail .title-container .title {
+    font-size: calc(5000vw / var(--base-width));
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #{{ section.id }}-hero-detail .title-container .sub-title {
+    font-size: calc(2400vw / var(--base-width));
+    line-height: 1.25;
+  }
+
+  #{{ section.id }}-hero-detail .left-text-container {
+    position: absolute;
+    left: 0;
+    top: calc(35000vw / var(--base-width));
+    display: flex;
+    flex-direction: column;
+    gap: calc(1400vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail .right-text-container {
+    position: absolute;
+    right: 0;
+    top: calc(35000vw / var(--base-width));
+    display: flex;
+    flex-direction: column;
+    gap: calc(1400vw / var(--base-width));
+    align-items: flex-end;
+  }
+
+  @media (max-width: 1500px){
+    #{{ section.id }}-hero-detail  .left-text-container, #{{ section.id }}-hero-detail .right-text-container {
+      top: calc(20000vw / var(--base-width));
+    }
+  }
+
+  #{{ section.id }}-hero-detail .text-container .title {
+    color:  {{ section.settings.middle_font_color }};
+    font-size: calc(3000vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    text-transform: capitalize;
+    max-width:450px;
+    min-height: 60px;
+  }
+  #{{ section.id }}-hero-detail .right-text-container .title{
+    max-width:300px;
+  }
+  #{{ section.id }}-hero-detail .text-box {
+    display: flex;
+    flex-direction: column;
+    gap: calc(550vw / var(--base-width));
+    position: relative;
+  }
+
+  #{{ section.id }}-hero-detail .text-box .box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width:fit-content;
+    padding:5px 20px;
+  }
+
+  #{{ section.id }}-hero-detail .text-box .bg-img {
+    {% comment %} width: calc(36600vw / var(--base-width));
+    height: auto; {% endcomment %}
+    width:100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  #{{ section.id }}-hero-detail .text-box .bottom-img {
+    width: calc(29500vw / var(--base-width));
+    height: auto;
+  }
+  #{{ section.id }}-hero-detail .right-text-container .text-box .bottom-img{
+    transform: scaleX(-1);
+  }
+
+  #{{ section.id }}-hero-detail .left-text-container .text {
+    {% comment %} position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(1700vw / var(--base-width)); {% endcomment %}
+    color: #fff;
+    font-family: BIGMACCA;
+    font-size: calc(2600vw / var(--base-width));
+    line-height: 1;
+    text-transform: uppercase;
+    max-width: calc(26800vw / var(--base-width));
+    text-align: left;
+    z-index:1;
+    padding:3px 5px;
+    position: relative;
+  }
+
+  #{{ section.id }}-hero-detail .right-text-container .text {
+    {% comment %} position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(1700vw / var(--base-width)); {% endcomment %}
+    position: relative;
+    z-index:1;
+    color: #fff;
+    font-family: BIGMACCA;
+    font-size: calc(2600vw / var(--base-width));
+    line-height: 1;
+    text-transform: uppercase;
+    max-width: calc(26800vw / var(--base-width));
+    text-align: left;
+    padding:3px 5px;
+    padding-right:0px;
+    margin-left: 70px;
+  }
+
+  #{{ section.id }}-hero-detail .right-text-container .text-box {
+    align-items: flex-end;
+  }
+
+  #{{ section.id }}-hero-detail .bottom-container {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color:  {{ section.settings.bottom_font_color }};
+  }
+
+  #{{ section.id }}-hero-detail .bottom-container img {
+    width: 100%;
+  }
+
+  #{{ section.id }}-hero-detail .bottom-container .left-box {
+    position: absolute;
+    top: calc(8000vw / var(--base-width));
+    left: calc(3600vw / var(--base-width));
+    font-size: calc(3000vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+
+  #{{ section.id }}-hero-detail .bottom-container .right-box {
+    position: absolute;
+    top: calc(8000vw / var(--base-width));
+    right: calc(4700vw / var(--base-width));
+    display: flex;
+    flex-direction: column;
+    gap: calc(6000vw / var(--base-width));
+    max-width: calc(32400vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail .bottom-container .right-box .text-top *{
+    color: #fff;
+    text-align: left;
+    font-size: calc(2400vw / var(--base-width));
+    line-height: 1.25;
+    margin-bottom:0px;
+  }
+  
+
+  #{{ section.id }}-hero-detail .bottom-container .right-box .text-bottom {
+    font-size: calc(3000vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+  #{{ section.id }}-hero-detail .bottom-container-mb{
+    display: none;
+  }
+  @media (max-width: 1728px){
+    #{{ section.id }}-hero-detail {
+      padding-left: calc(8000vw/var(--base-width));
+      padding-right: calc(8000vw/var(--base-width));
+    }
+  }
+  @media (max-width: 1500px){
+    #{{ section.id }}-hero-detail .bottom-container .right-box {
+      gap: calc(3000vw / var(--base-width)); 
+    }
+    #{{ section.id }}-hero-detail .text-container .title{
+       min-height: 60px;
+    }
+  }
+  @media (max-width: 1440px){
+    #{{ section.id }}-hero-detail {
+      padding-left: calc(3500vw/var(--base-width));
+      padding-right: calc(3500vw/var(--base-width));
+    }
+   
+  }
+  @media (max-width: 1280px){
+    #{{ section.id }}-hero-detail .bottom-container .left-box{
+      left: calc(1000vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail .text-container .title {
+      max-width:300px;
+    }
+    #{{ section.id }}-hero-detail .bottom-container .right-box {
+      top: calc(5400vw / var(--base-width));
+      max-width: calc(30000vw / var(--base-width));
+      gap: calc(3000vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail .left-text-container,
+    #{{ section.id }}-hero-detail .right-text-container{
+      top: calc(15000vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail .left-text-container .text {
+      font-size: calc(2400vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail .right-text-container .text {
+      font-size: calc(2400vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail .bottom-container .right-box .text-top *{
+      font-size: calc(2000vw / var(--base-width));
+    }
+  }
+  @media (max-width: 884px){
+    #{{ section.id }}-hero-detail .bottom-container .left-box{
+      left: calc(1000vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail .bottom-container .right-box {
+      top: calc(5400vw / var(--base-width));
+      max-width: calc(30000vw / var(--base-width));
+      gap: calc(3000vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail .left-text-container,
+    #{{ section.id }}-hero-detail .right-text-container{
+      top: calc(15000vw / var(--base-width));
+    }
+  }
+  @media (max-width: 768px){
+    #{{ section.id }}-hero-detail {
+      padding: calc(3500vw / var(--base-width)) calc(1250vw/var(--base-width)) calc(3000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail .title-container {
+      position: relative;
+      align-items: center;
+    }
+
+    #{{ section.id }}-hero-detail .title-container .title {
+      font-size: calc(3000vw / var(--base-width));
+      line-height: 1.1;
+      text-align:center;
+    }
+
+    #{{ section.id }}-hero-detail .title-container .sub-title {
+      font-size: calc(1500vw / var(--base-width));
+      line-height: 1.2;
+    }
+
+    #{{ section.id }}-hero-detail .left-text-container {
+      position: relative;
+      left: auto;
+      top: auto;
+      gap: calc(400vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail .right-text-container {
+      position: relative;
+      right: auto;
+      top: auto;
+      gap: calc(400vw / var(--base-width));
+      align-items: flex-start;
+    }
+
+    #{{ section.id }}-hero-detail .text-container .title {
+      font-size: calc(1300vw / var(--base-width));
+      line-height: 1.23;
+    }
+
+    #{{ section.id }}-hero-detail .text-box {
+      gap: calc(400vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail .text-box .box {
+      position: relative;
+      background:  {{ section.settings.text_lin_bg_color }};
+      border-radius: calc(400vw / var(--base-width));
+      padding: calc(700vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail .text-box .bg-img {
+      display: none;
+    }
+
+    #{{ section.id }}-hero-detail .text-box .bottom-img {
+      width: 100%;
+    }
+
+    #{{ section.id }}-hero-detail .dom-box{
+      width: 100%;
+      display: flex;
+      gap: calc(800vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail .left-text-container .text {
+      position: relative;
+      top: auto;
+      transform: translateY(0);
+      left: auto;
+      color: #fff;
+      font-size: calc(1500vw / var(--base-width));
+      line-height: 1.13;
+      max-width: 100%;
+      text-align: left;
+      z-index:1;
+      padding:3px 5px;
+    }
+
+    #{{ section.id }}-hero-detail .right-text-container .text {
+      position: relative;
+      top: auto;
+      transform: translateY(0);
+      left: auto;
+      right: 0;
+      color: #fff;
+      font-size: calc(1500vw / var(--base-width));
+      line-height: 1.13;
+      max-width: 100%;
+      text-align: left;
+      z-index:1;
+      padding:3px 5px;
+      margin-left: 0px;
+    }
+    #{{ section.id }}-hero-detail .bottom-container{
+      display: none;
+    }
+    #{{ section.id }}-hero-detail .bottom-container-mb{
+      display: flex;
+      flex-direction: column;
+      background: url({{ section.settings.bottom_bg_mb |  image_url }});
+      background-position: top;
+      background-repeat: no-repeat;
+      padding: calc(3800vw / var(--base-width)) calc(1750vw / var(--base-width));
+      margin-top: calc(2000vw / var(--base-width));
+      background-size: 100% 100%;
+      min-height:650px;
+    }
+    #{{ section.id }}-hero-detail .bottom-text-1,
+    #{{ section.id }}-hero-detail .bottom-text-2{
+      color: #FFF;
+      font-size: calc(2000vw / var(--base-width));
+      font-weight: 700;
+      line-height: 1.15;
+      text-transform: capitalize;
+      margin-bottom: calc(2000vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail .bottom-img{
+      width: 100%;
+    }
+    #{{ section.id }}-hero-detail .bottom-text-3 {
+     
+      margin-top: calc(3000vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail .bottom-text-3 *{
+      color: #FFF;
+      text-align: left;
+      font-size: calc(1800vw / var(--base-width));
+      line-height: 1.16;
+      margin-bottom:0px;
+    }
+    #{{ section.id }}-hero-detail .bottom-text-2{
+      margin-top: calc(2500vw / var(--base-width));
+      margin-bottom: calc(1200vw / var(--base-width));
+    }
+  }
+</style>
+<div id="{{ section.id }}-hero-detail">
+  <div class="container">
+    <div class="title-container">
+      <h2 class="title">{{ section.settings.title }}</h2>
+      <div class="sub-title">{{ section.settings.sub_title }}</div>
+    </div>
+    <picture>
+      <source
+        media="(max-width: 768px)"
+        srcset="{{ section.settings.main_img_mobile | image_url }}"
+      >
+      <img
+        class="mian-img"
+        src="{{ section.settings.main_img |  image_url }}"
+        alt="{{ section.settings.main_img.alt }}"
+        loading="lazy"
+      >
+    </picture>
+    <div class="dom-box">
+      <div class="left-text-container text-container">
+        <div class="title">{{ section.settings.left_item_title }}</div>
+        <div class="text-box">
+          <div class="box">
+            <div class="text">{{ section.settings.left_item_text }}</div>
+            <img
+              class="bg-img"
+              src="{{section.settings.text_bg_left_img | image_url}}"
+              alt=""
+            >
+          </div>
+          {% comment %} <img
+            class="bottom-img"
+            src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/left-under.png?v=1730708109"
+            alt=""
+          > {% endcomment %}
+        </div>
+      </div>
+      <div class="right-text-container text-container">
+        <div class="title">{{ section.settings.right_item_title }}</div>
+        <div class="text-box">
+          <div class="box">
+            <div class="text">{{ section.settings.right_item_text }}</div>
+            <img
+              class="bg-img"
+              src="{{ section.settings.text_bg_right_img | image_url }}"
+              alt=""
+            >
+          </div>
+          {% comment %} <img
+            class="bottom-img"
+            src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/right-under.png?v=1730708110"
+            alt=""
+          > {% endcomment %}
+        </div>
+      </div>
+    </div>
+    <div class="bottom-container">
+      <img src="{{ section.settings.bottom_img | image_url }}" alt="{{ section.settings.bottom_img.alt }}">
+      <div class="left-box">{{ section.settings.bottom_left_title }}</div>
+      <div class="right-box">
+        <div class="text-top">{{ section.settings.bottom_right_title }}</div>
+        <div class="text-bottom">{{ section.settings.bottom_right_text }}</div>
+      </div>
+    </div>
+    <div class="bottom-container-mb">
+      <div class="bottom-text-1">{{ section.settings.bottom_left_title }}</div>
+      <img
+        class="bottom-img"
+        src="{{ section.settings.bottom_img_mb_1 | image_url }}"
+        alt="{{ section.settings.bottom_img_mb_1.alt }}"
+      >
+      <div class="bottom-text-2">{{ section.settings.bottom_right_text }}</div>
+      <img
+        class="bottom-img"
+        src="{{ section.settings.bottom_img_mb_2 | image_url }}"
+        alt="{{ section.settings.bottom_img_mb_2.alt }}"
+      >
+      <div class="bottom-text-3">{{ section.settings.bottom_right_title }}</div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Detail Unit1",
+  "class": "product-detail-01",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Armor Up, Hero Rising"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "Every Hero Tells a Legend"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_img",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_img_mobile",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "left_item_title",
+      "label": "Left Item Title"
+    },
+    {
+      "type": "text",
+      "id": "left_item_text",
+      "label": "Left Item Text"
+    },
+    {
+      "type": "text",
+      "id": "right_item_title",
+      "label": "Right Item Title"
+    },
+    {
+      "type": "text",
+      "id": "right_item_text",
+      "label": "Right Item Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_img",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_bg_mb",
+      "label": "Bottom Background Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_img_mb_1",
+      "label": "Bottom Image Mobile 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_img_mb_2",
+      "label": "Bottom Image Mobile 2"
+    },
+    {
+      "type": "text",
+      "id": "bottom_left_title",
+      "label": "Bottom Left Title"
+    },
+    {
+      "type": "richtext",
+      "id": "bottom_right_title",
+      "label": "Bottom Right Title"
+    },
+    {
+      "type": "text",
+      "id": "bottom_right_text",
+      "label": "Bottom Right Text"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#D21517"
+    },
+    {
+      "type": "color",
+      "id": "title_font_color",
+      "label": "Title Font Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "middle_font_color",
+      "label": "Middle Font Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "bottom_font_color",
+      "label": "Bottom Font Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_lin_bg_color",
+      "label": "Text Line Background Color",
+      "default": "#007bff"
+    },
+    {
+      "type": "image_picker",
+      "id": "text_bg_left_img",
+      "label": "Text Background Left Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "text_bg_right_img",
+      "label": "Text Background Right Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Detail Unit1"
+    }
+  ]
+}
+{% endschema %}

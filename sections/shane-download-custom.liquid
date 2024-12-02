@@ -1,0 +1,180 @@
+<style>
+  .shane-manual {
+    /* background-color: #f4f0e6; */
+    background-color: {{ section.settings.background_color }};
+    width: 100%;
+    padding-top: calc(14000vw / var(--base-width));
+    color: {{ section.settings.text_color }};
+    padding-bottom: calc(4000vw / var(--base-width));
+  }
+  .shane-manual > div {
+    /* width: 94%; */
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin: auto;
+  }
+  .shane-manual h2 {
+    font-family: Outfit-Bold;
+    font-size: 2.2vw;
+    margin: 0;
+    margin-bottom: calc(1000vw / var(--base-width));
+    color: {{ section.settings.text_color }};
+  }
+  .shane-manual .text {
+    width: 60%;
+    font-size: calc(2400vw / var(--base-width));
+    line-height: 1.25;
+    color: {{ section.settings.text_color }};
+  }
+  .shane-manual .pdf-down {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: calc(3000vw / var(--base-width));
+    color: {{ section.settings.text_color }};
+  }
+  .shane-manual .pdf-down > span {
+    display: block;
+    font-size: calc(3500vw / var(--base-width));
+    margin-right: 1vw;
+    color: {{ section.settings.text_color }};
+  }
+  .shane-manual .pdf-down .link {
+    width: 9vw;
+    min-width: 160px;
+  }
+  .shane-manual .shane-button-02 {
+    width: 100%;
+    color: {{ section.settings.text_color }};
+    border: 1px solid {{ section.settings.text_color }};
+    background-color: #fff;
+  }
+  .btn__circle-02 span {
+    font-size: 16px;
+    color: {{ section.settings.text_color }};
+  }
+  .shane-button-02 .btn__bg_custom {
+    width: 0;
+    height: 100%;
+    background-color: {{ section.settings.text_color }};
+    transition: 0.2s;
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    left: 0;
+  }
+  .shane-button-02:hover .btn__bg_custom {
+    width: 100%;
+  }
+  .shane-button-02:hover .btn__label-02 {
+    color: #fff;
+  }
+  @media (max-width: 1440px) {
+    .shane-manual .pdf-down > span {
+      font-size: calc(4500vw / var(--base-width));
+    }
+  }
+  @media (max-width: 768px) {
+    .shane-manual {
+      padding-top: 7vw;
+      padding-bottom: calc(2000vw / var(--base-width));
+    }
+    .shane-manual h2 {
+      font-size: 6vw;
+      margin-bottom: 3vw;
+      color: {{ section.settings.text_color }};
+    }
+    .shane-manual .text {
+      width: 90%;
+      font-size: 3.6vw;
+      line-height: 4vw;
+    }
+    .shane-manual .pdf-down {
+      margin-top: 5vw;
+    }
+    .shane-manual .pdf-down > span {
+      /* font-size: 10vw; */
+      margin-right: 4vw;
+      font-size: calc(3500vw / var(--base-width));
+    }
+    .shane-manual .pdf-down .link {
+      width: 40vw;
+    }
+    .shane-manual .shane-button-02 {
+      width: 90%;
+      height: 8vw;
+      border-radius: 5vw;
+      font-size: 4vw;
+    }
+    .shane-manual .btn__circle-02 {
+      width: 30px;
+    }
+    .btn__circle-02 span {
+      font-size: 4vw;
+    }
+  }
+</style>
+<div>
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="text">{{ section.settings.context }}</div>
+  <div class="pdf-down">
+    <span class="fa fa-file-pdf-o"></span>
+    <div class="link">
+      <a class="shane-button-02" href="{{ section.settings.link }}">
+        <div class="btn__bg_custom"></div>
+        <div class="btn__label-02">{{ section.settings.buttontext }}</div>
+        <div class="btn__circle-02">
+          <span class="fa fa-arrow-up"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Shane download Custom",
+  "class": "shane-manual",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "context",
+      "label": "Text"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "link",
+      "info": "Adds a link"
+    },
+    {
+      "type": "text",
+      "id": "buttontext",
+      "label": "Button Text",
+      "default": "Down Load"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#006de5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shane download Custom"
+    }
+  ]
+}
+{% endschema %}

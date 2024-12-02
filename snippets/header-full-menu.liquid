@@ -1,0 +1,207 @@
+<full-menu class="full-menu">
+	<ul class="thb-full-menu" role="menubar">
+	  {%- for link in menu.links -%}
+		  {%- liquid
+				assign parent_index = forloop.index
+				assign has_sub_menu = false
+				assign has_mega_menu = false
+				assign has_menu_badge = false
+				assign mega_menu_block_index = false
+				assign mega_menu_blocks = blocks | where: "type", "megamenu"
+				assign menu_badge_index = false
+				assign menu_badge_blocks = blocks | where: "type", "menu_badge"
+
+				if link.links.size > 0
+					assign has_sub_menu = true
+				endif
+				for block in mega_menu_blocks
+					assign position = block.settings.position | plus: 0
+		    	if position == parent_index
+						assign has_mega_menu = true
+						assign mega_menu_block_index = forloop.index0
+					endif
+				endfor
+				for block in menu_badge_blocks
+					assign badge_position = block.settings.badge_position | plus: 0
+		    	if badge_position == parent_index
+						assign has_menu_badge = true
+						assign menu_badge_index = forloop.index0
+					endif
+				endfor
+			-%}
+		  <li class="{% if has_sub_menu or has_mega_menu %}menu-item-has-children{% endif %}{% if has_mega_menu %} menu-item-has-megamenu{% endif %}{% if link.active %} active{% endif %}" {% if has_sub_menu %}data-item-title="{{ link.title | escape }}"{% endif %}>
+		    <a href="{{ link.url }}" title="{{ link.title | escape }}"{%- if link.active %} aria-current="page"{% endif -%}>
+					{{- link.title -}}
+					{%- if has_sub_menu or has_mega_menu -%}{%- render 'svg-icons' with 'thb-dropdown-bottom' -%}{%- endif -%}
+				</a>
+				{%- if has_menu_badge -%}
+					{%- assign menu_badge_block = menu_badge_blocks[menu_badge_index] -%}
+					<span class="menu-item-badge" style="--menu-badge-bg: {{ menu_badge_block.settings.color_bg }};--menu-badge-text: {{ menu_badge_block.settings.color_text }};">{{ menu_badge_block.settings.text }}</span>
+				{%- endif -%}
+		    {%- if has_sub_menu == true and has_mega_menu == false -%}
+			    <div class="sub-menu shane-menu-fromleft shane-menu-fromleft-new" tabindex="-1">
+					
+					<div class="menu-list">
+						{% for block in blocks %}
+						  {% if block.type == 'menulist' and block.settings.menu_name == link.title %}
+							  <div class="menu-item" >
+								<div class='line-left'>
+									<div class='left-tag'>
+									  {% for item in block.settings.collection.all_tags %}
+										<div class='tag-item'> 
+										  {{ item }}
+										</div>
+									  {% endfor %}
+									   
+									</div>
+									<div class='left-text'>
+									  <div class='left-title'>
+										 {{ block.settings.collection.title }}
+									   </div>
+									   <div class='left-subtitle'>
+										{% comment %} {% assign variable = block.settings.collection.products | size %}
+										01
+										{% if variable > 0 %}
+										  {% if variable  < 10 %}
+											-0{{ variable}}
+										  {% endif %}
+										  {% if variable >= 10 %}
+											-{{ variable }}
+										  {% endif %}
+										{% endif %} {% endcomment %}
+										
+									   </div>
+									</div> 
+									<div class='left-content'> 
+									   {{ block.settings.collection.description }}
+									</div>
+								 </div>
+								 
+								 {% assign prosize = block.settings.collection.products | size %}
+								 {% if prosize >3 %}
+								  <div class='line-right line-right-frist'> 
+								  {% for item in block.settings.collection.products %}
+									{% assign len = block.settings.collection.products.size %}
+									{% if forloop.index == len %}
+										{% assign variablesss = "active" %}
+										
+									{% else %}
+										{% assign variablesss = "" %}
+									{% endif %}
+									<a href="{{ item.url }}"  class='right-item {{ variablesss }} ' >
+									  {% assign content = item.metafields.custom.title_grop.value.meshi.value %}
+									  {% assign img = item.metafields.custom.title_grop.value.myimg.value %}
+									  <img src="{{ img | image_url }}"> 
+									  <div class='item-title'>{{  content }}</div>
+									</a>
+								  {% endfor %}
+									
+								  </div>
+								 {% endif %}
+								 {% if prosize <= 3 %}
+								  <div class='line-right line-right-last'> 
+								  {% for item in block.settings.collection.products %}
+									{% assign len = block.settings.collection.products.size %}
+									{% if forloop.index == len %}
+										{% assign variablesss = "active" %}
+										
+									{% else %}
+										{% assign variablesss = "" %}
+									{% endif %}
+									<a href="{{ item.url }}"  class='right-item {{ variablesss }}'>
+									  {% assign content = item.metafields.custom.title_grop.value.meshi.value %}
+									  {% assign img = item.metafields.custom.title_grop.value.myimg.value %}
+									  <img src="{{ img | image_url }}"> 
+									  <div class='item-title'>{{  content }}</div>
+									</a>
+								  {% endfor %}
+									
+								  </div>
+								  
+								 {% endif %}
+							 
+							  </div>
+						  {% endif %}
+						{% endfor %} 
+					  </div>
+					  
+		        {% comment %} {%- for l in link.links -%}
+							{%- liquid
+								assign has_sub_menu = false
+								assign has_mega_menu = false
+								if l.links.size > 0
+									assign has_sub_menu = true
+								endif
+
+							-%}
+			        <li class="{%- if l.active %}active{% endif %}{% if has_sub_menu %} menu-item-has-children{%- endif -%}" role="none" {% if has_sub_menu %}data-item-title="{{ l.title | escape }}"{% endif %}>
+			          <a href="{{ l.url }}" title="{{ l.title | escape }}" role="menuitem">
+									{{- l.title -}}
+									{%- if has_sub_menu -%}{%- render 'svg-icons' with 'thb-dropdown-right' -%}{%- endif -%}
+								</a>
+								{%- if has_sub_menu -%}
+									<ul class="sub-menu" role="menu">
+										{%- for sub_link in l.links -%}
+											<li class="{%- if sub_link.active %} active{% endif %}" role="none">
+												<a href="{{ sub_link.url }}" title="{{ sub_link.title | escape }}" role="menuitem">{{- sub_link.title -}}</a>
+											</li>
+										{%- endfor -%}
+									</ul>
+								{%- endif -%}
+			        </li>
+						{%- endfor -%} {% endcomment %}
+			    </div>
+		    {%- elsif has_sub_menu == true or has_mega_menu == true -%}
+					{%- liquid
+						assign mega_menu_block = mega_menu_blocks[mega_menu_block_index]
+					-%}
+					<div class="sub-menu mega-menu-container" tabindex="-1">
+
+				    <ul class="mega-menu-columns" tabindex="-1">
+							{% if link.links.size > 0 %}
+			        {%- for l in link.links -%}
+				        <li class="{% if l.active %} active{% endif %}" role="none">
+				          <a href="{{ l.url }}" title="{{ l.title | escape }}" class="mega-menu-columns__heading" role="menuitem">{{ l.title }}</a>
+									{%- if l.links.size > 0 -%}
+										<ul role="menu">
+											{%- for sub_link in l.links -%}
+												<li class="{% if sub_link.active %} active{% endif %}" role="none">
+													<a href="{{ sub_link.url }}" title="{{ sub_link.title | escape }}" role="menuitem">{{ sub_link.title }}</a>
+												</li>
+											{%- endfor -%}
+										</ul>
+									{%- endif -%}
+				        </li>
+							{%- endfor -%}
+							{% endif %}
+							{% if has_mega_menu %}
+								{%- if mega_menu_block.settings.promo_1_image -%}
+									{% render 'header-full-menu-promotion', promotion_image: mega_menu_block.settings.promo_1_image, promotion_link: mega_menu_block.settings.promo_1_link, promotion_heading: mega_menu_block.settings.promo_1_heading, promotion_content: mega_menu_block.settings.promo_1_content %}
+								{%- endif -%}
+								{%- if mega_menu_block.settings.promo_2_image -%}
+									{% render 'header-full-menu-promotion', promotion_image: mega_menu_block.settings.promo_2_image, promotion_link: mega_menu_block.settings.promo_2_link, promotion_heading: mega_menu_block.settings.promo_2_heading, promotion_content: mega_menu_block.settings.promo_2_content %}
+								{%- endif -%}
+								{%- if mega_menu_block.settings.promo_3_image -%}
+									{% render 'header-full-menu-promotion', promotion_image: mega_menu_block.settings.promo_3_image, promotion_link: mega_menu_block.settings.promo_3_link, promotion_heading: mega_menu_block.settings.promo_3_heading, promotion_content: mega_menu_block.settings.promo_3_content %}
+								{%- endif -%}
+								{%- if mega_menu_block.settings.promo_4_image -%}
+									{% render 'header-full-menu-promotion', promotion_image: mega_menu_block.settings.promo_4_image, promotion_link: mega_menu_block.settings.promo_4_link, promotion_heading: mega_menu_block.settings.promo_4_heading, promotion_content: mega_menu_block.settings.promo_4_content %}
+								{%- endif -%}
+							{%- endif -%}
+				    </ul>
+
+					</div>
+		    {%- endif -%}
+		  </li>
+	  {%- endfor -%}
+	</ul>
+</full-menu>
+<script>
+	$('.right-item').mouseenter(function() {
+        if($(this).hasClass('active')){
+			$(this).removeClass('active');
+		}
+    })
+	
+
+</script>

@@ -1,0 +1,236 @@
+<style>
+	.shane-home-social{
+		width: 100%; height: 69vw; background-image: url(https://cdn.shopify.com/s/files/1/0679/6538/6990/files/2024011201.jpg?v=1705723176); background-position: top center; background-size: 100%; background-repeat: no-repeat; background-color: #1A1A1A;
+    	overflow: hidden; padding-bottom:5vw;
+    }
+	.shane-home-social>div{
+		width: 94%; margin: auto; position: relative; height: 100%; padding-top: 19vw;
+	}
+    .template-collection-ao3 .shane-home-social>div{
+		padding-top: 12vw;
+	}
+	.home-social-ani01{
+		width: 100%; position: absolute; top: 19vw; right: 0; height: 7vw; z-index: 2; background-color: #1a1a1a; transition: 0.3s;
+	}
+	.home-social-h2{
+		width: 50%; position: absolute; top: 22vw; left: 0; z-index: 3; font-family: Outfit-Bold; font-size: 5.6vw; line-height: 6vw; color: #F4F0E6; text-transform: uppercase; z-index:10;
+	}
+	.home-social-ani02{
+		width: 55%; position: absolute; top: 6vw; right: 5%; z-index: 4;
+	}
+	.home-social-swiper{
+		width: 100%; position: absolute; bottom: -5vw; left: 0; height: auto; background-color: #FF5F00; border-radius: 25px; z-index: 9; display: flex; justify-content: space-between; align-items: center;
+	}
+	.home-social-swiper>div{
+		width: 50%;
+	}
+	.socialTextSwiper .swiper-slide{
+		padding: 0 9vw 0 6vw; color: #fff;
+	}
+	.socialTextSwiper .swiper-slide h2{
+		text-transform: capitalize; color:#fff; font-size: 2.7vw; line-height: 3.1vw;width: 121%;
+	}
+	.socialTextSwiper .socialText{
+		font-size: 0.9vw; font-family: Outfit-Light; margin-top: 1.7vw; margin-bottom: 1vw;
+	}
+	.socialLink{
+		width: 160px;
+	}
+	.socialLink .shane-button-02{
+		width: 100%; border: 1px solid #ffffff; color: #fff; background-color: #FF5F00;
+	}
+	.socialLink .btn__bg{
+		background-color: #ffffff;
+	}
+	.socialLink .btn__circle-02 span{
+		color: #fff;
+	}
+	.socialLink .shane-button-02:hover{
+		color: #FF5F00;
+	}
+	.socialLink .shane-button-02:hover span{
+		color: #FF5F00;
+	}
+	.socialTextSwiper .social-text-next, .socialTextSwiper .social-text-prev{
+		position: absolute; top: 50%; width: 58px; height: 58px; margin-top: -29px; border-radius: 50%; display: flex; justify-content: center; align-items: center; background-color: #fff; cursor: pointer; z-index: 1;
+	}
+	.socialTextSwiper .social-text-next{
+		left: 3%;	
+	}
+	.socialTextSwiper .social-text-next img{
+		transform: scaleX(-1);
+	}
+	.socialTextSwiper .social-text-prev{
+		right: 3%;	
+	}
+@media (max-width: 768px){
+	.shane-home-social{
+		height: 179vw; padding-bottom:5vw;
+	}
+	.shane-home-social>div{
+		padding-top: 30vw;
+	}
+    .template-collection-ao3 .shane-home-social>div{
+		padding-top: 22vw; margin-top: -10vw;
+	}
+	.home-social-ani01{
+		top: 30vw; height: 20vw;
+	}
+	.home-social-ani02{
+		top: 7vw;
+	}
+	.home-social-h2{
+		width: 60%; top: 7vw; font-size: 6vw; line-height: 6.5vw;
+	}
+    .socialTextSwiper .socialText{
+		font-size: 3.6vw; line-height:4.6vw;
+		margin-bottom:5vw;
+	}
+	.home-social-swiper{
+		flex-wrap: wrap-reverse;
+		bottom: 0;
+	}
+	.home-social-swiper>div {
+		width: 100%;
+	}
+	.socialTextSwiper .swiper-slide {
+		padding: 0 5vw 6vw;
+	}
+    .socialTextSwiper .swiper-slide h2{
+      font-size:6.6vw; line-height: 7.5vw;width: fit-content;
+    }
+    .socialTextSwiper .social-text-next, .socialTextSwiper .social-text-prev{
+		width: 7.4vw; height: 7.4vw; margin-top: -3.8vw;
+	}
+    .socialTextSwiper .social-text-next img{
+		width: 50%;
+	}	
+	.socialTextSwiper .social-text-prev img{
+		width: 50%;
+	}
+}
+</style>
+    {%- liquid
+      assign image = section.settings.image
+      assign blocksnum = section.blocks
+     -%}
+	<div>
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/2024011216.png?v=1705722803" style="width: 100%;">
+		<div class="home-social-ani01"></div>
+		<div class="home-social-h2">{{ section.settings.heading }}</div>
+		<img src="{{ image | image_url }}" alt="{{image.alt }}" class="home-social-ani02 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="200">
+		<div class="home-social-swiper">
+			<div>
+				<div class="swiper socialTextSwiper">
+					<div class="swiper-wrapper">
+                        {%- for block in section.blocks -%}
+						<div class="swiper-slide">
+							<h2>{{ block.settings.block_title }}</h2>
+							<p class="socialText">{{ block.settings.block_text }}</p>
+							<div class="socialLink">
+								<a class="shane-button-02" href="{{ block.settings.block_link }}">
+									<div class="btn__bg"></div>
+									<div class="btn__label-02">{{ block.settings.buttontext }}</div>
+									<div class="btn__circle-02">
+										<span class="fa fa-arrow-up"></span>
+									</div>
+								</a>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+                  {% if blocksnum.size > 1 %}  
+					<div class="social-text-next">
+						<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939">
+					</div>
+					<div class="social-text-prev">
+						<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939">
+					</div>
+                    {% endif %}
+				</div>
+			</div>
+			<div>
+				<div class="swiper socialImgSwiper" style="border-radius: 20px;">
+					<div class="swiper-wrapper">
+                      {%- for block in section.blocks -%}
+                      {%- liquid
+            			assign block_image = block.settings.block_image
+            		   -%}
+						<div class="swiper-slide stop-swiping"><img src="{{ block_image | image_url }}" alt="{{block_image.alt }}" style="width: 100%;"></div>
+                      {% endfor %}
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% schema %}
+  {
+    "name": "Home Social",
+    "class": "shane-home-social",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      }      
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+            {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image",
+              "info": "Img"
+            },
+            {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "text",
+              "id": "block_text",
+              "label": "Text",
+              "default": "text"
+			},
+           	{
+              "id": "block_link",
+              "type": "url",
+              "label": "link"
+            },
+            {
+              "type": "text",
+              "id": "buttontext",
+              "label": "Button Text",
+              "default": "Follow Us"
+            }
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Home Social"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+$(window).scroll(function(){
+  var socialToTop = $('.shane-home-social').offset().top;
+  var scrollHeight = $(window).scrollTop();
+  if(scrollHeight > socialToTop-400){
+    $('.home-social-ani01').css("width","0");
+   }
+});
+</script>

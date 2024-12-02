@@ -1,0 +1,105 @@
+{{ 'login-register.css' | asset_url | stylesheet_tag }}
+<style>
+  .template-customers-register  #wrapper #main-content{
+    background-color: #fff; min-height:30vw;
+  }
+  .thb-form-container{
+    display: flex; justify-content: space-between; align-items:center; position: relative; width:100%; padding:0 50px;
+  }
+  .thb-form-container .thb-register-form{
+    width:50%; max-width:100%; margin:0; padding: 0 30px 20px 0; border-right: 1px solid #DADADA; flex: none;
+  }
+  .thb-form-container .thb-register-form h4{
+    color: #FF5F00; font-size: 110px; font-weight: 600; line-height: 120px; font-family: Outfit-Bold; text-align:left; text-transform: capitalize; margin-bottom: 20px;
+  }
+  .shane-field-title{
+    font-family: Outfit-Bold; color: #191C1F; font-size: 24px; font-weight: bold; line-height: 60px;
+  }
+  .thb-register-form .field input{
+    height: 60px; border:1px solid #DADADA; border-radius:15px; outline: none;
+  }
+  .thb-register-form .field input::placeholder {
+    font-size:16px; color:#757779;
+  }
+  .thb-register-form .shane-sub{
+      height: 43px; background: #FF5F00; font-size: 22px;
+    }
+  .thb-form-container .thb-register-form .form-notification{
+    margin: 15px 0;
+  }
+  .form-notification .errors ul li{
+    font-size:14px; line-height:18px;
+  }
+  .register-img{
+    height:auto; width:40%;
+  }
+@media (max-width: 1280px){
+    .thb-form-container .thb-register-form h4{
+		font-size: 80px;
+	}
+}
+@media (max-width: 1092px){
+  .register-img{
+    display:none;
+  }
+  .thb-form-container .thb-register-form{
+    width:100%; padding: 0 0 20px 0; border-right: 0;
+  }
+}
+@media (max-width: 768px){
+  .thb-form-container{
+    padding:0 15px;
+  }
+  .thb-form-container .thb-register-form h4{
+		font-size: 60px; line-height: 80px;
+	}
+  .shane-field-title{
+    font-size: 20px; font-weight: bold; line-height: 30px;
+  }
+  .thb-register-form .field input{
+    height: 50px; border-radius:10px;
+  }
+}
+</style>
+<div class="row">
+	<div class="small-12 columns">
+    <div class="thb-form-container">
+      <div class="thb-register-form">
+        {% form 'create_customer', novalidate: 'novalidate' %}
+					<h4>Register</h4>
+					<p style="display:none;">{{ 'customer.login_page.create_account_description' | t }}</p>					
+		  <div class="fields">
+            <div class="field">
+              <div class="shane-field-title">First Name</div>
+              <input type="text" name="customer[first_name]" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" />
+            </div>
+            <div class="field">
+              <div class="shane-field-title">Last Name</div>
+              <input type="text" name="customer[last_name]" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" />
+            </div>
+		  </div>
+          <div class="field">
+            <div class="shane-field-title">Email address</div>
+            <input type="email" name="customer[email]" class="full {% if form.errors contains 'email' %}invalid{% endif %}" value="" placeholder="{{ 'customer.login_page.email' | t }}" />
+          </div>
+          <div class="field">
+            <div class="shane-field-title">Password</div>
+            <input type="password" name="customer[password]" class="full" value="" placeholder="{{ 'customer.login_page.password' | t }}" />
+          </div>
+          <button type="submit" class="button full shane-sub"><span>{{ 'customer.login_page.submit_register' | t }} <span class="fa fa-angle-right"></span></span></button>
+          {% if form.errors %}
+          <div class="form-notification error">
+            {% render 'svg-icons' with 'thb-error' %} {{ form.errors | default_errors }}
+          </div>
+          {% endif %}
+        {% endform %}
+				<div class="switch-login-section">
+					{{ 'customer.login_page.already_have_an_account' | t }} 
+					{% assign text_button_title = 'customer.login_page.login' | t %}
+					{% render 'text-button', url: routes.account_login_url, title: text_button_title %}
+				</div>
+      </div>
+      <img src="https://cdn.shopifycdn.net/s/files/1/0679/6538/6990/files/register-img.png?v=1710814671" class="register-img">
+    </div>
+  </div>
+</div>

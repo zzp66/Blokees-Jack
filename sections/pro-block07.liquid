@@ -1,0 +1,153 @@
+<style>
+	.shane-pro-block07{
+		width:100%; min-height: 30vw; background-color: #FF5F00; color: #FFFFFF; padding-top: 7vw; padding-bottom: 7vw; position: relative;
+	}
+	.pro-block07-main{
+		width: 94%; margin: auto; display: flex; justify-content: flex-start;
+	}
+	.block07-width-full{
+		width: 50%; margin: auto; text-align: center;
+	}
+	.shane-pro-block07 h2{
+		text-transform: uppercase; margin: 0 0 0.5vw; font-size: 2.2vw; line-height: 2.8vw;
+	}
+	.shane-pro-block07 .stitle{
+		font-size: 1.4vw; margin-bottom: 0.5vw;
+	}
+	.shane-pro-block07 .text{
+		font-size: 1vw; margin-bottom: 0.5vw;
+	}
+	.block07-columns{
+		width: 94%; margin: auto; display: flex; justify-content: space-between; align-items: flex-start; margin-top: 2vw; z-index: 2; position: relative;
+	}
+	.block07-columns>div{
+		width: 30%;
+	}
+	.block07-columns h3{
+		font-family: Outfit-Bold; font-size: 1.4vw;
+	}
+	.block07-columns span{
+		font-size: 0.9vw;
+	}
+	.block07-fd01{
+		position: absolute; left: 4vw; top: 7vw; width: 22vw; z-index: 1;
+	}
+	.block07-fd02{
+		position: absolute; right: 4vw; top: 7vw; width: 22vw; z-index: 1;
+	}
+@media (max-width: 768px){
+	.block07-width-full{
+		width: 100%;
+	}
+    .shane-pro-block07 h2{
+		font-size: 5vw; line-height: 6.4vw;
+	}
+	.shane-pro-block07 .stitle{
+		font-size: 3.4vw; margin-bottom: 2vw;
+	}
+	.shane-pro-block07 .text{
+		font-size: 3vw; margin-bottom: 2vw;
+	}
+	.block07-columns>div{
+		width: 100%; padding-bottom: 6vw;
+	}
+	.block07-columns h3{
+		font-size: 4vw;
+	}
+	.block07-columns span{
+		font-size: 3vw;
+	}
+	.block07-columns{
+		display: block;
+	}
+	.block07-fd01{
+		display: none;
+	}
+	.block07-fd02{
+		display: none;
+	}
+}
+</style>
+	<div class="pro-block07-main">		
+		<div class="block07-width-full">
+			<h2>{{ section.settings.heading }}</h2>
+			<div class="stitle">{{ section.settings.subheading }}</div>
+			<div class="text">{{ section.settings.text }}</div>
+		</div>
+	</div>
+	<div class="block07-columns">
+        {%- for block in section.blocks -%}
+		<div>
+			<img src="{{ block.settings.block_image | image_url }}" style="width: 100%;">
+			<div>
+				<h3>{{ block.settings.block_title }}</h3>
+				<span>{{ block.settings.block_text }}</span>
+			</div>
+		</div>
+        {% endfor %}
+	</div>
+	<img src="{{ section.settings.image1 | image_url }}" class="block07-fd01">
+	<img src="{{ section.settings.image2 | image_url }}" class="block07-fd02">
+{% schema %}
+  {
+    "name": "Pro block07",
+    "class": "shane-pro-block07",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+	  },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image1",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image2",
+        "label": "Image"
+      }
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+           {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image"
+            },
+           {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "textarea",
+              "id": "block_text",
+              "label": "Text"
+			}
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Pro block07"
+          
+       }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,402 @@
+<style>
+  #{{ section.id }}-hero-detail2 {
+    font-family: Outfit-Regular;
+    width: 100%;
+    background: {{ section.settings.background_color }};
+    margin-top: -1px;
+    padding: calc(8000vw / var(--base-width)) calc(12000vw / var(--base-width)) calc(10000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail2 .container {
+    width: 100%;
+    position: relative;
+    padding: 0;
+  }
+
+  #{{ section.id }}-hero-detail2 .title {
+    margin-top: 0;
+    color: {{ section.settings.title_font_color }};
+    text-align: center;
+    font-size: calc(5000vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: calc(3000vw / var(--base-width));
+    
+  }
+
+  #{{ section.id }}-hero-detail2 .middle-contianer {
+    width: 100%;
+    position: relative;
+    margin-bottom: calc(2200vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail2 .bg-img {
+    width: 100%;
+  }
+
+  #{{ section.id }}-hero-detail2 .left-container {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: calc(2800vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail2 .text-box {
+    display: flex;
+    flex-direction: column;
+    gap: calc(500vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail2 .text-box .box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #{{ section.id }}-hero-detail2 .left-container .text-box .text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(1800vw / var(--base-width));
+    color:  {{ section.settings.middle_font_color }};
+    font-family: BIGMACCA;
+    font-size: calc(2600vw / var(--base-width));
+    line-height: 1;
+    text-transform: uppercase;
+    max-width: calc(40000vw / var(--base-width));
+    text-align: left;
+  }
+
+  #{{ section.id }}-hero-detail2 .right-container .text-box .text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(1500vw / var(--base-width));
+    color:  {{ section.settings.middle_font_color }};
+    font-size: calc(1800vw / var(--base-width));
+    line-height: 1.22;
+    max-width: calc(38500vw / var(--base-width));
+    text-align: right;
+  }
+
+  #{{ section.id }}-hero-detail2 .text-box .bg-img {
+    width: calc(45900vw / var(--base-width));
+    height: auto;
+  }
+
+  #{{ section.id }}-hero-detail2 .text-box .bottom-img {
+    width: calc(38800vw / var(--base-width));
+    height: auto;
+  }
+
+  #{{ section.id }}-hero-detail2 .right-container {
+    position: absolute;
+    right: 0;
+    top: calc(10000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail2 .right-container .text-box {
+    align-items: flex-end;
+  }
+
+  #{{ section.id }}-hero-detail2 .item-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(1100vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail2 .item-box .item {
+    padding: calc(500vw / var(--base-width)) calc(4300vw / var(--base-width));
+    display: inline-block;
+    background-color: {{ section.settings.text_lin_bg_color }};
+    text-align: center;
+    clip-path: polygon(5% 0, 95% 0, 100% 50%, 95% 100%, 5% 100%, 0 50%);
+  }
+
+  #{{ section.id }}-hero-detail2 .item-box .item .text {
+    color:  {{ section.settings.middle_font_color }};
+    text-align: center;
+    font-size: calc(1800vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1.33;
+  }
+
+  #{{ section.id }}-hero-detail2 .bottom-container .bottom-img {
+    width: 100%;
+  }
+  @media (max-width: 1728px){
+    #{{ section.id }}-hero-detail2 {
+      padding-left: calc(8000vw/var(--base-width));
+      padding-right: calc(8000vw/var(--base-width));
+    }
+  }
+  @media (max-width: 1440px){
+    #{{ section.id }}-hero-detail2 {
+      padding-left: calc(3500vw/var(--base-width));
+      padding-right: calc(3500vw/var(--base-width));
+    }
+  }
+  @media (max-width: 768px){
+    #{{ section.id }}-hero-detail2 {
+      padding: calc(3000vw / var(--base-width)) calc(1250vw/var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail2 .title {
+      font-size: calc(3000vw / var(--base-width));
+      line-height: 1.1;
+      margin-bottom: calc(2000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail2 .middle-contianer {
+      margin-bottom: calc(2000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail2 .left-container {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      display: flex;
+      flex-direction: column;
+      gap: calc(1000vw / var(--base-width));
+      margin-top: calc(1000vw / var(--base-width));
+      margin-bottom: calc(1000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail2 .text-box {
+      gap: calc(400vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail2 .left-container .text-box .text {
+      position: relative;
+      top: auto;
+      transform: translateY(0);
+      left: auto;
+      font-size: calc(2200vw / var(--base-width));
+      line-height: 1.06;
+      max-width: 100%;
+      background: {{ section.settings.text_lin_bg_color }};
+      border-radius: calc(400vw / var(--base-width));
+      padding: calc(700vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail2 .right-container .text-box .text {
+      position: relative;
+      top: auto;
+      transform: translateY(0);
+      left: auto;
+      right: auto;
+      font-size: calc(1500vw / var(--base-width));
+      line-height: 1.2;
+      max-width: 100%;
+      background:  {{ section.settings.text_lin_bg_color }};
+      border-radius: calc(400vw / var(--base-width));
+      padding: calc(1000vw / var(--base-width)) calc(1600vw / var(--base-width));
+      text-align: center;
+    }
+
+    #{{ section.id }}-hero-detail2 .text-box .bg-img {
+      display: none;
+    }
+
+    #{{ section.id }}-hero-detail2 .right-container .text-box .bottom-img {
+      transform: scaleX(-1);
+    }
+
+    #{{ section.id }}-hero-detail2 .right-container {
+      position: relative;
+      right: auto;
+      top: auto;
+    }
+
+    #{{ section.id }}-hero-detail2 .item-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: calc(1100vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail2 .item-box .item {
+      padding: calc(500vw / var(--base-width)) calc(2000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail2 .item-box .item .text {
+      font-size: calc(1500vw / var(--base-width));
+      line-height: 1.1;
+    }
+  }
+</style>
+<div id="{{ section.id }}-hero-detail2">
+  <div class="container">
+    <h2 class="title">{{ section.settings.title }}</h2>
+    <div class="middle-contianer">
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcset="{{ section.settings.main_img_mobile | image_url }}"
+        >
+        <img
+          class="bg-img"
+          src="{{ section.settings.main_img |  image_url }}"
+          alt="{{ section.settings.main_img.alt }}"
+          loading="lazy"
+        >
+      </picture>
+      <div class="left-container">
+        <div class="text-box">
+          <div class="box">
+            <div class="text">{{ section.settings.left_item_title }}</div>
+            <img
+              class="bg-img"
+              src="{{section.settings.text_bg_left_img | image_url}}"
+              alt=""
+            >
+          </div>
+          {% comment %} <img
+            class="bottom-img"
+            src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/left-under.png?v=1730708109"
+            alt=""
+          > {% endcomment %}
+        </div>
+        <div class="item-box">
+          {% for block in section.blocks %}
+            <div class="item">
+              <div class="text">{{ block.settings.item_text }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="right-container">
+        <div class="text-box">
+          <div class="box">
+            <div class="text">
+              {{ section.settings.right_item_title }}
+            </div>
+            <img
+              class="bg-img"
+              src="{{section.settings.text_bg_right_img | image_url}}"
+              alt=""
+            >
+          </div>
+          {% comment %} <img
+            class="bottom-img"
+            src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/right-under.png?v=1730708110"
+            alt=""
+          > {% endcomment %}
+        </div>
+      </div>
+    </div>
+    <div class="bottom-container">
+      <picture>
+        <source
+          media="(max-width: 768px)"
+          srcset="{{ section.settings.bottom_img_mb | image_url }}"
+        >
+        <img
+          class="mian-img"
+          src="{{ section.settings.bottom_img |  image_url }}"
+          alt="{{ section.settings.bottom_img.alt }}"
+          loading="lazy"
+        >
+      </picture>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Detail Unit2",
+  "class": "product-detail-02",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Universal Ape Armor System"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_img",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_img_mobile",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "text",
+      "id": "left_item_title",
+      "label": "Left Item Title"
+    },
+    {
+      "type": "text",
+      "id": "right_item_title",
+      "label": "Right Item Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_img",
+      "label": "Bottom Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bottom_img_mb",
+      "label": "Bottom Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#D21517"
+    },
+    {
+      "type": "color",
+      "id": "title_font_color",
+      "label": "Title Font Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "middle_font_color",
+      "label": "Middle Font Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_lin_bg_color",
+      "label": "Text Line Background Color",
+      "default": "#007bff"
+    },
+    {
+      "type": "image_picker",
+      "id": "text_bg_left_img",
+      "label": "Text Background Left Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "text_bg_right_img",
+      "label": "Text Background Right Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "item_text",
+          "label": "Left Item Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Detail Unit2"
+    }
+  ]
+}
+{% endschema %}

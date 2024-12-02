@@ -1,0 +1,357 @@
+<style>
+	.shane-policy{
+		width: 100%; 
+		padding: 40px 50px;
+		display: flex;
+		justify-content: space-between;
+		align-items: stretch;
+		font-family: Outfit-Regular;
+	}
+	.shane-policy-left{
+		width: 25%; min-width: 400px; min-height: 500px; margin-right: 20px; background-color: #fff; border-radius: 30px; font-size: 26px; line-height: 40px; padding-top: 80px;
+	}
+    .shane-policy-left>div{
+          position: sticky; top: 100px;
+    }
+	.shane-policy-left>div>div{
+		padding:25px 0px 15px 45px;
+	}
+	.shane-policy-left .active{
+		background-color: #F6F6F6;
+	}
+	.shane-policy-left>div>div a{
+		color: #343434;
+	}
+	.shane-policy-right{
+		width: 100%; background-color: #fff; border-radius: 30px; padding: 80px 50px; color:#343434;
+	}
+	.shane-policy-right h1{
+		color: #FF5F00; font-size: 70px; line-height: 88px; margin: 0 0 25px 0; text-transform: uppercase;
+	}
+	.shane-policy-right .policy-updated{
+		font-size: 22px; line-height: 28px;
+	}
+	.policy-right-blocks{
+		padding: 20px 0;
+	}
+	.shane-policy-right .text{
+		font-size: 16px; line-height: 24px;
+	}
+    .shane-policy-right .text a{
+      text-decoration: underline;
+    }
+	.shane-policy-right ul{
+		padding-left: 20px;
+	}
+	.shane-policy-right li{
+		font-size: 18px; line-height: 36px;
+	}
+	.shane-policy-right h2{
+		font-size: 30px; line-height: 28px; margin: 0 0 15px 0;
+	}
+	.shane-policy-right h3{
+		font-size: 24px; line-height: 28px; margin: 0 0 15px 0; font-family: Outfit-Bold;
+	}
+	.shane-policy-jump{
+		display: none;
+	}
+@media (max-width: 1660px){
+	.shane-policy-right h1{
+		font-size: 56px;
+	}
+}
+@media (max-width: 1440px){
+	.shane-policy-right h1{
+		font-size: 48px;
+	}
+}
+@media (max-width: 1240px){
+	.shane-policy{
+		display: block;
+	}
+	.shane-policy-left{
+		display: none;
+	}
+	.shane-policy-right h1{
+		font-size: 42px;
+		line-height: 60px;
+		margin: 10px 0 25px 0;
+	}
+	.shane-policy-jump{
+		margin: 0 0 20px 0; background-color: #ff5f00; color:#fff; border-radius: 30px; padding: 20px 50px; display: flex; justify-content: space-between; align-items: flex-start; position: sticky; top: 70px;
+	}
+	.jump-left{
+		color: #fff; font-size: 16px;
+	}
+	.jump-right .title{
+		font-size: 20px; font-weight: 600;
+	}
+	.jump-right .show-cd{
+		padding-top: 10px; display: none;
+	}
+	.show-cd>div{
+		padding: 5px 0; font-size: 16px;
+	}
+	.show-cd>div a{
+		color:#eeeeee;
+	}
+}
+@media (max-width: 768px){
+	.shane-policy{
+		padding: 40px 15px;
+	}
+	.shane-policy-right{
+		padding: 50px 30px;
+	}
+	.shane-policy-right h1{
+		font-size: 36px;
+		line-height: 40px;
+		margin: 0 0 15px 0;
+	}
+	.policy-right-blocks{
+		padding: 10px 0;
+	}
+	.shane-policy-right li{
+		font-size: 18px; line-height: 28px;
+	}
+	.shane-policy-right h2{
+		font-size: 28px; line-height: 28px;
+	}
+	.shane-policy-right h3{
+		font-size: 22px; line-height: 28px;
+	}
+    .shane-policy-jump{
+		padding: 15px 30px;
+	}
+}
+</style>
+	<div class="shane-policy-left"> 
+      <div>
+        {% if section.settings.menu1 != blank %}<div class="{% if section.settings.menu1 == section.settings.Highlight %}active {% endif %}"><a href="{{ section.settings.menu_link1 }}">{{ section.settings.menu1 | escape }}</a></div>{% endif %}
+  	  	{% if section.settings.menu2 != blank %}<div class="{% if section.settings.menu2 == section.settings.Highlight %}active {% endif %}"><a href="{{ section.settings.menu_link2 }}">{{ section.settings.menu2 | escape }}</a></div>{% endif %}
+        {% if section.settings.menu3 != blank %}<div class="{% if section.settings.menu3 == section.settings.Highlight %}active {% endif %}"><a href="{{ section.settings.menu_link3 }}">{{ section.settings.menu3 | escape }}</a></div>{% endif %}
+		{% if section.settings.menu4 != blank %}<div class="{% if section.settings.menu4 == section.settings.Highlight %}active {% endif %}"><a href="{{ section.settings.menu_link4 }}">{{ section.settings.menu4 | escape }}</a></div>{% endif %}
+        {% if section.settings.menu5 != blank %}<div class="{% if section.settings.menu5 == section.settings.Highlight %}active {% endif %}"><a href="{{ section.settings.menu_link5 }}">{{ section.settings.menu5 | escape }}</a></div>{% endif %}
+        {% if section.settings.menu6 != blank %}<div class="{% if section.settings.menu6 == section.settings.Highlight %}active {% endif %}"><a href="{{ section.settings.menu_link6 }}">{{ section.settings.menu6 | escape }}</a></div>{% endif %}
+        {% if section.settings.menu7 != blank %}<div class="{% if section.settings.menu7 == section.settings.Highlight %}active {% endif %}"><a href="{{ section.settings.menu_link7 }}">{{ section.settings.menu7 | escape }}</a></div>{% endif %}
+        {% if section.settings.menu8 != blank %}<div class="{% if section.settings.menu8 == section.settings.Highlight %}active {% endif %}"><a href="{{ section.settings.menu_link8 }}">{{ section.settings.menu8 | escape }}</a></div>{% endif %}
+        {% if section.settings.menu9 != blank %}<div class="{% if section.settings.menu9 == section.settings.Highlight %}active {% endif %}"><a href="{{ section.settings.menu_link9 }}">{{ section.settings.menu9 | escape }}</a></div>{% endif %}
+      </div>		
+  	</div>
+  	<div class="shane-policy-jump">
+		<div class="jump-left">Jump to:</div>
+		<div class="jump-right">
+			<div class="title">{{ section.settings.Highlight }} <span class="fa fa-chevron-down"></span></div>
+			<div class="show-cd">
+				{% if section.settings.menu1 != blank %}<div><a href="{{ section.settings.menu_link1 }}">{{ section.settings.menu1 | escape }}</a></div>{% endif %}
+        	  	{% if section.settings.menu2 != blank %}<div><a href="{{ section.settings.menu_link2 }}">{{ section.settings.menu2 | escape }}</a></div>{% endif %}
+        		{% if section.settings.menu3 != blank %}<div><a href="{{ section.settings.menu_link3 }}">{{ section.settings.menu3 | escape }}</a></div>{% endif %}
+                {% if section.settings.menu4 != blank %}<div><a href="{{ section.settings.menu_link4 }}">{{ section.settings.menu4 | escape }}</a></div>{% endif %}
+                {% if section.settings.menu5 != blank %}<div><a href="{{ section.settings.menu_link5 }}">{{ section.settings.menu5 | escape }}</a></div>{% endif %}
+                {% if section.settings.menu6 != blank %}<div><a href="{{ section.settings.menu_link6 }}">{{ section.settings.menu6 | escape }}</a></div>{% endif %}
+                {% if section.settings.menu7 != blank %}<div><a href="{{ section.settings.menu_link7 }}">{{ section.settings.menu7 | escape }}</a></div>{% endif %}
+                {% if section.settings.menu8 != blank %}<div><a href="{{ section.settings.menu_link8 }}">{{ section.settings.menu8 | escape }}</a></div>{% endif %}
+                {% if section.settings.menu9 != blank %}<div><a href="{{ section.settings.menu_link9 }}">{{ section.settings.menu9 | escape }}</a></div>{% endif %}
+			</div>
+		</div>
+  	</div>
+	<div class="shane-policy-right">
+		<h1>{{ section.settings.title }}</h1>
+		<div class="policy-updated">{{ section.settings.updated }}</div>
+        {% for block in section.blocks %}
+		<div class="policy-right-blocks"> 
+            {% if block.settings.title != blank %}
+            {% if block.settings.text_type == '1' %}<h2>{{ block.settings.title }}</h2>{% endif %}
+			{% if block.settings.text_type == '2' %}<h3>{{ block.settings.title }}</h3>{% endif %}
+            {% endif %}
+            {% if block.settings.richtext != blank %}
+            <div class="text">{{ block.settings.richtext }}</div>
+            {% endif %}
+		</div>
+      {% endfor %}
+	</div>
+<script>
+	$(document).ready(function(){
+	  $(".jump-right .title").click(function(){
+		$(".jump-right .show-cd").slideToggle(200);
+	  });
+	});
+</script>
+{% schema %}
+{
+  "name": "Main policy",
+  "class": "shane-policy",
+   "blocks": [
+    {
+      "type": "content",
+      "name": "content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "title"
+        },
+        {
+           "type": "select",
+           "id": "text_type",
+          "options": [
+            {
+              "value": "1",
+               "label": "H2"
+            },
+            {
+              "value": "2",
+              "label": "H3"
+             }
+           ],
+           "default": "2",
+          "label": "Title type"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "richtext"
+        }
+      ]
+    }
+  ],
+ 
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"     
+    },
+    {
+      "type": "text",
+      "id": "updated",
+      "label": "Updated"     
+    },
+    {
+      "type": "header",
+      "content": "slide menu"
+     
+    },    
+    {
+      "type": "text",
+      "id": "Highlight",
+      "label": "Highlight menu"     
+    },
+    {
+      "type": "text",
+      "id": "menu1",
+      "label": "menu1"
+     
+    },
+    {
+      "type": "url",
+      "id": "menu_link1",
+      "label": "menu link1"
+     
+    },
+    {
+      "type": "text",
+      "id": "menu2",
+      "label": "menu2"
+     
+    },
+    {
+      "type": "url",
+      "id": "menu_link2",
+      "label": "menu link2"
+     
+    },
+    {
+      "type": "text",
+      "id": "menu3",
+      "label": "menu3"
+     
+    },
+    {
+      "type": "url",
+      "id": "menu_link3",
+      "label": "menu link3"
+     
+    },
+    {
+      "type": "text",
+      "id": "menu4",
+      "label": "menu4"
+     
+    },
+    {
+      "type": "url",
+      "id": "menu_link4",
+      "label": "menu link4"
+     
+    },
+    {
+      "type": "text",
+      "id": "menu5",
+      "label": "menu5"
+     
+    },
+    {
+      "type": "url",
+      "id": "menu_link5",
+      "label": "menu link5"
+     
+    },
+    {
+      "type": "text",
+      "id": "menu6",
+      "label": "menu6"
+     
+    },
+    {
+      "type": "url",
+      "id": "menu_link6",
+      "label": "menu link6"
+     
+    },
+    {
+      "type": "text",
+      "id": "menu7",
+      "label": "menu7"
+     
+    },
+    {
+      "type": "url",
+      "id": "menu_link7",
+      "label": "menu link7"
+     
+    },
+    {
+      "type": "text",
+      "id": "menu8",
+      "label": "menu8"
+     
+    },
+    {
+      "type": "url",
+      "id": "menu_link8",
+      "label": "menu link8"
+     
+    },
+    {
+      "type": "text",
+      "id": "menu9",
+      "label": "menu9"
+     
+    },
+    {
+      "type": "url",
+      "id": "menu_link9",
+      "label": "menu link9"
+     
+    }   
+  ],
+  
+  "presets": [
+    {
+      "name": "Main policy"
+      
+    }
+  ]
+}
+{% endschema %}

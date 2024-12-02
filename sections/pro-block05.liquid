@@ -1,0 +1,244 @@
+<style>
+	.shane-pro-block05{
+		background-color: #F4F0E6; width: 100%; padding-top: 7vw; color: #FF5F00;overflow: hidden;
+	}
+	.shane-pro-block05>div{
+		width:94%; margin: auto; display: flex; justify-content: space-between; align-items: center;
+	}
+	.shane-pro-block05>div>div{
+		width:50%;
+	}
+	.shane-pro-block05 .context{
+		padding-right: 10vw;
+	}
+	.shane-pro-block05 .title{
+		width:100%; position: relative; height: 10vw;
+	}
+	#Layer_5{
+		width: 19vw; height: 8vw; position:absolute;transform: rotate(145deg); left: 12vw;
+	}
+	.svg-line3{
+		stroke-width: 1px;
+		stroke: #FF5F00;
+		fill:none;
+		stroke-dasharray: 1000;
+		stroke-dashoffset: 1000;
+		animation: svgmove01 2s infinite;
+	}
+	@keyframes svgmove01 {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+	.shane-pro-block05 .title>div{
+		position: absolute; left: 0;
+	}
+	.shane-pro-block05 .stitle{
+		display: flex; justify-content: flex-start; align-items: center; font-size: 1vw;
+	}
+	.shane-pro-block05 .stitle span{
+		display: block; margin-right: 0.6vw; font-size: 0.8vw;
+	}
+	.shane-pro-block05 .title h2{
+		font-size: 2.6vw; line-height:3vw; background-color:#F4F0E6; margin: 0; width: 25vw;  color:#FF5F00;
+	}
+	.shane-pro-block05 .text{
+		font-size: 1vw; line-height: 1.2vw;
+	}
+	.shane-pro-block05 .link{
+		width: 16vw; margin-top: 3vw; min-width: 320px;
+	}
+	.shane-pro-block05 .shane-button-02{
+		width: 100%;
+	}
+	.block05-fd1{
+		width:2vw; position: absolute; top: 1vw; left: 24vw;animation: moveblock05fd1 1s ease-in-out infinite;
+	}
+	@keyframes moveblock05fd1 {
+		0% {
+			top: 1vw;
+		}
+		50% {
+			top: 0.5vw;
+		}
+		100% {
+			top: 1vw;
+		}
+	}
+@media (max-width: 768px){
+	.shane-pro-block05{
+		padding-top: 8vw;
+	}
+	.shane-pro-block05>div{
+		display: block;
+	}
+	.shane-pro-block05>div>div{
+		width:100%;
+	}
+	.shane-pro-block05 .context{
+		padding-right: 0;
+	}
+	.shane-pro-block05 .title{
+		width:100%; position: relative; height: 24vw;
+	}
+	#Layer_5{
+		width: 50vw; height: 16vw; left: 40vw; top: 4vw;
+	}
+	.shane-pro-block05 .stitle{
+		font-size: 3.6vw;
+	}
+	.shane-pro-block05 .stitle span{
+		margin-right:2vw; font-size: 1.6vw;
+	}
+	.shane-pro-block05 .title h2{
+		font-size: 6vw; width: 60vw; line-height:7vw;
+	}
+	.shane-pro-block05 .text{
+		font-size: 3.6vw; line-height: 4vw;
+	}
+	.shane-pro-block05 .link{
+		width: 60vw; margin:3vw auto 5vw 0;
+
+		width: fit-content;
+	}
+	.shane-pro-block05 .shane-button-02{
+		{% comment %} height: 8vw; border-radius: 4vw; font-size: 4vw; width:73%; {% endcomment %}
+		height: 8vw;
+        border-radius: 4vw;
+        font-size: 4vw;
+        width: fit-content;
+        padding: 3vw;
+	}
+	.block05-fd1{
+		width:4vw; top: 8vw; left: 60vw;
+	}
+	@keyframes moveblock05fd1 {
+		0% {
+			top: 8vw;
+		}
+		50% {
+			top: 7vw;
+		}
+		100% {
+			top: 8vw;
+		}
+	}
+}
+</style>
+
+	<div>
+		<div class="context">
+			<div class="title">
+				<svg id="Layer_5" version="1.1" xmlns="http://www.w3.org/2000/svg">
+					<ellipse ry="2.5vw" rx="9vw" cy="50%" cx="50%" class="svg-line3 pc_show" />
+					<ellipse ry="6vw" rx="18vw" cy="50%" cx="50%" class="svg-line3 mobile_show" />
+				</svg>
+				<div>
+					<div class="stitle"><span class="fa fa-circle"></span>{{ section.settings.subheading }}</div>
+					<h2>{{ section.settings.heading }}</h2>
+				</div>
+				<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/star-icon02.png?v=1705974991" class="block05-fd1">
+			</div>
+			<div class="text">
+				{{ section.settings.context }}
+            </div>
+			<div class="link">
+				<a class="shane-button-02" href="{{ section.settings.link }}">
+					<div class="btn__bg"></div>
+					<div class="btn__label-02">{{ section.settings.buttontext }}</div>
+					<div class="btn__circle-02">
+						<span class="fa fa-arrow-up"></span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="shaneProOne">
+			<div class="swiper proOneSwiper">
+				<div class="swiper-wrapper">
+                    {%- assign blocksnum = section.blocks -%} 
+					{%- for block in section.blocks -%}
+        			<div class="swiper-slide">
+        				<img src="{{ block.settings.block_image | image_url }}" style="width: 100%;" alt="{{ block.settings.block_image.alt }}">
+        			</div>
+                    {% endfor %}
+				</div>
+			</div>
+            {% if blocksnum.size > 1 %} 
+			<div class="swiper-l-r">
+				<div class="columns-next">
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="icon-next">
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="icon-next-hover">
+				</div>
+				<div class="columns-prev">
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="icon-prev">
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="icon-prev-hover">
+				</div>
+			</div>
+            {% endif %}
+		</div>
+	</div>
+
+{% schema %}
+  {
+    "name": "Pro block05",
+    "class": "shane-pro-block05",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "subheading"
+	  },
+      {
+        "type": "textarea",
+        "id": "context",
+        "label": "Text"
+      },
+      {
+        "id": "link",
+        "type": "url",
+        "label": "link",
+        "info": "Adds a link"
+      },
+      {
+        "type": "text",
+        "id": "buttontext",
+        "label": "Button Text",
+        "default": "Share Now and Inspire Others"
+      }
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+            {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image"
+            }
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Pro block05"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+var proOneSwiper = new Swiper(".proOneSwiper", {
+	  loop: true,
+	  navigation: {
+        nextEl: ".shaneProOne .columns-prev",
+        prevEl: ".shaneProOne .columns-next",
+      },	  
+    });
+</script>

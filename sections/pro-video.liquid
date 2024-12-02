@@ -1,0 +1,375 @@
+<style>
+	.shane-video{
+		width:100%; min-height: 30vw; background-color: #FF5F00; color: #F4F0E6; padding-top: 7vw; position: relative;
+	}
+	.home-video-main{
+		width: 94%; margin: auto; display: flex; justify-content: flex-start;
+	}
+	.v-main-left, .v-main-right{
+		width: 50%; overflow: hidden; border-radius: 20px; position: relative; margin-right: 0.8vw;
+	}
+	.width-full{
+		width: 100%; border-radius: 0;
+	}
+	.v-main-right{
+		margin-right: 0;
+	}
+	.v-main-right h2{
+		text-transform: uppercase; margin: 0 0 0.5vw;
+	}
+	.v-main-right .stitle{
+		font-size: 1.4vw; margin-bottom: 0.5vw;
+	}
+	.v-main-text{
+		max-width: 580px;
+	}
+	.width-full .v-main-text{
+		max-width: 1000px;
+	}
+	.v-main-like{
+		width: 150px; margin-top: 1.6vw;
+	}
+	.v-main-right .shane-button-02{
+		width: 100%; border: 1px solid #ffffff; color: #fff; background-color: #FF5F00;
+	}
+	.v-main-right .btn__bg{
+		background-color: #ffffff;
+	}
+	.v-main-right .btn__circle-02 span{
+		color: #fff;
+	}
+	.v-main-right .shane-button-02:hover{
+		color: #FF5F00;
+	}
+	.v-main-right .shane-button-02:hover span{
+		color: #FF5F00;
+	}	
+	.shane-video-text{
+		position: absolute; bottom: 0; left: 0; width: 100%; padding: 1vw; color: #fff; text-align: right;
+	}
+	.shane-video-text .video-views{
+		font-size: 1vw; font-family: Outfit-Bold;
+	}
+	.shane-video-text .video-views span{
+		font-size: 0.8vw; opacity: 0.6; font-family: Outfit-Regular;
+	}
+	.shane-video-text h3{
+		font-size: {{ section.settings.list_title_size }}; font-family: Outfit-Bold; margin: 5px 0; text-transform: uppercase; line-height:{{ section.settings.list_title_line_height }};
+	}
+	.shane-video-text .video-date{
+		font-size: 1.1vw; opacity: 0.8;
+	}
+	.shane-video-text-hover{
+		position: absolute; bottom: -16vw; left: 0; width: 100%; padding: 1vw; color: #fff; border:3px solid #fff; background-color: #006DE5; border-radius: 20px; transition: 0.2s;
+	}
+	.shane-video-text-hover .video-views{
+		font-size: 1.2vw; font-family: Outfit-Bold;
+	}
+	.shane-video-text-hover .video-date{
+		font-size: 0.9vw; opacity: 0.6; padding-bottom: 10px; border-bottom: 1px solid #4B98ED;
+	}
+	.shane-video-text-hover .video-views span{
+		font-size: 1vw; opacity: 0.6; font-family: Outfit-Regular;
+	}
+	.shane-video-text-hover .video-label{
+		padding-top: 0.5vw;
+	}
+	.video-hover.active .shane-video-btn{
+		background-color: #00000000;
+	}
+	.video-hover.active .shane-video-text{
+		display: none;
+	}
+	.video-hover.active .shane-video-text-hover{
+		display: block; bottom: 0;
+	}
+	.home-video-columns{
+		width: 94%; margin: auto; display: flex; justify-content: space-between; padding: 15px 0; position: relative;
+	}
+	.home-video-columns>div{
+		width: 25%; margin-right: 15px; position: relative; border-radius: 20px; overflow: hidden;
+	}
+	.home-video-columns>div:last-child{
+		margin-right: 0;
+	}
+	.home-video-fd{
+		position: absolute; width: 22vw; right: 5px; top: 7vw; animation: moveUpAndDown 1s ease-in-out infinite;
+	}
+	@keyframes moveUpAndDown {
+	  0% {
+		top: 7vw;
+	  }
+	  50% {
+		top: 6.7vw;
+	  }
+	  100% {
+		top: 7vw;
+	  }
+	}
+    .shane-video .shaneHomeVideo{
+    	width:100%; height: 100%; position: fixed; border-radius: 0; background-color: #00000040; -webkit-backdrop-filter: blur(15px); backdrop-filter: blur(15px); top: 0; left: 0; z-index: 2147483638; display: none; justify-content: center; align-items: center;
+    }
+    .shane-video .shaneHomeVideo iframe{
+    	width: 80vw; height: 90vh;
+    }
+    .shane-video .shaneHomeVideo blockquote{
+        max-width: 605px; min-width: 325px; padding:0; border:0; margin:0;
+    }
+    .shane-video .shaneHomeVideo .close-shaneHomeVideo{
+    	width: 35px; height: 35px; border-radius: 50%; background-color: #fff; position: absolute; right: 20px; top: 20px; cursor: pointer; display: flex; justify-content: center; align-items: center; padding:0;
+    }
+    .shane-video .shaneHomeVideo .close-shaneHomeVideo svg{
+    	width:45%; transform: rotate(-45deg); transition: 0.2s;
+    }
+    .shane-video .shaneHomeVideo .close-shaneHomeVideo:hover svg{
+    	transform: rotate(45deg);
+    }
+@media (max-width: 768px){
+	.home-video-main{
+		flex-wrap: wrap-reverse;
+	}
+	.v-main-left, .v-main-right{
+		width: 100%; margin-right: 0;
+	}
+	.v-main-right h2{
+		font-size: 5.2vw;
+	}
+	.v-main-right .stitle{
+		font-size: 3.6vw; margin-bottom: 0.5vw;
+	}
+	.v-main-left{
+		z-index: 2;
+	}
+	.v-main-text {
+		margin-top: 1vw; font-size: 3.4vw;
+	}
+	.v-main-like {
+		width: 150px;
+		margin-top: 6vw;
+		margin-bottom: 6vw;
+	}	
+	.shane-video-btn div{
+		height: 10vw; width: 10vw; padding-left: 5px; text-align: center; background-color: #FF5F00; border-radius: 50%;
+	}
+	.video-hover.active .shane-video-btn div{
+		margin-bottom: 15vw;
+	}
+	.shane-video-btn span{
+		font-size: 4.6vw; color: #fff; line-height: 10vw;
+	}
+	.home-video-fd {
+		width: 55vw;
+		right: 0;
+		top: 35vw;
+		animation: moveUpAndDown2 1s ease-in-out infinite;
+	}
+	.shane-video-text .video-views{
+		font-size: 3.4vw;
+	}
+	.shane-video-text .video-views span{
+		font-size: 2.6vw;
+	}
+	.shane-video-text h3{
+		font-size: 4.8vw;
+        line-height: 5vw;
+	}
+	.shane-video-text .video-date{
+		font-size: 3.4vw;
+	}
+	.shane-video-text-hover .video-views{
+		font-size: 3.6vw;
+	}
+	.shane-video-text-hover .video-date{
+		font-size: 2.8vw;
+	}
+	.shane-video-text-hover .video-views span{
+		font-size: 2.4vw;
+	}
+	.shane-video-text-hover{
+		bottom: -100%;
+        border-radius: 10px;
+	}
+	.home-video-columns {
+		padding: 2vw 0;
+		flex-wrap: wrap;
+	}
+	.home-video-columns>div {
+		width: 49%;
+		margin-right: 0;
+		margin-bottom: 1vw;
+        border-radius: 10px;
+	}
+	@keyframes moveUpAndDown2 {
+	  0% {
+		top: 35vw;
+	  }
+	  50% {
+		top: 33vw;
+	  }
+	  100% {
+		top: 35vw;
+	  }
+	}
+}
+</style>
+    {%- liquid
+      assign image = section.settings.image
+     -%}
+	<div class="home-video-main">
+        <div class="v-main-right width-full">
+			<h2>{{ section.settings.heading }}</h2>
+			<div class="stitle">{{ section.settings.subheading }}</div>
+			<div class="v-main-text">{{ section.settings.text }}</div>
+		</div>
+	</div>
+	<div class="home-video-columns">
+        {%- assign my_variable = 0 -%} 
+        {%- for block in section.blocks -%} 
+        {%- liquid
+          assign block_image = block.settings.block_image
+          assign my_variable = my_variable | plus: 1
+        -%}
+		<div class="video-hover {% if my_variable==1 %}active{% endif %}">
+            <img src="{{ block_image | image_url }}" style="width: 100%;" alt="{{block_image.alt }}">
+			<div class="shane-video-btn">
+				<a {% if block.settings.block_video_type == "2" %} href="{{ block.settings.block_link }}" target="_blank"{% endif %}>
+					<div><span class="fa fa-play"></span></div>
+				</a>
+                {% if block.settings.block_video_type == "1" %}
+                {% if block.settings.block_link != blank %}
+				<div class="shaneHomeVideo">
+               		<iframe src="{{ block.settings.block_link }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                    <div class="close-shaneHomeVideo">
+            			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"></path></svg>
+            		</div>
+            	</div>
+				{% endif %}
+                {% endif %}
+			</div>
+			<div class="shane-video-text">
+				<div class="video-views">{{ block.settings.block_views }} <span>views</span></div>
+				<h3>{{ block.settings.block_title }}</h3>
+				<div class="video-date">{{ block.settings.block_date }}</div>
+			</div>
+			<div class="shane-video-text-hover">
+				<div class="video-views">{{ block.settings.block_views }} <span>views</span></div>
+				<div class="video-date">{{ block.settings.block_date }}</div>
+				<div class="video-label">
+					{{ block.settings.block_text }}
+				</div>
+			</div>
+		</div>
+        {% endfor %}
+	</div>
+<script async src="https://www.tiktok.com/embed.js"></script>
+<script>
+$(document).ready(function() {
+    $(".shane-video .shane-video-btn a").click(function(){
+		$(this).siblings(".shaneHomeVideo").css("display","flex");        
+    });
+    $(".shane-video .shaneHomeVideo .close-shaneHomeVideo").click(function(){
+		$(this).parents(".shaneHomeVideo").css("display","none"); 
+    });
+});
+</script>
+{% schema %}
+  {
+    "name": "Pro Video",
+    "class": "shane-video",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "Subheading"
+	  },
+      {
+        "type": "textarea",
+        "id": "text",
+        "label": "Text",
+        "default": "text"
+      },
+      {
+        "type": "text",
+        "id": "list_title_line_height",
+        "label": "List Title Line Height",
+        "default": "2vw"
+      },
+      {
+        "type": "text",
+        "id": "list_title_size",
+        "label": "List Title Font Size",
+        "default": "1.8vw"
+      },
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+            {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image",
+              "info": "Img"
+            },
+            {
+              "type": "text",
+              "id": "block_title",
+              "label": "Video title",
+              "default": "Add a title"
+			},           
+           {
+              "type": "text",
+              "id": "block_date",
+              "label": "Video date"
+			},
+           {
+              "type": "text",
+              "id": "block_views",
+              "label": "Video views"
+			},
+           {
+              "type": "text",
+              "id": "block_text",
+              "label": "Video text",
+              "default": "Video text"
+			},
+            {
+				"type": "select",
+				"id": "block_video_type",
+              	"label": "Video Type",
+				"options": [
+					{
+					"value": "1",
+					"label": "YouTube"
+					},
+					{
+					"value": "2",
+					"label": "TikTok"
+					}
+				],
+				"default": "1"
+			},
+           	{
+              "id": "block_link",
+              "type": "text",
+              "label": "VIdeo url",
+			  "info": "If it is a local video or a YouTube video, please include the URL of the video. If it is a TikTok video, please include the ID of the video"
+            }
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Pro Video"
+          
+       }
+    ]
+  }
+{% endschema %}

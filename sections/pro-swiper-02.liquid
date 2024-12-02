@@ -1,0 +1,340 @@
+<style>
+	.shane-pro-swiper-2{
+		background-color: #1A1A1A; padding-top: 6vw; color: #fff;
+	}
+	.shane-pro-swiper-2 .context{
+		width: 94%; margin: auto;
+	}
+	.shane-pro-swiper-2 .context div{
+		font-size: 1vw; opacity: 0.8;
+	}
+	.shane-pro-swiper-2 .context h2{
+		margin-bottom: 2vw; font-size: 2.2vw; line-height: 2.8vw;
+	}
+	.shaneProSwiper02 .swiper-slide{
+		position: relative; padding: 0 3%;
+	}
+	.shaneProSwiper02 .swiper-slide>img{
+		width:100%;
+	}
+	.shaneProSwiper02 .red{
+		background-image: linear-gradient(#1A1A1A, #571315 70%, #CA2B30 100%);
+	}
+	.shaneProSwiper02 .blue{
+		background-image: linear-gradient(#1A1A1A, #133357 70%, #006DE5 100%);
+	}
+	.shaneProSwiper02 .green{
+		background-image: linear-gradient(#1A1A1A, #3E5713 70%, #8AE500 100%);
+	}
+	.shaneProSwiper02 .orange{
+		background-image: linear-gradient(#1A1A1A, #7D6E10 70%, #E5C600 100%);
+	}
+    .shaneProSwiper02 .purple{
+		background-image: linear-gradient(#1A1A1A, #3e214c 70%, #512566 100%);
+	}
+	.shaneProSwiper02 .slide-pro-info{
+		width: 30vw; position: absolute; right: 5vw; top: 5vw;
+	}
+
+	.shaneProSwiper02 .slide-type{
+		width: fit-content; display:flex; justify-content: flex-start; align-items: center; border-radius: 8px; background-color: #D60023;
+	}
+	.shaneProSwiper02 .slide-type img{
+		width: 2.9vw;
+	}
+	.shaneProSwiper02 .slide-type div{
+		font-size:1.4vw; text-transform: uppercase; padding: 0 1vw; font-family: Outfit-Bold;
+	}
+	.shaneProSwiper02 .slide-title{
+		font-size: 2.4vw; margin: 1vw 0; font-family: Outfit-Bold; text-transform: uppercase;
+	}
+	.shaneProSwiper02 .slide-subtitle{
+		font-size: 1vw; width: 80%; margin-bottom: 0.6vw;
+	}
+	.shaneProSwiper02 .slide-text{
+		font-size: 0.8vw; opacity: 0.8; font-family: Outfit-Light;
+	}
+	.shaneProSwiper02 .slide-info1, .shaneProSwiper02 .slide-info2, .shaneProSwiper02 .slide-info3, .shaneProSwiper02 .slide-info4, .shaneProSwiper02 .slide-info5{
+		display: flex; justify-content: center; align-items: center; position: absolute; width: 15.2vw; height: 6.3vw; text-align: center; padding: 0 1.5vw; font-size: 0.8vw;
+	}
+	.shaneProSwiper02 .slide-info1{
+		left: 6vw; top: 9.6vw;
+	}
+	.shaneProSwiper02 .slide-info2{
+		left: 3vw; top: 19vw;
+	}
+	.shaneProSwiper02 .slide-info3{
+		left: 46.5vw; top: 10.8vw;
+	}
+	.shaneProSwiper02 .slide-info4{
+		left: 46vw; top: 19vw;
+	}
+	.shaneProSwiper02 .slide-info5{
+		left: 46vw; top: 2.6vw; padding: 0 3vw;
+	}
+	.shaneProSwiper02-next, .shaneProSwiper02-prev{
+		width: 3vw; height: 3vw; border-radius: 50%; background-color: #fff; position: absolute; top: 40%; z-index: 9; display: flex; justify-content: center; align-items: center;
+	}
+	.shaneProSwiper02-next img, .shaneProSwiper02-prev img{
+		width: 40%;
+	}
+	.shaneProSwiper02-next{
+		left: 3vw;
+	}	
+	.shaneProSwiper02-next .img-np{
+		transform: scaleX(-1);
+	}
+	.shaneProSwiper02-prev{
+		right:3vw;
+	}
+	.shaneProSwiper02-prev .img-np-hover{
+		transform: scaleX(-1);
+	}
+	.shaneProSwiper02 .img-np-hover{
+		display: none;
+	}
+	.shaneProSwiper02-next:hover, .shaneProSwiper02-prev:hover{
+		background-color: #FF5F00;
+	}
+	.shaneProSwiper02-next:hover .img-np, .shaneProSwiper02-prev:hover .img-np{
+		display: none;
+	}
+	.shaneProSwiper02-next:hover .img-np-hover, .shaneProSwiper02-prev:hover .img-np-hover{
+		display: block;
+	}
+@media (max-width: 768px){
+	.shane-pro-swiper-2 .context {
+		padding-bottom: 5vw;
+	}
+	.shane-pro-swiper-2 .context div{
+		font-size: 3.6vw;
+	}
+    .shane-pro-swiper-2 .context h2{
+		font-size: 5vw; line-height: 6.4vw;
+	}
+	.shaneProSwiper02 .swiper-slide{
+		padding: 0 3% 0;
+	}
+	.shaneProSwiper02 .swiper-slide>img{
+		margin-bottom: 4vw;
+	}
+	.shaneProSwiper02 .slide-pro-info{
+		width: 94%; right: 3%; top: 2vw; position: static; margin-bottom: 5vw; min-height: 90vw;
+	}
+	.shaneProSwiper02 .slide-type img{
+		width: 7vw;
+	}
+	.shaneProSwiper02 .slide-type div{
+		font-size:3.6vw; padding: 0 3vw;
+	}
+	.shaneProSwiper02 .slide-title{
+		font-size: 8.6vw; margin: 3vw 0;
+	}
+	.shaneProSwiper02 .slide-subtitle{
+		font-size: 4vw; width: 100%; margin-bottom: 2vw; line-height: 5vw;
+	}
+	.shaneProSwiper02 .slide-text{
+		font-size: 3vw;
+	}
+	.shaneProSwiper02 .slide-info1, .shaneProSwiper02 .slide-info2, .shaneProSwiper02 .slide-info3, .shaneProSwiper02 .slide-info4, .shaneProSwiper02 .slide-info5{
+		width: 38vw; height: 16vw; padding: 0 3vw; font-size: 2.6vw; line-height: 3.2vw;
+	}
+	.shaneProSwiper02 .slide-info1{
+		left: 3.6vw; top: 94.5vw;
+	}
+	.shaneProSwiper02 .slide-info2{
+		left: 3vw; top: 170vw;
+	}
+	.shaneProSwiper02 .slide-info3{
+		left: 58.5vw; top: 94.5vw;
+	}
+	.shaneProSwiper02 .slide-info4{
+		left: 58.5vw; top: 170vw;
+	}
+	.shaneProSwiper02 .slide-info5{
+		left: 3vw; top: 115vw; padding: 0 5vw;
+	}
+	.shaneProSwiper02-next, .shaneProSwiper02-prev{
+		width: 6vw; height: 6vw; top: 32%;
+	}
+}
+</style>
+	<div class="context">
+		<div>{{ section.settings.text }}</div>
+		<h2>{{ section.settings.heading }}</h2>		
+	</div>
+	<div class="swiper shaneProSwiper02">		
+		<div class="swiper-wrapper">
+			{%- for block in section.blocks -%}
+            <div class="swiper-slide {{ block.settings.color }}">
+				<div class="slide-pro-info">
+					<div class="slide-type">
+						<img src="{{ block.settings.block_image_icon | image_url }}"><div>{{ block.settings.icon_text }}</div>
+					</div>
+					<div class="slide-title">{{ block.settings.block_title }}</div>
+					<div class="slide-subtitle">{{ block.settings.block_subtitle }}</div>
+					<div class="slide-text">{{ block.settings.block_text }}</div>
+				</div>
+				<img src="{{ block.settings.block_image | image_url }}" class="pc_show">
+				<img src="{{ block.settings.block_image_m | image_url }}" class="mobile_show">
+				<img src="{{ block.settings.block_image_2 | image_url }}" class="pc_show">
+				<img src="{{ block.settings.block_image_2_m | image_url }}" class="mobile_show">				
+				{% if block.settings.text_info1 != blank %}<div class="slide-info1">{{ block.settings.text_info1 }}</div>{% endif %}
+				{% if block.settings.text_info2 != blank %}<div class="slide-info2">{{ block.settings.text_info2 }}</div>{% endif %}
+				{% if block.settings.text_info3 != blank %}<div class="slide-info3">{{ block.settings.text_info3 }}</div>{% endif %}
+				{% if block.settings.text_info4 != blank %}<div class="slide-info4">{{ block.settings.text_info4 }}</div>{% endif %}
+                {% if block.settings.text_info5 != blank %}<div class="slide-info5">{{ block.settings.text_info5 }}</div>{% endif %}
+			</div>
+            {% endfor %}
+		</div>
+		<div class="shaneProSwiper02-next">
+            <img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="img-np">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="img-np-hover">
+		</div>
+		<div class="shaneProSwiper02-prev">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="img-np">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="img-np-hover">
+		</div>
+	</div>
+{% schema %}
+  {
+    "name": "Pro swiper02",
+    "class": "shane-pro-swiper-2",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text"
+      }   
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+           {
+              "type": "select",
+              "id": "color",
+              "options": [
+                {
+                  "value": "red",
+                  "label": "red"
+                },
+                {
+                  "value": "blue",
+                  "label": "blue"
+                },
+                {
+                  "value": "green",
+                  "label": "green"
+                },
+                {
+                  "value": "orange",
+                  "label": "orange"
+                },
+                {
+                  "value": "purple",
+                  "label": "purple"
+                }
+                
+              ],
+              "default": "red",
+              "label": "Bg Color"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_m",
+              "label": "Image mobile"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_2",
+              "label": "Image 2"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_2_m",
+              "label": "Image 2 mobile"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_icon",
+              "label": "Image icon"
+            },
+           {
+              "type": "text",
+              "id": "icon_text",
+              "label": "icon text"
+            },
+           {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "text",
+              "id": "block_subtitle",
+              "label": "Subtitle"
+			},
+           {
+              "type": "textarea",
+              "id": "block_text",
+              "label": "Text"
+			},
+           {
+              "type": "text",
+              "id": "text_info1",
+              "label": "Product details 1"
+			},
+           {
+              "type": "text",
+              "id": "text_info2",
+              "label": "Product details 2"
+			},
+           {
+              "type": "text",
+              "id": "text_info3",
+              "label": "Product details 3"
+			},
+           {
+              "type": "text",
+              "id": "text_info4",
+              "label": "Product details 4"
+			},
+           {
+              "type": "text",
+              "id": "text_info5",
+              "label": "Product details 5"
+			}
+           
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Pro swiper02"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+    var shaneProSwiper02 = new Swiper(".shaneProSwiper02", {
+	  loop: true,
+      navigation: {
+        nextEl: ".shaneProSwiper02-prev",
+        prevEl: ".shaneProSwiper02-next",
+      },	  
+    });
+</script>

@@ -1,0 +1,50 @@
+<div class="thb-header-mobile-left">
+	{% render 'header-mobile-toggle', header_settings: header_settings, blocks: blocks %}
+</div>
+<div class="menu-logo-container">
+    {% render 'shane-menu-fromleft' header_blocks: header_blocks %}
+	{% if header_settings.logo %}
+		<a class="logolink" href="{{ routes.root_url }}">
+			<img
+				src="{{ header_settings.logo | image_url }}"
+				class="logoimg"
+				alt="{{ header_settings.logo.alt | default: shop.name | escape }}"
+				width="{{ header_settings.logo.width }}"
+				height="{{ header_settings.logo.height }}"
+			>
+			{%- liquid
+				if header_settings.logo_light != blank
+					assign light_logo = header_settings.logo_light
+				else
+					assign light_logo = header_settings.logo
+				endif
+			-%}
+			<img
+				src="{{ light_logo | image_url }}"
+				class="logoimg logoimg--light"
+				alt="{{ header_settings.logo.alt | default: shop.name | escape }}"
+				width="{{ header_settings.logo.width }}"
+				height="{{ section.settings.logo.height }}"
+			>
+		</a>
+	{% else %}
+		<a class="logolink text-logo" href="{{ routes.root_url }}">
+			{{ shop.name }}
+		</a>
+	{% endif %}
+     <div class="shane-menu-01 " style='background-color: #e3e0e000;cursor: context-menu;pointer-events: none;'>
+       <span class="fa fa-bars"  style="display: none;"></span>
+       <span class="fa fa-close"  style="display: none;"></span>       
+     </div>
+	{% render 'header-full-menu', menu: header_settings.menu, blocks: blocks %}
+</div>
+<div class="menu-right">
+     <ul class="thb-full-menu" role="menubar">
+       {% for linkright in header_settings.menu_right.links %}
+       <li class>
+         <a href="{{ linkright.url }}" title="{{ linkright.title | escape }}">{{- linkright.title -}}</a>
+       </li>
+       {% endfor %}
+     </ul>
+</div>
+{% render 'header-secondary-area', header_settings: header_settings %}

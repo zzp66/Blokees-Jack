@@ -1,0 +1,701 @@
+<style>
+  /* product-detail-show-custom */
+  #{{ section.id }}-product-detail-show .product-detail-show {
+    width: 100%;
+    background: #13111d;
+    font-family: Outfit-Regular;
+  }
+
+  /* 第一个模块 start */
+  #{{ section.id }}-product-detail-show .unit1-container {
+    display: flex;
+    position: relative;
+    margin-top: -1px;
+  }
+
+  #{{ section.id }}-product-detail-show .unit1-container img {
+    width: 100%;
+  }
+
+  #{{ section.id }}-product-detail-show .unit1-container .text-box {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: calc(2000vw / var(--base-width));
+    /* margin-bottom: calc(5700vw / var(--base-width)); */
+    margin-bottom: calc(12000vw / var(--base-width));
+    align-items: center;
+  }
+
+  #{{ section.id }}-product-detail-show .unit1-container .title {
+    max-width: calc(86300vw / var(--base-width));
+    text-align: center;
+    /* text-shadow: 3px 4px 3px #6c4d04; */
+    font-size: calc(5000vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    text-transform: capitalize;
+    background:
+      linear-gradient(
+        170deg,
+        #ce9d67 13.06%,
+        #fefbb0 25.97%,
+        #fde19c 35.04%,
+        #ddac71 39.89%,
+        #e2b77d 47.51%,
+        #e6c187 52.25%,
+        #fef4bd 57.43%,
+        #fedc9f 65.63%,
+        #fde4b7 71.23%,
+        #af8549 85.18%,
+        #85520d 89.7%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #{{ section.id }}-product-detail-show .unit1-container .sub-title {
+    max-width: calc(72700vw / var(--base-width));
+    color: {{ section.settings.unit1_sub_title_color }};
+    text-align: center;
+    font-size: calc(3200vw / var(--base-width));
+    line-height: 1.18;
+  }
+
+  /* 第一个模块 end */
+
+  /* 第二个模块 start */
+  #{{ section.id }}-product-detail-show .unit2-container {
+    width: 100%;
+    display: flex;
+    margin-top: -2px;
+  }
+
+  #{{ section.id }}-product-detail-show .unit2-container img {
+    width: 100%;
+  }
+
+  /* 第二个模块 end */
+
+  /* 第三个模块 start */
+  #{{ section.id }}-product-detail-show .unit3-container {
+    background-color: {{ section.settings.unit3_background_color }};
+  }
+
+  /* 三个模块共用样式 start */
+  #{{ section.id }}-product-detail-show .unit3-container .content-box {
+    display: flex;
+    flex-direction: column;
+    gap: calc(2500vw / var(--base-width));
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .content-box .number-box {
+    display: flex;
+    align-items: center;
+    padding: 0.3vw 1.7vw 0.3vw 0.3vw;
+    padding: calc(600vw / var(--base-width)) calc(1600vw / var(--base-width)) calc(600vw / var(--base-width))
+      calc(600vw / var(--base-width));
+    gap: calc(1300vw / var(--base-width));
+    background-color: {{ section.settings.button_background_color }};
+    border-radius: calc(1000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .content-box .number-content {
+    color: {{ section.settings.number_color }};
+    font-size: calc(3500vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: calc(800vw / var(--base-width)) calc(700vw / var(--base-width));
+    background-color: {{ section.settings.number_background_color }};
+    border-radius: calc(500vw / var(--base-width));
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .content-box .text-content {
+    color: {{ section.settings.button_color }};
+    font-size: calc(2500vw / var(--base-width));
+    line-height: 1;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: Outfit-Bold;
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .content-box .richtext-box {
+    color: {{ section.settings.rich_text_color }};
+    font-size: calc(2000vw / var(--base-width));
+    line-height: 1.2;
+  }
+  /* 富文本定制样式 start */
+  #{{ section.id }}-product-detail-show .content-box .richtext-box p,
+  #{{ section.id }}-product-detail-show .content-box .richtext-box ul li{
+    font-size: calc(2000vw/var(--base-width));
+    line-height: 1.2;
+  }
+  #{{ section.id }}-product-detail-show .content-box .richtext-box ul li{
+    margin-bottom: calc(1000vw/var(--base-width));
+  }
+  /* 富文本定制样式 end */
+
+  /* 三个模块共用样式 end */
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type1-box {
+    display: flex;
+    gap: calc(6000vw / var(--base-width));
+    align-items: center;
+    padding: calc(5300vw / var(--base-width)) calc(16300vw / var(--base-width)) calc(620vw / var(--base-width))
+      calc(6000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type1-box .content-image {
+    width: calc(62300vw / var(--base-width));
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type2-box {
+    width: 100%;
+    padding: calc(3600vw / var(--base-width)) calc(7000vw / var(--base-width));
+    display: flex;
+    align-items: center;
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type2-box .content-image {
+    width: calc(34300vw / var(--base-width));
+    margin-left: calc(16600vw / var(--base-width));
+    margin-right: calc(7000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type2-box .content-box-sp {
+    width: calc(34600vw / var(--base-width));
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: calc(3600vw / var(--base-width)) calc(12000vw / var(--base-width)) calc(7000vw / var(--base-width));
+    background-image: url({{ section.settings.unit3_background_image |  image_url }});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -1px;
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box .content-image {
+    max-width: 26%;
+    margin-left: calc(5100vw / var(--base-width));
+    margin-right: calc(12600vw / var(--base-width));
+    align-self: center;
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box .grid-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box .grid-box-left {
+    gap: calc(11000vw / var(--base-width));
+    max-width: calc(41000vw / var(--base-width));
+    max-width: 30%;
+  }
+  /* #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box .grid-box-left .content-box:nth-child(1){
+    max-width: calc(33600vw / var(--base-width));
+  } */
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box .grid-box-right {
+    gap: calc(8000vw / var(--base-width));
+    justify-content: flex-start;
+    padding-top: calc(8000vw / var(--base-width));
+    max-width: calc(34200vw / var(--base-width));
+    max-width: 25%;
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box .grid-box-left .number-box {
+    max-width: calc(40500vw / var(--base-width));
+  }
+
+  #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box .grid-box-right .number-box {
+    /* max-width: calc(29500vw / var(--base-width)); */
+    max-width: calc(34000vw / var(--base-width));
+  }
+
+  /* 隐藏移动端元素 */
+  #{{ section.id }}-product-detail-show .unit3-container-mobile{
+    display: none;
+  }
+  #{{ section.id }}-product-detail-show .img-mobile{
+    display: none;
+  }
+
+  /* 第三个模块 end */
+  @media (max-width: 1728px){
+    #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box{
+      padding-left: calc(8000vw/var(--base-width));
+      padding-right: calc(8000vw/var(--base-width));
+    }
+  }
+  @media (max-width: 1440px){
+    #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box{
+      padding-left: calc(3500vw/var(--base-width));
+      padding-right: calc(3500vw/var(--base-width));
+    }
+    #{{ section.id }}-product-detail-show .unit1-container .text-box {
+      margin-bottom: calc(6400vw / var(--base-width));
+    }
+  }
+  @media (max-width: 1200px){
+    #{{ section.id }}-product-detail-show .unit1-container .text-box {
+      margin-bottom: calc(6400vw / var(--base-width));
+    }
+  }
+  @media (max-width: 834px){
+    #{{ section.id }}-product-detail-show .unit3-container .unit3-type3-box .content-image {
+      max-width: 30%;
+      margin-right: calc(5100vw / var(--base-width));
+    }
+  }
+
+  /* 适配移动端 start */
+  @media (max-width: 768px){
+    /* 第一个模块 start */
+    #{{ section.id }}-product-detail-show .unit1-container .text-box {
+      gap: 0;
+      margin-bottom: calc(3000vw / var(--base-width));
+      width: 100vw;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #{{ section.id }}-product-detail-show .unit1-container .title {
+      /* max-width: calc(26000vw / var(--base-width)); */
+      max-width: 70vw;
+      font-size: calc(3000vw / var(--base-width));
+      margin-bottom: calc(1000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-product-detail-show .unit1-container .sub-title {
+      /* max-width: calc(30000vw / var(--base-width)); */
+      max-width: 80vw;
+      font-size: calc(1500vw / var(--base-width));
+    }
+
+    /* 第一个模块 end */
+
+    /* 第三个模块 start */
+    /* 三个模块共用样式 start */
+    #{{ section.id }}-product-detail-show .unit3-container-mobile .content-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: calc(2000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-product-detail-show .unit3-container-mobile .content-box .number-box {
+      display: flex;
+      align-items: center;
+      background-color: {{ section.settings.button_background_color }};
+      padding: calc(300vw / var(--base-width)) calc(1600vw / var(--base-width)) calc(300vw / var(--base-width))
+        calc(300vw / var(--base-width));
+      gap: calc(750vw / var(--base-width));
+      border-radius: calc(500vw / var(--base-width));
+    }
+
+    #{{ section.id }}-product-detail-show .unit3-container-mobile .content-box .number-content {
+      color: {{ section.settings.number_color }};
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+      background-color: {{ section.settings.number_background_color }};
+      font-size: calc(1800vw / var(--base-width));
+      padding: calc(400vw / var(--base-width)) calc(300vw / var(--base-width));
+      border-radius: calc(250vw / var(--base-width));
+    }
+
+    #{{ section.id }}-product-detail-show .unit3-container-mobile .content-box .text-content {
+      color: {{ section.settings.button_color }};
+      line-height: 1;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: calc(1500vw / var(--base-width));
+    }
+
+    #{{ section.id }}-product-detail-show .unit3-container-mobile .content-box .richtext-box {
+      color: {{ section.settings.rich_text_color }};
+      font-size: calc(1300vw / var(--base-width));
+      line-height: 1.23;
+      padding-left: calc(400vw/var(--base-width));
+    }
+
+    /* 富文本定制样式 start */
+    #{{ section.id }}-product-detail-show .content-box .richtext-box p,
+    #{{ section.id }}-product-detail-show .content-box .richtext-box ul li{
+      font-size: calc(1300vw/var(--base-width));
+      line-height: 1.23;
+    }
+    #{{ section.id }}-product-detail-show .content-box .richtext-box ul li{
+      margin-bottom: calc(500vw/var(--base-width));
+    }
+    /* 富文本定制样式 end */
+
+    /* 三个模块共用样式 end */
+
+    /* 移动端第三个模块只有一种样式 */
+    #{{ section.id }}-product-detail-show .unit3-container{
+      display: none;
+    }
+    #{{ section.id }}-product-detail-show .unit3-container-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: calc(3500vw / var(--base-width));
+      background-image: url({{ section.settings.unit3_background_image_mobile |  image_url }});
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: calc(4000vw / var(--base-width)) calc(1500vw / var(--base-width)) calc(5000vw / var(--base-width));
+      margin-top: -1px;
+    }
+    #{{ section.id }}-product-detail-show .unit3-container-mobile .content-image{
+      width: 100%;
+      margin-bottom: calc(1500vw / var(--base-width));
+    }
+    #{{ section.id }}-product-detail-show .img-pc{
+      display: none;
+    }
+    #{{ section.id }}-product-detail-show .img-mobile{
+      display: flex;
+    }
+    /* 第三个模块 end */
+    /* 适配移动端 end */
+  }
+</style>
+
+<div id="{{ section.id }}-product-detail-show-custom">
+  {% for block in section.blocks %}
+    {% if block.type == 'unit1' %}
+      <div class="unit1-container">
+        <img
+          class="img-pc"
+          src="{{ section.settings.unit1_img |  image_url }}"
+          alt="{{ section.settings.unit1_img.alt }}"
+        >
+        <img
+          class="img-mobile"
+          src="{{ section.settings.unit1_img_mobile |  image_url }}"
+          alt="{{ section.settings.unit1_img_mobile.alt }}"
+        >
+        <div class="text-box">
+          <h2 class="title">{{ section.settings.title }}</h2>
+          <div class="sub-title">{{ section.settings.sub_title }}</div>
+        </div>
+      </div>
+    {% endif %}
+    {% if block.type == 'unit2' %}
+      <div class="unit2-container">
+        <img
+          class="img-pc"
+          src="{{ section.settings.unit2_img |  image_url }}"
+          alt="{{ section.settings.unit2_img.alt }}"
+        >
+        <img
+          class="img-mobile"
+          src="{{ section.settings.unit2_img_mobile |  image_url }}"
+          alt="{{ section.settings.unit2_img_mobile.alt }}"
+        >
+      </div>
+    {% endif %}
+    {% if block.type == 'unit3' %}
+      <div class="unit3-container">
+        {% if section.settings.unit3_type == 'type1' %}
+          <!-- 第一种模式 -->
+          <div
+            class="unit3-type1-box"
+            style="flex-direction: {% if section.settings.unit3_type1_img == 'left' %}row{% else %}row-reverse{% endif %};"
+          >
+            {% if section.settings.unit3_img != blank %}
+              <img
+                class="content-image"
+                src="{{ section.settings.unit3_img |  image_url }}"
+                alt="{{ section.settings.unit3_img.alt }}"
+              >
+            {% endif %}
+            {% for block in section.blocks limit: 4 %}
+              {% if forloop.index == 1 %}
+                <div class="content-box">
+                  <div class="number-box">
+                    <div class="number-content">{{ block.settings.number_text }}</div>
+                    <h4 class="text-content">{{ block.settings.content_text }}</h4>
+                  </div>
+                  <div class="richtext-box">{{ block.settings.rich_text }}</div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% elsif section.settings.unit3_type == 'type2' %}
+          <!-- 第二种模式 -->
+          <div class="unit3-type2-box">
+            {% for block in section.blocks limit: 4 %}
+              {% if forloop.index == 1 %}
+                <div class="content-box content-box-sp">
+                  <div class="number-box">
+                    <div class="number-content">{{ block.settings.number_text }}</div>
+                    <h4 class="text-content">{{ block.settings.content_text }}</h4>
+                  </div>
+                  <div class="richtext-box">{{ block.settings.rich_text }}</div>
+                </div>
+              {% endif %}
+            {% endfor %}
+            {% if section.settings.unit3_img != blank %}
+              <img
+                class="content-image"
+                src="{{ section.settings.unit3_img |  image_url }}"
+                alt="{{ section.settings.unit3_img.alt }}"
+              >
+            {% endif %}
+            {% for block in section.blocks limit: 4 %}
+              {% if forloop.index == 2 %}
+                <div class="content-box content-box-sp">
+                  <div class="number-box">
+                    <div class="number-content">{{ block.settings.number_text }}</div>
+                    <h4 class="text-content">{{ block.settings.content_text }}</h4>
+                  </div>
+                  <div class="richtext-box">{{ block.settings.rich_text }}</div>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% elsif section.settings.unit3_type == 'type3' %}
+          <!-- 第三种模式 -->
+          <div class="unit3-type3-box">
+            <div class="grid-box grid-box-left">
+              {% for block in section.blocks limit: 4 %}
+                {% if forloop.index < 3 %}
+                  <div class="content-box content-box-sp">
+                    <div class="number-box">
+                      <div class="number-content">{{ block.settings.number_text }}</div>
+                      <h4 class="text-content">{{ block.settings.content_text }}</h4>
+                    </div>
+                    <div class="richtext-box">{{ block.settings.rich_text }}</div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+            {% if section.settings.unit3_img != blank %}
+              <img
+                class="content-image"
+                src="{{ section.settings.unit3_img |  image_url }}"
+                alt="{{ section.settings.unit3_img.alt }}"
+              >
+            {% endif %}
+            <div class="grid-box grid-box-right">
+              {% for block in section.blocks limit: 4 %}
+                {% if forloop.index > 2 %}
+                  <div class="content-box content-box-sp">
+                    <div class="number-box">
+                      <div class="number-content">{{ block.settings.number_text }}</div>
+                      <h4 class="text-content">{{ block.settings.content_text }}</h4>
+                    </div>
+                    <div class="richtext-box">{{ block.settings.rich_text }}</div>
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      {% comment %} 移动端单独写元素 {% endcomment %}
+      <div class="unit3-container-mobile">
+        {% if section.settings.unit3_img_mobile != blank %}
+          <img
+            class="content-image"
+            src="{{ section.settings.unit3_img_mobile |  image_url }}"
+            alt="{{ section.settings.unit3_img_mobile.alt }}"
+          >
+        {% endif %}
+        {% for block in section.blocks limit: 4 %}
+          <div class="content-box">
+            <div class="number-box">
+              <div class="number-content">{{ block.settings.number_text }}</div>
+              <h4 class="text-content">{{ block.settings.content_text }}</h4>
+            </div>
+            <div class="richtext-box">{{ block.settings.rich_text }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Detail Show1",
+  "class": "product-detail-show",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "unit1_img",
+      "label": "Unit1 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "unit1_img_mobile",
+      "label": "Unit1 Image Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "unit2_img",
+      "label": "Unit2 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "unit2_img_mobile",
+      "label": "Unit2 Image Mobile"
+    },
+    {
+      "type": "select",
+      "id": "unit3_type",
+      "label": "Unit3 Type",
+      "options": [
+        {
+          "value": "type1",
+          "label": "Type1"
+        },
+        {
+          "value": "type2",
+          "label": "Type2"
+        },
+        {
+          "value": "type3",
+          "label": "Type3"
+        }
+      ],
+      "default": "type1"
+    },
+    {
+      "type": "select",
+      "id": "unit3_type1_img",
+      "label": "Unit3 Type1 Img Side",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "image_picker",
+      "id": "unit3_img",
+      "label": "Unit3 Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "unit3_img_mobile",
+      "label": "Unit3 Image Mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "unit3_background_image",
+      "label": "Unit3 Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "unit3_background_image_mobile",
+      "label": "Unit3 Background Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "unit1_sub_title_color",
+      "label": "Unit1 Sub Title Color",
+      "default": "#FFEED8"
+    },
+    {
+      "type": "color",
+      "id": "unit3_background_color",
+      "label": "Unit3 Background Color",
+      "default": "#131423"
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Number Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "number_background_color",
+      "label": "Number Background Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "rich_text_color",
+      "label": "Rich Text Color",
+      "default": "#fff"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number_text",
+          "label": "Number Text"
+        },
+        {
+          "type": "text",
+          "id": "content_text",
+          "label": "Content Text"
+        },
+        {
+          "type": "richtext",
+          "id": "rich_text",
+          "label": "Rich Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Detail Show1"
+    }
+  ]
+}
+{% endschema %}

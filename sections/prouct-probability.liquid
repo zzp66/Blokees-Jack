@@ -1,0 +1,927 @@
+<style>
+  #{{section.id}}-product-probability{
+    padding-top: calc(12000vw/var(--base-width));
+    padding-bottom: calc(13700vw/var(--base-width));
+    background-color: {{ section.settings.background_color }};
+    background-image: url({{ section.settings.bg_image |  image_url }});
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    color: {{ section.settings.font_color }};
+    margin-top: -1px;
+    font-family: Outfit-Regular;
+  }
+  #{{section.id}}-product-probability>div{
+    padding: 0 calc(3500vw/var(--base-width));
+    margin: auto;
+  }
+  #{{section.id}}-product-probability .text-container{
+    display: flex;
+    justify-content: space-between;
+    gap:calc(18000vw/var(--base-width));
+    align-items: center;
+  }
+  #{{section.id}}-product-probability h2{
+    text-align: left;
+    font-size: calc(5000vw/var(--base-width));
+    line-height: 1.12;
+    margin: 0;
+    max-width: calc(66200vw/var(--base-width));
+    letter-spacing: normal;
+  }
+  #{{section.id}}-product-probability .stitle{
+    text-align: left;
+    font-size: calc(3000vw/var(--base-width));
+    margin: 0;
+    margin-bottom: calc(1500vw/var(--base-width));
+  }
+  #{{section.id}}-product-probability .info{
+    max-width: calc(50600vw/var(--base-width));
+    /* font-size: calc(1800vw/var(--base-width)); */
+    opacity: 0.8;
+    text-align: left;
+    overflow: hidden;
+    height: calc(10000vw/var(--base-width));
+    position: relative;
+    height: auto;
+    margin: 0;
+    font-size: clamp(12px,calc(1800vw/var(--base-width)),18px);
+  }
+  #{{section.id}}-product-probability .more{
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: calc(6000vw/var(--base-width));
+    text-align: center;
+    /* background-image: linear-gradient(#00000000, #1A1A1A, #1A1A1A); */
+    background: linear-gradient(180deg, rgba(7, 20, 39, 0.00) 0%, #060A1E 85.5%);
+    font-family: Outfit-Bold;
+    display: flex;
+    align-items: flex-end;
+  }
+  #{{section.id}}-product-probability a{
+    /* line-height: calc(6000vw/var(--base-width)); */
+    line-height: initial;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  #{{section.id}}-product-probability a img{
+    width: calc(2400vw/var(--base-width));
+    height: auto;
+  }
+  #{{section.id}}-product-probability .more span{
+    color: #006DE5; font-size: calc(2800vw/var(--base-width));
+  }
+  #{{section.id}}-product-probability .columns{
+    /* 改成grid布局，以满足排版需求 */
+    margin-top: calc(4000vw/var(--base-width));
+    display: grid;
+    {% if section.settings.show_type == "5" %}
+      grid-template-columns: repeat(5,1fr);
+      gap:calc(1600vw/var(--base-width));
+    {% elsif section.settings.show_type == "6" %}
+      grid-template-columns: repeat(6,1fr);
+      gap:calc(1000vw/var(--base-width));
+    {% endif %}
+  }
+  #{{section.id}}-product-probability .columns>div{
+    border-radius: calc(1200vw/var(--base-width)); overflow: hidden;
+  }
+  #{{section.id}}-product-probability .columns .equal-two{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0;
+  }
+  #{{section.id}}-product-probability  .columns-img{
+    width: 100%;
+    margin-bottom: calc(1800vw/var(--base-width));
+  }
+  #{{section.id}}-product-probability  .columns-img img{
+    width:100%; transition:0.2s;
+  }
+  #{{section.id}}-product-probability .equal-two:hover .columns-img img{
+    animation: moveUpAndDown01 1s ease-in-out infinite;
+  }
+  @keyframes moveUpAndDown01 {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: -10px;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  #{{section.id}}-product-probability .columns-context{
+    width: 76%; margin: 0 auto calc(2000vw/var(--base-width));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    align-items: center;
+  }
+  #{{section.id}}-product-probability .columns-context .title{
+    display: flex; justify-content: center; align-items: flex-start; font-size: calc(2000vw/var(--base-width)); font-family: Outfit-Bold;line-height: 1.1;
+    margin-bottom: calc(1400vw/var(--base-width));
+    position: relative;
+    text-align: center;
+    max-width: calc(16700vw/var(--base-width));
+  }
+  #{{section.id}}-product-probability .columns-context img{
+    width:calc(3600vw/var(--base-width));
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  #{{section.id}}-product-probability .equal-two .probability{
+    width:100%;
+    height: calc(4000vw/var(--base-width));
+    margin-top: 5px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    font-family: Outfit-Bold;
+  }
+  .equal-two .probability>div:first-child{
+    width: 54%;
+    font-size: calc(1600vw/var(--base-width));
+    line-height: calc(1600vw/var(--base-width)); align-items: center; flex-wrap: wrap;
+  }
+  .equal-two .probability>div:first-child span{
+    font-size: calc(1400vw/var(--base-width));
+  }
+  .equal-two .probability>div:last-child{
+    width: 46%;
+    height: 100%;
+    font-size: calc(2800vw/var(--base-width));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+  }
+  /* 隐藏款样式 start */
+  #{{section.id}}-product-probability .equal-six .title{
+    font-size: calc(4400vw/var(--base-width)); text-transform: uppercase; font-family: Outfit-Bold;
+  }
+  #{{section.id}}-product-probability .equal-six .top-title{
+    color: rgba(255, 255, 255, 0.80);
+    font-family: Outfit-Regular;
+    font-size: calc(100vw* 14 / 1920);
+    font-style: normal;
+    font-weight: 700;
+    line-height: calc(100vw* 14 / 1920);
+  }
+  #{{section.id}}-product-probability .equal-six .probability>div:first-child{
+    width: 100%; font-size: calc(1600vw/var(--base-width));
+  }
+  #{{section.id}}-product-probability .equal-six .probability>div:last-child{
+    width: 100%;
+    line-height: calc(7000vw/var(--base-width));
+    font-size: calc(6000vw/var(--base-width));
+    font-family: Outfit-Bold;
+    border-radius: calc(800vw/var(--base-width));
+    border: 2px solid #fff;
+  }
+  #{{section.id}}-product-probability .equal-six .text{
+    font-size: calc(1400vw/var(--base-width)); width:95%;
+  }
+  /* 隐藏款样式展示逻辑：对应三种大小选择 */
+  #{{section.id}}-product-probability .equal-six{
+   	{%  assign show_special_count = section.settings.show_special_count %}
+   	{% if show_special_count == '1' %}
+   	grid-column: span 1;
+   	{% elsif show_special_count == '2' %}
+   	grid-column: span 2;
+   	{% elsif show_special_count == '3' %}
+   	grid-column: span 3;
+   	{% endif %}
+    position: relative; display: flex; justify-content: flex-start; align-items: center;
+    background-image: url({{ section.settings.special_background |  image_url }});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 1vw;
+  }
+  /* 第一种情况，占据一列 start */
+  {% if show_special_count == '1' %}
+    #{{section.id}}-product-probability .equal-six img{
+      width: 100%;
+    }
+    #{{section.id}}-product-probability .equal-six{
+      display: flex;
+      flex-direction: column;
+      gap: calc(4600vw/var(--base-width));
+      justify-content: center;
+      align-items: center;
+    }
+  	#{{section.id}}-product-probability .equal-six .special-text{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: calc(1400vw/var(--base-width));
+  	}
+  	#{{section.id}}-product-probability .equal-six .special-title{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: calc(600vw/var(--base-width));
+  		line-height: 1.25;
+      font-size: calc(2800vw/var(--base-width));
+  	}
+    #{{section.id}}-product-probability .equal-six .special-title .title{
+      font-size: calc(3000vw/var(--base-width));
+      text-align: center;
+    }
+    #{{section.id}}-product-probability .equal-six .special-title .sub-title{
+      font-size: calc(1600vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-six .probability{
+      width:100%;
+  		text-align: center;
+    }
+  /* 第一种情况，占据一列 end */
+  /* 第二种情况，占据两列 start */
+  {% elsif show_special_count == '2' %}
+    #{{section.id}}-product-probability .equal-six img{
+      width: 100%;
+    }
+    #{{section.id}}-product-probability .equal-six{
+      flex-direction: column-reverse;
+      justify-content: center;
+    }
+  	#{{section.id}}-product-probability .equal-six .special-text{
+      display: flex;
+      align-items: center;
+      gap: calc(800vw/var(--base-width));
+      width: 100%;
+    }
+    #{{section.id}}-product-probability .equal-six .probability{
+      flex: 1;
+  		text-align: center;
+    }
+  	#{{section.id}}-product-probability .equal-six .special-title{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  		line-height: 1;
+      max-width: calc(13600vw/var(--base-width));
+  	}
+    #{{section.id}}-product-probability .equal-six .special-title .sub-title{
+      font-size: calc(1600vw/var(--base-width));
+    }
+   #{{section.id}}-product-probability .equal-six .probability>div:last-child{
+      width: 100%;
+      line-height: 1;
+      font-size: calc(8000vw/var(--base-width));
+      font-family: Outfit-Bold;
+      border-radius: calc(800vw/var(--base-width));
+    }
+  /* 第二种情况，占据两列 end */
+  {% elsif show_special_count == '3' %}
+  /* 第三种情况，占据三列 start */
+    #{{section.id}}-product-probability .equal-six img{
+      width: 60%;
+    }
+    #{{section.id}}-product-probability .equal-six{
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+  	#{{section.id}}-product-probability .equal-six .special-text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: calc(1200vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-six .probability{
+  		text-align: center;
+      min-width: calc(30000vw/var(--base-width));
+    }
+  	#{{section.id}}-product-probability .equal-six .special-title{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  		line-height: 1;
+      gap: calc(1000vw/var(--base-width));
+  	}
+    #{{section.id}}-product-probability .equal-six .special-title .sub-title{
+      font-size: calc(1600vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-six .probability>div:last-child{
+      width: 100%; line-height: 1; font-size: calc(10400vw/var(--base-width)); font-family: Outfit-Bold; border-radius: calc(800vw/var(--base-width));
+    }
+  /* 第三种情况，占据三列 end */
+  {% endif %}
+  {% if section.settings.product_type == 'hero' %}
+    #{{section.id}}-product-probability .equal-six img{
+      width: 46%;
+    }
+    #{{section.id}}-product-probability .equal-six .special-text{
+      width: 50%;
+    }
+    #{{section.id}}-product-probability .columns-context{
+      width: 90%;
+    }
+    #{{section.id}}-product-probability .equal-six .special-title{
+      align-items: flex-start;
+    }
+    #{{section.id}}-product-probability .equal-six .title{
+      font-size: calc(3000vw/var(--base-width));
+      line-height: 1.2;
+    }
+    #{{section.id}}-product-probability .equal-six .special-title .sub-title{
+      font-size: calc(2000vw/var(--base-width));
+      line-height: 1.2;
+    }
+    #{{section.id}}-product-probability .equal-six .probability>div:last-child{
+      font-size: calc(8000vw/var(--base-width));
+      padding-left: calc(5600vw/var(--base-width));
+      padding-right: calc(5600vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-six .special-text{
+      align-items: flex-start;
+    }
+  {%endif%}
+  @media (max-width: 1194px){
+    #{{section.id}}-product-probability .equal-two .probability>div:last-child{
+      font-size: calc(2000vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-six .probability{
+      min-width: auto;
+    }
+  }
+  @media (max-width: 1200px){
+    #{{section.id}}-product-probability .equal-six .probability>div:last-child{
+      font-size: calc(5000vw/var(--base-width));
+    }
+    {% if section.settings.product_type == 'hero' %}
+      #{{section.id}}-product-probability .equal-six .probability>div:last-child{
+        font-size: calc(7000vw/var(--base-width));
+        padding-left: calc(4000vw/var(--base-width));
+        padding-right: calc(4000vw/var(--base-width));
+      }
+    {% endif %}
+  }
+  @media (max-width: 884px){}
+  /* 隐藏款样式 end */
+  @media (max-width: 768px){
+    #{{section.id}}-product-probability{
+      padding-top: calc(8000vw/var(--base-width));
+      padding-bottom: calc(50vw/var(--base-width));
+      background-image: url({{ section.settings.bg_image_mobile |  image_url }});
+    }
+    #{{section.id}}-product-probability .text-container{
+      width: 90%;
+      margin: 0 auto;
+      padding: 0;
+      flex-direction: column;
+      gap: calc(1750vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability h2{
+      width: 100%;
+      font-size: calc(3000vw/var(--base-width));
+      line-height: 1.1;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    #{{section.id}}-product-probability .stitle{
+      width: 90%;
+      margin: 0 auto calc(700vw/var(--base-width));
+      font-size: calc(1800vw/var(--base-width));
+      text-align: left;
+      padding: 0;
+    }
+    #{{section.id}}-product-probability .info{
+      width:100%;
+      line-height: 1.16;
+      height: calc(6300vw/var(--base-width));
+      text-align: center;
+    }
+    #{{section.id}}-product-probability .more{
+      line-height: initial;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      font-size: calc(1300vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .more img{
+      font-size: calc(1500vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability a{
+      line-height: initial;
+    }
+    #{{section.id}}-product-probability .more span{
+      font-size: calc(7200vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .columns{
+      margin-top: calc(3000vw/var(--base-width));
+      grid-template-columns: repeat(2,1fr);
+      gap: calc(1000vw/var(--base-width));
+      width: 90%;
+      padding: 0;
+      padding-bottom: calc(5000vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .columns>div{
+      border-radius: calc(1000vw/var(--base-width));
+      margin-bottom: 0;
+    }
+    #{{section.id}}-product-probability .equal-two{
+      width: 100%;
+    }
+    #{{section.id}}-product-probability  .columns-img{
+      width: 100%;
+      margin-bottom: 0;
+    }
+    #{{section.id}}-product-probability .columns-context{
+      width: 88%;
+      margin: 0 auto calc(1250vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .columns-context .title{
+      font-size: calc(1500vw/var(--base-width));
+      line-height: 1.2;
+    }
+    #{{section.id}}-product-probability .columns-context img{
+      width:calc(6800vw/var(--base-width));
+      margin-right: calc(2000vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-two .probability{
+      height: calc(3000vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-two .probability>div:first-child{
+      font-size: calc(1000vw/var(--base-width));
+      line-height: 1;
+    }
+    #{{section.id}}-product-probability .equal-two .probability>div:first-child span{
+      font-size: calc(1000vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-two .probability>div:last-child{
+      font-size: calc(2000vw/var(--base-width));
+    }
+    /* 特殊样式 start */
+    #{{section.id}}-product-probability .equal-six{
+      display: flex;
+      width: 100%;
+      gap: calc(1200vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-six .special-text{
+      gap: calc(600vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-six>img{
+      width: 100%;
+    }
+    #{{section.id}}-product-probability .equal-six>div{
+      position: initial;
+      width: 100%;
+    }
+    #{{section.id}}-product-probability .equal-six .special-title .title{
+      font-size: calc(2100vw/var(--base-width));
+      letter-spacing: -1.1px;
+    }
+    #{{section.id}}-product-probability .equal-six .probability>div:last-child{
+      width: 86%;
+      font-size: calc(4500vw/var(--base-width));
+      line-height: 1;
+      margin: 0 auto;
+      border-radius: calc(400vw/var(--base-width));
+    }
+    #{{section.id}}-product-probability .equal-six .special-title .sub-title{
+      font-size: clamp(12px, calc(1000vw/var(--base-width)), 16px);
+    }
+    /* 特殊样式 end */
+
+    /* 给hero定制样式 */
+    {% if section.settings.product_type == 'hero' %}
+      #{{section.id}}-product-probability .equal-six{
+        grid-column: span 2;
+        gap: calc(700vw/var(--base-width));
+        padding: calc(1200vw/var(--base-width)) calc(800vw/var(--base-width));
+      }
+      #{{section.id}}-product-probability .equal-six>img{
+        width: 43%;
+      }
+      #{{section.id}}-product-probability .equal-six .special-text{
+        width: 54%;
+        gap: calc(1300vw/var(--base-width));
+        align-items: flex-start;
+      }
+      #{{section.id}}-product-probability .equal-six .probability{
+        min-width: initial;
+        width: 88%;
+      }
+      #{{section.id}}-product-probability .equal-six .probability>div:last-child{
+        width: 100%;
+        padding-left: calc(300vw/var(--base-width));
+        padding-right: calc(300vw/var(--base-width));
+        font-size: calc(4000vw/var(--base-width));
+      }
+      #{{section.id}}-product-probability .equal-six .special-title{
+        align-items: flex-start;
+        gap: calc(750vw/var(--base-width));
+      }
+      #{{section.id}}-product-probability .equal-six .special-title .title{
+        font-size: calc(1500vw/var(--base-width));
+        letter-spacing: normal;
+      }
+    {% endif %}
+  }
+</style>
+<div id="{{section.id}}-product-probability">
+  {% if section.settings.subheading != blank %}
+    <div class="stitle">{{ section.settings.subheading }}</div>
+  {% endif %}
+  <div class="text-container">
+    <div class="title-container">
+      <h2>{{ section.settings.heading }}</h2>
+    </div>
+    <div class="info">
+      {{ section.settings.text }}
+      {% if section.settings.yc_checkbox == false %}
+        <div class="more">
+          <a
+            style="color: {{section.settings.read_more_color}};"
+            >Read More&nbsp;&nbsp;
+            <img
+              src="{{ section.settings.read_more_icon |  image_url: width: 23 }}"
+              alt="section.settings.read_more_icon.alt"
+            >
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="columns">
+    {%- assign my_variable = 0 -%}
+    {%- assign my_count = section.settings.show_type | plus: 0 -%}
+    {%- for block in section.blocks -%}
+      {% assign my_variable = my_variable | plus: 1 %}
+      {% if my_variable > my_count %}
+        {% assign delay = my_variable | minus: my_count | minus: 1 %}
+      {% else %}
+        {% assign delay = my_variable | minus: 1 %}
+      {% endif %}
+      {% comment %} 根据一行展示数量，隐藏模块占据列数，有六种不同的样式 start {% endcomment %}
+      {% if block.settings.stylewidth == '1' %}
+        {% comment %} 普通模块 {% endcomment %}
+        <div
+          class="equal-two wow fadeInUp"
+          data-wow-duration=".5s"
+          data-wow-delay=".{{ delay }}s"
+          data-wow-offset="100"
+          style="border:1px solid {{ block.settings.border_color }};background-color:  {{ block.settings.bg_color }};"
+        >
+          <div class="columns-img">
+            <picture>
+              <source
+                media="(max-width: 800px)"
+                srcset="{{ block.settings.block_image | image_url: width: 180 }}"
+              >
+              <img src="{{ block.settings.block_image | image_url: width: 269 }}" loading="lazy">
+            </picture>
+          </div>
+          <div class="columns-context" style="color: {{ block.settings.title_color }};">
+            <div class="title">
+              {% if block.settings.block_image_icon != blank -%}
+                <img src="{{ block.settings.block_image_icon | image_url }}">
+              {%- endif %}
+              {{ block.settings.block_title }}
+            </div>
+            <div
+              class="probability"
+              style="color: {{ block.settings.math_color }};background-color:  {{ block.settings.math_bg_color }};border: 1px solid {{ block.settings.math_border_color }}"
+            >
+              {% comment %}
+                <div class="probability-normal">
+                  Probability<br>
+                  <span>(Math.)</span>
+                </div>
+              {% endcomment %}
+              <div class="probability-normal">{{ block.settings.probability_math }}</div>
+              <div style="color: {{ block.settings.button_font_color }};background-color:  {{ block.settings.button_bg_color }};">
+                {{ block.settings.block_text }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% else %}
+        {% comment %} 隐藏款 {% endcomment %}
+        <div
+          class="equal-six wow fadeInUp"
+          data-wow-duration=".5s"
+          data-wow-delay=".{{ delay }}s"
+          data-wow-offset="100"
+          style="
+            border:1px solid {{ block.settings.border_color }};
+            background-color:  {{ block.settings.bg_color }};
+            {% if section.settings.set_diff_bg == 'true' %}
+              background-image: url({{ block.settings.bg_img |  image_url  }})
+            {% endif %}
+          "
+        >
+          <div class="special-text">
+            {% comment %} <div class="top-title">{{ block.settings.block_top_title }}</div> {% endcomment %}
+            <div class="special-title">
+              <div class="title" style="color: {{ block.settings.title_color }};">{{ block.settings.block_title }}</div>
+              {% comment %} <div style="color: {{ block.settings.math_color }};" class="sub-title">Probability (Math.)</div> {% endcomment %}
+              <div style="color: {{ block.settings.math_color }};" class="sub-title">
+                {{ block.settings.probability_math }}
+              </div>
+            </div>
+            <div
+              class="probability"
+            >
+              <div style="color: {{ block.settings.button_font_color }};background-color:  {{ block.settings.button_bg_color }};">
+                {{ block.settings.block_text }}
+              </div>
+            </div>
+            {% comment %} <div class="text">{{ block.settings.block_text_02 }}</div> {% endcomment %}
+          </div>
+          <img class="special-image" src="{{ block.settings.block_image | image_url }}">
+        </div>
+      {% endif %}
+      {% comment %} 根据一行展示数量，隐藏模块占据列数，有六种不同的样式 end {% endcomment %}
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Probability",
+  "class": "product-probability",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "yc_checkbox",
+      "label": "Checkbox"
+    },
+    {
+      "type": "select",
+      "id": "product_type",
+      "label": "Product Type",
+      "options": [
+        {
+          "value": "hero",
+          "label": "Hero"
+        },
+        {
+          "value": "ultraman",
+          "label": "Ultraman"
+        }
+      ],
+      "default": "ultraman"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "id": "text",
+      "type": "textarea",
+      "label": "Text"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "select",
+      "id": "show_type",
+      "label": "Show Type",
+      "options": [
+        {
+          "value": "5",
+          "label": "5"
+        },
+        {
+          "value": "6",
+          "label": "6"
+        }
+      ],
+      "default": "5"
+    },
+    {
+      "type": "select",
+      "id": "show_special_count",
+      "label": "Show Special Count",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "image_picker",
+      "id": "special_background",
+      "label": "Special Background"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Font Color",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#1A1A1A"
+    },
+    {
+      "type": "color",
+      "id": "read_more_color",
+      "label": "Read More Color",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "read_more_icon",
+      "label": "Read More Icon"
+    },
+    {
+      "type": "select",
+      "id": "set_diff_bg",
+      "label": "Diff BG",
+      "options": [
+        {
+          "value": "true",
+          "label": "True"
+        },
+        {
+          "value": "false",
+          "label": "False"
+        }
+      ],
+      "default": "false"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "stylewidth",
+          "options": [
+            {
+              "value": "1",
+              "label": "small"
+            },
+            {
+              "value": "2",
+              "label": "Big"
+            }
+          ],
+          "default": "1",
+          "label": "Width"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image_icon",
+          "label": "Image icon",
+          "info": "icon"
+        },
+        {
+          "type": "text",
+          "id": "block_top_title",
+          "label": "Top Title"
+        },
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Figures Title",
+          "default": "Add a title"
+        },
+        {
+          "type": "text",
+          "id": "block_text",
+          "label": "Probability",
+          "default": "4/36"
+        },
+        {
+          "type": "text",
+          "id": "probability_math",
+          "label": "Probability Math",
+          "default": "Probability (Math.)"
+        },
+        {
+          "type": "text",
+          "id": "block_text_02",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Background Color",
+          "default": "#201637"
+        },
+        {
+          "type": "image_picker",
+          "id": "bg_img",
+          "label": "Background Image"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#FFF"
+        },
+        {
+          "type": "color",
+          "id": "math_color",
+          "label": "Math Color",
+          "default": "#006DE5"
+        },
+        {
+          "type": "color",
+          "id": "math_bg_color",
+          "label": "Math BG Color",
+          "default": "#FFF"
+        },
+        {
+          "type": "color",
+          "id": "math_border_color",
+          "label": "Math Border Color",
+          "default": "#FFF"
+        },
+        {
+          "type": "color",
+          "id": "button_font_color",
+          "label": "Button Font Color",
+          "default": "#FFF"
+        },
+        {
+          "type": "color",
+          "id": "button_bg_color",
+          "label": "Button BG Color",
+          "default": "#006DE5"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Color",
+          "default": "#006DE5"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Probability"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  $(document).ready(function () {
+    $('#{{section.id}}-product-probability .more').click(function () {
+      $(this).css('display', 'none');
+      $('#{{section.id}}-product-probability .info').css('height', 'auto');
+    });
+    // let windowW = window.innerWidth;
+    // if (windowW < 768) {
+    //   // 设置每个模块的动画延迟时间
+    //   let itemList = document.querySelectorAll('#{{section.id}}-product-probability [data-wow-delay]');
+    //   window.console.log('itemList.length' + itemList.length);
+    //   for (let i = 0; i < itemList.length; i++) {
+    //     if (index % 2 === 0) {
+    //       item.setAttribute('data-wow-delay', '.1s');
+    //     } else {
+    //       item.setAttribute('data-wow-delay', '.0s');
+    //     }
+    //   }
+    // }
+  });
+</script>

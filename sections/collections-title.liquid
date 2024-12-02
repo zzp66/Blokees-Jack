@@ -1,0 +1,249 @@
+<style>	    
+	.shane-collections-title{
+		width: 100%; color: #fff;background-color: #006DE5;
+	}
+	.shane-collections-title>div{
+		position: relative; width: 100%; height: 29vw;
+	}
+	#Layer_3, #Layer_4{
+		position: absolute; left: 50%; top: -10vw; margin-left: -6vw; width: 12vw; height: 36vw;
+	}
+	.svg-line{
+		stroke-width: 1px;
+		stroke: #ffffff;
+		fill:none;
+		stroke-dasharray: 1800;
+		stroke-dashoffset: 1800;
+		animation: svgmove 2s infinite;
+	}
+	.svg-line2{
+		stroke-width: 1px;
+		stroke: #ffffff;
+		fill:none;
+		stroke-dasharray: 1400;
+		stroke-dashoffset: 1400;
+		animation: svgmove 2s infinite;
+	}
+	@keyframes svgmove {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+   .shane-collections-title>div .collections-title-img{
+       width: 30vw; position: absolute; left: 35vw; top: 11vw; z-index:9;
+   }
+	.shane-collections-title>div h1{
+		    background-color: #006DE5;width: calc(100vw* 915/ 1920); text-align: center; font-size: calc(100vw* 62/ 1920); position: absolute; left: 26vw; top: 4vw; color:#fff; z-index:9;font-weight: bold; font-family: Outfit-Regular;margin:0;line-height: calc(100vw* 62/ 1920);
+	
+    }
+	.shane-collections-title .info{
+		width:calc(100vw* 980/ 1920); margin: auto; font-size: calc(100vw* 16/ 1920);opacity: 0.8; text-align: center; overflow: hidden; height: 6vw; position: absolute; left: calc(100vw* 471/ 1920);top: calc(100vw* 245/ 1920);font-family: Outfit-Regular;
+	}
+	.shane-collections-title .more{
+		display: none;
+		width:100%; position: absolute; bottom: 0; left: 0; height: 3vw; text-align: center; background-image: linear-gradient(#00000000, #006DE5, #006DE5); font-family: Outfit-Bold;
+	}
+  	.shane-collections-title .more a{
+      color:#fff;font-size: calc(100vw* 18/ 1920);position: absolute; top: calc(100vw* 37/ 1920); left: calc(100vw* 416/ 1920);font-weight: bold;
+    }
+    .shane-collections-title .more span{
+      color:#FF5F00;
+    }
+	.collections-fd1{
+		width:2vw; position: absolute; top: 4vw; left: 35vw;animation: moveimgshowfd1 1s ease-in-out infinite;
+	}
+	.collections-fd2{
+		width:2vw; position: absolute; top: 18vw; left: 65vw;animation: moveimgshowfd2 1s ease-in-out infinite;
+	}
+    .collections-fd3{
+        width:234px; position: absolute; bottom: 8%; left: 3%; z-index:9;
+    }
+	@keyframes moveimgshowfd1 {
+		0% {
+			top: 4vw;
+		}
+		50% {
+			top: 3.5vw;
+		}
+		100% {
+			top: 4vw;
+		}
+	}
+	@keyframes moveimgshowfd2 {
+	  0% {
+		top: 18vw;
+	  }
+	  50% {
+		top: 17.5vw;
+	  }
+	  100% {
+		top: 18vw;
+	  }
+	}
+@media (max-width: 768px){
+    .shane-collections-title>div{
+		height: 90vw; margin-top:-5vw;transition: 0.3s;
+	}
+	#Layer_3, #Layer_4{
+		position: absolute; left: 50%; top: -8vw; margin-left: -15vw; width: 30vw; height: 70vw;
+	}
+    .shane-collections-title>div .collections-title-img{
+       width: 60vw; left: 20vw; top: 25vw;
+   }
+    .shane-collections-title>div h1{
+      width: calc(100vw* 360 / 430);
+              text-align: center;
+              font-size: calc(100vw* 26 / 430);
+              position: absolute;
+              left: 8vw;
+              top: 18vw;
+              color: #fff;
+              z-index: 9;
+              font-weight: bold;
+              font-family: Outfit-Regular;
+              margin: 0;
+              line-height: calc(100vw* 31 / 430);
+      
+	}
+  .shane-collections-title .info {
+        width: calc(100vw* 360 / 430);
+        margin: auto;
+        font-size: calc(100vw* 16 / 430);
+        opacity: 0.8;
+        text-align: center;
+        overflow: hidden;
+        height: 21vw;
+        position: absolute;
+        left: calc(100vw* 34 / 430);
+        top: calc(100vw* 173 / 430);
+        font-family: Outfit-Regular;
+}
+  .shane-collections-title .more {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 9vw;
+    text-align: center;
+    background-image: linear-gradient(#00000000, #006DE5, #006DE5);
+    font-family: Outfit-Bold;
+	display:none;
+}
+  .shane-collections-title .more a {
+    color: #fff;
+    font-size: calc(100vw* 18 / 430);
+    position: absolute;
+    top: calc(100vw* 17 / 430);
+    left: calc(100vw* 122 / 430);
+    font-weight: bold;
+}
+      .shane-collections-title>div h2{
+		width: 70vw; font-size: 3.2vw; left: 15vw; top: 40vw; line-height:3.6vw;
+	}
+    .collections-fd1{
+		width:4vw; top: 10vw; left: 20vw;
+	}
+	.collections-fd2{
+		width:4vw; top: 45vw; left: 75vw;
+	}
+    .collections-fd3{
+        width:200px;
+    }
+	@keyframes moveimgshowfd1 {
+		0% {
+			top: 10vw;
+		}
+		50% {
+			top: 9vw;
+		}
+		100% {
+			top: 10vw;
+		}
+	}
+	@keyframes moveimgshowfd2 {
+	  0% {
+		top: 45vw;
+	  }
+	  50% {
+		top: 44.5vw;
+	  }
+	  100% {
+		top: 45vw;
+	  }
+	}
+}
+</style>
+	<div class="main" >
+		{% if section.settings.show_svg %}
+		<svg id="Layer_3" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-60deg);">
+			<ellipse ry="17.5vw" rx="5.5vw" cy="50%" cx="50%" class="svg-line pc_show" />
+			<ellipse ry="35vw" rx="9vw" cy="50%" cx="50%" class="svg-line mobile_show" />
+		</svg>
+	
+		<svg id="Layer_4" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(60deg);">
+			<ellipse ry="13vw" rx="3.6vw" cy="50%" cx="50%" class="svg-line2 pc_show" />
+			<ellipse ry="26vw" rx="7vw" cy="50%" cx="50%" class="svg-line2 mobile_show" />
+		</svg>
+	{% endif %}
+        <!-- <img src="{{ section.settings.image | image_url }}" class="collections-title-img"> -->
+		<h1>{{ section.settings.heading }}</h1>
+        <div class="info">
+			{{ section.settings.heading1 }}
+			<div class="more"><a>Read More&nbsp;&nbsp;<span class="fa fa-arrow-circle-down"></span></a></div>
+		</div>
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/star-icon.png?v=1705974991" class="collections-fd1">
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/star-icon.png?v=1705974991" class="collections-fd2">
+        <img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/20240829103134.png?v=1724898948" class="collections-fd3">
+	</div>	
+
+<script>
+    $(document).ready(function() {
+		$(".shane-collections-title .more").click(function(){
+			$(this).css("display","none");
+			$(".shane-collections-title .info").css("height","auto");
+			$(".shane-collections-title .info").css("height","auto");
+            console.log($(".shane-collections-title").width())
+            if($(".shane-collections-title .main").innerWidth() < 768){
+              $(".shane-collections-title .main").css("height","140vw");
+            }
+		});
+	});
+</script>    
+              
+{% schema %}
+  {
+    "name": "Collections title",
+    "class": "shane-collections-title",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Ultraman Series Blocks Toys & Action Figure"
+	  },
+            {
+        "type": "text",
+        "id": "heading1",
+        "label": "Heading1",
+        "default": "Ultraman Series Blocks Toys & Action Figure"
+	  },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+	  {
+		"type": "checkbox",
+		"id": "show_svg",
+		"label": "svg line show",
+		"default": true
+	  } 
+    ],
+    "presets": [
+       {
+        "name": "Collections title"
+          
+       }
+    ]
+  }
+{% endschema %}

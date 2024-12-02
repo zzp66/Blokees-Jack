@@ -1,0 +1,271 @@
+<style>
+  .shane-pro-columns {
+    width: 100%;
+    padding: 0 0 5.2vw;
+    color: #006de5;
+    font-family: Outfit-Light;
+    z-index: 2;
+    position: relative;
+  }
+  .shane-pro-columns > div {
+    width: 97%;
+    margin-right: 0;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pro-columns-right {
+    width: 70%;
+    font-family: Outfit-Bold;
+  }
+  .pro-columns-right .swiper-slide {
+    border-top: 2px solid #f6dbc500;
+  }
+  .pro-columns-right .swiper-slide .product-card {
+    background-color: #fff;
+    border: 0;
+  }
+  .pro-columns-right .swiper-slide > img {
+    width: 100%;
+  }
+  .pro-columns-right .swiper-slide .product-card-info {
+    position: relative;
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .product-card-metafield {
+    border: 1px solid #fff;
+    background: #006de5;
+  }
+  .pro-columns-right .swiper-slide .product-card-info .product-card-title {
+    color: #fff;
+    min-height: 70px;
+    font-family: Outfit-Bold;
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .price {
+    font-size: 22px;
+    color: #fff;
+    font-family: Outfit-Bold;
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent {
+    background: #fff;
+    color: #006de5;
+    position: absolute;
+    right: calc(100vw * 20 / 1920);
+    bottom: calc(100vw * 20 / 1920);
+    width: fit-content;
+    min-width: calc(100vw * 120 / 1920);
+    padding: calc(100vw * 10 / 1920);
+    font-size: calc(100vw * 14 / 1920);
+    border-radius: calc(100vw * 18 / 1920);
+    font-family: Outfit-Bold;
+    text-align: center;
+    height: fit-content;
+    line-height: calc(100vw * 16 / 1920);
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .product-card--add-to-cart-text {
+    text-align: center;
+    display: block;
+    width: 80%;
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .icon-shopping-cart {
+    background: #006de5;
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent svg circle {
+    stroke: #006de5;
+  }
+  .pro-columns-right .s-title {
+    text-transform: uppercase;
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+  }
+  .pro-columns-right .s-title img {
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+  }
+  .pro-columns-link {
+    margin-top: 20px;
+  }
+  @media (max-width: 1660px) {
+    .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent {
+      width: 50%;
+    }
+  }
+  @media (max-width: 768px) {
+    .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent {
+      width: fit-content !important;
+      padding: calc(100vw * 5 / 430);
+      font-size: calc(100vw * 12 / 430);
+      min-width: calc(100vw * 100 / 430);
+      right: 20px;
+      bottom: 20px;
+      width: fit-content;
+      border-radius: 18px;
+      font-family: Outfit-Bold;
+      text-align: center;
+      height: fit-content;
+      line-height: 16px;
+    }
+    .shane-pro-columns > div {
+      width: 95%;
+      display: block;
+    }
+    .pro-columns-right {
+      width: 100%;
+      margin-top: 4vw;
+    }
+    .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent {
+      width: 55%;
+    }
+    .shane-pro-columns .shane-button-02 {
+      width: 130px;
+      height: 36px;
+      font-size: 14px;
+    }
+  }
+</style>
+<div id="{{ section.id }}">
+  <div class="pro-columns-right">
+    <div class="swiper procolumnSwiper">
+      <div class="swiper-wrapper">
+        {% assign display = 1 %}
+        {% if display == 2 %}
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign image = block.settings.image
+              assign imageicon = block.settings.imageicon
+            -%}
+            <div class="swiper-slide">
+              <div class="s-title">
+                {%- if block.settings.imageicon != blank -%}<img src="{{ imageicon | image_url }}">{% endif %}
+                {{ block.settings.stitle }}
+              </div>
+              <img src="{{ image | image_url }}" alt="{{image.alt }}">
+            </div>
+          {%- endfor -%}
+        {% endif %}
+        {% assign featured_collection = section.settings.collection %}
+        {%- for product in featured_collection.products -%}
+          <div class="swiper-slide">
+            {% render 'product-card', product_card_product: product %}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    {% assign productnum = featured_collection.products %}
+    {% if blocks.size > 3 %}
+      <div class="swiper-l-r">
+        <div class="columns-next">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939"
+            class="icon-next"
+          >
+          <img
+            src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939"
+            class="icon-next-hover"
+          >
+        </div>
+        <div class="columns-prev">
+          <img
+            src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939"
+            class="icon-prev"
+          >
+          <img
+            src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939"
+            class="icon-prev-hover"
+          >
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Home Product Columns",
+  "class": "shane-pro-columns",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "text"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "link",
+      "info": "Adds a link"
+    },
+    {
+      "type": "text",
+      "id": "buttontext",
+      "label": "Button Text",
+      "default": "View More"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Banner Img"
+        },
+        {
+          "type": "image_picker",
+          "id": "imageicon",
+          "label": "Image icon",
+          "info": "Banner Img icon"
+        },
+        {
+          "type": "text",
+          "id": "stitle",
+          "label": "Title",
+          "default": "Add a title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Product Columns"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  var swiperColumn = new Swiper('{{ section.id }} .procolumnSwiper', {
+    slidesPerView: 1.3,
+    spaceBetween: 15,
+    navigation: {
+      nextEl: '.shane-pro-columns .columns-prev',
+      prevEl: '.shane-pro-columns .columns-next',
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+    },
+  });
+</script>

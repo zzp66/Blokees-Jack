@@ -1,0 +1,141 @@
+<style>
+	.shane-faq{
+		background-color: #F4F0E6; width: 100%; padding-top: 7vw; color: #FF5F00;
+	}
+	.shane-faq>div{
+		width:94%; margin: auto; display: flex; justify-content: space-between; align-items:flex-start;
+	}
+	.shane-faq>div>h2{
+		width: 35%; font-family: Outfit-Bold; font-size: 2.2vw; margin:0;
+	}
+	.shane-faq>div>div{
+		width: 65%; border-top: 1px solid #FAA874;
+	}
+	.shane-faq-list{
+		width: 100%; padding: 0.6vw 0 1vw; cursor: pointer; border-bottom: 1px solid #FAA874;
+	}
+	.faq-ask{
+		font-size: 1vw; display: flex; justify-content: space-between; align-items: flex-start;
+	}
+	.faq-ask .title{
+		transition: 0.1s; font-weight:400; font-size: 1vw; margin:0; line-height: normal;
+	}
+	.faq-ask .faq-icon{
+		width: 1.2vw; transition: 0.1s;
+	}
+	.faq-questions{
+		width: 55%; margin: 1vw 0 0 auto; padding: 1vw; font-size: 0.9vw; background-color: #FF5F00; opacity: 0.5; color: #fff; border-radius: 1.5vw; display: none;
+	}
+	.shane-faq-list .active .faq-icon{
+		transform: rotate(90deg);
+	}
+	.shane-faq-list .active .title{
+		color: #fff; padding: 0.6vw 1vw; border-radius: 2vw; background-color: #FF5F00;
+	}
+@media (max-width: 1300px){
+    .faq-ask{
+		font-size: 14px;
+	}
+    .faq-ask .title{
+		font-size: 14px;
+	}
+    .faq-questions{
+		width: 65%; font-size: 14px;
+	}
+}
+@media (max-width: 768px){
+	.shane-faq>div{
+		display: block;
+	}
+	.shane-faq>div>h2{
+		width: 100%; font-size: 6vw; margin-bottom: 5vw;
+	}
+	.shane-faq>div>div{
+		width: 100%;
+	}
+	.shane-faq-list{
+		padding: 3vw 0 2vw;
+	}
+	.faq-ask{
+		font-size: 3.6vw; line-height: 4vw;
+	}
+	.faq-ask .title{
+		transition: 0.1s; width: 100%; font-size: 3.6vw;
+	}
+	.faq-ask .faq-icon{
+		width:3vw;
+	}
+	.faq-questions{
+		width: 75%; margin: 2vw 0 0 auto; padding: 2vw; font-size: 3.6vw; border-radius: 2vw; line-height: 4vw;
+	}
+	.shane-faq-list .active .faq-icon{
+		transform: rotate(90deg);
+	}
+	.shane-faq-list .active .title{
+		padding: 2vw;width: 75%;
+	}
+}
+</style>
+	<div>
+		<h2>{{ section.settings.heading }}</h2>
+		<div>
+            {%- for block in section.blocks -%}
+			<div class="shane-faq-list">
+				<div class="faq-ask">
+					<h3 class="title">{{ block.settings.block_title }}</h3>
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="faq-icon">
+				</div>
+				<div class="faq-questions">
+					{{ block.settings.block_text }}
+				</div>
+			</div>
+            {%- endfor -%}
+		</div>
+	</div>
+{% schema %}
+  {
+    "name": "Shane FAQ",
+    "class": "shane-faq",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  }
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+            {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "textarea",
+              "id": "block_text",
+              "label": "Questions",
+              "default": "Questions"
+			}
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Shane FAQ"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+$(document).ready(function() {
+    $(".shane-faq-list .faq-ask").click(function(){
+		$(this).toggleClass("active");
+		$(this).parent().find(".faq-questions").slideToggle(100);
+	});
+})
+</script>

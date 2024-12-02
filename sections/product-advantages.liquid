@@ -1,0 +1,546 @@
+{% comment %} {% assign default_icon = 'https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939' %} {% endcomment %}
+<style>
+  #{{section.id}}-product-advantages{
+    background-color: {{ section.settings.background_color_main }};
+    padding-top: calc(13600vw/var(--base-width));
+    background-image: url({{ section.settings.background_image | image_url }});
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    font-family: Outfit-Regular;
+    margin-top: -1px;
+  }
+  #{{section.id}}-product-advantages>div{
+    width: 90%;
+    margin: auto;
+  }
+  #{{section.id}}-product-advantages h2{
+    text-align: center;
+    color: {{ section.settings.title_color }};
+    font-size: calc(5000vw/var(--base-width));
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: calc(2000vw/var(--base-width));
+    max-width: 55%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #{{section.id}}-product-advantages .info{
+    color: {{ section.settings.sub_title_color }};
+    width:65%;
+    margin: auto;
+    font-size: calc(2400vw/var(--base-width));
+    text-align: center;
+  }
+  #{{section.id}}-product-advantages .columns{
+    width:100%;
+    margin-top: calc(4000vw/var(--base-width));
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: calc(3800vw/var(--base-width));
+    padding: 0 calc(12000vw/var(--base-width)) calc(3500vw/var(--base-width));
+    position: relative;
+  }
+  #{{section.id}}-product-advantages .columns .shane-left{
+    width: 45%;
+  }
+  #{{section.id}}-product-advantages .columns .shane-right{
+    flex: 1;
+    /* 做一个黑色的背景 */
+    background: #000;
+    position: sticky;
+    top: 100px;
+  }
+  #{{section.id}}-product-advantages .shane-list{
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    padding: calc(2800vw/var(--base-width))  calc(3600vw/var(--base-width))  calc(2400vw/var(--base-width));
+    cursor: pointer;
+  }
+  #{{section.id}}-product-advantages .shane-left .active{
+    padding: calc(2200vw/var(--base-width))  calc(3600vw/var(--base-width))  calc(3400vw/var(--base-width));
+    border-bottom: 0;
+    background-color: {{ section.settings.background_color_active }};
+    border-radius: calc(800vw/var(--base-width));
+  }
+  #{{section.id}}-product-advantages .shane-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #{{section.id}}-product-advantages .shane-title .icon-text-box{
+    display: flex;
+    gap: calc(2340vw/var(--base-width));
+    align-items: center;
+  }
+  #{{section.id}}-product-advantages .shane-title .icon-text-box img{
+    height: 100%;
+    display: none;
+  }
+  #{{section.id}}-product-advantages .shane-title .icon-text-box .body-title{
+    font-family: Outfit-Regular;
+    font-size: calc(2800vw/var(--base-width));
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: normal;
+    line-height: 1.4;
+  }
+  #{{section.id}}-product-advantages .active .icon-text-box img{
+    display:inline;
+  }
+  #{{section.id}}-product-advantages .icon-right{
+    display: block;
+    width: 1.2vw;
+    transform: rotate(180deg);
+  }
+  #{{section.id}}-product-advantages .icon-up{
+    display: none;
+    transform: rotate(-90deg);
+    width: 1.2vw;
+  }
+  #{{section.id}}-product-advantages .shane-text{
+    display: none;
+    font-size: calc(2400vw/var(--base-width)) ;
+    transition:1s;
+    margin-top: calc(3000vw/var(--base-width));
+  }
+  #{{section.id}}-product-advantages .shane-left .active .icon-right{
+    display: none;
+  }
+  #{{section.id}}-product-advantages .shane-left .active .icon-up{
+    display: block;
+  }
+  #{{section.id}}-product-advantages .shane-left .active .shane-text{
+    display:block;
+    line-height: 1.2;
+  }
+  #{{section.id}}-product-advantages .shane-right .media-item{
+    display: flex;
+    border-radius: calc(800vw/var(--base-width));
+    overflow: hidden;
+    cursor: pointer;
+  }
+  #{{section.id}}-product-advantages .shane-right .media-item .youtube-iframe{
+    pointer-events: none;
+  }
+  #{{section.id}}-product-advantages .shane-right img,
+  #{{section.id}}-product-advantages .shane-right video,
+  #{{section.id}}-product-advantages .shane-right iframe{
+    min-height: 25vw;
+    width: 100%;
+  }
+  #{{section.id}}-product-advantages .shane-video-btn>a{
+    display: block;
+    cursor: pointer;
+  }
+  /* 视频模块 start */
+  #{{section.id}}-product-advantages .video-play-popup{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  #{{section.id}}-product-advantages .video-play-popup .host-video-play,
+  #{{section.id}}-product-advantages .video-play-popup .youtube-video-play{
+    height: calc(62000vw/var(--base-width));
+    display: flex;
+    width: 100vw;
+    padding-left: 140px;
+    padding-right: 140px;
+  }
+  #{{section.id}}-product-advantages .video-play-popup .host-video-play video{
+    height: 100%;
+  }
+  #{{section.id}}-product-advantages .video-play-popup .youtube-video-play iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+  }
+  @media (max-width: 1728px){
+    #{{section.id}}-product-advantages .columns{
+      padding-left: calc(8000vw/var(--base-width));
+      padding-right: calc(8000vw/var(--base-width));
+    }
+  }
+  @media (max-width: 1440px){
+    #{{section.id}}-product-advantages .columns{
+      padding-left: calc(3500vw/var(--base-width));
+      padding-right: calc(3500vw/var(--base-width));
+    }
+  }
+  /* 视频模块 end */
+  @media (max-width: 768px){
+    #{{section.id}}-product-advantages{
+      padding-top: calc(5000vw/var(--base-width));
+      background-image: url({{ section.settings.background_image_mobile | image_url }});
+    }
+    #{{section.id}}-product-advantages h2{
+      max-width: 98%;
+      font-size: calc(3000vw/var(--base-width));
+      line-height: 1.1;
+      margin: 0 auto;
+      margin-bottom: calc(1000vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantages .info{
+      max-width: 87%;
+      width: 87%;
+      font-size: calc(1500vw/var(--base-width));
+      line-height: 1.2;
+    }
+    #{{section.id}}-product-advantages .columns{
+      margin-top: calc(3000vw/var(--base-width));
+      flex-direction: column;
+      align-items: center;
+      gap: calc(3500vw/var(--base-width));
+      padding: 0;
+    }
+    #{{section.id}}-product-advantages .columns .shane-left{
+      width: 100%;
+      padding: 0 calc(1250vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantages .columns .shane-right{
+      width: 100%;
+    }
+    #{{section.id}}-product-advantages .shane-list{
+      padding: calc(1250vw/var(--base-width)) calc(750vw/var(--base-width)) calc(1000vw/var(--base-width));
+      cursor: pointer;
+    }
+    #{{section.id}}-product-advantages .shane-left .active{
+      padding: calc(2000vw/var(--base-width)) calc(750vw/var(--base-width)) calc(3200vw/var(--base-width)) calc(1250vw/var(--base-width));
+      border-radius: calc(500vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantages .shane-title .icon-text-box{
+      gap: calc(1000vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantages .shane-title .icon-text-box img{
+      width: calc(3000vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantages .shane-title .icon-text-box .body-title{
+      font-size: calc(1800vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantages .icon-right{
+      width: calc(1400vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantages .icon-up{
+      width: calc(1400vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantages .shane-text{
+      font-size: calc(1300vw/var(--base-width)) ;
+      margin-top: calc(1500vw/var(--base-width));
+    }
+    /* 视频模块 start */
+    #{{section.id}}-product-advantages .video-play-popup{
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+    #{{section.id}}-product-advantages .video-play-popup .host-video-play,
+    #{{section.id}}-product-advantages .video-play-popup .youtube-video-play{
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #{{section.id}}-product-advantages .video-play-popup .host-video-play video{
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+    }
+    /* 视频模块 end */
+  }
+</style>
+<div id="{{section.id}}-product-advantages">
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="info">{{ section.settings.context }}</div>
+  <div class="columns">
+    <div class="shane-left">
+      {%- assign my_variable = 0 -%}
+      {%- for block in section.blocks -%}
+        {% assign my_variable = my_variable | plus: 1 %}
+        <div class="shane-list {% if my_variable==1 %}active{% endif %}">
+          <div class="shane-title">
+            <div class="icon-text-box">
+              {% if block.settings.block_image != blank %}
+                <img src="{{ block.settings.block_image | image_url }}">
+              {%- endif %}
+              <h3 class="body-title" style="color:{{ block.settings.title_color }};">
+                {{ block.settings.block_title }}
+              </h3>
+            </div>
+            {% if section.settings.icon_state != blank %}
+              <img
+                src="{{ section.settings.icon_state | image_url }}"
+                class="icon-right"
+              >
+              <img
+                src="{{ section.settings.icon_state | image_url }}"
+                class="icon-up"
+              >
+            {%- endif %}
+          </div>
+          <div class="shane-text" style="color:{{ block.settings.text_color }};">{{ block.settings.block_text }}</div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="shane-right">
+      {% comment %} 重写媒体展示逻辑，自定义展示选择的媒体类型 {% endcomment %}
+      {% if section.settings.media_type == 'image' %}
+        <img class="media-item" src="{{ section.settings.image | image_url }}" alt="{{ section.settings.image.alt }}">
+      {% elsif section.settings.media_type == 'video' %}
+        {% comment %} 本地视频 {% endcomment %}
+        {% assign video_url = '' %}
+        {% for item in section.settings.video.sources %}
+          {% if item.mime_type == 'video/mp4' %}
+            {% assign video_url = item.url %}
+          {% endif %}
+        {% endfor %}
+        <div
+          class="media-item media-video"
+          onclick="videoPlay('host','{{ video_url }}')"
+          onmouseenter="hostVideoSeenter(this)"
+          onmouseleave="hostVideoLeave(this)"
+        >
+          {% assign video_hosted = section.settings.video %}
+          {{
+            video_hosted
+            | video_tag: autoplay: false, loop: true, controls: false, muted: true, image_size: 'master'
+          }}
+        </div>
+      {% elsif section.settings.media_type == 'video_external' %}
+        <div
+          class="media-item media-video"
+          onclick="videoPlay('youtube','{{ section.settings.video_external.id }}')"
+        >
+          <iframe
+            class="youtube-iframe"
+            width="100%"
+            src="https://www.youtube.com/embed/{{ section.settings.video_external.id }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% comment %} 视频播放弹窗 {% endcomment %}
+  <div class="video-play-popup">
+    {% comment %} shopify后台视频 {% endcomment %}
+    <div class="host-video-play"></div>
+    {% comment %} youtube视频 {% endcomment %}
+    <div class="youtube-video-play"></div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Advantages",
+  "class": "product advantages",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "context",
+      "label": "Text"
+    },
+    {
+      "type": "select",
+      "id": "media_type",
+      "label": "Media Type",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        },
+        {
+          "value": "video_external",
+          "label": "Video External"
+        }
+      ],
+      "default": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video"
+    },
+    {
+      "type": "video_url",
+      "id": "video_external",
+      "label": "Video External",
+      "accept": ["youtube"]
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "background_color_main",
+      "label": "Background Color",
+      "default": "#1A1A1A"
+    },
+    {
+      "type": "color",
+      "id": "background_color_active",
+      "label": "Background Color Active",
+      "default": "#006EE5"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "sub_title_color",
+      "label": "Sub Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_state",
+      "label": "Icon"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Image icon",
+          "info": "icon"
+        },
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Title",
+          "default": "Add a title"
+        },
+        {
+          "type": "text",
+          "id": "block_text",
+          "label": "Text"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#fff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Advantages"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  // 鼠标移入事件
+  function hostVideoSeenter(dom) {
+    let _video = dom.querySelector('video');
+    _video.play();
+  }
+  function hostVideoLeave(dom) {
+    let _video = dom.querySelector('video');
+    _video.pause();
+    _video.currentTime = 0;
+  }
+  function videoPlay(type, url) {
+    hostVideoPlay.style.display = 'none';
+    youtubeVideoPlay.style.display = 'none';
+    if (type == 'host') {
+      let videoElement = document.createElement('video');
+      videoElement.controls = true;
+      videoElement.src = url;
+      videoElement.autoplay = 1;
+      videoElement.type = 'video/mp4';
+      hostVideoPlay.innerHTML = '';
+      hostVideoPlay.appendChild(videoElement);
+      hostVideoPlay.style.display = 'flex';
+    } else {
+      let iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + url;
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      youtubeVideoPlay.innerHTML = '';
+      youtubeVideoPlay.appendChild(iframe);
+      youtubeVideoPlay.style.display = 'flex';
+    }
+    // 展开弹窗
+    videoPlayDom.style.display = 'flex';
+  }
+  $(document).ready(function () {
+    $('#{{section.id}}-product-advantages .shane-list').click(function () {
+      $('#{{section.id}}-product-advantages .shane-list').removeClass('active');
+      $(this).addClass('active');
+    });
+    // 视频播放数据
+    let videoPlayDom = document.querySelector('#{{section.id}}-product-advantages .video-play-popup');
+    let hostVideoPlay = videoPlayDom.querySelector('.host-video-play');
+    let youtubeVideoPlay = videoPlayDom.querySelector('.youtube-video-play');
+    // 弹窗播放视频
+    function popupPlay() {
+      videoPlayDom.addEventListener('click', function (event) {
+        if (
+          event.target.classList.contains('video-play-popup') ||
+          event.target.classList.contains('host-video-play') ||
+          event.target.classList.contains('youtube-video-play')
+        ) {
+          videoPlayDom.style.display = 'none';
+          hostVideoPlay.innerHTML = '';
+          youtubeVideoPlay.innerHTML = '';
+        }
+      });
+    }
+  });
+</script>

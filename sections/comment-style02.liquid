@@ -1,0 +1,493 @@
+<style>
+	.shane-comment-style02{
+		width:100%; min-height: 30vw; background-color: #97D700; color: #F4F0E6; padding-top: 7vw; padding-bottom: 4vw;
+	}
+	.shane-comment-style02>div{
+		width: 97%; margin: 0 0 0 auto;
+	}
+	.comment-context{
+		width: 93vw; display: flex; justify-content: space-between; align-items: flex-end;
+	}
+	.comment-context>div:first-child{
+		width: 80%; color: #F4F0E6; font-size: 16px;
+	}
+	.comment-context>div:last-child{
+		width: 250px;
+	}
+	.comment-context .shane-button-02{
+		width: 100%; border: 1px solid #ffffff; color: #fff; background-color: #97D700;
+	}
+	.comment-context .btn__bg{
+		background-color: #ffffff;
+	}
+	.comment-context .btn__circle-02 span{
+		color: #fff;
+	}
+	.comment-context .shane-button-02:hover{
+		color: #97D700;
+	}
+	.comment-context .shane-button-02:hover span{
+		color: #97D700;
+	}
+	.comment-context .stitle{
+		font-size: 1.4vw; text-transform: capitalize; opacity: 0.9;
+	}
+	.comment-context .title{
+		font-size: 3vw; text-transform: uppercase; font-family: Outfit-Bold;
+	}
+	.comment-context .text{
+		opacity: 0.9; width: 60%; font-size:1vw;
+	}
+	.comment-columns{
+		width: 100%; margin-top: 1.2vw;
+	}
+	.comment-columns .text-img{
+		width: 100%; position: relative; border-radius: 10px; background-color: #fff; overflow: hidden;
+	}
+    .comment-columns .text-img img{
+      border-radius: 10px;
+    }
+	.comment-columns .text-img .text-list1{
+		width: 100%; position: absolute; height: 100%; left: 0; top: 0; background-color: #00000040; padding: 1.2vw; display: flex; justify-content: start; align-content: space-between; flex-wrap: wrap; color: #fff; border-radius: 10px; border:2px solid #fff;
+	}
+	.comment-columns .text-img .text-list1>div{
+		width:100%; font-size: 1vw;
+	}
+	.comment-columns .text-img .text-list2{
+		width: 100%; position: absolute; left: 0; bottom: 0; background-color: #ffffff; padding: 1.2vw; justify-content: start; align-content: flex-end; flex-wrap: wrap; display: none; color: #000; border-radius: 10px 10px 0px 0px;
+	}
+	.comment-columns .active .text-img .text-list2{
+		display: flex;
+	}
+	.comment-columns .text-img-subtitle{
+		font-size: 1vw; width: 100%;
+	}
+	.comment-columns .text-img-title{
+		font-size: 1.8vw; font-family: Outfit-Bold; line-height: 3vw; width: 100%;
+	}
+	.comment-columns .text-img-text{
+		font-size: 0.7vw; opacity: 0.9; font-family: Outfit-Light; padding-bottom: 1.2vw; padding-top: 0.5vw; border-top: 1px solid #B6B6B8;
+	}
+	.comment-columns .text-img-date{
+		font-size: 0.7vw;
+	}
+	.comment-columns .text-list1 .text-img-subtitle{
+		font-size: 1vw; width: 100%;
+	}
+	.comment-columns .text-list1 .text-img-title{
+		font-size: 1.8vw; font-family: Outfit-Bold; line-height: 3vw; width: 100%; margin-bottom: 1vw; border-bottom: 1px solid #fff;
+	}
+	.comment-columns .text-list1 .text-img-date{
+		font-size: 0.7vw;
+	}
+	.comment-columns .text-list1 .score-star{
+		font-size: 1vw; color: #FECA1F;
+	}
+	.comment-columns .text-img-score{
+		width: 100%; display: flex; justify-content: space-between; align-items: center; margin-top: 1.2vw;
+	}
+	.comment-columns .text-img-score>div{
+		width: 100%;
+	}
+	.comment-columns .text-img-score>div>div{
+		display: flex; justify-content: space-between; align-items: center; 
+	}
+	.comment-columns .text-img-score .score-title{
+		font-size: 0.8vw; width: 60%; font-family: Outfit-Bold;
+	}
+	.comment-columns .text-img-score .score-star{
+		width: 40%; font-size: 1vw; color: #FECA1F;
+	}
+	.comment-columns .comment-columns-title{
+		font-family: Outfit-Bold; font-size: 1.4vw; margin-top: 0.6vw;
+	}
+	.comment-columns .comment-columns-date{
+		font-size: 1vw; color: #FFBF99;
+	}
+@media (max-width: 768px){
+	.comment-context {
+		flex-wrap: wrap;
+	}
+	.comment-context>div:first-child{
+		width: 100%; font-size: 3.4vw;
+	}
+	.comment-context .stitle{
+		font-size: 3.6vw; line-height: 3.4vw; margin-bottom: 1vw;
+	}
+	.comment-context .title{
+		font-size: 8vw; line-height: 9vw; margin-bottom: 1vw;
+	}
+    .comment-context .text{
+		width: 100%; font-size:2.6vw;
+	}
+	.comment-context>div:last-child{
+		margin-top: 2vw;
+	}
+	.comment-columns{
+		margin-top: 3vw;
+	}
+    .comment-columns .text-img{
+        border-radius: 10px;
+    }
+	.comment-columns .text-img-text{
+		font-size: 3vw; padding: 2vw;
+	}
+	.comment-columns .text-img-date{
+		font-size:3vw;
+	}
+	.comment-columns .text-img-score{
+		margin-top: 2vw;
+	}
+	.comment-columns .text-img-score>div:first-child{
+		width: 70%;
+	}
+	.comment-columns .text-img-score>div:last-child{
+		font-size: 6vw;
+	}
+	.comment-columns .text-img-score .score-title{
+		font-size: 3vw;
+	}
+	.comment-columns .text-img-score .score-star{
+		font-size: 3vw;
+	}
+	.comment-columns .comment-columns-title{
+		font-size: 4.8vw; margin-top: 1vw;
+	}
+	.comment-columns .comment-columns-date{
+		font-size: 3.6vw;
+	}
+    .comment-columns .text-img-subtitle {
+      font-size: 3.6vw;
+    }
+    .comment-columns .text-img-title {
+      font-size: 4vw;
+      line-height: 6vw;
+    }
+    .comment-columns .text-img .text-list1>div {
+      font-size: 3vw;
+    }
+    .comment-columns .text-list1 .text-img-subtitle {
+      font-size: 3vw;
+    }
+    .comment-columns .text-list1 .text-img-title {
+      font-size: 5vw;
+      line-height: 7vw;
+      margin-bottom: 2vw;
+    }
+    .comment-columns .text-list1 .text-img-date {
+      font-size: 2.8vw;
+    }
+    .comment-columns .text-list1 .score-star{
+      font-size: 4vw;
+    }
+    .comment-columns .text-img .text-list2 {
+      padding: 4vw 5%;
+    }
+    .comment-columns .active .text-img .text-list2{
+		display: none;
+	}
+    .comment-columns .swiper-slide-active .text-img .text-list2{
+		display: flex;
+	}
+}
+</style>
+	<div>
+		<div class="comment-context">
+			<div>
+				<div class="stitle">{{ section.settings.subtitle }}</div>
+				<div class="title">{{ section.settings.heading }}</div>
+				<div class="text">{{ section.settings.context }}</div>
+              </div>
+			<div>
+				<a class="shane-button-02" href="{{ section.settings.link }}">
+					<div class="btn__bg"></div>
+					<div class="btn__label-02">{{ section.settings.buttontext }}</div>
+					<div class="btn__circle-02">
+						<span class="fa fa-arrow-up"></span>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="comment-columns">
+			<div class="swiper commentcolumnSwiper02">
+				<div class="swiper-wrapper">
+                  {%- assign my_variable = 0 -%} 
+                  {%- for block in section.blocks -%}
+                   {%- liquid
+        			assign image = block.settings.image
+                    assign my_variable = my_variable | plus: 1
+                    assign num1 = block.settings.num1 | plus: 0
+                    assign num2 = block.settings.num2 | plus: 0
+                    assign num3 = block.settings.num3 | plus: 0
+        		   -%}
+					<div class="swiper-slide {% if my_variable==1 %}active{% endif %}">
+						<div class="text-img">
+							<img src="{{ image | image_url }}" style="width: 100%;" alt="{{image.alt }}">
+							<div class="text-list1">
+								<div>{{ block.settings.block_subtitle }}</div>
+								<div>
+									<div class="text-img-subtitle" style="display:none;">By</div>
+									<div class="text-img-title">{{ block.settings.title }}</div>
+									<div class="text-img-date">{{ block.settings.text_date }}</div>
+									<div class="score-star">
+										{% if num1>1 %}<span class="fa fa-star"></span>{% endif %}
+										{% if num1>2 %}<span class="fa fa-star"></span>{% endif %}
+										{% if num1>3 %}<span class="fa fa-star"></span>{% endif %}
+										{% if num1>4 %}<span class="fa fa-star"></span>{% endif %}
+										{% if num1==5 %}<span class="fa fa-star"></span>{% endif %}
+									</div>
+								</div>
+							</div>
+							<div class="text-list2">
+								<div class="text-img-subtitle" style="display:none;">By</div>
+								<div class="text-img-title">{{ block.settings.title }}</div>
+								<div class="text-img-text">
+									{{ block.settings.context }}
+								</div>
+								<div class="text-img-date">{{ block.settings.text_date }}</div>
+								<div class="text-img-score">
+									<div>
+                                        {% if block.settings.score_title1 != blank %}
+										<div>
+											<div class="score-title">{{ block.settings.score_title1 }}</div>
+											<div class="score-star">
+                                                {% if num1>1 %}<span class="fa fa-star"></span>{% endif %}
+												{% if num1>2 %}<span class="fa fa-star"></span>{% endif %}
+                                                {% if num1>3 %}<span class="fa fa-star"></span>{% endif %}
+                                                {% if num1>4 %}<span class="fa fa-star"></span>{% endif %}
+                                                {% if num1==5 %}<span class="fa fa-star"></span>{% endif %}
+											</div>
+										</div>
+                                        {% endif %}
+										{% if block.settings.score_title2 != blank %}
+										<div>
+											<div class="score-title">{{ block.settings.score_title2 }}</div>
+											<div class="score-star">
+                                                {% if num2>1 %}<span class="fa fa-star"></span>{% endif %}
+												{% if num2>2 %}<span class="fa fa-star"></span>{% endif %}
+                                                {% if num2>3 %}<span class="fa fa-star"></span>{% endif %}
+                                                {% if num2>4 %}<span class="fa fa-star"></span>{% endif %}
+                                                {% if num2==5 %}<span class="fa fa-star"></span>{% endif %}
+											</div>
+										</div>
+                                        {% endif %}
+                                        {% if block.settings.score_title3 != blank %}
+										<div>
+											<div class="score-title">{{ block.settings.score_title3 }}</div>
+											<div class="score-star">
+                                                {% if num3>1 %}<span class="fa fa-star"></span>{% endif %}
+												{% if num3>2 %}<span class="fa fa-star"></span>{% endif %}
+                                                {% if num3>3 %}<span class="fa fa-star"></span>{% endif %}
+                                                {% if num3>4 %}<span class="fa fa-star"></span>{% endif %}
+                                                {% if num3==5 %}<span class="fa fa-star"></span>{% endif %}
+											</div>
+										</div>
+                                        {% endif %}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>	
+<script>
+	$(".shane-comment-style02 .swiper-slide").mouseenter(function(){
+			$(".shane-comment-style02 .swiper-slide").removeClass("active");
+			$(this).addClass("active");			
+	});
+	var swiperColumn02 = new Swiper(".commentcolumnSwiper02", {
+      slidesPerView: 1.2,
+      spaceBetween: 15,
+	  loop: true,
+	  navigation: {
+        nextEl: ".home-comment .columns-next",
+        prevEl: ".home-comment .columns-prev",
+      },
+	  breakpoints: {
+        769: {
+          slidesPerView: 5,
+          spaceBetween: 15,
+        },
+	  },
+    });		
+</script>
+{% schema %}
+  {
+    "name": "comment style02",
+    "class": "shane-comment-style02",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Add a subtitle"
+      },
+      {
+        "type": "textarea",
+        "id": "context",
+        "label": "Text"
+      },
+      {
+        "id": "link",
+        "type": "url",
+        "label": "link",
+        "info": "Adds a link"
+      },
+      {
+        "type": "text",
+        "id": "buttontext",
+        "label": "Button Text",
+        "default": "Build, Share, Inspire"
+      } 
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+			},
+           {
+              "type": "text",
+              "id": "block_subtitle",
+              "label": "Subtitle"
+			},
+            {
+              "type": "text",
+              "id": "text_date",
+              "label": "Date"
+			},
+            {
+              "type": "textarea",
+              "id": "context",
+              "label": "Text"
+            },
+            {
+              "type": "text",
+              "id": "score_title1",
+              "label": "Score title 1",
+              "default": "Play Experience"
+			},
+            {
+              "type": "select",
+              "id": "num1",
+              "options": [
+                {
+                  "value": "1",
+                  "label": "1"
+                },
+                {
+                  "value": "2",
+                  "label": "2"
+                },
+                {
+                  "value": "3",
+                  "label": "3"
+                },
+                {
+                  "value": "4",
+                  "label": "4"
+                },
+                {
+                  "value": "5",
+                  "label": "5"
+                }
+              ],
+              "default": "5",
+              "label": "Star Num1"
+            },
+            {
+              "type": "text",
+              "id": "score_title2",
+              "label": "Score title 2",
+              "default": "Building Experience"
+			},
+            {
+              "type": "select",
+              "id": "num2",
+              "options": [
+                {
+                  "value": "1",
+                  "label": "1"
+                },
+                {
+                  "value": "2",
+                  "label": "2"
+                },
+                {
+                  "value": "3",
+                  "label": "3"
+                },
+                {
+                  "value": "4",
+                  "label": "4"
+                },
+                {
+                  "value": "5",
+                  "label": "5"
+                }
+              ],
+              "default": "5",
+              "label": "Star Num2"
+            },
+            {
+              "type": "text",
+              "id": "score_title3",
+              "label": "Score title 3",
+              "default": "Value For Money"
+			},
+            {
+              "type": "select",
+              "id": "num3",
+              "options": [
+                {
+                  "value": "1",
+                  "label": "1"
+                },
+                {
+                  "value": "2",
+                  "label": "2"
+                },
+                {
+                  "value": "3",
+                  "label": "3"
+                },
+                {
+                  "value": "4",
+                  "label": "4"
+                },
+                {
+                  "value": "5",
+                  "label": "5"
+                }
+              ],
+              "default": "5",
+              "label": "Star Num3"
+            }
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "comment style02"
+          
+       }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,723 @@
+<style>
+	.shane-pro-swiperae{
+		background-color: #1A1A1A; padding-top: 6vw; color: #fff;
+	}
+	.shane-pro-swiperae>div{
+		position: relative; width: 100%;
+	}
+	.shaneProSwiperae .context{
+		width: 46%; position: absolute; top: 0; left: 27%; text-align: center; z-index: 99;
+	}
+	.shaneProSwiperae .context h2{
+		margin: 0; font-size: 2.6vw; color:#fff; line-height:3.2vw;
+	}
+	.shaneProSwiperae .context div{
+		width: 98%; margin: 1vw auto; font-size: 1vw; opacity: 0.8;
+	}
+	.shaneProSwiperae .swiper-slide{
+		position: relative;
+	}
+	.shaneProSwiperae .swiper-slide .slide-bg{
+		width:100%;
+	}
+	.shaneProSwiperae .swiper-slide .slide-img1{
+		width:38.3vw; position: absolute; bottom: 0; left: 3vw;
+	}
+	.shaneProSwiperae .slide-context{
+		position: absolute; width:50vw; bottom: 7.4vw; left: 2%; height: 35vw; display: flex; flex-wrap: wrap; align-content: space-between;
+	}
+	.slide-context>div{
+		width:100%;
+	}
+	.shaneProSwiperae .slide-type{
+		width: 15vw; display:flex; justify-content: flex-start; align-items: center; border-radius: 8px;
+	}
+	.shaneProSwiperae .slide-type img{
+		width: 2.9vw;
+	}
+	.shaneProSwiperae .slide-type div{
+		font-size:1.4vw; text-transform: uppercase; padding: 0 1vw; font-family: Outfit-Bold;
+	}
+	.shaneProSwiperae .slide-title{
+		 font-family: Outfit-Bold; font-size: calc(100vw* 80 / 1920); text-transform: uppercase;line-height: calc(100vw* 86 / 1920);margin: calc(100vw* 20 / 1920) 0;
+	}
+	.shaneProSwiperae .slide-cs{
+		display:flex; justify-content: flex-start; align-items: center; width: fit-content; height: 1.88vw; border-radius: 0.94vw; line-height: 1.7vw; font-size: 1vw; margin-bottom: 0.5vw; text-transform: capitalize;
+	}
+	.shaneProSwiperae .slide-cs>div:first-child{
+		width: 7.8vw; height: 100%; text-align: center; border-radius: 0.94vw;font-family: Outfit-Bold;
+	}
+	.shaneProSwiperae .slide-cs>div:last-child{
+		height: 100%; padding: 0 1.5vw 0 1vw;font-family: Outfit-Regular;
+	}
+
+	.shaneProSwiperae .slide-flex .slide-flex-title{
+		background-color: #D60023;
+		height: 100%;
+		text-align: center;
+		padding:calc(100vw* 5 / 1920) calc(100vw* 21 / 1920);
+		width: fit-content;
+		border-radius: 0.94vw;
+	}
+	.shaneProSwiperae .slide-flex .slide-grid{
+		width: 100%;
+		max-width: calc(100vw* 751 / 1920);
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		margin-top: calc(100vw* 10 / 1920);
+		/* border: 1px; */
+		border-radius: calc(100vw* 18 / 1920);
+		border: calc(100vw* 2 / 1920) solid #D60023;
+		padding:  calc(100vw* 17 / 1920) calc(100vw* 37 / 1920);
+	}
+	.shaneProSwiperae .slide-flex .slide-grid .slide-grid-item{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.shaneProSwiperae .slide-flex .slide-grid .slide-grid-item div{
+		max-width:calc(100vw* 130 / 1920);
+		color: #FFF;
+		font-family: Outfit;
+		font-size: calc(100vw* 20 / 1920);
+		font-style: normal;
+		font-weight: 400;
+		text-align: center;
+		line-height: normal;
+		margin-top: calc(100vw* 16 / 1920);
+	}
+	.shaneProSwiperae .swiper-ps{
+		font-size: 0.9vw;
+	}
+	.shaneProSwiperae .swiper-ps span{
+		font-size:1vw; font-family: Outfit-Bold;
+	}
+	.shaneProSwiperae .purple .slide-type{
+		background-color: #561C7F;
+	}
+	.shaneProSwiperae .purple .slide-cs{
+		border: 2px solid #561C7F;
+	}
+	.shaneProSwiperae .purple .slide-cs>div:first-child{
+		background-color: #561C7F;
+	}
+	.shaneProSwiperae .red .slide-type{
+		background-color: #D60023;
+	}
+	.shaneProSwiperae .red .slide-cs{
+		border: 2px solid #D60023;
+	}
+	.shaneProSwiperae .red .slide-cs>div:first-child{
+		background-color: #D60023;
+	}
+	.shaneProSwiperae-next, .shaneProSwiperae-prev{
+		width: 3vw; height: 3vw; border-radius: 50%; background-color: #fff; position: absolute; top: 55%; z-index: 9; display: flex; justify-content: center; align-items: center;
+	}
+	.shaneProSwiperae-next img, .shaneProSwiperae-prev img{
+		width: 40%;
+	}
+	.shaneProSwiperae-next{
+		display:none;
+		left: 3vw;
+	}	
+	.shaneProSwiperae-next .img-np{
+		transform: scaleX(-1);
+	}
+	.shaneProSwiperae-prev{
+		display:none;
+		right:3vw;
+	}
+	.shaneProSwiperae-prev .img-np-hover{
+		transform: scaleX(-1);
+	}
+	.shaneProSwiperae .img-np-hover{
+		display: none;
+	}
+	.shaneProSwiperae-next:hover, .shaneProSwiperae-prev:hover{
+		background-color: #FF5F00;
+	}
+	.shaneProSwiperae-next:hover .img-np, .shaneProSwiperae-prev:hover .img-np{
+		display: none;
+	}
+	.shaneProSwiperae-next:hover .img-np-hover, .shaneProSwiperae-prev:hover .img-np-hover{
+		display: block;
+	}
+	.shaneProSwiperae .bottom{
+		background:#06070A;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: calc(100vw* 80 / 1920);
+		padding-right:calc(100vw* 60 / 1920);
+		padding-left:calc(100vw* 60 / 1920);
+		padding-top:calc(100vw* 88 / 1920);
+		padding-bottom:calc(100vw* 60 / 1920);
+	}
+	.shaneProSwiperae .bottom .bottom-item{
+		display:flex;
+		flex-direction: column;
+	}
+	.shaneProSwiperae .bottom .bottom-item .lin-img{
+		width:calc(100vw* 550 / 1920);
+		height:calc(100vw* 300 / 1920);
+	}
+
+	.shaneProSwiperae .bottom .bottom-item .title{
+		max-width:calc(100vw* 550 / 1920);
+		color: #FFF;
+		font-family: Outfit-Bold;
+		font-size: calc(100vw* 40 / 1920);;
+		font-style: normal;
+		font-weight: 700;
+		line-height:calc(100vw* 44 / 1920); /* 110% */
+		text-transform: capitalize;
+		margin-top:calc(100vw* 20 / 1920);
+		margin-bottom:calc(100vw* 15 / 1920);
+	}
+
+	.shaneProSwiperae .bottom .bottom-item .content{
+		max-width:calc(100vw* 550 / 1920);
+		color: #FFF;
+		font-family: Outfit-Light;
+		font-size: calc(100vw* 24 / 1920);
+		font-style: normal;
+		font-weight: 300;
+		line-height: calc(100vw* 28 / 1920); /* 116.667% */
+	}
+
+
+@media (max-width: 1300px){
+    .shaneProSwiperae .context{
+		width: 56%; left: 22%;
+	}
+	.shaneProSwiperae .context div{
+		width: 100%; font-size: 1.4vw;
+	}
+}
+@media (max-width: 768px){
+
+	.shaneProSwiperae .bottom {
+		background: #06070A;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		grid-gap: calc(100vw* 0 / 430);
+		padding-right: calc(100vw* 20 / 430);
+		padding-left: calc(100vw* 20 / 430);
+		padding-top: calc(100vw* 60 / 430);
+		padding-bottom: calc(100vw* 60 / 430);
+	}
+	.shaneProSwiperae .bottom .bottom-item .lin-img{
+		width: calc(100vw* 389 / 430);
+    height: calc(100vw* 210 / 430);
+	}
+	.shaneProSwiperae .bottom .bottom-item .title{
+		max-width: calc(100vw* 389 / 430);
+		color: #FFF;
+		font-family: Outfit-Bold;
+		font-size: calc(100vw* 30 / 430);
+		font-style: normal;
+		font-weight: 700;
+		line-height: calc(100vw* 34 / 430);
+		text-transform: capitalize;
+		margin-top: calc(100vw* 14 / 430);
+		margin-bottom: calc(100vw* 10 / 430);
+	}
+	.shaneProSwiperae .bottom .bottom-item .content{
+		max-width: calc(100vw* 389 / 430);
+		color: #FFF;
+		font-family: Outfit-Light;
+		font-size: calc(100vw* 18 / 430);
+		font-style: normal;
+		font-weight: 300;
+		line-height: calc(100vw* 24 / 430);
+		margin-bottom: calc(100vw* 34 / 430);
+	}
+	.shane-pro-swiperae{
+		padding-top: 0; color: #fff;
+	}
+	.shaneProSwiperae{
+		overflow-x: clip;
+		overflow-y:visible;
+	}
+	.shaneProSwiperae .context{
+		width: 90%;left: 5%; top: -40vw;
+	}
+	.shaneProSwiperae .context h2{
+		margin: 0; font-size: 8vw; line-height:9vw;
+	}
+	.shaneProSwiperae .context div{
+		width: 90%; margin: 2vw auto; font-size: 3.6vw;
+	}
+	.shaneProSwiperae .swiper-slide .slide-img1{
+		width:70vw; left: 0;
+	}
+	.shaneProSwiperae .slide-context{
+		width:90vw; bottom: inherit; left: 5vw; height: 140vw;top:calc(100vw* 80 / 430);
+	}
+	.shaneProSwiperae .slide-type{
+		width: fit-content; border-radius: 8px;height: calc(100vw* 47 / 430)
+	}
+	.shaneProSwiperae .slide-type img{
+		width: calc(100vw* 42 / 430);
+	}
+	.shaneProSwiperae .slide-type div{
+		font-size:calc(100vw* 20 / 430); padding: 0 2vw;
+	}
+	.shaneProSwiperae .slide-title{
+		 font-size: calc(100vw* 40 / 430); line-height: calc(100vw* 56 / 430);        margin: calc(100vw* 20 / 430) 0;
+	}
+	.shaneProSwiperae .slide-cs{
+		width: 100%; height: auto; border-radius: 4.5vw; line-height: 7vw; font-size: calc(100vw* 18 / 430);         margin-bottom: calc(100vw* 15 / 430); text-transform: capitalize;align-items: flex-start ;
+	}
+	.shaneProSwiperae .slide-cs>div:first-child{
+		width: 28%; height: 100%; text-align: center; border-radius: 4.2vw; line-height: 8vw;font-weight: 700;
+	}
+	.shaneProSwiperae .slide-cs>div:last-child{
+		font-family: Outfit-Regular;width:72%;height: 100%; padding: 0 1.5vw 0 2vw; line-height: calc(100vw* 22 / 430);display: flex; justify-content: flex-start; align-items: center;font-weight: 400;
+		padding-top: 1.5vw;
+		padding-bottom: 1.5vw;
+	}
+	.shaneProSwiperae .swiper-ps{
+		display:none;
+		font-size: 3vw; padding-left: 65%;
+	}
+	.shaneProSwiperae .swiper-ps span{
+		font-size:3.2vw;
+	}
+	.shaneProSwiperae .purple .slide-cs{
+		border: 1px solid #561C7F;
+	}
+	.shaneProSwiperae .red .slide-cs{
+		border: calc(100vw* 0.5 / 430) solid rgba(255, 255, 255, 0.3);
+	}
+	.shaneProSwiperae-next, .shaneProSwiperae-prev{
+		width: 6vw; height: 6vw;top: 60%;
+	}
+	.shaneProSwiperae .slide-flex{
+		border: calc(100vw* 0.5 / 430) solid #fff;
+		border-radius: calc(100vw* 18 / 430);
+	}
+	.shaneProSwiperae .slide-flex .slide-flex-title{
+		background-color: #D60023;
+		height: 100%;
+		text-align: center;
+		padding:calc(100vw* 7 / 430) calc(100vw* 14 / 430);
+		width: fit-content;
+		border-radius: 0.94vw;
+	}
+	.shaneProSwiperae .slide-flex .slide-grid{
+		width: 100%;
+		max-width: calc(100vw * 390 / 430);
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		margin-top: calc(100vw* 10 / 430);
+		/* border: 1px; */
+		border-radius: calc(100vw* 18 / 430);
+		border: none;
+		padding: calc(100vw* 12 / 430);
+		grid-gap: calc(100vw* 10 / 430);
+
+	}
+	.shaneProSwiperae .slide-flex .slide-grid .slide-grid-item{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.shaneProSwiperae .slide-flex .slide-grid .slide-grid-item div{
+		display:none
+	}
+}
+</style>
+	<div class="swiper shaneProSwiperae">
+		<div class="context">
+			<h2>{{ section.settings.heading }}</h2>
+			<div>{{ section.settings.text }}</div>
+		</div>
+		<div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+			<div class="swiper-slide">
+				<img src="{{ block.settings.block_image_bg | image_url }}" class="slide-bg pc_show">
+				<img src="{{ block.settings.block_image_bg_m | image_url }}" class="slide-bg mobile_show">
+				{% comment %} <img src="{{ block.settings.block_image | image_url }}" class="slide-img1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s"> {% endcomment %}
+				<div class="slide-context {{ block.settings.color }}">
+					<div>
+						<div class="slide-type"><img src="{{ block.settings.block_image_icon | image_url }}"><div>{{ block.settings.block_subtitle }}</div></div>
+						<div class="slide-title">{{ block.settings.block_title }}</div>
+                        {% if block.settings.text_disguise != blank %}
+						<div class="slide-cs">
+							<div>Disguise:</div><div>{{ block.settings.text_disguise }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_height != blank %}
+						<div class="slide-cs">
+							<div>Height:</div><div>{{ block.settings.text_height }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_strengths != blank %}
+						<div class="slide-cs">
+							<div>Strengths:</div><div>{{ block.settings.text_strengths }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_weaknesses != blank %}
+						<div class="slide-cs">
+							<div>Weaknesses:</div><div>{{ block.settings.text_weaknesses }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_position != blank %}
+						<div class="slide-cs">
+							<div>Position:</div><div>{{ block.settings.text_position }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_features != blank %}
+						<div class="slide-cs">
+							<div>Features:</div><div>{{ block.settings.text_features }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_1 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_1 }}:</div><div>{{ block.settings.custom_text_1 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_2 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_2 }}:</div><div>{{ block.settings.custom_text_2 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_3 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_3 }}:</div><div>{{ block.settings.custom_text_3 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_4 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_4 }}:</div><div>{{ block.settings.custom_text_4 }}</div>
+						</div>
+                        {% endif %}
+					
+                        {% if block.settings.custom_title_5 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_5 }}:</div><div>{{ block.settings.custom_text_5 }}</div>
+						</div>
+                        
+						<div class="slide-flex"> 
+							{% if block.settings.custom_title_6 != blank %}
+								<div class="slide-flex-title">{{ block.settings.custom_title_6 }}</div>
+							{% endif %}
+							<div class="slide-grid">
+								{% if block.settings.custom_image_1 != blank %}
+									<div class="slide-grid-item">
+										<img src="{{ block.settings.custom_image_1 | image_url }}" class="slide-grid-item-img">
+										<div>{{ block.settings.custom_image_text_1 }}</div>
+									</div>
+								{% endif %}
+								{% if block.settings.custom_image_2 != blank %}
+									<div class="slide-grid-item">
+										<img src="{{ block.settings.custom_image_2 | image_url }}" class="slide-grid-item-img">
+										<div>{{ block.settings.custom_image_text_2 }}</div>
+									</div>
+								{% endif %}
+								{% if block.settings.custom_image_3 != blank %}
+									<div class="slide-grid-item">
+										<img src="{{ block.settings.custom_image_3 | image_url }}" class="slide-grid-item-img">
+										<div>{{ block.settings.custom_image_text_4 }}</div>
+									</div>
+								{% endif %}
+								{% if block.settings.custom_image_4 != blank %}
+									<div class="slide-grid-item">
+										<img src="{{ block.settings.custom_image_4 | image_url }}" class="slide-grid-item-img">
+										<div>{{ block.settings.custom_image_text_4 }}</div>
+									</div>
+								{% endif %}
+							</div>
+						</div>
+					{% endif %}
+                        
+					</div>
+					<div class="swiper-ps"><span>P.S.</span> {{ block.settings.block_ps }}</div>
+				</div>
+			</div>
+            {% endfor %}
+		</div>
+		<div class="bottom">
+			{% for block in section.blocks %}
+				{% if block.type == "line"%}
+					<div class="bottom-item">
+						<img src="{{ block.settings.block_line_image | image_url }}" class="lin-img">
+						<div class="title">{{ block.settings.line_text  }} </div>
+						<div class="content"> {{ block.settings.line_content  }}</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+			
+
+		</div>
+		<div class="shaneProSwiperae-next">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="img-np">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="img-np-hover">
+		</div>
+		<div class="shaneProSwiperae-prev">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="img-np">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="img-np-hover">
+		</div>
+	</div>
+{% schema %}
+  {
+    "name": "Pro swiperae",
+    "class": "shane-pro-swiperae",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text"
+      }   
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+           {
+              "type": "select",
+              "id": "color",
+              "options": [
+                {
+                  "value": "red",
+                  "label": "red"
+                },
+                {
+                  "value": "purple",
+                  "label": "purple"
+                }
+              ],
+              "default": "red",
+              "label": "Color"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_bg",
+              "label": "Image bg"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_bg_m",
+              "label": "Image bg mobile"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_icon",
+              "label": "Image icon"
+            },
+           {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "text",
+              "id": "block_subtitle",
+              "label": "Subtitle"
+			},
+           {
+              "type": "text",
+              "id": "text_disguise",
+              "label": "Disguise"
+			},
+           {
+              "type": "text",
+              "id": "text_height",
+              "label": "Height"
+			},
+           {
+              "type": "text",
+              "id": "text_strengths",
+              "label": "Strengths"
+			},
+           {
+              "type": "text",
+              "id": "text_weaknesses",
+              "label": "Weaknesses"
+			},
+           {
+              "type": "text",
+              "id": "text_position",
+              "label": "Position"
+			},
+           {
+              "type": "text",
+              "id": "text_features",
+              "label": "Features"
+			},
+           {
+             "type": "header",
+             "content": "自定义标题和内容"
+           },
+           {
+              "type": "text",
+              "id": "custom_title_1",
+              "label": "Custom Title 1"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_1",
+              "label": "Custom Text 1"
+			},
+           {
+              "type": "text",
+              "id": "custom_title_2",
+              "label": "Custom Title 2"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_2",
+              "label": "Custom Text 2"
+			},
+           {
+              "type": "text",
+              "id": "custom_title_3",
+              "label": "Custom Title 3"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_3",
+              "label": "Custom Text 3"
+			},
+            {
+              "type": "text",
+              "id": "custom_title_4",
+              "label": "Custom Title 4"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_4",
+              "label": "Custom Text 4"
+			},
+           {
+              "type": "text",
+              "id": "custom_title_5",
+              "label": "Custom Title 5"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_5",
+              "label": "Custom Text 5"
+			},
+			{
+				"type": "text",
+				"id": "custom_title_6",
+				"label": "Custom Title 6"
+			  },
+			{
+				"type": "image_picker",
+				"id": "custom_image_1",
+				"label": "Custom Image 1 "
+			},
+			{
+				"type": "text",
+				"id": "custom_image_text_1",
+				"label": "Custom Image Text 1"
+			},
+			{
+				"type": "image_picker",
+				"id": "custom_image_2",
+				"label": "Custom Image 2 "
+			},
+			{
+				"type": "text",
+				"id": "custom_image_text_2",
+				"label": "Custom Image Text 2"
+			},
+			{
+				"type": "image_picker",
+				"id": "custom_image_3",
+				"label": "Custom Image 3 "
+			},
+			{
+				"type": "text",
+				"id": "custom_image_text_3",
+				"label": "Custom Image Text 3"
+			},
+			{
+				"type": "image_picker",
+				"id": "custom_image_4",
+				"label": "Custom Image 4 "
+			},
+			{
+				"type": "text",
+				"id": "custom_image_text_4",
+				"label": "Custom Image Text 4"
+			},
+
+
+           {
+              "type": "text",
+              "id": "block_ps",
+              "label": "P.S.",
+              "default": "Don't forget to share your epic loot on social media using #BlindBoxBattle!"
+			}
+           
+         ]
+       },
+	   {
+		"type": "line",
+		"name":"line",
+		"settings": [
+			{
+				"type": "image_picker",
+				"id": "block_line_image",
+				"label": "Image"
+			},
+			{
+				"type": "text",
+				"id":"line_text",
+				"label": "Line Text"
+			},
+			{
+				"type": "text",
+				"id":"line_content",
+				"label": "Line Content"
+			}
+
+
+		]
+	}
+    ],
+    "presets": [
+       {
+        "name": "Pro swiperae"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+    {% comment %} var shaneProSwiperae = new Swiper(".shaneProSwiperae", {
+	  loop: true,
+      speed:200,
+      navigation: {
+        nextEl: ".shaneProSwiperae-prev",
+        prevEl: ".shaneProSwiperae-next",
+      },
+	  on:{
+		  init: function(){
+			swiperAnimateCache(this); //隐藏动画元素 
+			swiperAnimate(this); //初始化完成开始动画
+		  }, 
+		  slideChangeTransitionEnd: function(){ 
+			swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+			//this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+		  } 
+		}
+    }); {% endcomment %}
+</script>

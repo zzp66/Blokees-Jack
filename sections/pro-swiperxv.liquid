@@ -1,0 +1,694 @@
+<style>
+	.shane-pro-swiperxv{
+		background-color: #1A1A1A; padding-top: 6vw; color: #fff;
+	}
+	.shane-pro-swiperxv>div{
+		position: relative; width: 100%;
+	}
+	.shaneProSwiperxv .context{
+		width: 46%; position: absolute; top: 0; left: 27%; text-align: center; z-index: 99;        width: calc(100vw* 1062 / 1920);
+        left: calc(100vw* 453 / 1920);
+		display: flex;
+        width: calc(100vw* 1262 / 1920);
+        left: calc(100vw* 324 / 1920);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+	}
+	.shaneProSwiperxv .context h2{
+		margin: 0; font-size: 2.6vw; color:#fff; line-height:3.2vw;        width: calc(100vw* 1062 / 1920);
+	}
+	.shaneProSwiperxv .context div{
+		width: 98%;  font-size: 1vw; opacity: 0.8;width: calc(100vw* 1062 / 1920);
+	}
+	.shaneProSwiperxv .swiper-slide{
+		position: relative;
+	}
+	.shaneProSwiperxv .swiper-slide .slide-bg{
+		width:100%;
+	}
+	.shaneProSwiperxv .swiper-slide .slide-img1{
+		width:38.3vw; position: absolute; bottom: 0; left: 3vw;
+	}
+	.shaneProSwiperxv .slide-context{
+		position: absolute; width:50vw; bottom: 2.4vw; left: 45vw; height: 35vw; display: flex; flex-wrap: wrap; align-content: space-between;
+	}
+	.slide-context>div{
+		width:100%;
+	}
+	.shaneProSwiperxv .slide-type{
+		width: 15vw; display:flex; justify-content: flex-start; align-items: center; border-radius: 8px;
+	}
+	.shaneProSwiperxv .slide-type img{
+		width: 2.9vw;
+	}
+	.shaneProSwiperxv .slide-type div{
+		font-size:1.4vw; text-transform: uppercase; padding: 0 1vw; font-family: Outfit-Bold;
+	}
+	.shaneProSwiperxv .slide-title{
+		 font-family: Outfit-Bold; font-size: 5vw; text-transform: uppercase;
+	}
+	.shaneProSwiperxv .slide-cs{
+		border: 1px solid #D60023;
+		display:flex; justify-content: flex-start; align-items: center; width: fit-content; height: 1.88vw; border-radius: 0.94vw; line-height: 1.7vw; font-size: 1vw; margin-bottom: 0.5vw; text-transform: capitalize;
+	}
+	.shaneProSwiperxv .slide-cs>div:first-child{
+		width: 7.8vw; height: 100%; text-align: center; border-radius: 0.94vw;
+	}
+	.shaneProSwiperxv .slide-cs>div:last-child{
+		height: 100%; padding: 0 1.5vw 0 1vw;
+	}
+	.shaneProSwiperxv .slide-flex{
+		border-radius: 0.94vw;
+		border: 1px solid #D60023;
+	}
+	.shaneProSwiperxv .slide-flex .slide-flex-title{
+		background-color: #D60023;
+		height: 100%;
+		text-align: center;
+		padding:calc(100vw* 5 / 1920) calc(100vw* 21 / 1920);
+		width: fit-content;
+		border-radius: 0.94vw;
+	}
+	.shaneProSwiperxv .slide-flex .slide-grid{
+		width: 100%;
+		{% comment %} max-width: calc(100vw* 751 / 1920); {% endcomment %}
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		margin-top: calc(100vw* 10 / 1920);
+		/* border: 1px; */
+		border-radius: calc(100vw* 18 / 1920);
+		{% comment %} border: calc(100vw* 2 / 1920) solid #D60023; {% endcomment %}
+		padding:  calc(100vw* 17 / 1920) calc(100vw* 37 / 1920);
+	}
+	.shaneProSwiperxv .slide-flex .slide-grid .slide-grid-item{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.shaneProSwiperxv .slide-flex .slide-grid .slide-grid-item div{
+		max-width:calc(100vw* 130 / 1920);
+		color: #FFF;
+		font-family: Outfit;
+		font-size: calc(100vw* 20 / 1920);
+		font-style: normal;
+		font-weight: 400;
+		text-align: center;
+		line-height: normal;
+		margin-top: calc(100vw* 16 / 1920);
+	}
+	.shaneProSwiperxv .swiper-ps{
+		font-size: 0.9vw;
+	}
+	.shaneProSwiperxv .swiper-ps span{
+		font-size:1vw; font-family: Outfit-Bold;
+	}
+	.shaneProSwiperxv .purple .slide-type{
+		background-color: #561C7F;
+	}
+	.shaneProSwiperxv .purple .slide-cs{
+		border: 1px solid #561C7F;
+	}
+	.shaneProSwiperxv .purple .slide-cs>div:first-child{
+		background-color: #561C7F;
+	}
+	.shaneProSwiperxv .red .slide-type{
+		background-color: #D60023;
+	}
+	.shaneProSwiperxv .red .slide-cs{
+		border: 1px solid #D60023;
+	}
+	.shaneProSwiperxv .red .slide-cs>div:first-child{
+		background-color: #D60023;
+	}
+	.shaneProSwiperxv-next, .shaneProSwiperxv-prev{
+		width: 3vw; height: 3vw; border-radius: 50%; background-color: #fff; position: absolute; top: 55%; z-index: 9; display: flex; justify-content: center; align-items: center;
+	}
+	.shaneProSwiperxv-next img, .shaneProSwiperxv-prev img{
+		width: 40%;
+	}
+	.shaneProSwiperxv-next{
+		left: 3vw;
+	}	
+	.shaneProSwiperxv-next .img-np{
+		transform: scaleX(-1);
+	}
+	.shaneProSwiperxv-prev{
+		right:3vw;
+	}
+	.shaneProSwiperxv-prev .img-np-hover{
+		transform: scaleX(-1);
+	}
+	.shaneProSwiperxv .img-np-hover{
+		display: none;
+	}
+	.shaneProSwiperxv-next:hover, .shaneProSwiperxv-prev:hover{
+		background-color: #FF5F00;
+	}
+	.shaneProSwiperxv-next:hover .img-np, .shaneProSwiperxv-prev:hover .img-np{
+		display: none;
+	}
+	.shaneProSwiperxv-next:hover .img-np-hover, .shaneProSwiperxv-prev:hover .img-np-hover{
+		display: block;
+	}
+@media (max-width: 1300px){
+
+    .shaneProSwiperxv .context{
+		{% comment %} width: 56%; left: 22%; {% endcomment %}
+		width: calc(100vw* 1262 / 1920); 
+        left: calc(100vw* 324 / 1920);
+	}
+	.shaneProSwiperxv .context div{
+		{% comment %} width: 100%; font-size: 1.4vw; {% endcomment %}
+		width: calc(100vw* 1262 / 1920); font-size: 1.2vw;
+	}
+}
+@media (max-width: 768px){
+	.shaneProSwiperxv .swiper-slide .slide-bg{
+		height: 100%;
+		position: absolute;
+        top: 0;
+		z-index: -1;
+	}
+	.shaneProSwiperxv .swiper-slide{
+		padding-top: calc(100vw* 70 / 430);
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+	}
+	.shane-pro-swiperxv{
+		padding-top: 60vw; color: #fff;
+	}
+	.shaneProSwiperxv{
+		overflow-x: clip;
+		overflow-y:visible;
+	}
+	.shaneProSwiperxv .context{
+		width: 90%;left: 5%; top: -51vw;
+	}
+	.shaneProSwiperxv .context h2{
+		margin: 0; font-size: 8vw; line-height:9vw;
+		width: 100%;
+	}
+	.shaneProSwiperxv .context div{
+		width: 90%; margin: 2vw auto; font-size: 3.6vw;
+	}
+	.shaneProSwiperxv .swiper-slide .slide-img1{
+		width:70vw; left: 0;position: initial;
+	}
+	.shaneProSwiperxv .slide-context{
+	 position: initial;width:90vw; top: 12.4vw; left: 5vw; height: 140vw;        margin: auto;        height: fit-content;
+	 z-index: 1;
+	}
+	.shaneProSwiperxv .slide-type{
+		width: fit-content; border-radius: calc(100vw* 8/ 430);
+	}
+	.shaneProSwiperxv .slide-type img{
+		width: 6vw;
+	}
+	.shaneProSwiperxv .slide-type div{
+		font-size:3.4vw; padding: 0 2vw;color: #FFF;
+		font-family: Outfit;
+		font-size: calc(100vw* 20/ 430);
+		font-style: normal;
+		font-weight: 700;
+		line-height: normal;
+	}
+	.shaneProSwiperxv .slide-title{
+		 font-size: 8vw; line-height: 18vw;
+	}
+	.shaneProSwiperxv .slide-cs{
+		width: 100%; height: 9vw; border-radius: 4.5vw; line-height: 7vw; font-size: 3.2vw; margin-bottom: 2vw; text-transform: capitalize;
+	}
+	.shaneProSwiperxv .slide-cs>div:first-child{
+		width: 28%; height: 100%; text-align: center; border-radius: 4.2vw; line-height: 8vw;color: #FFF;
+		text-align: center;
+		font-family: Outfit;
+		font-size: calc(100vw* 18/ 430);
+		font-style: normal;
+		font-weight: 700;
+		line-height: calc(100vw* 36/ 430); /* 122.222% */
+	}
+	.shaneProSwiperxv .slide-cs>div:last-child{
+		width:72%;height: 100%; padding: 0 1.5vw 0 2vw; line-height: 3.6vw; display: flex; justify-content: flex-start; align-items: center;color: #FFF;
+		font-family: Outfit;
+		font-size: calc(100vw* 18/ 430);
+		font-style: normal;
+		font-weight: 400;
+		line-height: calc(100vw* 22/ 430); /* 122.222% */
+	}
+	.shaneProSwiperxv .swiper-ps{
+		font-size: 3vw; padding-left: 65%;
+	}
+	.shaneProSwiperxv .swiper-ps span{
+		font-size:3.2vw;
+	}
+	.shaneProSwiperxv .purple .slide-cs{
+		border: 1px solid #561C7F;
+	}
+	.shaneProSwiperxv .red .slide-cs{
+		border: 1px solid #D60023;
+	}
+	.shaneProSwiperxv-next, .shaneProSwiperxv-prev{
+		width: 6vw; height: 6vw;top: 60%;
+	}
+	.shaneProSwiperxv .slide-flex{
+		border: calc(100vw* 0.5 / 430) solid #fff;
+		border-radius: calc(100vw* 18 / 430);
+	}
+	.shaneProSwiperxv .slide-flex .slide-flex-title{
+		background-color: #D60023;
+		height: 100%;
+		text-align: center;
+		padding:calc(100vw* 7 / 430) calc(100vw* 14 / 430);
+		width: fit-content;
+		border-radius: 4.94vw;
+	}
+	.shaneProSwiperxv .slide-flex .slide-grid{
+		width: 100%;
+		max-width: calc(100vw * 390 / 430);
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		margin-top: calc(100vw* 10 / 430);
+		/* border: 1px; */
+		border-radius: calc(100vw* 18 / 430);
+		border: none;
+		padding: calc(100vw* 12 / 430);
+		grid-gap: calc(100vw* 10 / 430);
+
+	}
+	.shaneProSwiperxv .slide-flex .slide-grid .slide-grid-item{
+		display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+	}
+	.shaneProSwiperxv .slide-flex .slide-grid .slide-grid-item div{
+		max-width: calc(100vw* 160 / 430);
+		color: #FFF;
+		font-family: Outfit;
+		font-size: calc(100vw* 12 / 430);
+		font-style: normal;
+		font-weight: 400;
+		text-align: center;
+		line-height: normal;
+		{% comment %} margin-top: calc(100vw* 12 / 430); {% endcomment %}
+	}
+}
+</style>
+	<div class="swiper shaneProSwiperxv">
+		<div class="context">
+			<h2>{{ section.settings.heading }}</h2>
+			<div>{{ section.settings.text }}</div>
+		</div>
+		<div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+			<div class="swiper-slide">
+				<img src="{{ block.settings.block_image_bg | image_url: width: 1920,height:1006 }}"  class="slide-bg pc_show">
+				<img src="{{ block.settings.block_image_bg_m | image_url }}" class="slide-bg mobile_show">
+				<img src="{{ block.settings.block_image | image_url: width: 735,height:852 }}"  class="slide-img1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s">
+				<div class="slide-context {{ block.settings.color }}">
+					<div>
+						<div class="slide-type" style="background-color:{{ block.settings.top_button_color }}"><img src="{{ block.settings.block_image_icon | image_url }}"><div>{{ block.settings.block_subtitle }}</div></div>
+						<div class="slide-title">{{ block.settings.block_title }}</div>
+						{% if block.settings.border_button_color != blank %}
+							{% assign border_button_color = block.settings.border_button_color %}
+						{% else %} 
+							 {% assign border_button_color = block.settings.color %}
+						 {% endif %}
+                        {% if block.settings.text_disguise != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">Disguise</div><div>{{ block.settings.text_disguise }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_height != blank %}
+						<div class="slide-cs" style="border-color: {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">Height</div><div>{{ block.settings.text_height }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_strengths != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">Strengths</div><div>{{ block.settings.text_strengths }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_weaknesses != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">Weaknesses</div><div>{{ block.settings.text_weaknesses }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_position != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">Position</div><div>{{ block.settings.text_position }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_features != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">Features</div><div>{{ block.settings.text_features }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_1 != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">{{ block.settings.custom_title_1 }}:</div><div>{{ block.settings.custom_text_1 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_2 != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">{{ block.settings.custom_title_2 }}:</div><div>{{ block.settings.custom_text_2 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_3 != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">{{ block.settings.custom_title_3 }}:</div><div>{{ block.settings.custom_text_3 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_4 != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">{{ block.settings.custom_title_4 }}:</div><div>{{ block.settings.custom_text_4 }}</div>
+						</div>
+                        {% endif %}
+					
+                        {% if block.settings.custom_title_5 != blank %}
+						<div class="slide-cs" style="border-color:  {{ border_button_color }}">
+							<div style="background-color:{{ border_button_color }}">{{ block.settings.custom_title_5 }}:</div><div>{{ block.settings.custom_text_5 }}</div>
+						</div>
+                        {% endif %}
+						<div class="slide-flex" style="border-color: {{ border_button_color }}"> 
+							{% if block.settings.custom_title_6 != blank %}
+								<div class="slide-flex-title" style="background-color:  {{ border_button_color }}">{{ block.settings.custom_title_6 }}</div>
+							
+							<div class="slide-grid">
+								{% if block.settings.custom_image_1 != blank %}
+									<div class="slide-grid-item">
+										<img src="{{ block.settings.custom_image_1 | image_url }}" class="slide-grid-item-img">
+										<div>{{ block.settings.custom_image_text_1 }}</div>
+									</div>
+								{% endif %}
+								{% if block.settings.custom_image_2 != blank %}
+									<div class="slide-grid-item">
+										<img src="{{ block.settings.custom_image_2 | image_url }}" class="slide-grid-item-img">
+										<div>{{ block.settings.custom_image_text_2 }}</div>
+									</div>
+								{% endif %}
+								{% if block.settings.custom_image_3 != blank %}
+									<div class="slide-grid-item">
+										<img src="{{ block.settings.custom_image_3 | image_url }}" class="slide-grid-item-img">
+										<div>{{ block.settings.custom_image_text_3 }}</div>
+									</div>
+								{% endif %}
+								{% if block.settings.custom_image_4 != blank %}
+									<div class="slide-grid-item">
+										<img src="{{ block.settings.custom_image_4 | image_url }}" class="slide-grid-item-img">
+										<div>{{ block.settings.custom_image_text_4 }}</div>
+									</div>
+								{% endif %}
+								{% if block.settings.custom_image_5 != blank %}
+									<div class="slide-grid-item">
+										<img src="{{ block.settings.custom_image_5 | image_url }}" class="slide-grid-item-img">
+										<div>{{ block.settings.custom_image_text_5 }}</div>
+									</div>
+								{% endif %}
+							</div>
+						{% endif %}
+						</div>
+
+                        
+					</div>
+					<div class="swiper-ps"><span></span> {{ block.settings.block_ps }}</div>
+				</div>
+			</div>
+            {% endfor %}
+		</div>
+
+
+		<div class="shaneProSwiperxv-next">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="img-np">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="img-np-hover">
+		</div>
+		<div class="shaneProSwiperxv-prev">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="img-np">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="img-np-hover">
+		</div>
+	</div>
+{% schema %}
+  {
+    "name": "Pro swiperxv",
+    "class": "shane-pro-swiperxv",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text"
+      }   
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+           {
+              "type": "select",
+              "id": "color",
+              "options": [
+                {
+                  "value": "#D60023",
+                  "label": "red"
+                },
+                {
+                  "value": "purple",
+                  "label": "purple"
+                },
+                {
+                  "value": "#561C7F",
+                  "label": "#561C7F"
+                }
+              ],
+              "default": "#D60023",
+              "label": "Color"
+            },
+			{
+				"type": "color_background",
+				"id": "top_button_color",
+				"label": "top button background",
+				"default": "#D60023"
+			  },
+			{
+				"type": "color",
+				"id": "border_button_color",
+				"label": "border button color",
+			  },
+           {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_bg",
+              "label": "Image bg"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_bg_m",
+              "label": "Image bg mobile"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_icon",
+              "label": "Image icon"
+            },
+           {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "text",
+              "id": "block_subtitle",
+              "label": "Subtitle"
+			},
+           {
+              "type": "text",
+              "id": "text_disguise",
+              "label": "Disguise"
+			},
+           {
+              "type": "text",
+              "id": "text_height",
+              "label": "Height"
+			},
+           {
+              "type": "text",
+              "id": "text_strengths",
+              "label": "Strengths"
+			},
+           {
+              "type": "text",
+              "id": "text_weaknesses",
+              "label": "Weaknesses"
+			},
+           {
+              "type": "text",
+              "id": "text_position",
+              "label": "Position"
+			},
+           {
+              "type": "text",
+              "id": "text_features",
+              "label": "Features"
+			},
+           {
+             "type": "header",
+             "content": "自定义标题和内容"
+           },
+           {
+              "type": "text",
+              "id": "custom_title_1",
+              "label": "Custom Title 1"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_1",
+              "label": "Custom Text 1"
+			},
+           {
+              "type": "text",
+              "id": "custom_title_2",
+              "label": "Custom Title 2"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_2",
+              "label": "Custom Text 2"
+			},
+           {
+              "type": "text",
+              "id": "custom_title_3",
+              "label": "Custom Title 3"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_3",
+              "label": "Custom Text 3"
+			},
+            {
+              "type": "text",
+              "id": "custom_title_4",
+              "label": "Custom Title 4"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_4",
+              "label": "Custom Text 4"
+			},
+           {
+              "type": "text",
+              "id": "custom_title_5",
+              "label": "Custom Title 5"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_5",
+              "label": "Custom Text 5"
+			},
+			{
+				"type": "text",
+				"id": "custom_title_6",
+				"label": "Custom Title 6"
+			  },
+			{
+				"type": "image_picker",
+				"id": "custom_image_1",
+				"label": "Custom Image 1 "
+			},
+			{
+				"type": "text",
+				"id": "custom_image_text_1",
+				"label": "Custom Image Text 1"
+			},
+			{
+				"type": "image_picker",
+				"id": "custom_image_2",
+				"label": "Custom Image 2 "
+			},
+			{
+				"type": "text",
+				"id": "custom_image_text_2",
+				"label": "Custom Image Text 2"
+			},
+			{
+				"type": "image_picker",
+				"id": "custom_image_3",
+				"label": "Custom Image 3 "
+			},
+			{
+				"type": "text",
+				"id": "custom_image_text_3",
+				"label": "Custom Image Text 3"
+			},
+			{
+				"type": "image_picker",
+				"id": "custom_image_4",
+				"label": "Custom Image 4 "
+			},
+			{
+				"type": "text",
+				"id": "custom_image_text_4",
+				"label": "Custom Image Text 4"
+			},
+			{
+				"type": "image_picker",
+				"id": "custom_image_5",
+				"label": "Custom Image 5 "
+			},
+			{
+				"type": "text",
+				"id": "custom_image_text_5",
+				"label": "Custom Image Text 5"
+			},
+
+
+           {
+              "type": "text",
+              "id": "block_ps",
+              "label": "P.S.",
+              "default": "Don't forget to share your epic loot on social media using #BlindBoxBattle!"
+			}
+           
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Pro swiperxv"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+    var shaneProSwiperxv = new Swiper(".shaneProSwiperxv", {
+	  loop: true,
+      speed:200,
+      navigation: {
+        nextEl: ".shaneProSwiperxv-prev",
+        prevEl: ".shaneProSwiperxv-next",
+      },
+	  on:{
+		  init: function(){
+			swiperAnimateCache(this); //隐藏动画元素 
+			swiperAnimate(this); //初始化完成开始动画
+		  }, 
+		  slideChangeTransitionEnd: function(){ 
+			swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+			//this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+		  } 
+		}
+    });
+</script>

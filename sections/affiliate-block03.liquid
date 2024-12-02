@@ -1,0 +1,297 @@
+<style>
+	.shane-affiliate-block03{
+		background-color: #1A1A1A;
+		color: #fff;
+		font-family: Outfit-Regular;
+		padding: 5.7vw 3vw;
+	}
+	.aff-b3-1{
+		width: 100%; display: flex; justify-content: flex-start; align-items: flex-start; margin-bottom: 1vw;
+	}
+	.aff-b3-1 div{
+		width: 35%; padding-right: 10%; font-size: 1.8vw; line-height: 2.2vw;
+	}
+	.aff-b3-1 h2{
+		font-family: Outfit-Bold; font-size: 4.2vw; line-height: 4.4vw; text-transform: uppercase; margin: 0; width: 40%;
+	}
+	.affb3Swiper .swiper-wrapper{
+		align-items: flex-end;
+	}
+	.affb3Swiper .swiper-slide{
+		position: relative; min-height: 300px; border:1px solid #fff; border-radius: 15px; overflow: hidden;
+	}
+	.affb3Swiper .swiper-slide>div{
+		position: absolute; width: 100%; height: 100%; left: 0; top: 0; padding: 30px 10px;
+	}
+	.affb3Swiper .swiper-slide img{
+		width: 100%;
+	}
+	.affb3Swiper .swiper-slide.black{
+		color:#1A1A1A;
+	}
+	.affb3Swiper .swiper-slide>div img{
+		width: 50px; margin-bottom: 15px;
+	}
+	.affb3Swiper .swiper-slide>div h4{
+		margin: 0 0 8px 0; font-family: Outfit-Bold; font-size: 24px; line-height: 24px;
+	}
+	.affb3Swiper .swiper-slide>div div{
+		font-size: 16px; line-height: 22px;
+	}
+	.aff-b3-2 .swiper-l-r>div{
+		border: 1px solid #ffffff;background-color: #1A1A1A;
+	}
+	.aff-b3-2 .swiper-l-r>div:hover{
+		background-color: #ffffff;
+	}
+	.aff-b3-2 .columns-prev .icon-prev{
+		transform:scaleX(-1);
+	}
+	.aff-b3-2 .columns-next .icon-next{
+		transform:scaleX(1);
+	}
+	.aff-b3-2 .columns-prev .icon-prev-hover{
+		transform:scaleX(1);
+	}
+	.aff-b3-2 .columns-next .icon-next-hover{
+		transform:scaleX(-1);
+	}
+	.aff-b3-3{
+		padding-top: 8vw; position: relative;
+	}
+	.aff-b3-3 .title{
+		width: 56%; margin: auto; text-align: center; font-family: Outfit-Bold; font-size: 4.2vw; line-height: 4.4vw; text-transform: uppercase; margin-bottom: 3vw; position: relative; z-index: 2;
+	}
+	.aff-b3-3 .title::after{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 88px;
+		height: 16px;
+		top: 50%; left: -88px;
+		margin-top: -8px;
+		background-image: url(https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b2-5.png?v=1711007775);
+		background-size: 100%;
+	}
+	.aff-b3-3 .title::before{
+		content: "";
+		display: block;
+		position: absolute;
+		width: 88px;
+		height: 16px;
+		top: 50%; right: -88px;
+		margin-top: -8px;
+		background-image: url(https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b2-5.png?v=1711007775);
+		background-size: 100%;
+	}
+	.b3-3-steps{
+		width: 100%; text-align: center; display: flex; justify-content: center; align-items: center; position: relative; z-index: 2;
+	}
+	.b3-3-steps>div{
+		width:27vw; height: 27vw; border:1px solid #fff; border-radius: 50%;
+	}
+	.b3-3-steps .stitle{
+		margin-top: 8vw; font-size: 2.1vw; line-height: 2.5vw; font-family: Outfit-Bold;
+	}
+	.b3-3-steps .stext{
+		width: 70%; margin: 1vw auto 0; font-size: 1.5vw; line-height: 2.2vw;
+	}
+	.b3-img1{
+		position: absolute; width:28px; top: 10%; left: 32%;
+	}
+	.b3-img2{
+		position: absolute; width:20%; top: 18%; left: 0%;
+	}
+	.b3-img3{
+		position: absolute; width:25%; top: 8%; right: 0%;
+	}
+@media (max-width: 768px){
+	.shane-affiliate-block03{
+		padding: 15vw 3vw;
+	}
+	.aff-b3-1{
+		display: block; margin-bottom: 1vw;
+	}
+	.aff-b3-1 div{
+		width: 100%; font-size: 4.6vw; line-height: 5.4vw; padding-right: 0;
+	}
+	.aff-b3-1 h2{
+		font-size: 10vw; line-height: 11vw; width: 100%; margin-top: 2vw; margin-bottom: 4vw;
+	}
+	.affb3Swiper .swiper-slide{
+		min-height: 260px;
+	}
+	.affb3Swiper .swiper-slide>div img{
+		width: 40px; margin-bottom: 15px;
+	}
+	.affb3Swiper .swiper-slide>div h4{
+		font-size: 22px; line-height: 20px;
+	}
+	.aff-b3-3{
+		padding-top: 16vw; padding-bottom: 20vw;
+	}
+	.aff-b3-3 .title{
+		width: 80%; font-size: 10vw; line-height: 11vw; margin-bottom: 6vw;
+	}
+	.aff-b3-3 .title::after, .aff-b3-3 .title::before{
+		content: none;
+	}
+	.b3-3-steps{
+		display: block;
+	}
+	.b3-3-steps>div{
+		width:70vw; height: 70vw; margin: -8vw auto 0;
+	}
+	.b3-3-steps>div:first-child{
+		margin: 0 auto;
+	}
+	.b3-3-steps .stitle{
+		margin-top: 24vw; font-size: 5.6vw; line-height: 6vw;
+	}
+	.b3-3-steps .stext{
+		width: 65%; margin: 4vw auto 0; font-size: 3.6vw; line-height: 4.4vw;
+	}
+	.b3-img1{
+		display: none;
+	}
+	.b3-img2{
+		width:40%; top: auto; bottom: -4%; left: -10%; z-index: 3;
+	}
+	.b3-img3{
+		width:45%; top: 18%; right: 0%; z-index: 3;
+	}
+}
+</style>
+	<div class="aff-b3-1">
+		<div>Why choose the blokees affiliate program?</div>
+		<h2>Receive Your Payments</h2>
+	</div>
+	<div class="aff-b3-2">
+		<div class="swiper affb3Swiper">
+			<div class="swiper-wrapper">
+			  <div class="swiper-slide">
+				<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b3-1.png?v=1711008477">
+				<div>
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-icon1.png?v=1711008476">
+					<h4>Great Commission: </h4>
+					<div>Earn a competitive 6% commission on all sales generated through your efforts.</div>
+				</div>
+			  </div>
+			   <div class="swiper-slide black">
+				<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b3-2.png?v=1711008477">
+				<div>
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-icon2.png?v=1711008476">
+					<h4>Long Cookie Period: </h4>
+					<div>Benefit from a generous 30-Day tracking cookie to ensure you capture every earning opportunity.</div>
+				</div>
+			  </div>
+			  <div class="swiper-slide">
+			  	<div>
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-icon3.png?v=1711008476">
+					<h4>Simplified Process:</h4>
+					<div>Get started effortlessly with our straightforward application form.</div>
+				</div>
+			  </div>
+			   <div class="swiper-slide">
+				<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b3-3.png?v=1711008477">
+				<div>
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-icon4.png?v=1711008476">
+					<h4>Free Membership:</h4>
+					<div>We're proud to offer free membership without any entry fees or charges.</div>
+				</div>
+			  </div>
+			  <div class="swiper-slide">
+				<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b3-4.png?v=1711008477">
+				<div>
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-icon5.png?v=1711008476">
+					<h4>Own Your Account:</h4>
+					<div>Keep a close eye on your account balance as it grows in real time.</div>
+				</div>
+			  </div>
+			  <div class="swiper-slide">
+			  	<div>
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-icon6.png?v=1711008476">
+					<h4>Promotional Material:</h4>
+					<div>Access a comprehensive suite of promotional materials by Blokees, including banners, videos and more.</div>
+				</div>
+			  </div>
+			</div>
+		</div>
+		<div class="swiper-l-r">
+			<div class="columns-next">
+				<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="icon-next">
+				<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="icon-next-hover">				
+			</div>
+			<div class="columns-prev">
+				<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="icon-prev">
+				<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="icon-prev-hover">
+			</div>
+		</div>
+	</div>
+	<div class="aff-b3-3">
+		<div class="title">How To Get Started?</div>
+		<div class="b3-3-steps">
+			<div>
+				<div class="stitle">Step 1:</div>
+				<div class="stext">Begin your journey by completing our simple sign-up form.</div>
+			</div>
+			<div>
+				<div class="stitle">Step 2:</div>
+				<div class="stext">Drive traffic to our website using our provided promotional materials.</div>
+			</div>
+			<div>
+				<div class="stitle">Step 3:</div>
+				<div class="stext">Earn commissions when customers make purchases within the 30-day cookie period.</div>
+			</div>
+		</div>
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/star-icon03.png?v=1706175325" class="b3-img1">
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b3-5.png?v=1711008477" class="b3-img2">
+		<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/aff-b3-6.png?v=1711008477" class="b3-img3" alt="Blokees Transformer Toys Affiliate Comission">
+	</div>
+<script>
+var swiper = new Swiper(".affb3Swiper", {
+  slidesPerView: 1.4,
+  spaceBetween: 10,
+  speed:200,
+  navigation: {
+  	nextEl: ".aff-b3-2 .columns-prev",
+  	prevEl: ".aff-b3-2 .columns-next",
+  },
+  breakpoints: {
+	556: {
+	  slidesPerView: 2,
+	  spaceBetween: 10,
+	},
+	768: {
+	  slidesPerView: 2.4,
+	  spaceBetween: 10,
+	},
+	1100: {
+	  slidesPerView: 3.4,
+	  spaceBetween: 10,
+	},
+	1300: {
+	  slidesPerView: 4.4,
+	  spaceBetween: 10,
+	},
+	1600: {
+	  slidesPerView: 5.01,
+	  spaceBetween: 10,
+	},
+  },
+});
+</script>
+{% schema %}
+  {
+    "name": "Affiliate block03",
+    "class": "shane-affiliate-block03",
+    "settings": [
+    ],
+    "presets": [
+       {
+        "name": "Affiliate block03"
+          
+       }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,911 @@
+<style>
+  #{{ section.id }}-product-accessories {
+    background-color: {{ section.settings.background_color }};
+    background-image: url({{ section.settings.background_image |  image_url }});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: {{ section.settings.text_color }};
+    font-family: Outfit-Regular;
+    padding: calc(14000vw/var(--base-width)) calc(12000vw/var(--base-width));
+  }
+
+  #{{ section.id }}-product-accessories .title-container {
+      display: flex;
+      flex-direction: column;
+      gap: calc(2000vw/var(--base-width));
+      text-align: center;
+  }
+
+  #{{ section.id }}-product-accessories .title-container .title {
+      font-size:  calc(5000vw/var(--base-width));
+      font-weight: 700;
+      line-height: 1;
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+
+  #{{ section.id }}-product-accessories .title-container .sub-title {
+      font-size:  calc(2400vw/var(--base-width));
+      line-height: 1.25;
+      opacity: 0.8;
+  }
+
+  /* 三个模块共用样式 start */
+  #{{ section.id }}-product-accessories .content-box {
+      display: flex;
+      gap: calc(2500vw/var(--base-width));
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  #{{ section.id }}-product-accessories .content-box .content-image {
+      {% comment %} width: 100%; {% endcomment %}
+      width: calc(100vw * 450 / var(--base-width));
+
+  }
+
+  #{{ section.id }}-product-accessories .content-box .number-box {
+      display: flex;
+      align-items: center;
+      padding: calc(600vw/var(--base-width)) calc(3400vw/var(--base-width)) calc(600vw/var(--base-width)) calc(600vw/var(--base-width));
+      gap: calc(1200vw/var(--base-width));
+      border-radius: calc(1000vw/var(--base-width));
+      background-color: {{ section.settings.button_background_color }};
+      max-height: calc(6100vw/var(--base-width));
+  }
+
+  #{{ section.id }}-product-accessories .content-box .number-content {
+      font-size: calc(3600vw/var(--base-width));
+      font-weight: 700;
+      line-height: 1;
+      text-transform: uppercase;
+      padding: calc(800vw/var(--base-width));
+      border-radius: calc(600vw/var(--base-width));
+      background-color: {{ section.settings.number_background_color }};
+      color: {{ section.settings.number_color }};
+  }
+
+  #{{ section.id }}-product-accessories .content-box .text-content {
+      color: {{ section.settings.button_color }};
+      font-size: calc(2500vw/var(--base-width));
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: 1.1;
+      font-family: 'Outfit-Bold';
+  }
+
+  #{{ section.id }}-product-accessories .content-box .richtext-box {
+    color: {{ section.settings.text_color }};
+    font-size: calc(2000vw/var(--base-width));
+    line-height: 1.2;
+    opacity: 0.9;
+  }
+
+  /* 富文本定制样式 start */
+  #{{ section.id }}-product-accessories .content-box .richtext-box p,
+  #{{ section.id }}-product-accessories .content-box .richtext-box ul li{
+    font-size: calc(2000vw/var(--base-width));
+    line-height: 1.2;
+  }
+  #{{ section.id }}-product-accessories .content-box .richtext-box ul li{
+    margin-bottom: calc(1000vw/var(--base-width));
+  }
+  /* 富文本定制样式 end */
+
+  /* 三个模块共用样式 end */
+
+  #{{ section.id }}-product-accessories .top-item {
+      display: flex;
+      flex-direction: column;
+      gap: calc(1600vw/var(--base-width)); 
+      margin-bottom: calc(7600vw/var(--base-width));
+      margin-top: calc(6000vw/var(--base-width));
+  }
+
+  #{{ section.id }}-product-accessories .top-item .item-title {
+      font-size: calc(4000vw/var(--base-width));
+      font-weight: 700;
+      line-height: 1.12;
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+
+  #{{ section.id }}-product-accessories .top-item .item-box {
+      display: flex;
+      align-items: flex-start;
+      gap: calc(2000vw/var(--base-width));
+      justify-content: space-between;
+  }
+
+  #{{ section.id }}-product-accessories .top-item .left-box,
+  #{{ section.id }}-product-accessories .top-item .right-box {
+      display: flex;
+      align-items: center;
+      width: 50%;
+  }
+
+  #{{ section.id }}-product-accessories .top-item .image-content {
+      width: calc(28000vw/var(--base-width));
+  }
+
+  /* 单独设置最大宽度 start */
+  #{{ section.id }}-product-accessories .top-item .right-box .content-box .richtext-box{
+    max-width: calc(29600vw/var(--base-width));
+  }
+  #{{ section.id }}-product-accessories .bottom-item .content-box .number-box{
+    max-width: calc(32900vw/var(--base-width));
+  }
+  #{{ section.id }}-product-accessories .bottom-item .content-box .richtext-box{
+    max-width: calc(40000vw/var(--base-width));
+  }
+  /* 单独设置最大宽度 end */
+
+  #{{ section.id }}-product-accessories .middle{
+    display: flex;
+    flex-direction: column;
+    gap: calc(4000vw/var(--base-width));
+    margin-top: calc(9800vw/var(--base-width));
+    margin-bottom: calc(5500vw/var(--base-width));
+  }
+  #{{ section.id }}-product-accessories .middle .middle-title{
+    font-size: calc(4000vw/var(--base-width));
+    font-weight: 700;
+    line-height: 1.12;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #{{ section.id }}-product-accessories .middle-item {
+    display: flex;
+    gap: calc(6200vw/var(--base-width));
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  #{{ section.id }}-product-accessories .middle-image {
+      width: 45%;
+  }
+
+  #{{ section.id }}-product-accessories .bottom-item {
+    /* display: grid; */
+    display: flex;
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: calc(2000vw/var(--base-width));
+    position: relative;
+    align-items: start;
+  }
+
+  #{{ section.id }}-product-accessories .bottom-item .bottom-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: calc(4000vw/var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #{{ section.id }}-product-accessories .bottom-content-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: calc(2000vw/var(--base-width));
+      margin-top: calc(8000vw/var(--base-width));
+  }
+
+  #{{ section.id }}-product-accessories .bottom-image {
+      /* width: 100%; */
+      max-width: calc(50000vw/var(--base-width));
+      max-height: 100%;
+  }
+  #{{ section.id }}-product-accessories .image-content-mobile{
+    display: none;
+  }
+  #{{ section.id }}-product-accessories .bottom-image-mobile{
+    display: none;
+  }
+
+  @media (max-width: 1728px){
+    #{{section.id}}-product-accessories {
+      padding-left: calc(8000vw/var(--base-width));
+      padding-right: calc(8000vw/var(--base-width));
+    }
+  }
+  @media (max-width: 1440px){
+    #{{section.id}}-product-accessories {
+      padding-left: calc(3500vw/var(--base-width));
+      padding-right: calc(3500vw/var(--base-width));
+    }
+    #{{ section.id }}-product-accessories .bottom-image {
+      max-width: 27%;
+    }
+    /* #{{ section.id }}-product-accessories .bottom-item {
+      align-items: center;
+    } */
+    #{{ section.id }}-product-accessories .content-box .content-image {
+      {% comment %} width: 100%; {% endcomment %}
+        width: calc(100vw * 300 / var(--base-width));
+
+    }
+  }
+  @media (max-width: 1200px){
+    #{{ section.id }}-product-accessories .top-item .right-box{
+      min-width: 50%;
+    }
+    #{{ section.id }}-product-accessories .content-box .text-content{
+      font-size: calc(2000vw/var(--base-width));
+    }
+    #{{ section.id }}-product-accessories .content-box .content-image {
+      {% comment %} width: 100%; {% endcomment %}
+        width: calc(100vw * 250 / var(--base-width));
+     
+    }
+    #{{ section.id }}-product-accessories .top-item .left-box, #{{ section.id }}-product-accessories .top-item .right-box {
+      align-items: start;
+    }
+  }
+  /* 适配移动端 start */
+  @media (max-width: 768px){
+    #{{ section.id }}-product-accessories {
+      background-image: url({{ section.settings.background_image_mobile |  image_url }});
+      padding: calc(6900vw/var(--base-width)) calc(1250vw/var(--base-width));
+    }
+  
+    #{{ section.id }}-product-accessories .top-item .top-content-box-pc{
+      display:none;
+    }
+
+    #{{ section.id }}-product-accessories .title-container {
+        gap: calc(1000vw/var(--base-width));
+    }
+
+    #{{ section.id }}-product-accessories .title-container .title {
+        font-size:  calc(3000vw/var(--base-width));
+        line-height: 1.1;
+    }
+
+    #{{ section.id }}-product-accessories .title-container .sub-title {
+        font-size:  calc(1200vw/var(--base-width));
+    }
+
+    /* 三个模块共用样式 start */
+    #{{ section.id }}-product-accessories .content-box {
+        display: flex;
+        gap: calc(2000vw/var(--base-width));
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #{{ section.id }}-product-accessories .content-box .content-image{
+      display: none;
+    }
+
+    #{{ section.id }}-product-accessories .content-box .number-box {
+        padding: calc(300vw/var(--base-width)) calc(1250vw/var(--base-width)) calc(300vw/var(--base-width)) calc(300vw/var(--base-width));
+        gap: calc(700vw/var(--base-width));
+        border-radius: calc(600vw/var(--base-width));
+        max-height: calc(3600vw/var(--base-width));
+        max-width: 92%;
+    }
+
+    #{{ section.id }}-product-accessories .content-box .number-content {
+        font-size: calc(1800vw/var(--base-width));
+        padding: calc(400vw/var(--base-width));
+        border-radius: calc(300vw/var(--base-width));
+    }
+
+    #{{ section.id }}-product-accessories .content-box .text-content {
+        font-size: calc(1500vw/var(--base-width));
+        line-height: 1;
+    }
+
+    #{{ section.id }}-product-accessories .content-box .richtext-box {
+      font-size: calc(1300vw/var(--base-width));
+    }
+    /* 三个模块共用样式 end */
+
+    /* 富文本定制样式 start */
+    #{{ section.id }}-product-accessories .content-box .richtext-box ul{
+      margin-bottom: 0;
+    }
+    #{{ section.id }}-product-accessories .content-box .richtext-box p,
+    #{{ section.id }}-product-accessories .content-box .richtext-box ul li{
+      font-size: calc(1300vw/var(--base-width));
+      line-height: 1.23;
+    }
+    #{{ section.id }}-product-accessories .content-box .richtext-box ul li{
+      margin-bottom: calc(500vw/var(--base-width));
+    }
+    #{{ section.id }}-product-accessories .content-box .richtext-box ul li:last-of-type{
+      margin-bottom: 0;
+    }
+    /* 富文本定制样式 end */
+
+    #{{ section.id }}-product-accessories .top-item {
+        gap: calc(1500vw/var(--base-width));
+        margin-top: calc(3500vw/var(--base-width));
+        margin-bottom: calc(6000vw/var(--base-width));
+    }
+
+    #{{ section.id }}-product-accessories .top-item .item-title {
+        font-size: calc(2250vw/var(--base-width));
+        text-align: center;
+    }
+
+    #{{ section.id }}-product-accessories .top-item .item-box {
+      display: flex;
+      flex-direction: column;
+      gap: calc(4000vw/var(--base-width));
+    }
+
+    #{{ section.id }}-product-accessories .top-item .left-box,
+    #{{ section.id }}-product-accessories .top-item .right-box {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: calc(3500vw/var(--base-width));
+    }
+
+    #{{ section.id }}-product-accessories .top-item .image-content {
+      width: 100%;
+    }
+    /* 单独设置最大宽度 start */
+    #{{ section.id }}-product-accessories .bottom-item .content-box .richtext-box{
+      max-width: calc(26000vw/var(--base-width));
+    }
+    /* 单独设置最大宽度 end */
+
+    #{{ section.id }}-product-accessories .middle{
+      gap: calc(1500vw/var(--base-width));
+        margin-top: calc(3000vw/var(--base-width));
+        margin-bottom: calc(6000vw/var(--base-width))
+    }
+    #{{ section.id }}-product-accessories .middle .middle-title{
+      font-size: calc(2250vw/var(--base-width));
+      text-align: center;
+    }
+
+    #{{ section.id }}-product-accessories .middle-item {
+      flex-direction: column;
+        gap: calc(3500vw/var(--base-width));
+    }
+
+    #{{ section.id }}-product-accessories .middle-image {
+        width: 100%;
+    }
+
+    #{{ section.id }}-product-accessories .bottom-item {
+        display: flex;
+        flex-direction: column;
+        gap: calc(1000vw/var(--base-width));
+    }
+
+    #{{ section.id }}-product-accessories .bottom-item .bottom-title {
+        font-size: calc(2250vw/var(--base-width));
+        position: relative;
+        text-align: center;
+        width: 100%;
+    }
+
+    #{{ section.id }}-product-accessories .bottom-content-box {
+        padding-bottom: 0;
+        margin-top: calc(2500vw/var(--base-width));
+    }
+
+    #{{ section.id }}-product-accessories .bottom-image {
+      max-width: 100%;
+        width: 100%;
+    }
+    #{{ section.id }}-product-accessories .image-content-pc{
+      display: none;
+    }
+    #{{ section.id }}-product-accessories .image-content-mobile{
+      display: block;
+    }
+    #{{ section.id }}-product-accessories .bottom-image-pc{
+      display: none;
+    }
+    #{{ section.id }}-product-accessories .bottom-image-mobile{
+      display: block;
+    }
+  }
+  /* 适配移动端 end */
+</style>
+
+<div id="{{ section.id }}-product-accessories">
+  <div class="title-container">
+    <h2 class="title">{{ section.settings.title }}</h2>
+    <div class="sub-title">{{ section.settings.sub_title }}</div>
+  </div>
+  {% for block in section.blocks %}
+    {% if block.type == 'unit1' %}
+      <div class="top-item">
+        <h3 class="item-title">{{ block.settings.title_unit_1 }}</h3>
+        <div class="item-box">
+          <div
+            class="left-box"
+            style="
+                        {% if block.settings.left_img_unit1 == 'right' %}
+              flex-direction: row-reverse;
+              {% endif %}
+            "
+          >
+            <img
+              class="image-content image-content-pc"
+              src="{{ block.settings.left_main_img_unit1 |  image_url: width: 340 }}"
+              alt="{{ block.settings.left_main_img_unit1.alt }}"
+            >
+            <img
+              class="image-content image-content-mobile"
+              src="{{ block.settings.left_main_img_unit1_mobile |  image_url: width: 340 }}"
+              alt="{{ block.settings.left_main_img_unit1_mobile.alt }}"
+            >
+            <div class="top-content-box top-content-box-h5">
+              <div class="content-box">
+                <img
+                  class="content-image"
+                  src="{{ block.settings.left_detail_img_unit1 |  image_url: width: 450 }}"
+                  alt="{{ block.settings.left_detail_img_unit1.alt }}"
+                >
+                <div class="number-box">
+                  <div class="number-content">{{ block.settings.left_number_unit1 }}</div>
+                  <h4 class="text-content">{{ block.settings.left_text_unit1 }}</h4>
+                </div>
+                <div class="richtext-box">{{ block.settings.left_richtext_unit1 }}</div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="right-box"
+            style="
+                        {% if block.settings.right_img_unit1 == 'right' %}
+              flex-direction: row-reverse;
+              {% endif %}
+            "
+          >
+            <img
+              class="image-content image-content-pc"
+              src="{{ block.settings.right_main_img_unit1 |  image_url: width: 340 }}"
+              alt="{{ block.settings.right_main_img_unit1.alt }}"
+            >
+            <img
+              class="image-content image-content-mobile"
+              src="{{ block.settings.right_main_img_unit1_mobile |  image_url: width: 340 }}"
+              alt="{{ block.settings.right_main_img_unit1_mobile.alt }}"
+            >
+            <div class="top-content-box  top-content-box-pc">
+              <div class="content-box">
+                <img
+                  class="content-image"
+                  src="{{ block.settings.right_detail_img_unit1 |  image_url: width: 450 }}"
+                  alt="{{ block.settings.right_detail_img_unit1.alt }}"
+                >
+                <div class="number-box">
+                  <div class="number-content">{{ block.settings.right_number_unit1 }}</div>
+                  <h4 class="text-content">{{ block.settings.right_text_unit1 }}</h4>
+                </div>
+                <div class="richtext-box">{{ block.settings.right_richtext_unit1 }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% elsif block.type == 'unit2' %}
+      <div class="middle">
+        <h3 class="middle-title">{{ block.settings.title_unit2 }}</h3>
+        <div
+          class="middle-item"
+          style="
+            {% if block.settings.img_unit2 == 'right' %}
+              flex-direction: row-reverse;
+            {% endif %}
+          "
+        >
+          <img
+            class="middle-image image-content-pc"
+            src="{{ block.settings.main_img_unit2 |  image_url: width: 640 }}"
+            alt="{{ block.settings.main_img_unit2.alt }}"
+          >
+          <img
+            class="middle-image image-content-mobile"
+            src="{{ block.settings.main_img_unit2_mobile |  image_url: width: 640 }}"
+            alt="{{ block.settings.main_img_unit2_mobile.alt }}"
+          >
+          <div class="top-content-box">
+            <div class="content-box">
+              <img
+                class="content-image"
+                src="{{ block.settings.detail_img_unit2 |  image_url: width: 640 }}"
+                alt="{{ block.settings.detail_img_unit2.alt }}"
+              >
+              <div class="number-box">
+                <div class="number-content">{{ block.settings.number_unit2 }}</div>
+                <h4 class="text-content">{{ block.settings.text_unit2 }}</h4>
+              </div>
+              <div class="richtext-box">{{ block.settings.richtext_unit2 }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% elsif block.type == 'unit3' %}
+      <div class="bottom-item">
+        <h3 class="bottom-title">{{ block.settings.title_unit3 }}</h3>
+        <img
+          class="bottom-image bottom-image-mobile"
+          src="{{ block.settings.main_img_unit3_mobile |  image_url: width: 500 }}"
+          alt="{{ block.settings.main_img_unit3_mobile.alt }}"
+        >
+        {% if block.settings.img_unit3 == 'left' %}
+          <img
+            class="bottom-image bottom-image-pc"
+            src="{{ block.settings.main_img_unit3 |  image_url: width: 500 }}"
+            alt="{{ block.settings.main_img_unit3.alt }}"
+          >
+        {% endif %}
+        <div class="bottom-content-box">
+          <div class="content-box">
+            <img
+              class="content-image"
+              src="{{ block.settings.left_detail_img_unit3 |  image_url: width: 500 }}"
+              alt="{{ block.settings.left_detail_img_unit3}}"
+            >
+            <div class="number-box">
+              <div class="number-content">{{ block.settings.left_number_unit3 }}</div>
+              <h4 class="text-content">{{ block.settings.left_text_unit3 }}</h4>
+            </div>
+            <div class="richtext-box">{{ block.settings.left_richtext_unit3 }}</div>
+          </div>
+        </div>
+        {% if block.settings.img_unit3 == 'middle' %}
+          <img
+            class="bottom-image bottom-image-pc"
+            src="{{ block.settings.main_img_unit3 |  image_url: width: 500 }}"
+            alt="{{ block.settings.main_img_unit3.alt }}"
+          >
+        {% endif %}
+        <div class="bottom-content-box">
+          <div class="content-box">
+            <img
+              class="content-image"
+              src="{{ block.settings.right_detail_img_unit3 |  image_url: width: 500 }}"
+              alt="{{ block.settings.right_detail_img_unit3}}"
+            >
+            <div class="number-box">
+              <div class="number-content">{{ block.settings.right_number_unit3 }}</div>
+              <h4 class="text-content">{{ block.settings.right_text_unit3 }}</h4>
+            </div>
+            <div class="richtext-box">{{ block.settings.right_richtext_unit3 }}</div>
+          </div>
+        </div>
+        {% if block.settings.img_unit3 == 'right' %}
+          <img
+            class="bottom-image bottom-image-pc"
+            src="{{ block.settings.main_img_unit3 |  image_url: width: 500 }}"
+            alt="{{ block.settings.main_img_unit3.alt }}"
+          >
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Accessories Block",
+  "class": "product-accessories",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "number_color",
+      "label": "Number Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "number_background_color",
+      "label": "Number Background Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Ultraman vs. Monsters:  Epic Battles Await"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "Snap Together Awesomeness - Summon Heroes with a Click!"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "unit1",
+      "name": "Unit1",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_unit_1",
+          "label": "Title Unit 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "left_main_img_unit1",
+          "label": "Left Main Img Unit 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "left_main_img_unit1_mobile",
+          "label": "Left Main Img Unit 1 Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "left_detail_img_unit1",
+          "label": "Left Detail Img Unit 1"
+        },
+        {
+          "type": "text",
+          "id": "left_number_unit1",
+          "label": "Left Number Unit 1"
+        },
+        {
+          "type": "text",
+          "id": "left_text_unit1",
+          "label": "Left Text Unit 1"
+        },
+        {
+          "type": "richtext",
+          "id": "left_richtext_unit1",
+          "label": "Left Richtext Unit 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "right_main_img_unit1",
+          "label": "Right Main Img Unit 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "right_main_img_unit1_mobile",
+          "label": "Right Main Img Unit 1 Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "right_detail_img_unit1",
+          "label": "Right Detail Img Unit 1"
+        },
+        {
+          "type": "text",
+          "id": "right_number_unit1",
+          "label": "Right Number Unit 1"
+        },
+        {
+          "type": "text",
+          "id": "right_text_unit1",
+          "label": "Right Text Unit 1"
+        },
+        {
+          "type": "richtext",
+          "id": "right_richtext_unit1",
+          "label": "Right Richtext Unit 1"
+        },
+        {
+          "type": "select",
+          "id": "left_img_unit1",
+          "label": "Left Img Unit 1",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "select",
+          "id": "right_img_unit1",
+          "label": "Right Img Unit 1",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        }
+      ]
+    },
+    {
+      "type": "unit2",
+      "name": "Unit2",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_unit2",
+          "label": "Title Unit 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_img_unit2",
+          "label": "Main Img Unit 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_img_unit2_mobile",
+          "label": "Main Img Unit 2 Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "detail_img_unit2",
+          "label": "Detail Img Unit 2"
+        },
+        {
+          "type": "text",
+          "id": "number_unit2",
+          "label": "Number Unit 2"
+        },
+        {
+          "type": "text",
+          "id": "text_unit2",
+          "label": "Text Unit 2"
+        },
+        {
+          "type": "richtext",
+          "id": "richtext_unit2",
+          "label": "Richtext Unit 2"
+        },
+        {
+          "type": "select",
+          "id": "img_unit2",
+          "label": "Img Unit 2",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        }
+      ]
+    },
+    {
+      "type": "unit3",
+      "name": "Unit3",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title_unit3",
+          "label": "Title Unit 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_img_unit3",
+          "label": "Main Img Unit 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_img_unit3_mobile",
+          "label": "Main Img Unit 3 Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "left_detail_img_unit3",
+          "label": "Left Detail Img Unit 3"
+        },
+        {
+          "type": "text",
+          "id": "left_number_unit3",
+          "label": "Lef Number Unit 3"
+        },
+        {
+          "type": "text",
+          "id": "left_text_unit3",
+          "label": "Lef Text Unit 3"
+        },
+        {
+          "type": "richtext",
+          "id": "left_richtext_unit3",
+          "label": "Left Richtext Unit 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "right_detail_img_unit3",
+          "label": "Right Detail Img Unit 3"
+        },
+        {
+          "type": "text",
+          "id": "right_number_unit3",
+          "label": "Lef Number Unit 3"
+        },
+        {
+          "type": "text",
+          "id": "right_text_unit3",
+          "label": "Lef tText Unit 3"
+        },
+        {
+          "type": "richtext",
+          "id": "right_richtext_unit3",
+          "label": "Right Richtext Unit 3"
+        },
+        {
+          "type": "select",
+          "id": "img_unit3",
+          "label": "Img Unit 3",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "middle",
+              "label": "Middle"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "right"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Accessories Block"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,341 @@
+<style>
+	.shane-pro-promoted{
+		width: 100%; min-height: 50vw; background-image: linear-gradient( #F4F0E6 80%, #006DE5 20%); margin-top: -16vw; z-index: 1; position: relative;
+	}
+	.shane-pro-promoted .swiper-slide{
+		position: relative;
+	}
+	.shane-pro-promoted .swiper-slide>img{
+		width:100%;
+	}
+	.shane-pro-promoted .pro-1st{
+		position: absolute; left: 9.6%; top: 23.6vw; width:47.3vw; 
+	}
+	.shane-pro-promoted .pro-1st-p{
+		position: absolute; left: 0; bottom: 2vw; width: 55%; z-index: 2;
+	}
+	.shane-pro-promoted .pro-2nd{
+		position: absolute; left: 20%; top: 20vw; width:30vw; 
+	}
+	.shane-pro-promoted .pro-2nd-p{
+		position: absolute; right: 0; bottom: 0; width: 100%; z-index: 2;
+	}
+	.pro-promoted-context{
+		position: absolute; right: 3%; top: 18vw; width:  53vw; text-align: right; color: #FF5F00; z-index: 3;
+	}
+	.pro-promoted-context h2{
+		text-transform: uppercase; font-size: 2.6vw; margin:0;
+	}
+	.pro-promoted-context .m-title{
+		font-size: 1.8vw; font-family: Outfit-Bold; margin: 2vw 0 0 auto; width: 70%;
+	}
+	.pro-promoted-context .promoted-slogan{
+		margin: 0.6vw 0 0 auto; width: 65%; font-size: 1vw;
+	}
+	.pro-promoted-context .promoted-text{
+		margin: 0.6vw 0 0 auto; width: 65%; color: #FC8B45;
+	}
+	.pro-promoted-context a{
+		margin: 1vw 0 0 auto; background-color: #FF5F00; color: #FFFFFF;
+	}
+	.pro-promoted-context a:hover{
+		color: #FFFFFF;
+	}
+	.pro-promoted-context .btn__circle {
+		background-color: #FFFFFF;
+	}
+	.pro-promoted-context .bi-arrow-right-short{
+		color: #FC8B45;
+	}
+	.pro-promoted-n-p{
+		position: absolute; right: 3%; top: 45vw; display: flex; justify-content: space-between; z-index: 9; width: 35%;
+	}
+	.pro-promoted-n-p>div{
+		width:49%; background-color: #ddddddc0; border-radius: 10px; cursor: pointer; position: relative;
+	}
+	.pro-promoted-n-p>div img{
+		width: 100%;
+	}
+	.pro-promoted-n-p .swiper-button-disabled{
+		background-color: #ffffff;
+	}
+	.promoted-n-p-context{
+		position: absolute; top: 10px; left: 15px; width: 60%; font-family: Outfit-Bold; font-size: 22px; color: #FF5F00;
+	}
+	.promoted-n-p-context>div{
+		font-size: 12px;
+	}
+	.pro-promoted-animation{
+		position: absolute; right: 1%; bottom: -7vw; width: 38.6vw; z-index: 9;
+	}
+	.pro-promoted-animation img{
+		width: 100%;
+	}
+@media (max-width: 768px){
+	.shane-pro-promoted{
+		margin-top: 7vw;
+	}
+	.shane-pro-promoted .swiper-slide{
+		overflow: hidden;
+	}
+	.shane-pro-promoted .pro-1st{
+		left: -9%; top: 57vw; width:60vw; 
+	}
+	.shane-pro-promoted .pro-2nd{
+		left: 2%; top: 55vw; width:45vw; 
+	}
+	.pro-promoted-context{
+		right: 5%; top: 0; width: 90%;
+	}
+	.pro-promoted-context h2{
+		margin: 0; font-size: 5.2vw; color: #FF5F00;
+	}
+	.pro-promoted-context .m-title {
+		font-size: 4.6vw; width: 100%; line-height: 5vw;
+	}
+	.pro-promoted-context .promoted-slogan{
+		margin: 2vw 0 0 auto; width: 100%; font-size: 3.6vw;
+	}
+	.pro-promoted-context .promoted-text{
+		margin: 2vw 0 0 auto; width: 70%;
+	}
+	.pro-promoted-context a {
+		width: 25vw;
+	}
+	.pro-promoted-context .shane-button{
+		height: 8vw; border-radius: 4vw; font-size: 3vw;
+	}
+	.pro-promoted-context .btn__label{
+		padding: 0 1vw;
+	}
+	.pro-promoted-context .btn__circle>div{
+		height: 5vw;
+	}
+	.pro-promoted-context .shane-button:hover .btn__circle{
+		width:5vw; height: 5vw;
+	}
+	.pro-promoted-context .shane-button:hover .btn__circle>div{
+		width: 5vw;
+	}
+	.pro-promoted-n-p{
+		right: 4%; top: auto; bottom: 8vw; width: 92%;
+	}
+	.promoted-n-p-context{
+		width: 80%; height: 80%; font-size: 4vw; text-transform: uppercase; display: flex; flex-wrap: wrap; align-content: space-between;
+	}
+	.promoted-n-p-context>div{
+		font-size:4.2vw; font-family: Outfit-Regular; line-height: 4vw; text-transform: capitalize;
+	}
+	.pro-promoted-animation{
+		position: absolute; right: 0%; bottom: -22vw; width: 60vw; z-index: 9;
+	}
+	.pro-promoted-animation img{
+		width: 110%;
+	}
+}
+</style>
+	<div class="swiper promotedSwiper">
+		<div class="swiper-wrapper">
+            {%- assign my_variable = 0 -%} 
+			{%- for block in section.blocks -%} 
+			{%- liquid
+    			assign image_banner = block.settings.image_banner
+        		assign image_banner_m = block.settings.image_banner_m
+        		assign image_pro = block.settings.image_pro
+        		assign image_auxiliary = block.settings.image_auxiliary
+        		assign image_auxiliary_m = block.settings.image_auxiliary_m
+			-%}
+            {%- assign my_variable = my_variable | plus: 1 -%}
+            <div class="swiper-slide">
+				<img src="{{ image_banner | image_url }}" class="pc_show" alt="{{ image_banner.alt }}">
+				<img src="{{ image_banner_m | image_url }}" class="mobile_show" alt="{{ image_banner_m.alt }}">
+				<div class="{% if my_variable == 1 %}pro-1st{% else %}pro-2nd{% endif %} wow bounceInDown" data-wow-duration="1.5s" data-wow-offset="200">
+					<img src="{{ image_pro | image_url }}" style="width: 100%;" alt="{{ image_pro.alt }}">
+				</div>
+				<div class="{% if my_variable == 1 %}pro-1st-p{% else %}pro-2nd-p{% endif %}">
+					<img src="{{ image_auxiliary | image_url }}" style="width: 100%;" class="pc_show" alt="{{ image_auxiliary.alt }}">
+					<img src="{{ image_auxiliary_m | image_url }}" style="width: 100%;" class="mobile_show" alt="{{ image_auxiliary_m.alt }}">
+				</div>
+				<div class="pro-promoted-context">
+					<h2>{{ block.settings.title }}</h2>
+					<div class="m-title">{{ block.settings.subtitle }}</div>
+					<div class="promoted-slogan">{{ block.settings.slogan }}</div>
+					<div class="promoted-text">{{ block.settings.context }}</div>
+					<a class="shane-button" href="{{ block.settings.slide_link }}">
+						<div class="btn__label">{{ block.settings.buttontext }}</div>
+						<div class="btn__circle">
+							<div>
+								<svg class="bi bi-arrow-right-short" width="100%" height="100%" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								  <path fill-rule="evenodd" d="M8.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.793 8 8.146 5.354a.5.5 0 0 1 0-.708z"/>
+								  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5H11a.5.5 0 0 1 0 1H4.5A.5.5 0 0 1 4 8z"/>
+								</svg>
+							</div>							
+						</div>
+					</a>
+				</div>
+			</div>
+            {%- endfor -%}
+		</div>
+	</div>
+    {%- liquid
+      assign image_animation = section.settings.image_animation
+      assign image_next = section.settings.image_next
+      assign image_next_mobile = section.settings.image_next_mobile
+      assign image_prev = section.settings.image_prev
+      assign image_prev_mobile = section.settings.image_prev_mobile
+    -%}
+	<div class="pro-promoted-n-p">
+		<div class="pro-promoted-next">
+			<img src="{{ image_next | image_url }}" class="pc_show"  alt="{{image_next.alt }}">
+			<img src="{{ image_next_mobile | image_url }}" class="mobile_show" alt="{{ image_next_mobile.alt }}">
+			<div class="promoted-n-p-context">
+				<div>{{ section.settings.next_subtitle }}</div>
+				{{ section.settings.next_title }}
+			</div>
+		</div>
+		<div class="pro-promoted-prev">
+			<img src="{{ image_prev | image_url }}" class="pc_show" alt="{{image_prev.alt }}">
+			<img src="{{ image_prev_mobile | image_url }}" class="mobile_show" alt="{{image_prev_mobile.alt }}">
+			<div class="promoted-n-p-context">
+				<div>{{ section.settings.prev_subtitle }}</div>
+				{{ section.settings.prev_title }}
+			</div>
+		</div>
+	</div>
+	<div class="pro-promoted-animation" style="overflow: hidden;">
+		<img src="{{ image_animation | image_url }}" class="wow fadeInRight" data-wow-duration="2s" data-wow-offset="300">
+	</div>
+{% schema %}
+  {
+    "name": "Home Product Promoted",
+    "class": "shane-pro-promoted",
+    "max_blocks": 2,
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image_animation",
+        "label": "Image animation"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_next",
+        "label": "Image next"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_next_mobile",
+        "label": "Image next mobile"
+      },
+      {
+        "type": "text",
+        "id": "next_title",
+        "label": "Next title"
+      },
+      {
+        "type": "text",
+        "id": "next_subtitle",
+        "label": "Next subtitle"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_prev",
+        "label": "Image prev"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_prev_mobile",
+        "label": "Image prev mobile"
+      },
+      {
+        "type": "text",
+        "id": "prev_title",
+        "label": "Prev title"
+      },
+      {
+        "type": "text",
+        "id": "prev_subtitle",
+        "label": "Prev subtitle"
+      }
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+            {
+              "type": "image_picker",
+              "id": "image_banner",
+              "label": "Image",
+              "info": "Banner Img"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_banner_m",
+              "label": "Image mobile",
+              "info": "Banner Img mobile"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_pro",
+              "label": "Image product",
+              "info": "Banner Img product"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_auxiliary",
+              "label": "Image auxiliary",
+              "info": "Banner Img auxiliary"
+            },
+            {
+              "type": "image_picker",
+              "id": "image_auxiliary_m",
+              "label": "Image auxiliary mobile",
+              "info": "Banner Img auxiliary mobile"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Heading",
+              "default": "Add a Heading"
+			},
+            {
+              "type": "text",
+              "id": "subtitle",
+              "label": "Subtitle",
+              "default": "Add a subtitle"
+			},
+            {
+              "type": "text",
+              "id": "slogan",
+              "label": "Slogan",
+              "default": "Add a slogan"
+			},
+            {
+              "type": "textarea",
+              "id": "context",
+              "label": "Text"
+            },
+           	{
+              "id": "slide_link",
+              "type": "url",
+              "label": "Slide link",
+              "info": "Adds a link to slide"
+            },
+            {
+              "type": "text",
+              "id": "buttontext",
+              "label": "Button Text",
+              "default": "View More"
+			}
+           
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Home Product Promoted"
+          
+       }
+    ]
+  }
+{% endschema %}

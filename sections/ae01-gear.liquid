@@ -1,0 +1,784 @@
+<style>
+    .ae01-Gear{
+        background-color: #006DE5;
+    }
+    @media (min-width: 768px){
+        .ae01-Gear div{
+            position:relative;
+            width: 100%;
+        }
+    
+        .ae01-Gear .title-line{
+            position: absolute;
+            left: 0;
+            top: calc(100vw* 80 / 1920);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        .ae01-Gear .title-line .text{
+            color: #FFF;
+            text-align: center;
+            font-family: Outfit;
+            font-size: calc(100vw* 50 / 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 60 / 1920);
+            max-width: calc(100vw* 1151 / 1920);
+            margin-bottom: calc(100vw* 27 / 1920);
+        }
+        .ae01-Gear .title-line .content{
+            color: #FFF;
+            text-align: center;
+            font-family: Outfit;
+            font-size: calc(100vw* 24 / 1920);
+            font-style: normal;
+            font-weight: 300;
+            line-height: calc(100vw* 30 / 1920);
+        }
+    
+    
+        .ae01-Gear  .top{
+            display: flex;
+            align-items: center;
+            background: #fff;
+            width: fit-content;
+            padding-right: calc(100vw* 25/ 1920);
+            padding-left: calc(100vw* 2/ 1920);
+            padding-top: calc(100vw* 1/ 1920);
+            padding-bottom: calc(100vw* 1/ 1920);
+            border-radius: calc(100vw* 9/ 1920);
+            margin-bottom: calc(100vw* 30/ 1920);
+        }
+        .ae01-Gear .top img{
+            height: calc(100vw* 57 / 1920);
+            width: calc(100vw* 57 / 1920);
+        }
+        .ae01-Gear .top .text{
+            margin-left: calc(100vw* 22/ 1920);
+            color: #FF5F00;
+            font-family: Outfit;
+            font-size: calc(100vw* 26 / 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 32 / 1920); /* 123.077% */
+            text-transform: capitalize;
+        }
+        .ae01-Gear .top-line{
+            position: absolute;
+            top: calc(100vw* 331 / 1920);
+            left: 0;
+            display: flex;
+            width: 100%;
+            padding: 0 calc(100vw* 87 / 1920);
+        }
+    
+        .ae01-Gear .top-line  .line-left{
+            display: flex;
+            align-items: flex-end;
+        }
+    
+        .ae01-Gear .top-line  .line-left .grop-left .content{
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 20 / 1920);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 26 / 1920);
+            max-width: calc(100vw* 359 / 1920);
+            margin-top:calc(100vw* 15 / 1920);
+        }
+        .ae01-Gear .top-line  .line-left .grop-right{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .ae01-Gear .top-line  .line-left .grop-right img:first-child{
+            background:#000;
+            width: calc(100vw* 306 / 1920);
+            height: calc(100vw* 139 / 1920);
+            margin-bottom: calc(100vw* 25 / 1920);
+        }
+        .ae01-Gear .top-line .line-left .grop-right img:last-child{
+            width: calc(100vw* 308 / 1920);
+        }
+        .ae01-Gear .top-line .line-right{
+            display: flex;
+            align-items: flex-end;
+            padding-left: calc(100vw* 40 / 1920);;
+        }
+        .ae01-Gear .top-line .line-right .grop-left img{
+            width: calc(100vw* 381 / 1920);
+        }
+        .ae01-Gear .top-line .line-right .grop-left .list img{
+            width: calc(100vw* 254 / 1920);
+            margin-top: calc(100vw* 15 / 1920);
+        }
+        .ae01-Gear .top-line .line-right .grop-right .content{
+            margin-top:calc(100vw* 15 / 1920);
+            max-width: calc(100vw* 378 / 1920);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 20 / 1920);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 26 / 1920); /* 130% */
+        }
+    
+        .ae01-Gear .center-line{
+            position: absolute;
+            top: calc(100vw* 1384 / 1920);
+            right: calc(100vw* 111 / 1920);
+            width: auto;
+            
+        }
+        .ae01-Gear .center-line img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+    
+        }
+        .ae01-Gear .center-line .line-text{
+            display: flex;
+            width: fit-content;
+            height: auto;
+            padding: calc(100vw* 23 / 1920) calc(100vw* 15 / 1920);
+            padding-top: calc(100vw* 43 / 1920);
+            flex-direction: column;
+        }
+        .ae01-Gear .center-line .line-text .text{
+            max-width: calc(100vw* 563 / 1920);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 38 / 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 46 / 1920);
+            margin-bottom: calc(100vw* 20 / 1920);
+        }
+    
+        .ae01-Gear .center-line .line-text .content{
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 1920);
+            font-style: normal;
+            font-weight: 300;
+            line-height: calc(100vw* 24 / 1920);
+            max-width: calc(100vw* 600 / 1920);
+        }
+    
+        .ae01-Gear .bottom-line {
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            height: 100%;
+        }
+        .ae01-Gear .bottom-line .line-left{
+            position: absolute;
+            bottom: calc(100vw* 535 / 1920);
+            left: calc(100vw* 621 / 1920);
+            display: flex;
+            flex-direction: column;
+        }
+        .ae01-Gear .bottom-line .line-left .gorw-top .content{
+            max-width: calc(100vw* 462 / 1920);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 20 / 1920);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 26 / 1920);
+            margin-bottom: calc(100vw* 35 / 1920);
+        }
+        .ae01-Gear .bottom-line .line-left  .gorw-bottom img{
+            width: calc(100vw* 308 / 1920);
+            height: calc(100vw* 164 / 1920);
+        }
+        .ae01-Gear .bottom-line .line-left  .gorw-bottom .content{
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 1920);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 24 / 1920);
+            max-width: calc(100vw* 308 / 1920);
+            margin-top: calc(100vw* 15 / 1920);
+        }
+    
+    
+        .ae01-Gear .bottom-line .line-right{
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            margin-top: calc(100vw* 118 / 1920);
+            margin-left: calc(100vw* 260 / 1920);
+        }
+    
+        .ae01-Gear .bottom-line .line-right .content{
+            width: calc(100vw* 434 / 1920);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 1920);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 24 / 1920);
+        }
+    }
+    @media (max-width: 768px){
+        .ae01-Gear div{
+            position:relative;
+            width: 100%;
+        }
+    
+        .ae01-Gear .title-line{
+            position: absolute;
+            left: 0;
+            top: calc(100vw* 80 / 430);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+    
+        .ae01-Gear .title-line .text{
+            color: #FFF;
+            text-align: left;
+            font-family: Outfit;
+            font-size: calc(100vw* 26 / 430);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 32 / 430);
+            max-width: calc(100vw* 367 / 430);
+            margin-bottom: calc(100vw* 10 / 430);
+        }
+        .ae01-Gear .title-line .content{
+            max-width: calc(100vw* 367 / 430);
+            color: #FFF;
+            text-align: left;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 300;
+            line-height: calc(100vw* 24 / 430);
+        }
+    
+    
+        .ae01-Gear .top{
+            display: flex;
+            align-items: center;
+            background: #fff;
+            width: fit-content;
+            padding-right: calc(100vw* 25 / 430);
+            padding-left: calc(100vw* 2 / 430);
+            padding-top: calc(100vw* 1 / 430);
+            padding-bottom: calc(100vw* 1 / 430);
+            border-radius: calc(100vw* 9 / 430);
+            {% comment %} / margin-bottom: calc(100vw* 30 / 430); {% endcomment %}
+        }
+        .ae01-Gear .top .text{
+            margin-left: calc(100vw* 22 / 430);
+            color: #FF5F00;
+            font-family: Outfit;
+            font-size: calc(100vw* 20 / 430);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 20 / 430);
+            text-transform: capitalize;
+        }
+        .ae01-Gear .top img{
+            height: calc(100vw* 42 / 430);
+            width: calc(100vw* 42 / 430);
+        }
+        .ae01-Gear .top-line{
+            position: absolute;
+            top: calc(100vw* 277 / 430);
+            left: 0;
+            display: flex;
+            width: 100%;
+            padding: 0 calc(100vw* 20 / 430);
+            flex-direction: column;
+        }
+    
+        .ae01-Gear .top-line .line-left{
+            display: flex;
+            flex-direction: column;
+        }
+        .ae01-Gear .top-line .line-left .grop-left{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ae01-Gear .top-line .line-left .grop-left .content{
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 24 / 430);
+            max-width: calc(100vw* 166 / 430);
+            margin-top: calc(100vw* 15 / 430);
+            margin-left: calc(100vw* 231 / 430);
+            margin-top: calc(100vw* 183 / 430);
+        }
+        .ae01-Gear .top-line  .line-left .grop-right{
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: calc(100vw* 5 / 430);
+            /* display: flex; */
+            flex-direction: row;
+            align-items: center;
+            margin-top: calc(100vw* 53 / 430);
+        }
+        .ae01-Gear .top-line .line-left .grop-right img:first-child{
+            width: fit-content;
+            height: calc(100vw* 144 / 430);
+        }
+        .ae01-Gear .top-line .line-left .grop-right img:last-child{
+            width: fit-content;
+        }
+        .ae01-Gear .top-line .line-right{
+            display: flex;
+            align-items: center;
+            flex-direction: column-reverse;
+            margin-top: calc(100vw* 80 / 430);
+        }
+        .ae01-Gear .top-line .line-right .grop-left img{
+            width: 100%;
+        }
+        .ae01-Gear .top-line .line-right .grop-left .list{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: calc(100vw* 5 / 430)
+        }
+        .ae01-Gear .top-line .line-right .grop-left .list img{
+            width: calc(100vw* 254 / 430);
+            margin-top: calc(100vw* 15 / 430);
+            height: calc(100vw* 144 / 430);
+        }
+        .ae01-Gear .top-line .line-right .grop-right{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: calc(100vw* 398 / 430);
+        }
+        .ae01-Gear .top-line .line-right .grop-right .content{
+            margin-top: calc(100vw* 15 / 430);
+            max-width: calc(100vw* 346 / 430);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 400;
+            text-align: center;
+            line-height: calc(100vw* 24 / 430); /* 130% */
+        }
+    
+        .ae01-Gear .center-line{
+            position: absolute;
+            top: calc(100vw* 2227 / 430);
+            left: calc(100vw* 0 / 430);
+            margin: 0 calc(100vw* 20 / 430);
+            width: -webkit-fill-available;
+            
+        }
+        .ae01-Gear .center-line img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+    
+        }
+        .ae01-Gear .center-line .line-text{
+            display: flex;
+            width: fit-content;
+            height: auto;
+            padding: calc(100vw* 23 / 430) calc(100vw* 15 / 430);
+            padding-top: calc(100vw* 43 / 430);
+            flex-direction: column;
+        }
+        .ae01-Gear .center-line .line-text .text{
+            max-width: calc(100vw* 322 / 430);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 26 / 430);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 32 / 430);
+        }
+    
+        .ae01-Gear .center-line .line-text .content{
+            color: #FFF;
+        font-family: Outfit;
+        font-size: calc(100vw* 14 / 430);
+        font-style: normal;
+        font-weight: 300;
+        line-height: calc(100vw* 16 / 430);
+        max-width: calc(100vw* 337 / 430);
+        }
+    
+        .ae01-Gear .bottom-line {
+            position: absolute;
+            top: calc(100vw* 2459 / 430);
+            left: 0px;
+        }
+        .ae01-Gear .bottom-line .line-left{
+            display: flex;
+        flex-direction: column;
+        }
+        .ae01-Gear .bottom-line .line-left .gorw-top{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: calc(100vw* 465 / 430);
+        }
+
+        .ae01-Gear .bottom-line .line-left .gorw-top .content{
+            max-width: calc(100vw* 323 / 430);
+            color: #FFF;
+            text-align: center;
+            font-family: Outfit;
+            font-size: calc(100vw* 20 / 430);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 26 / 430);
+            margin-top: calc(100vw* 20 / 430);
+            margin-bottom: calc(100vw* 35 / 430);
+        }
+
+        .ae01-Gear .bottom-line .line-left  .gorw-bottom{
+            padding: 0 calc(100vw* 20 / 430);
+        }
+
+        .ae01-Gear .bottom-line .line-left  .gorw-bottom img{
+            width: 100%;
+            height: calc(100vw* 164 / 430);
+        }
+        .ae01-Gear .bottom-line .line-left  .gorw-bottom .content{
+            display: none;
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 24 / 430);
+            max-width: calc(100vw* 308 / 430);
+            margin-top: calc(100vw* 15 / 430);
+        }
+    
+    
+        .ae01-Gear .bottom-line .line-right{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: calc(100vw* 60 / 430);
+            /* margin-left: calc(100vw* 260 / 430); */
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .ae01-Gear .bottom-line .line-right .content{
+            max-width: calc(100vw* 323 / 430);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 400;
+            text-align: center;
+            margin-top: calc(100vw* 20 / 430);
+            line-height: calc(100vw* 24 / 430);
+        }
+
+    
+    }
+    
+
+
+</style>
+<div style='overflow: hidden;' > 
+    <img src="{{ section.settings.block_image | image_url }}" style="width: 100%;" class="pc_show">
+    <img src="{{ section.settings.block_mb_image | image_url }}" style="width: 100%;" class="mobile_show">
+    <div class="title-line">
+        <div class="text">
+            {{ section.settings.title_line_text }}
+        </div>
+        <div class="content">
+            {{ section.settings.title_line_content }}
+        </div>
+    </div>
+    <div class="top-line">
+        <div class="line-left">
+            <div class='grop-left'>
+                <div class="top">
+                    <img src="{{ section.settings.grop_left_top_ico_image | image_url }}" >
+                    <div class="text">
+                         {{ section.settings.grop_left_top_text }}
+                    </div>
+                </div>
+                <div class="content">
+                    {{ section.settings.grop_left_top_content }}
+
+                </div>
+            </div>
+            <div class='grop-right'>
+                <img src="{{ section.settings.grop_left_list_image1 | image_url }}"  class="pc_show">
+                <img src="{{ section.settings.grop_left_list_mb_image1 | image_url }}" class="mobile_show">
+                <img src="{{ section.settings.grop_left_list_image2 | image_url }}" class="pc_show">
+                <img src="{{ section.settings.grop_left_list_mb_image2 | image_url }}" class="mobile_show">
+            </div>
+        </div>
+        <div class='line-right'>
+            <div class='grop-left'>
+                <img src="{{ section.settings.grop_right_list_image1 | image_url }}" >
+                <div class="list">
+                    <img src="{{ section.settings.grop_right_list_image2 | image_url }}" >
+                    <img src="{{ section.settings.grop_right_list_image3 | image_url }}" >
+
+                </div>
+            </div>
+            <div class='grop-right'>
+                <div class="top">
+                    <img src="{{ section.settings.grop_right_top_ico_image | image_url }}" >
+                    <div class="text">
+                        {{ section.settings.grop_right_top_text }}
+                    </div>
+                </div>
+                <div class="content">
+                    {{ section.settings.grop_right_top_content }}
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class='center-line'>
+        <img src="{{ section.settings.center_line_image | image_url }}" >
+        <div class='line-text'>
+            <div class="text">
+                {{ section.settings.center_line_text }}
+            </div>
+            <div class="content">
+                {{ section.settings.center_line_content }}
+            </div>
+        </div>
+    </div>
+    <div class='bottom-line'>
+        <div class='line-left'>
+            <div class='gorw-top'>
+                <div class="top">
+                    <img src="{{ section.settings.bottom_line_left_icon_image | image_url }}" >
+                    <div class="text">
+                        {{ section.settings.bottom_line_left_top_text }}
+                    </div>
+                </div>
+                <div class="content">
+                    {{ section.settings.bottom_line_left_top_content }}
+                </div>
+            </div>
+
+            
+            <div class='gorw-bottom'>
+                <img src="{{ section.settings.bottom_line_bottom_image | image_url }}" >
+                <div class="content">
+                    {{ section.settings.bottom_line_bottom_content }}
+                </div>
+
+            </div>
+
+
+            <div class='line-right'>
+                <div class="top">
+                    <img src="{{ section.settings.bottom_line_right_icon_image | image_url }}" >
+                    <div class="text">
+                        {{ section.settings.bottom_line_right_top_text }}
+                    </div>
+                </div>
+                <div class="content">
+                    {{ section.settings.bottom_line_right_top_content }}
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+</div>
+
+
+{% schema %}
+    {
+        "name": "Ae01 Gear",
+        "class": "ae01-Gear",
+        "settings": [
+            {
+				"type": "image_picker",
+				"id": "block_image",
+				"label": "Image"
+			},
+            {
+				"type": "image_picker",
+				"id": "block_mb_image",
+				"label": "mb Image"
+			},
+
+            {
+				"type": "text",
+				"id":"title_line_text",
+				"label": "title Line Text"
+			},
+            {
+				"type": "text",
+				"id":"title_line_content",
+				"label": "title Line content"
+			},
+            {
+				"type": "image_picker",
+				"id": "grop_left_top_ico_image",
+				"label": "left top ico image"
+			},
+            {
+				"type": "text",
+				"id":"grop_left_top_text",
+				"label": "grop left top title"
+			},
+            {
+				"type": "text",
+				"id":"grop_left_top_content",
+				"label": "grop left top content"
+			},
+            {
+				"type": "image_picker",
+				"id": "grop_left_list_image1",
+				"label": "left list image1"
+			},
+            {
+				"type": "image_picker",
+				"id": "grop_left_list_mb_image1",
+				"label": "left list mb image1"
+			},
+            {
+				"type": "image_picker",
+				"id": "grop_left_list_image2",
+				"label": "left list image2"
+			},
+            {
+				"type": "image_picker",
+				"id": "grop_left_list_mb_image2",
+				"label": "left list mb image2"
+			},
+
+            {
+				"type": "image_picker",
+				"id": "grop_right_list_image1",
+				"label": "right list image1"
+			},
+            {
+				"type": "image_picker",
+				"id": "grop_right_list_image2",
+				"label": "right list image2"
+			},
+            {
+				"type": "image_picker",
+				"id": "grop_right_list_image3",
+				"label": "right list image3"
+			},
+            {
+				"type": "image_picker",
+				"id": "grop_right_top_ico_image",
+				"label": "right top ico image"
+			},
+            {
+				"type": "text",
+				"id":"grop_right_top_text",
+				"label": "grop right top title"
+			},
+            {
+				"type": "text",
+				"id":"grop_right_top_content",
+				"label": "grop right top content"
+			},
+
+            {
+				"type": "image_picker",
+				"id": "center_line_image",
+				"label": "center line image"
+			},
+            {
+				"type": "text",
+				"id":"center_line_text",
+				"label": "center line title"
+			},
+            {
+				"type": "text",
+				"id":"center_line_content",
+				"label": "center line content"
+			},
+
+
+            
+            {
+				"type": "image_picker",
+				"id": "bottom_line_left_icon_image",
+				"label": "bottom line left image"
+			},
+            {
+				"type": "text",
+				"id":"bottom_line_left_top_text",
+				"label": "bottom line left top text"
+			},
+            {
+				"type": "text",
+				"id":"bottom_line_left_top_content",
+				"label": "bottom line left top content"
+			},
+            {
+				"type": "image_picker",
+				"id": "bottom_line_bottom_image",
+				"label": "bottom line bottom image"
+			},
+            {
+				"type": "text",
+				"id":"bottom_line_bottom_content",
+				"label": "bottom line bottom content"
+			},
+
+
+            {
+				"type": "image_picker",
+				"id": "bottom_line_right_icon_image",
+				"label": "bottom line right image"
+			},
+            {
+				"type": "text",
+				"id":"bottom_line_right_top_text",
+				"label": "bottom line right top text"
+			},
+            {
+				"type": "text",
+				"id":"bottom_line_right_top_content",
+				"label": "bottom line right top content"
+			},
+
+
+
+
+
+
+          
+        ],
+        "blocks": [],
+        "presets": [
+            {
+                "name": "Ae01 Gear"
+                  
+               }
+        ]
+    }
+{% endschema %}

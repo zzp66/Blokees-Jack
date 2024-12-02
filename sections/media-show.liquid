@@ -1,0 +1,1050 @@
+<style>
+  #{{ section.id }}-media-show {
+    background-color: {{ section.settings.background_color }};
+    padding: calc(14000vw/var(--base-width)) calc(11500vw/var(--base-width));
+    margin-top: -1px;
+    font-family: Outfit-Regular;
+  }
+
+  #{{ section.id }}-media-show .title-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: calc(2000vw/var(--base-width));
+      margin-bottom: calc(4000vw/var(--base-width));
+  }
+
+  #{{ section.id }}-media-show .title-container .title {
+      color: {{ section.settings.text_color }};
+      text-align: center;
+      font-size: 2.8vw;
+      font-weight: 700;
+      line-height: 1;
+      text-transform: capitalize;
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+
+  #{{ section.id }}-media-show .title-container .sub-title {
+      color: {{ section.settings.text_color }};
+      font-size: calc(2400vw/var(--base-width));
+      line-height: 1;
+  }
+
+  #{{ section.id }}-media-show .media-container {
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  #{{ section.id }}-media-show .media-item {
+      width: 25%;
+      margin-bottom: calc(3000vw/var(--base-width));
+  }
+
+  #{{ section.id }}-media-show .media-content {
+      overflow: hidden;
+      margin: 0 calc(1500vw/var(--base-width));
+      border-radius: calc(1000vw/var(--base-width));
+      display: flex;
+  }
+  /* social start */
+
+  #{{ section.id }}-media-show .media-text .media-content {
+      background: #FFF;
+      padding: calc(1500vw/var(--base-width));
+      flex-direction: column;
+      gap: calc(2000vw/var(--base-width));
+  }
+
+  #{{ section.id }}-media-show .media-text .media-content .info-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  #{{ section.id }}-media-show .media-text .media-content .info-left {
+      display: flex;
+      gap: calc(800vw/var(--base-width));
+      align-items: center;
+  }
+
+  #{{ section.id }}-media-show .media-text .media-content .info-social {
+      max-width: calc(3000vw/var(--base-width));
+  }
+
+  #{{ section.id }}-media-show .media-text .media-content .info-photo {
+      width: calc(5100vw/var(--base-width));
+      max-height: calc(5100vw/var(--base-width));
+  }
+
+  #{{ section.id }}-media-show .media-text .media-content .info-name {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  #{{ section.id }}-media-show .media-text .media-content .name-text {
+      font-size: calc(1400vw/var(--base-width));
+      font-weight: 600;
+      line-height: 1;
+  }
+
+  #{{ section.id }}-media-show .media-text .media-content .des-text {
+      font-size: calc(1200vw/var(--base-width));
+  }
+
+  #{{ section.id }}-media-show .media-text .content-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: calc(1000vw/var(--base-width));
+  }
+
+  #{{ section.id }}-media-show .media-text .content-title {
+      font-size: calc(2000vw/var(--base-width));
+      font-weight: 600;
+      line-height: 1.3;
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+
+  #{{ section.id }}-media-show .media-text .content-text {
+    font-size: calc(1600vw/var(--base-width));
+    line-height: 1.37;
+    text-align: left;
+    opacity: 0.8;
+  }
+  /* 富文本定制样式 start */
+  #{{ section.id }}-media-show .media-text .content-text p{
+    font-size: calc(1600vw/var(--base-width));
+    line-height: 1.37;
+    margin-bottom: 0;
+  }
+  /* 富文本定制样式 end */
+
+  #{{ section.id }}-media-show .media-text .content-img {
+    width: 100%;
+    border-radius: calc(1000vw/var(--base-width));
+  }
+
+  #{{ section.id }}-media-show .media-text .time-star {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  #{{ section.id }}-media-show .media-text .time-star .time {
+      font-size: calc(1400vw/var(--base-width));
+      line-height: 1.14;
+      opacity: 0.5;
+  }
+
+  #{{ section.id }}-media-show .media-text .time-star .star {
+      display: flex;
+      gap: 2px;
+      align-items: center;
+  }
+  /* social end */
+
+  /* 视频模块 */
+  #{{ section.id }}-media-show .media-video{
+    cursor: pointer;
+  }
+  #{{ section.id }}-media-show .media-video .media-content {
+      position: relative;
+  }
+
+  #{{ section.id }}-media-show .media-video .mask {
+      position: absolute;
+      bottom: 0;
+      height: 30%;
+      width: 100%;
+      background: linear-gradient(180deg,transparent 20%,#000);
+
+  }
+
+  #{{ section.id }}-media-show .media-video video {
+      width: 100%;
+  }
+
+  #{{ section.id }}-media-show .media-video .media-text {
+      font-size: calc(1800vw/var(--base-width));
+      line-height: 1.3;
+      position: absolute;
+      bottom: calc(1500vw/var(--base-width));
+      left: calc(1400vw/var(--base-width));
+      max-width: calc(100% - calc(2800vw/var(--base-width)));
+  }
+  #{{ section.id }}-media-show .media-video .play-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(6800vw/var(--base-width));
+  }
+  #{{ section.id }}-media-show .media-video .youtube-image{
+    height: calc(52000vw/var(--base-width));
+    object-fit: cover;
+  }
+
+  #{{ section.id }}-media-show .media-video .youtube-iframe{
+    height: calc(52000vw/var(--base-width));
+    pointer-events: none;
+  }
+
+  #{{ section.id }}-media-show .video-play-popup{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+  #{{ section.id }}-media-show .video-play-popup .host-video-play,
+  #{{ section.id }}-media-show .video-play-popup .youtube-video-play{
+    height: 76vh;
+    display: flex;
+    width: 100vw;
+    max-width: 1200px;
+  }
+  #{{ section.id }}-media-show .video-play-popup .host-video-play video{
+    height: 100%;
+  }
+  #{{ section.id }}-media-show .video-play-popup .youtube-video-play iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+  }
+  /* 查看更多按钮 */
+  #{{ section.id }}-media-show .view-more{
+    display: flex;
+    justify-content: center;
+  }
+  #{{ section.id }}-media-show .view-more .view-more-text{
+    border-radius: calc(2400vw/var(--base-width));
+    background: {{ section.settings.viwemore_bg_color }};
+    color: {{ section.settings.viwemore_color }};
+    font-size: calc(2200vw/var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    padding: calc(1000vw/var(--base-width)) calc(5500vw/var(--base-width));
+    margin-top: calc(8000vw/var(--base-width));
+    cursor: pointer;
+  }
+  @media (max-width: 1728px){
+    #{{section.id}}-media-show {
+      padding-left: calc(8000vw/var(--base-width));
+      padding-right: calc(8000vw/var(--base-width));
+    }
+  }
+  @media (max-width: 1440px){
+    #{{section.id}}-media-show {
+      padding-left: calc(3500vw/var(--base-width));
+      padding-right: calc(3500vw/var(--base-width));
+    }
+    #{{ section.id }}-media-show .video-play-popup .host-video-play,
+    #{{ section.id }}-media-show .video-play-popup .youtube-video-play{
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  @media (max-width: 1194px){
+    #{{ section.id }}-media-show .media-item {
+      width: 33.3%;
+    }
+  }
+
+  /* 移动端适配 */
+  @media (max-width: 768px){
+    #{{ section.id }}-media-show {
+      padding: calc(5000vw/var(--base-width)) calc(1250vw/var(--base-width)) calc(6600vw/var(--base-width)) ;
+    }
+
+    #{{ section.id }}-media-show .title-container {
+        gap: calc(1000vw/var(--base-width));
+        margin-bottom: calc(3000vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .title-container .title {
+        font-size: 6vw;
+        max-width: calc(22100vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .title-container .sub-title {
+        font-size: calc(1500vw/var(--base-width));
+        max-width: calc(24000vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-item {
+        width: 50%;
+        margin-bottom: calc(750vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-content {
+        margin: 0 calc(500vw/var(--base-width));
+        border-radius: calc(500vw/var(--base-width));
+    }
+
+    /* social start */
+    #{{ section.id }}-media-show .media-text .media-content {
+        padding: calc(1300vw/var(--base-width))  calc(900vw/var(--base-width));
+        gap: calc(1500vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-text .media-content .info-social {
+        max-width: calc(1500vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-text .media-content .info-photo {
+        width: calc(2900vw/var(--base-width));
+        max-height: calc(2900vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-text .media-content .name-text {
+        font-size: calc(1000vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-text .media-content .des-text {
+        font-size: calc(800vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-text .content-container {
+        gap: calc(750vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-text .content-title {
+        font-size: calc(1500vw/var(--base-width));
+        line-height: 1.13;
+    }
+
+    #{{ section.id }}-media-show .media-text .content-text {
+        font-size: calc(1300vw/var(--base-width));
+        line-height: 1.23;
+    }
+
+    /* 富文本定制样式 start */
+    #{{ section.id }}-media-show .media-text .content-text p{
+      font-size: calc(1300vw/var(--base-width));
+      line-height: 1.23;
+    }
+    /* 富文本定制样式 end */
+
+    #{{ section.id }}-media-show .media-text .content-img {
+      border-radius: calc(500vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-text .time-star .time {
+      font-size: calc(1000vw/var(--base-width));
+    }
+    /* social end */
+
+    /* 视频模块 */
+    #{{ section.id }}-media-show .media-video .media-text {
+      font-size: calc(1300vw/var(--base-width));
+      line-height: 1.23;
+      bottom: calc(900vw/var(--base-width));
+      left: calc(800vw/var(--base-width));
+      max-width: 90%;
+    }
+
+    #{{ section.id }}-media-show .media-video .youtube-image{
+      height: calc(30000vw/var(--base-width));
+    }
+    #{{ section.id }}-media-show .media-video .play-icon{
+      width: calc(3200vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .media-video .youtube-iframe{
+      height: calc(30000vw/var(--base-width));
+    }
+
+    #{{ section.id }}-media-show .video-play-popup{
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 99;
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    #{{ section.id }}-media-show .video-play-popup .host-video-play,
+    #{{ section.id }}-media-show .video-play-popup .youtube-video-play{
+      height: 55vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
+    #{{ section.id }}-media-show .video-play-popup .youtube-video-play iframe{
+      border-radius: 0;
+    }
+    #{{ section.id }}-media-show .video-play-popup .host-video-play video{
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+    }
+    /* 查看更多按钮 */
+    #{{ section.id }}-media-show .view-more .view-more-text{
+      border-radius: calc(2000vw/var(--base-width));
+      font-size: calc(1300vw/var(--base-width));
+      padding: calc(1000vw/var(--base-width)) calc(3800vw/var(--base-width));
+      margin-top: calc(4000vw/var(--base-width));
+    }
+  }
+</style>
+<div id="{{ section.id }}-media-show">
+  <div class="title-container">
+    <h2 class="title">{{ section.settings.title }}</h2>
+    <div class="sub-title">{{ section.settings.sub_title }}</div>
+  </div>
+  <div class="media-container">
+    {% for block in section.blocks %}
+      {% if forloop.index < 9 %}
+        {% if block.type == 'social' %}
+          <div
+            class="media-item media-text"
+            data-media-id="media-id-{{ forloop.index }}"
+          >
+            <div class="media-content" style="color: {{ block.settings.font_color }};">
+              <div class="info-container">
+                <div class="info-left">
+                  {% if block.settings.info_photo != blank %}
+                    <img
+                      class="info-photo"
+                      src="{{ block.settings.info_photo | image_url: width: 51 }}"
+                      alt="block.settings.info_photo.alt"
+                    >
+                  {% endif %}
+                  <div class="info-name">
+                    <div class="name-text">
+                      {{ block.settings.info_name }}
+                    </div>
+                    <div class="des-text">
+                      {{ block.settings.info_des }}
+                    </div>
+                  </div>
+                </div>
+                {% if block.settings.info_social != blank %}
+                  <img
+                    class="info-social"
+                    src="{{ block.settings.info_social | image_url: width: 51 }}"
+                    alt="block.settings.info_social.alt"
+                  >
+                {% endif %}
+              </div>
+              <div class="content-container">
+                {% if block.settings.content_title != blank %}
+                <h3 class="content-title">
+                  {{ block.settings.content_title }}
+                </h3>
+                {% endif %}
+                <div class="content-text">
+                  {{ block.settings.content_text }}
+                </div>
+              </div>
+              {% if block.settings.content_img != blank %}
+                <img
+                  class="content-img"
+                  src="{{ block.settings.content_img |  image_url }}"
+                  alt="{{ block.settings.content_img.alt }}"
+                >
+              {% endif %}
+              <div class="time-star">
+                <div class="time">{{ block.settings.content_time }}</div>
+                <div class="star">
+                  {% assign max_stars = block.settings.star %}
+                  {% for i in (1..5) %}
+                    {% if i <= max_stars %}
+                      <svg
+                        width="12"
+                        height="10"
+                        viewBox="0 0 12 10"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                            d="M6 0L8.063 2.81417L11.5 3.82L9.337 6.56417L9.4 10L6 8.88167L2.6 10L2.662 6.56417L0.5 3.82L3.937 2.81417L6 0Z"
+                            fill="{{ block.settings.star_color }}" />
+                      </svg>
+                    {% else %}
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                            d="M5.5 1.11816L7.16742 3.62017L7.2158 3.69276L7.29885 3.7195L10.0972 4.62032L8.33042 7.08591L8.28229 7.15307L8.28367 7.23569L8.3349 10.3089L5.58506 9.31394L5.5 9.28316L5.41494 9.31394L2.665 10.3089L2.71542 7.23563L2.71678 7.15307L2.6687 7.08595L0.902754 4.62034L3.70115 3.7195L3.7842 3.69276L3.83258 3.62017L5.5 1.11816Z"
+                            stroke="{{ block.settings.star_color }}" stroke-width="0.5" />
+                      </svg>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% elsif block.type == 'host_video' %}
+          {% assign video_url = '' %}
+          {% for item in block.settings.video.sources %}
+            {% if item.mime_type == 'video/mp4' %}
+              {% assign video_url = item.url %}
+            {% endif %}
+          {% endfor %}
+          <div
+            class="media-item media-video"
+            onclick="videoPlay('host','{{ video_url }}')"
+            onmouseenter="hostVideoSeenter(this)"
+            onmouseleave="hostVideoLeave(this)"
+            data-media-id="media-id-{{ forloop.index }}"
+          >
+            <div class="media-content">
+              <div class="mask"></div>
+              <div class="media-text" style="color: {{ block.settings.video_font_color }};">
+                {{ block.settings.video_title_host }}
+              </div>
+              {% assign video_hosted = block.settings.video %}
+              {{
+                video_hosted
+                | video_tag: autoplay: false, loop: true, controls: false, muted: true, image_size: 'master'
+              }}
+            </div>
+          </div>
+        {% elsif block.type == 'youtube_video' %}
+          <div
+            class="media-item media-video"
+            data-media-id="media-id-{{ forloop.index }}"
+            onclick="videoPlay('youtube','{{ block.settings.video_external.id }}')"
+          >
+            <div class="media-content">
+              <div class="mask"></div>
+              <div class="media-text media-text-youtube" style="color: {{ block.settings.video_font_color }};">
+                {{ block.settings.video_title_youtube }}
+              </div>
+              <img
+                class="youtube-image"
+                src="https://img.youtube.com/vi/{{ block.settings.video_external.id }}/maxresdefault.jpg"
+                alt="youtube-img"
+              >
+              <img
+                class="play-icon"
+                src="{{ section.settings.play_icon |  image_url  }}"
+                alt="{{section.settings.play_icon.alt}}"
+              >
+            </div>
+          </div>
+        {% elsif block.type == 'video_cutom_url' %}
+          <div
+            class="media-item media-video"
+            data-media-id="media-id-{{ forloop.index }}"
+            onclick="videoPlay('video_cutom_url','{{ block.settings.video_external_url }}')"
+          >
+            <div class="media-content">
+              <div class="mask"></div>
+              <div class="media-text media-text-youtube" style="color: {{ block.settings.video_font_color }};">
+                {{ block.settings.video_url_title }}
+              </div>
+              <img
+                class="youtube-image"
+                src="{{ block.settings.video_external_url }}/maxresdefault.jpg"
+                alt="youtube-img"
+              >
+              <img
+                class="play-icon"
+                src="{{ section.settings.play_icon |  image_url  }}"
+                alt="{{section.settings.play_icon.alt}}"
+              >
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% if section.blocks.size > 8 %}
+    <div class="view-more">
+      <div class="view-more-text" onclick="loadMore()">View More</div>
+    </div>
+  {% endif %}
+  {% comment %} 视频播放弹窗 {% endcomment %}
+  <div class="video-play-popup">
+    {% comment %} shopify后台视频 {% endcomment %}
+    <div class="host-video-play"></div>
+    {% comment %} youtube视频 {% endcomment %}
+    <div class="youtube-video-play"></div>
+  </div>
+  <div class="hidden" style="display: none;">
+    {% for block in section.blocks %}
+      {% if forloop.index >= 9 %}
+        {% if block.type == 'social' %}
+          <div
+            class="media-item media-text hidden-item"
+            data-media-id="media-id-{{ forloop.index }}"
+          >
+            <div class="media-content" style="color: {{ block.settings.font_color }};">
+              <div class="info-container">
+                <div class="info-left">
+                  {% if block.settings.info_photo != blank %}
+                    <img
+                      class="info-photo"
+                      src="{{ block.settings.info_photo | image_url: width: 51 }}"
+                      alt="block.settings.info_photo.alt"
+                    >
+                  {% endif %}
+                  <div class="info-name">
+                    <div class="name-text">
+                      {{ block.settings.info_name }}
+                    </div>
+                    <div class="des-text">
+                      {{ block.settings.info_des }}
+                    </div>
+                  </div>
+                </div>
+                <img
+                  class="info-social"
+                  src="{{ block.settings.info_social | image_url: width: 51 }}"
+                  alt="block.settings.info_social.alt"
+                >
+              </div>
+              <div class="content-container">
+                {% if block.settings.content_title != blank %}
+                <h3 class="content-title">
+                  {{ block.settings.content_title }}
+                </h3>
+                {% endif %}
+                <div class="content-text">
+                  {{ block.settings.content_text }}
+                </div>
+              </div>
+              {% if block.settings.content_img != blank %}
+                <img
+                  class="content-img"
+                  src="{{ block.settings.content_img |  image_url }}"
+                  alt="{{ block.settings.content_img.alt }}"
+                >
+              {% endif %}
+              <div class="time-star">
+                <div class="time">{{ block.settings.content_time }}</div>
+                <div class="star">
+                  {% assign max_stars = block.settings.star %}
+                  {% for i in (1..5) %}
+                    {% if i <= max_stars %}
+                      <svg
+                        width="12"
+                        height="10"
+                        viewBox="0 0 12 10"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                            d="M6 0L8.063 2.81417L11.5 3.82L9.337 6.56417L9.4 10L6 8.88167L2.6 10L2.662 6.56417L0.5 3.82L3.937 2.81417L6 0Z"
+                            fill="{{ block.settings.star_color }}" />
+                      </svg>
+                    {% else %}
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 11 11"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                            d="M5.5 1.11816L7.16742 3.62017L7.2158 3.69276L7.29885 3.7195L10.0972 4.62032L8.33042 7.08591L8.28229 7.15307L8.28367 7.23569L8.3349 10.3089L5.58506 9.31394L5.5 9.28316L5.41494 9.31394L2.665 10.3089L2.71542 7.23563L2.71678 7.15307L2.6687 7.08595L0.902754 4.62034L3.70115 3.7195L3.7842 3.69276L3.83258 3.62017L5.5 1.11816Z"
+                            stroke="{{ block.settings.star_color }}" stroke-width="0.5" />
+                      </svg>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% elsif block.type == 'host_video' %}
+          {% assign video_url = '' %}
+          {% for item in block.settings.video.sources %}
+            {% if item.mime_type == 'video/mp4' %}
+              {% assign video_url = item.url %}
+            {% endif %}
+          {% endfor %}
+          <div
+            class="media-item media-video hidden-item"
+            onclick="videoPlay('host','{{ video_url }}')"
+            onmouseenter="hostVideoSeenter(this)"
+            onmouseleave="hostVideoLeave(this)"
+            data-media-id="media-id-{{ forloop.index }}"
+          >
+            <div class="media-content">
+              <div class="mask"></div>
+              <div class="media-text" style="color: {{ block.settings.video_font_color }};">
+                {{ block.settings.video_title_host }}
+              </div>
+              {% assign video_hosted = block.settings.video %}
+              {{
+                video_hosted
+                | video_tag: autoplay: false, loop: true, controls: false, muted: true, image_size: 'master'
+              }}
+            </div>
+          </div>
+        {% elsif block.type == 'youtube_video' %}
+          <div
+            class="media-item media-video hidden-item"
+            data-media-id="media-id-{{ forloop.index }}"
+            onclick="videoPlay('youtube','{{ block.settings.video_external.id }}')"
+          >
+            <div class="media-content">
+              <div class="mask"></div>
+              <div class="media-text media-text-youtube" style="color: {{ block.settings.video_font_color }};">
+                {{ block.settings.video_title_youtube }}
+              </div>
+              <iframe
+                class="youtube-iframe"
+                width="100%"
+                src="https://www.youtube.com/embed/{{ block.settings.video_external.id }}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        {% elsif block.type == 'video_cutom_url' %}
+          <div
+            class="media-item media-video hidden-item"
+            data-media-id="media-id-{{ forloop.index }}" 
+            onclick="videoPlay('video_cutom_url','{{ block.settings.video_external_url }}')"
+          >
+            <div class="media-content">
+              <div class="mask"></div>
+              <div class="media-text media-text-youtube" style="color: {{ block.settings.video_font_color }};">
+                {{ block.settings.video_url_title }}
+              </div>
+              <iframe
+                class="youtube-iframe"
+                width="100%"
+                src="{{ block.settings.video_external_url }}"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script>
+  var grid = document.querySelector('#{{ section.id }}-media-show .media-container');
+  const allItems = document.querySelectorAll('#{{ section.id }}-media-show .media-item');
+  const loadMoreButton = document.querySelector('#{{ section.id }}-media-show .view-more-text');
+  var hiddenItems = document.querySelectorAll('#{{ section.id }}-media-show .hidden-item');
+  // 视频播放数据
+  let videoPlayDom = document.querySelector('#{{ section.id }}-media-show .video-play-popup');
+  let hostVideoPlay = videoPlayDom.querySelector('.host-video-play');
+  let youtubeVideoPlay = videoPlayDom.querySelector('.youtube-video-play');
+  var msnry = new Masonry(grid, {
+    itemSelector: '.media-item',
+    percentPosition: true,
+  });
+  msnry.layout();
+  let currentIndex = 0;
+  const loadCount = 10;
+
+  // 弹窗播放视频
+  function popupPlay() {
+    videoPlayDom.addEventListener('click', function (event) {
+      if (
+        event.target.classList.contains('video-play-popup') ||
+        event.target.classList.contains('host-video-play') ||
+        event.target.classList.contains('youtube-video-play')
+      ) {
+        videoPlayDom.style.display = 'none';
+        hostVideoPlay.innerHTML = '';
+        youtubeVideoPlay.innerHTML = '';
+      }
+    });
+  }
+
+  function videoPlay(type, url) {
+    hostVideoPlay.style.display = 'none';
+    youtubeVideoPlay.style.display = 'none';
+    if (type == 'host') {
+      let videoElement = document.createElement('video');
+      videoElement.controls = true;
+      videoElement.src = url;
+      videoElement.autoplay = 1;
+      videoElement.type = 'video/mp4';
+      hostVideoPlay.innerHTML = '';
+      hostVideoPlay.appendChild(videoElement);
+      hostVideoPlay.style.display = 'flex';
+    } else if (type == 'youtube') {
+      let iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube.com/embed/' + url;
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      youtubeVideoPlay.innerHTML = '';
+      youtubeVideoPlay.appendChild(iframe);
+      youtubeVideoPlay.style.display = 'flex';
+    }else{
+      let iframe = document.createElement('iframe');
+      iframe.src = url;
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      youtubeVideoPlay.innerHTML = '';
+      youtubeVideoPlay.appendChild(iframe);
+      youtubeVideoPlay.style.display = 'flex';
+    }
+    // 展开弹窗
+    videoPlayDom.style.display = 'flex';
+  }
+
+  // loadMore事件
+  function loadMore() {
+    const newItems = [];
+    // 加载接下来的元素
+    for (let i = currentIndex; i < currentIndex + loadCount; i++) {
+      if (i >= hiddenItems.length - 1) {
+        loadMoreButton.style.display = 'none'; // 如果没有更多元素，隐藏按钮
+        break;
+      }
+      const item = hiddenItems[i];
+      grid.appendChild(item); // 将元素加入 grid 容器
+      newItems.push(item);
+    }
+    currentIndex += loadCount;
+    // 添加新元素到 Masonry 并重新布局
+    msnry.appended(newItems);
+    msnry.layout();
+  }
+
+  // 鼠标移入事件
+  function hostVideoSeenter(dom) {
+    let _video = dom.querySelector('video');
+    _video.play();
+  }
+  function hostVideoLeave(dom) {
+    let _video = dom.querySelector('video');
+    _video.pause();
+    _video.currentTime = 0;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    popupPlay();
+    msnry.layout();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Media Show",
+  "class": "media-show",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "what our little builders say"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "Real Feedback, Real Playtime Magic"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "viwemore_color",
+      "label": "View More Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "viwemore_bg_color",
+      "label": "View More Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "image_picker",
+      "id": "play_icon",
+      "label": "Play Icon"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "social",
+      "name": "social item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "info_photo",
+          "label": "Info Photo"
+        },
+        {
+          "type": "text",
+          "id": "info_name",
+          "label": "Info Name"
+        },
+        {
+          "type": "text",
+          "id": "info_des",
+          "label": "Info Description"
+        },
+        {
+          "type": "image_picker",
+          "id": "info_social",
+          "label": "Social Image"
+        },
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Content Title"
+        },
+        {
+          "type": "richtext",
+          "id": "content_text",
+          "label": "Content Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "content_img",
+          "label": "Content Img"
+        },
+        {
+          "type": "text",
+          "id": "content_time",
+          "label": "Content Time"
+        },
+        {
+          "type": "range",
+          "id": "star",
+          "label": "Star",
+          "min": 0,
+          "max": 5,
+          "step": 1,
+          "unit": "st",
+          "default": 5
+        },
+        {
+          "type": "color",
+          "id": "font_color",
+          "label": "Font Color",
+          "default": "#006DE5"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#FFF"
+        },
+        {
+          "type": "color",
+          "id": "star_color",
+          "label": "Star Color",
+          "default": "#006DE5"
+        },
+        {
+          "type": "color",
+          "id": "media_text_color",
+          "label": "Media Text Color",
+          "default": "#fff"
+        }
+      ]
+    },
+    {
+      "type": "host_video",
+      "name": "host item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "video_title_host",
+          "label": "Video Title"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video Url"
+        },
+        {
+          "type": "color",
+          "id": "video_font_color",
+          "label": "Video Font Color",
+          "default": "#fff"
+        }
+      ]
+    },
+    {
+      "type": "youtube_video",
+      "name": "youtube item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "video_title_youtube",
+          "label": "Video Title"
+        },
+        {
+          "type": "video_url",
+          "id": "video_external",
+          "label": "Youtube Video Url",
+          "accept": ["youtube"]
+        },
+        {
+          "type": "color",
+          "id": "video_font_color",
+          "label": "Video Font Color",
+          "default": "#fff"
+        }
+      ]
+    },
+    {
+      "type": "video_cutom_url",
+      "name": "test item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "video_url_title",
+          "label": "Video Title"
+        },
+        {
+          "type": "url",
+          "id": "video_external_url",
+          "label": "Youtube or Video Url"
+        },
+        {
+          "type": "color",
+          "id": "video_font_color",
+          "label": "Video Font Color",
+          "default": "#fff"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media Show"
+    }
+  ]
+}
+{% endschema %}

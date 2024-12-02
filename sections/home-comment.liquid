@@ -1,0 +1,492 @@
+<style>
+  .shane-home-comment {
+    width: 100%;
+    min-height: 30vw;
+    background-color: #ff5f00;
+    color: #f4f0e6;
+    padding-top: 7vw;
+  }
+  .shane-home-comment > div {
+    width: 97%;
+    margin: 0 0 0 auto;
+  }
+  .home-comment-context {
+    width: 93vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .home-comment-context > div:first-child {
+    width: 60%;
+    color: #f4f0e6;
+    font-size: 16px;
+  }
+  .home-comment-context > div:last-child {
+    width: 250px;
+  }
+  .home-comment-context .shane-button-02 {
+    width: 100%;
+    border: 1px solid #ffffff;
+    color: #fff;
+    background-color: #ff5f00;
+  }
+  .home-comment-context .btn__bg {
+    background-color: #ffffff;
+  }
+  .home-comment-context .btn__circle-02 span {
+    color: #fff;
+  }
+  .home-comment-context .shane-button-02:hover {
+    color: #ff5f00;
+  }
+  .home-comment-context .shane-button-02:hover span {
+    color: #ff5f00;
+  }
+  .home-comment-context .stitle {
+    font-size: 1.4vw;
+    text-transform: capitalize;
+    opacity: 0.9;
+  }
+  .home-comment-context .title {
+    font-size: 3vw;
+    text-transform: uppercase;
+    font-family: Outfit-Bold;
+  }
+  .home-comment-context .text {
+    opacity: 0.9;
+  }
+  .home-comment-columns {
+    width: 100%;
+    margin-top: 1.2vw;
+  }
+  .home-comment-columns .text-img {
+    width: 100%;
+    position: relative;
+    border-radius: 5px;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .home-comment-columns .text-img > div {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #00000080;
+    padding: 1.2vw;
+    justify-content: start;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    display: none;
+  }
+  .home-comment-columns .active .text-img > div {
+    display: flex;
+  }
+  .home-comment-columns .text-img-text {
+    font-size: 1vw;
+    color: #fff;
+    opacity: 0.9;
+    font-family: Outfit-Light;
+    padding-bottom: 1.2vw;
+    border-bottom: 1px solid #b6b6b8;
+  }
+  .home-comment-columns .text-img-score {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    margin-top: 1.2vw;
+  }
+  .home-comment-columns .text-img-score > div:first-child {
+    width: 70%;
+  }
+  .home-comment-columns .text-img-score > div:last-child {
+    width: 30%;
+    text-align: center;
+    font-family: Outfit-Bold;
+    font-size: 3.6vw;
+    line-height: 3vw;
+  }
+  .home-comment-columns .text-img-score > div:first-child > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .home-comment-columns .text-img-score .score-title {
+    font-size: 1vw;
+    width: 60%;
+  }
+  .home-comment-columns .text-img-score .score-star {
+    width: 40%;
+    font-size: 1vw;
+    color: #feca1f;
+  }
+  .home-comment-columns .comment-columns-title {
+    font-family: Outfit-Bold;
+    font-size: 1.4vw;
+    margin-top: 0.6vw;
+  }
+  .home-comment-columns .comment-columns-date {
+    font-size: 1vw;
+    color: #ffbf99;
+  }
+  .shane-home-comment .swiper-l-r {
+    padding: 15px 3% 15px 0;
+  }
+  .shane-home-comment .swiper-l-r > div {
+    border: 1px solid #f4f0e6;
+    background-color: #ff5f00;
+  }
+  .shane-home-comment .swiper-l-r > div:hover {
+    background-color: #f4f0e6;
+  }
+  .shane-home-comment .columns-next .icon-next {
+    transform: scaleX(1);
+  }
+  .shane-home-comment .columns-next .icon-next-hover {
+    transform: scaleX(-1);
+  }
+  .shane-home-comment .columns-prev .icon-prev {
+    transform: scaleX(-1);
+  }
+  .shane-home-comment .columns-prev .icon-prev-hover {
+    transform: scaleX(1);
+  }
+  @media (max-width: 768px) {
+    .home-comment-context {
+      flex-wrap: wrap;
+    }
+    .home-comment-context > div:first-child {
+      width: 100%;
+      font-size: 3.4vw;
+    }
+    .home-comment-context .stitle {
+      font-size: 3.6vw;
+      line-height: 3.4vw;
+      margin-bottom: 1vw;
+    }
+    .home-comment-context .title {
+      font-size: 8vw;
+      line-height: 9vw;
+      margin-bottom: 1vw;
+    }
+    .home-comment-context > div:last-child {
+      margin-top: 2vw;
+    }
+    .home-comment-columns {
+      margin-top: 3vw;
+    }
+    .home-comment-columns .active .text-img > div {
+      display: none;
+    }
+    .home-comment-columns .swiper-slide-active .text-img > div {
+      display: flex;
+    }
+    .home-comment-columns .text-img-text {
+      font-size: 3vw;
+      padding-bottom: 2vw;
+    }
+    .home-comment-columns .text-img-score {
+      margin-top: 2vw;
+    }
+    .home-comment-columns .text-img-score > div:first-child {
+      width: 70%;
+    }
+    .home-comment-columns .text-img-score > div:last-child {
+      font-size: 6vw;
+    }
+    .home-comment-columns .text-img-score .score-title {
+      font-size: 3vw;
+    }
+    .home-comment-columns .text-img-score .score-star {
+      font-size: 3vw;
+    }
+    .home-comment-columns .comment-columns-title {
+      font-size: 4vw;
+      margin-top: 1vw;
+      line-height: 1.2;
+    }
+    .home-comment-columns .comment-columns-date {
+      font-size: 3.6vw;
+    }
+  }
+</style>
+<div>
+  <div class="home-comment-context">
+    <div>
+      <div class="stitle">{{ section.settings.subtitle }}</div>
+      <div class="title">{{ section.settings.heading }}</div>
+      <div class="text">{{ section.settings.context }}</div>
+    </div>
+    <div>
+      {%- if section.settings.buttontext != blank -%}
+        <a class="shane-button-02" href="{{ section.settings.link }}">
+          <div class="btn__bg"></div>
+          <div class="btn__label-02">{{ section.settings.buttontext }}</div>
+          <div class="btn__circle-02">
+            <span class="fa fa-arrow-up"></span>
+          </div>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="home-comment-columns">
+    <div class="swiper commentcolumnSwiper">
+      <div class="swiper-wrapper">
+        {%- assign my_variable = 0 -%}
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign image = block.settings.image
+            assign my_variable = my_variable | plus: 1
+            assign num1 = block.settings.num1 | plus: 0
+            assign num2 = block.settings.num2 | plus: 0
+            assign num3 = block.settings.num3 | plus: 0
+          -%}
+          <div class="swiper-slide {% if my_variable==1 %}active{% endif %}">
+            <div class="text-img">
+              <img src="{{ image | image_url }}" style="width: 100%;" alt="{{image.alt }}">
+              <div>
+                <div class="text-img-text">
+                  {{ block.settings.context }}
+                </div>
+                <div class="text-img-score">
+                  <div>
+                    {% if block.settings.score_title1 != blank %}
+                      <div>
+                        <div class="score-title">{{ block.settings.score_title1 }}</div>
+                        <div class="score-star">
+                          {% if num1 > 1 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num1 > 2 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num1 > 3 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num1 > 4 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num1 == 5 %}<span class="fa fa-star"></span>{% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.score_title2 != blank %}
+                      <div>
+                        <div class="score-title">{{ block.settings.score_title2 }}</div>
+                        <div class="score-star">
+                          {% if num2 > 1 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num2 > 2 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num2 > 3 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num2 > 4 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num2 == 5 %}<span class="fa fa-star"></span>{% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                    {% if block.settings.score_title3 != blank %}
+                      <div>
+                        <div class="score-title">{{ block.settings.score_title3 }}</div>
+                        <div class="score-star">
+                          {% if num3 > 1 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num3 > 2 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num3 > 3 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num3 > 4 %}<span class="fa fa-star"></span>{% endif %}
+                          {% if num3 == 5 %}<span class="fa fa-star"></span>{% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  </div>
+                  <div>{{ block.settings.score }}</div>
+                </div>
+              </div>
+            </div>
+            <div class="comment-columns-title">{{ block.settings.title }}</div>
+            <div class="comment-columns-date">{{ block.settings.text_date }}</div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="swiper-l-r">
+      <div class="columns-next">
+        <img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="icon-next">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939"
+          class="icon-next-hover"
+        >
+      </div>
+      <div class="columns-prev">
+        <img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="icon-prev">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939"
+          class="icon-prev-hover"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Home comment",
+  "class": "shane-home-comment",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Add a subtitle"
+    },
+    {
+      "type": "textarea",
+      "id": "context",
+      "label": "Text"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "link",
+      "info": "Adds a link"
+    },
+    {
+      "type": "text",
+      "id": "buttontext",
+      "label": "Button Text",
+      "default": "Discover More Stories"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text_date",
+          "label": "Date"
+        },
+        {
+          "type": "textarea",
+          "id": "context",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "score_title1",
+          "label": "Score title 1"
+        },
+        {
+          "type": "select",
+          "id": "num1",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ],
+          "default": "5",
+          "label": "Star Num1"
+        },
+        {
+          "type": "text",
+          "id": "score_title2",
+          "label": "Score title 2"
+        },
+        {
+          "type": "select",
+          "id": "num2",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ],
+          "default": "5",
+          "label": "Star Num2"
+        },
+        {
+          "type": "text",
+          "id": "score_title3",
+          "label": "Score title 3"
+        },
+        {
+          "type": "select",
+          "id": "num3",
+          "options": [
+            {
+              "value": "1",
+              "label": "1"
+            },
+            {
+              "value": "2",
+              "label": "2"
+            },
+            {
+              "value": "3",
+              "label": "3"
+            },
+            {
+              "value": "4",
+              "label": "4"
+            },
+            {
+              "value": "5",
+              "label": "5"
+            }
+          ],
+          "default": "5",
+          "label": "Star Num3"
+        },
+        {
+          "type": "text",
+          "id": "score",
+          "label": "Score"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home comment"
+    }
+  ]
+}
+{% endschema %}

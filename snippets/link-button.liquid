@@ -1,0 +1,66 @@
+{% liquid
+    
+    assign section_id = section_id | default: section.id
+    assign  font_color = font_color | default: "#fff"
+    assign background_color = background_color | default: "#FF5F00"
+    assign hover_font_color = hover_font_color | default: "#fff"
+    assign hover_background_color = hover_background_color | default: "#fff"
+    assign text = text | default: "View All "
+    assign url = url | default: "#"
+  %}
+
+<style>
+   .link-button-{{ section_id }}{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding: calc(100vw * 10 / var(--base-size)) calc(100vw * 17 / var(--base-size));
+        background-color: {{ background_color }};
+        border-radius: calc(100vw * 22 / var(--base-size));  
+        cursor: pointer;
+    }
+    .link-button-{{ section_id }}:hover{
+        background-color: {{ hover_background_color }};
+        color: {{ hover_font_color }}
+    }
+    .link-button-{{ section_id }}:hover .link-button__text{
+        color: {{ hover_font_color }};
+    }
+    .link-button-{{ section_id }}:hover .link-button__icon path{
+        stroke: {{ hover_font_color }};
+    }
+    .link-button-{{ section_id }} .link-button__text{
+        color: {{ font_color }};
+        font-family: Outfit;
+        font-size: calc(100vw * 18 / var(--base-size));
+        font-style: normal;
+        font-weight: 700;
+        line-height: calc(100vw * 18 / var(--base-size));
+        text-transform: capitalize;
+    }
+    .link-button-{{ section_id }}  .link-button__icon{
+        margin-left: calc(100vw * 8 / var(--base-size));
+        width: calc(100vw * 13 / var(--base-size));
+        height: calc(100vw * 12 / var(--base-size));
+    }
+    .link-button-{{ section_id }}  .link-button__icon path{
+        stroke: {{ font_color }};
+    }
+</style>
+{% if url == "#" or url == "" or url == null  %}
+    <div  class="link-button-{{ section_id }}">
+        <span class="link-button__text">{{ text }}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="link-button__icon" width="13" height="12" viewBox="0 0 13 12" fill="none">
+            <path d="M6.39526 1.26074L11.0521 6.12677L6.18607 10.7836"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.6689 6.15978L1.21704 5.95215"  stroke-width="2" stroke-linecap="round"/>
+        </svg>
+    </div>
+{% else %}
+<a href="{{ url }}" target="_blank" class="link-button-{{ section_id }}">
+    <span class="link-button__text">{{ text }}</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="link-button__icon" width="13" height="12" viewBox="0 0 13 12" fill="none">
+        <path d="M6.39526 1.26074L11.0521 6.12677L6.18607 10.7836"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.6689 6.15978L1.21704 5.95215"  stroke-width="2" stroke-linecap="round"/>
+    </svg>
+</a>
+{% endif %}

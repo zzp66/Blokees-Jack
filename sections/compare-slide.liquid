@@ -1,0 +1,439 @@
+{{- 'customer-reviews.css' | asset_url | stylesheet_tag -}}
+{%- liquid
+  assign section_heading = section.settings.heading
+  assign marker_style = section.settings.marker_style
+  assign section_description = section.settings.description
+  assign columns = section.settings.columns
+  assign autoplay = section.settings.autoplay
+  assign color_heading = section.settings.color_heading
+  assign marker_color = section.settings.marker_color
+  assign color_text = section.settings.color_text
+  assign disable_top_spacing = section.settings.disable_top_spacing
+  assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+  if autoplay
+    assign autoplay = section.settings.autoplay_length | times: 1000
+  endif
+
+  assign color_bg = section.settings.color_bg | downcase
+  assign color_body_bg = settings.color_body_bg | downcase
+
+  assign has_bg = true
+  if color_body_bg == color_bg or color_bg == 'transparent' or color_bg == 'rgba(0,0,0,0)'
+    assign has_bg = false
+  endif
+
+  case columns
+    when 3
+      assign columns_class = 'medium-4'
+    when 4
+      assign columns_class = 'medium-6 large-3'
+    when 5
+      assign columns_class = 'medium-1/5 large-1/5'
+    when 6
+      assign columns_class = 'medium-3 large-2'
+  endcase
+-%}
+
+<customer-reviews
+  class="customer-reviews section-spacing-padding{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}"
+  style="--color-bg:{{ color_bg }}; --color-heading:{{ color_heading }}; --color-text:{{ color_text }}; --dot-speed: {{ autoplay | divided_by: 1000 | append: 's' }};"
+>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="compare-content">
+      <div class="compare-left">
+        {%- render 'section-header', section_heading: section_heading -%}
+        <div class="compare-attribute-name">
+          <ul>
+           <li>Rated Voltage</li>
+           <li>Construction</li>
+           <li>Max Torque</li>
+           <li>Max RPM</li>
+           <li>Open Size (mm)</li>
+           <li>Brake Type</li>
+           <li>Top Speed</li>
+           <li>Payload Capacity</li>
+           <li></li>
+         </ul>
+        </div>
+      </div>
+      <div class="compare-right">
+        <slide-show class="customer-reviews--carousel carousel" data-autoplay="{{ autoplay }}" data-align="left">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign product_handle = block.settings.product_handle
+              assign review_product = all_products[product_handle]
+            -%}
+            <div class="small-12 {{ columns_class }} carousel__slide carousel-cell">
+              <div
+                class="customer-reviews--review"
+                {{ block.shopify_attributes }}
+              >
+                
+               {%- if product_handle != blank -%}
+                  <div class="compare-product-featured-image">
+                    {%- if review_product.featured_image -%}
+                      {%- render 'responsive-image', image: review_product.featured_image, sizes: '300x250,600x500' -%}
+                    {%- else -%}
+                      <div class="thb-placeholder">
+                        {{ 'product-1' | placeholder_svg_tag }}
+                      </div>
+                    {%- endif -%}
+                   {% comment %}
+                    <quick-view class="customer-reviews--quick-view" data-product-handle="{{ review_product.handle }}">
+                      {%- render 'svg-icons' with 'thb-add-to-cart' %}
+                      {%- unless review_product == empty -%}
+                        <div class="loading-overlay">
+                          {% render 'svg-icons' with 'thb-loading' %}
+                        </div>
+                      {%- endunless -%}
+                    </quick-view>
+                    {% endcomment %}
+                  </div>
+                 <div class="customer-reviews--content">
+                  <h6 class="product-compare-title">{{ review_product.title }}</h6>
+                  <h6>{{review_product.price | money}}</h6>
+                   <a class="button product-compare-button" href="{{ review_product.url }}">learn more</a>
+                 </div>
+                 <div class="product-attribute-compare">
+                   <ul>
+                     <li>{{ block.settings.wheel_size }}</li>
+                     <li>{{ block.settings.voltage }}</li>
+                     <li>{{ block.settings.wattage }}</li>
+                     <li>{{ block.settings.wheel_type }}</li>
+                     <li>{{ block.settings.lcd_display }}</li>
+                     <li>{{ block.settings.max_speed }}</li>
+                     <li>{{ block.settings.max_torque }}</li>
+                     <li>{{ block.settings.weight }}</li>
+                     <li></li>
+                   </ul>
+                 </div>
+                {%- endif -%}     
+              </div>
+            </div>
+          {%- endfor -%}
+          {% comment %}
+          {%- if section.blocks.size > columns -%}
+            <div class="flickity-nav flickity-prev" tabindex="0">{% render 'svg-icons' with 'carousel-prev' %}</div>
+            <div class="flickity-nav flickity-next" tabindex="0">{% render 'svg-icons' with 'carousel-next' %}</div>
+          {%- endif -%}
+          {% endcomment %}
+        </slide-show>
+      </div>
+      </div>
+    </div>
+  </div>
+</customer-reviews>
+
+<style>
+  #shopify-section-{{section.id}} .flickity-slider{
+      left:-340px!important
+  }
+    
+  .compare-content{
+    
+  }
+  .compare-left {
+    
+  }
+  .compare-left .section-header--title{
+    width:55%;
+  }
+  #shopify-section-{{ section.id }} .flickity-slider{
+    margin-left:80px;
+  }
+  .compare-right {
+    width: 75%;
+    position: relative;
+    left: 332px;
+    top: -558px;
+    height: 200px;;
+  }
+  .compare-product-featured-image {
+    margin-right: 159px;
+  }
+  .product-attribute-compare{
+    margin-top:28px;
+  }
+  .product-attribute-compare ul,.compare-attribute-name ul{
+    list-style:none;  
+    margin:0;
+  }
+  .product-attribute-compare ul li{
+    border-top:1px solid rgba(0,0,0,0);
+    font-size: 16px;
+    padding: 13px 0;
+  }
+  .compare-attribute-name ul li{
+    border-top:1px solid #dadce0;
+    font-size: 16px;
+    padding: 13px 0;
+  }
+  .product-compare-title{
+    height:90px;
+    margin-right:115px;
+    margin-top:25px;
+    font-size:16px;
+  }
+  .product-compare-button{
+    background: #335FFE;
+    margin-top:19px;
+    padding:12px 19px;
+    text-transform:capitalize;
+  }
+  .compare-attribute-name{
+    position: relative;
+    top: 283px;
+  }
+  @media(max-width:767px){
+    #shopify-section-{{section.id}} .flickity-slider{
+      left:-90px!important
+    }
+    .compare-right {
+        width: 100%;
+        position: relative;
+        left: 170px;
+        top: -460px;
+        height: 350px;
+    }
+    .compare-attribute-name{
+        top: 407px;
+    }
+    #shopify-section-{{ section.id }} .flickity-slider{
+      margin-left: 0px;
+    }
+    .product-compare-title{
+      height:134px;
+      margin-right:0px;
+      margin-top:25px;
+      font-size:16px;
+      overflow: hidden;
+    }
+    .product-compare-button{background: #335FFE;margin-top:19px;padding:12px 19px;}
+    .compare-product-featured-image {
+      margin-right: 0px;
+      width:150px;
+    }
+    .customer-reviews--review{
+      margin-right:15px;
+    }
+    .customer-reviews--review h6{
+      width:150px
+    }
+  }
+  
+   @media(768px <= width <=1023px){
+     #shopify-section-{{section.id}} .flickity-slider{
+      left:-270px!important;
+    }
+    .compare-right {
+        width: 100%;
+        position: relative;
+        left: 240px;
+        top: -460px;
+        height: 350px;
+    }
+    .compare-attribute-name{
+        top: 407px;
+    }
+    #shopify-section-{{ section.id }} .flickity-slider{
+      margin-left: 0px;
+    }
+    .product-compare-title{
+      height:134px;
+      margin-right:0px;
+      margin-top:25px;
+      font-size:16px;
+      overflow: hidden;
+    }
+    .product-compare-button{
+      background: #335FFE;
+      margin-top:19px;
+      padding:12px 19px;
+    }
+    .compare-product-featured-image {
+      margin-right: 0px;
+      width:150px;
+    }
+    .customer-reviews--review{
+      margin-right:15px;
+    }
+    .customer-reviews--review h6{
+      width:150px
+    }
+  }
+</style>
+
+<!-- JavaScript -->
+<!-- CSS -->
+<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script>
+  var flkty = new Flickity( '.customer-reviews--carousel', {
+    freeScroll: true,
+    prevNextButtons: false,
+    pageDots: false
+  });
+</script>
+{% schema %}
+{
+  "name": "Compare slide",
+  "class": "section-customer-reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Compare slide"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "label": "Number of columns on desktop",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Auto-rotate slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_length",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Change slides every",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "Heading",
+      "default": "#1A1C1D"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text",
+      "default": "#2C2D2E"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_top_spacing",
+      "default": false,
+      "label": "Remove top spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bottom_spacing",
+      "default": false,
+      "label": "Remove bottom spacing"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product_handle",
+          "label": "Product"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading",
+          "default": "Product"
+        },
+        {
+          "type": "text",
+          "id": "wheel_size",
+          "label": "Wheel Size",
+          "default": "26\""
+        },
+        {
+          "type": "text",
+          "id": "voltage",
+          "label": "Voltage",
+          "default": "48V"
+        },
+        {
+          "type": "text",
+          "id": "wattage",
+          "label": "Wattage",
+          "default": "1500W"
+        },
+        {
+          "type": "text",
+          "id": "wheel_type",
+          "label": "Wheel Type",
+          "default": "Front wheel"
+        },
+        {
+          "type": "text",
+          "id": "lcd_display",
+          "label": "Wheel Type",
+          "default": "LCD Display"
+        },
+        {
+          "type": "text",
+          "id": "max_speed",
+          "label": "Max Speed",
+          "default": "120"
+        },
+        {
+          "type": "text",
+          "id": "max_torque",
+          "label": "Max Torque",
+          "default": "80N.m"
+        },
+        {
+          "type": "text",
+          "id": "weight",
+          "label": "Weight",
+          "default": "30KG/66 LB"
+        }
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare slide",
+      "blocks": [
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        },
+        {
+          "type": "review"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

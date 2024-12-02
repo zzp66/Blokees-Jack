@@ -1,0 +1,829 @@
+<style>
+  	.shane-pro-block03pd{
+  		background-color: #1A1A1A; padding-top: 6vw;
+  	}
+  	.shane-pro-block03pd>div{
+  		width: 90%; margin: auto; color: #fff;
+  	}
+  	.shane-pro-block03pd h2{
+  		text-align: center; width: 65%; margin: 0 auto 1vw; color:#fff; font-size: 2.2vw; line-height: 2.8vw;
+  	}
+  	.shane-pro-block03pd .stitle{
+  		text-align: center; width: 65%; margin: 0 auto 0.6vw; font-size: 1.4vw;
+  	}
+  	.shane-pro-block03pd .info{
+  		width:70%; margin: auto; font-size: 0.9vw;opacity: 0.8; text-align: center; overflow: hidden; height: 5vw; position: relative;
+  	}
+  	.shane-pro-block03pd .more{
+  		width:100%; position: absolute; bottom: 0; left: 0; height: 3vw; text-align: center; background-image: linear-gradient(#00000000, #1A1A1A, #1A1A1A); font-family: Outfit-Bold;
+  	}
+  	.shane-pro-block03pd a{
+  		color:#fff; line-height: 3vw; display: flex; justify-content: center; align-items: center;
+  	}
+  	.shane-pro-block03pd .more span{
+  		color: #FF5F00; font-size: 1.4vw;
+  	}
+  	.shane-pro-block03pd .columns{
+  		display: flex; justify-content: space-between; margin-top: 2vw; flex-wrap: wrap;
+  	}
+  	.shane-pro-block03pd .columns>div{
+  		border:1px solid #fff; border-radius: 0.6vw; overflow: hidden; margin-bottom: 0.8vw;
+  	}
+  	.shane-pro-block03pd .equal-two{
+  		width: 16%;
+  	}
+  	.shane-pro-block03pd  .columns-img{
+  		width: 100%; height: 19vw; position: relative;
+  	}
+  	.shane-pro-block03pd  .columns-img img{
+  		width:100%; position: absolute; top: 0; left: 0; transition:0.2s;
+  	}
+  	.shane-pro-block03pd .equal-two:hover .columns-img img{
+  		animation: moveUpAndDown01 1s ease-in-out infinite;
+  	}
+  	@keyframes moveUpAndDown01 {
+  	  0% {
+  		top: 0;
+  	  }
+  	  50% {
+  		top: -10px;
+  	  }
+  	  100% {
+  		top: 0;
+  	  }
+  	}
+  	.shane-pro-block03pd .columns-context{
+  		width: 76%; margin: 0 auto 1vw;
+  	}
+  	.shane-pro-block03pd .columns-context .title{
+  		display: flex; justify-content: flex-start; align-items: flex-start; font-size: 1.2vw; font-family: Outfit-Bold;line-height: 1.4vw;
+  		margin-bottom: 0.7vw;
+  	}
+  	.shane-pro-block03pd .columns-context img{
+  		width:1.6vw; margin-right: 0.5vw;
+  	}
+  	.shane-pro-block03pd .equal-two .probability{
+  		width:100%; border:1px solid #fff; height: 2vw; background-color: #fff; margin-top: 5px; border-radius: 3px; display: flex; justify-content: space-between; text-align: center; font-family: Outfit-Bold;
+  	}
+  	.equal-two .probability>div:first-child{
+  		width: 54%; font-size: 0.8vw; color: #FF5F00; line-height: 0.8vw; display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+  	}
+  	.equal-two .probability>div:first-child span{
+  		font-size: 0.7vw;
+  	}
+  	.equal-two .probability>div:last-child{
+  		width: 46%; font-size: 1.4vw; color: #fff; background-color: #FF5F00; display: flex; justify-content: center; align-items: center; border-radius: 3px;
+  	}
+  	.shane-pro-block03pd .equal-six{
+  		width: 49.5%; position: relative; display: flex; justify-content: flex-start; align-items: center;
+  	}
+  	.shane-pro-block03pd .equal-six>img{
+  		width: 60%;
+  	}
+      .shane-pro-block03pd .equal-six2{
+          width: 44%;
+      }
+      .shane-pro-block03pd .equal-six2>img{
+  		width: 100%;
+          height: 100%;
+  	}
+      .shane-pro-block03pd .equal-six2 .left{
+          position: absolute;
+          top: 0%;
+          left: 4%;
+          width: 20vw;
+          text-align: left;
+          height: -webkit-fill-available;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+      .shane-pro-block03pd .equal-six2 .left .grop{
+          margin-bottom: calc(100vw* 26 / 1920);
+          width: max-content;
+      }
+      .shane-pro-block03pd .equal-six2 .left .item{
+          display: flex;
+          width: fit-content;
+          padding-left: calc(100vw* 24 / 1920);
+          padding-right: calc(100vw* 78 / 1920);
+          padding-top: calc(100vw* 9 / 1920);
+          padding-bottom: calc(100vw* 9 / 1920);
+          background-image: url({{ "../assets/11.png" | asset_url }});
+          background-size: 100% 100%;
+          margin-top: calc(100vw* 17 / 1920);
+          color: #FFF;
+          font-family: Outfit;
+          font-size: calc(100vw* 20 / 1920);
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+      }
+      .shane-pro-block03pd .equal-six2 .left .title .mtitle{
+          display: flex;
+          flex-direction: row-reverse;
+          margin-top: calc(100vw* 34 / 1920);
+          color: #FFF;
+          font-family: Outfit;
+          font-size: calc(100vw* 50 / 1920);
+          font-style: normal;
+          font-weight: 700;
+          line-height: calc(100vw* 44 / 1920); /* 92% */
+          text-transform: uppercase;
+      }
+      .shane-pro-block03pd .equal-six2 .left .title .text{
+          max-width: calc(100vw* 304 / 1920);
+          color: #FFF;
+          font-family: Outfit;
+          font-size: calc(100vw* 16 / 1920);
+          font-style: normal;
+          font-weight: 400;
+          line-height: calc(100vw* 22 / 1920); /* 137.5% */
+          margin-top: calc(100vw* 21 / 1920);
+          text-transform: none;
+      }
+      .shane-pro-block03pd .equal-six3{
+          width: 55%;
+      }
+      .shane-pro-block03pd .equal-six3>img{
+          z-index: 2;
+  		width: 100%;
+          height: 100%;
+  	}
+      .shane-pro-block03pd .equal-six3 .text{
+          width: 100%;
+      }
+      .shane-pro-block03pd .equal-six3 .right{
+          right:  calc(100vw* 24 / 1920);
+          width: calc(100vw* 299 / 1920);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      .shane-pro-block03pd .equal-six3 .right .title{
+          font-size: calc(100vw* 36 / 1920);
+      }
+      .shane-pro-block03pd .equal-six3 .left{
+          position: absolute;
+          top: 0%;
+          left: 4%;
+          width: 20vw;
+          text-align: left;
+          height: -webkit-fill-available;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+      .shane-pro-block03pd .equal-six3 .left .title{
+          display: flex;
+          flex-direction: row-reverse;
+          margin-top: calc(100vw* 34 / 1920);
+          color: #FFF;
+          font-family: Outfit;
+          font-size: calc(100vw* 50 / 1920);
+          font-style: normal;
+          font-weight: 700;
+          line-height: calc(100vw* 46 / 1920); /* 92% */
+          text-transform: uppercase;
+      }
+      .shane-pro-block03pd .equal-six3 .left .title img{
+          margin-left: calc(100vw* 20 / 1920);
+          width: calc(100vw* 40 / 1920);
+      }
+      .shane-pro-block03pd .equal-six3 .left .grop{
+          margin-bottom: calc(100vw* 26 / 1920);
+      }
+      .shane-pro-block03pd .equal-six3 .left .item{
+          display: flex;
+          width: fit-content;
+          padding-left: calc(100vw* 24 / 1920);
+          padding-right: calc(100vw* 78 / 1920);
+          padding-top: calc(100vw* 9 / 1920);
+          padding-bottom: calc(100vw* 9 / 1920);
+          background-image: url({{ "../assets/10.png" | asset_url }});
+          background-size: 100% 100%;
+          margin-top: calc(100vw* 17 / 1920);
+          color: #FFF;
+          font-family: Outfit;
+          font-size: calc(100vw* 20 / 1920);
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+      }
+  	.equal-six>div{
+  		position: absolute; top: 16%; right: 5%; width: 17vw; text-align: center;
+  	}
+  	.equal-six .title{
+  		font-size: 2.2vw; text-transform: uppercase; font-family: Outfit-Bold;
+  		width: max-content;
+          line-height: normal;
+  	}
+  	.equal-six .top-title{
+  		color: rgba(255, 255, 255, 0.80);
+  		font-family: Outfit-Regular;
+  		font-size: calc(100vw* 14 / 1920);
+  		font-style: normal;
+  		font-weight: 700;
+  		line-height: calc(100vw* 14 / 1920);
+  	}
+  	.equal-six .probability{
+  		width:95%; margin: 0.6vw auto 1.5vw;
+  	}
+  	.equal-six .probability>div:first-child{
+  		width: 100%; font-size: 0.8vw;
+  	}
+  	.equal-six .probability>div:last-child{
+  		width: 100%; line-height: 5.6vw; font-size: 5vw; font-family: Outfit-Bold; background-color: #FF5F00; border-radius: 1vw; margin-top: 0.4vw;
+  	}
+  	.equal-six .text{
+  		font-size: 0.75vw; width:95%; margin: auto;
+  	}
+  @media (max-width: 1300px){
+      .shane-pro-block03pd h2{
+  		font-size: 3vw; line-height: 4vw;
+  	}
+      .shane-pro-block03pd .info{
+          width:85%; height: 8vw; font-size: 1.4vw;
+      }
+  }
+  @media (max-width: 768px){
+
+  	.shane-pro-block03pd{
+  		padding-top: 10vw;
+  	}
+  	.shane-pro-block03pd h2{
+  		width: 100%; margin: 0 auto 4vw; font-size: 5vw; line-height: 6.4vw;
+  	}
+  	.shane-pro-block03pd .stitle{
+  		width: 100%; margin: 0 auto 2vw; font-size: 4vw;
+  	}
+  	.shane-pro-block03pd .info{
+  		width:100%; font-size: 3.6vw; height: 25vw;
+  	}
+  	.shane-pro-block03pd .more{
+  		height: 10vw;
+  	}
+  	.shane-pro-block03pd a{
+  		line-height: 10vw;
+  	}
+  	.shane-pro-block03pd .more span{
+  		font-size: 3.6vw;
+  	}
+  	.shane-pro-block03pd .columns{
+  		margin-top: 6vw;
+  	}
+  	.shane-pro-block03pd .columns>div{
+  		border-radius: 1vw; margin-bottom: 2vw;
+  	}
+  	.shane-pro-block03pd .equal-two{
+  		width: 32%;
+  	}
+  	.shane-pro-block03pd  .columns-img{
+  		height: 38vw;
+  	}
+  	.shane-pro-block03pd .columns-context{
+  		width: 96%; margin: 0 auto 1vw; left: 2%;
+  	}
+  	.shane-pro-block03pd .columns-context .title{
+  		font-size: 3vw;
+  	}
+  	.shane-pro-block03pd .columns-context img{
+  		width:3.4vw; margin-right: 1vw;
+  	}
+  	.shane-pro-block03pd .equal-two .probability{
+  		height: 8vw;
+  	}
+  	.equal-two .probability>div:first-child{
+  		font-size: 2.4vw;line-height: 0vw;
+  	}
+  	.equal-two .probability>div:first-child span{
+  		font-size: 2.2vw;
+  	}
+  	.equal-two .probability>div:last-child{
+  		font-size: 5vw;
+  	}
+  	.shane-pro-block03pd .equal-six{
+  		display: flex;
+  		width: 100%;
+  	}
+  	.shane-pro-block03pd .equal-six>img{
+  		{% comment %} width: 60%; {% endcomment %}
+  		width: calc(100vw* 353 / 768);
+  		height: calc(100vw* 291 / 768);
+
+  	}
+
+  	.equal-six>div{
+  		{% comment %} width: 36vw;top: 5%; right: 4%; {% endcomment %}
+  		position: initial;
+  		width: 100%;
+          margin-top: 2vw;
+          margin-bottom: 2vw;
+  		margin-top: calc(100vw* 52 / 768);
+          margin-bottom: calc(100vw* 52 / 768);
+          padding-right: calc(100vw* 32 / 768);
+  	}
+  	.equal-six .title{
+  		{% comment %} font-size: 4.6vw; {% endcomment %}
+  		{% comment %} width: max-content; {% endcomment %}
+          font-size: calc(100vw* 35 / 768);
+  	}
+  	.equal-six .probability{
+  		margin: 0 auto 2vw;
+  	}
+  	.equal-six .probability>div:first-child{
+  		{% comment %} width: 100%; font-size: 3.2vw; {% endcomment %}
+
+  		width: 100%;
+          font-size: calc(100vw* 17 / 768);
+          margin-top: calc(100vw* 12 / 768);
+  	}
+  	.equal-six .probability>div:last-child{
+  		{% comment %} line-height: 9vw; font-size: 6vw; margin-top: 1vw; {% endcomment %}
+
+  		line-height: calc(100vw* 87 / 768);
+          font-size: calc(100vw* 87 / 768);
+          margin-top: 0;
+
+  	}
+  	.equal-six .text{
+  		font-size: 2.4vw; width:100%; margin: auto;
+  	}
+  	.equal-six .top-title{
+  		color: rgba(255, 255, 255, 0.80);
+          font-family: Outfit-Regular;
+          font-size: calc(100vw* 14 / 768);
+          font-style: normal;
+          font-weight: 400;
+          line-height: calc(100vw* 14 / 430);
+  	}
+      .shane-pro-block03pd .columns>.equal-six2{
+          border: none;
+      }
+      .shane-pro-block03pd .equal-six2>img{
+          width: 100%;
+          height: 100%;
+      }
+      .shane-pro-block03pd .equal-six2 .left{
+          position: absolute;
+          top: 0%;
+          left: 0%;
+          width: 20vw;
+          text-align: left;
+          height: -webkit-fill-available;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-top: calc(100vw* 0 / 768);
+          margin-bottom: calc(100vw* 0 / 768);
+          padding-right: calc(100vw* 0 / 768);
+      }
+      .shane-pro-block03pd .equal-six2 .left .grop{
+          margin-bottom: calc(100vw* 126 / 430);
+      }
+      .shane-pro-block03pd .equal-six2 .left .item{
+          display: flex;
+          width: fit-content;
+          padding-left: calc(100vw* 17 / 430);
+          padding-right: calc(100vw* 35 / 430);
+          padding-top: calc(100vw* 5 / 430);
+          padding-bottom: calc(100vw* 5 / 430);
+          background-image: url({{ "../assets/11.png" | asset_url }});
+          background-size: 100% 100%;
+          margin-top: calc(100vw* 17 / 430);
+          color: #FFF;
+          font-family: Outfit;
+          font-size: calc(100vw* 16 / 430);
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+      }
+      .shane-pro-block03pd .equal-six2 .left .title .mtitle{
+          display: flex;
+          flex-direction: row-reverse;
+          margin-top: calc(100vw* 80 / 430);
+          color: #FFF;
+          font-family: Outfit-Regular;
+          font-size: calc(100vw* 40 / 430);
+          font-style: normal;
+          font-weight: 700;
+
+
+          line-height: calc(100vw* 40 / 430); /* 92% */
+          text-transform: uppercase;
+      }
+      .shane-pro-block03pd .equal-six2 .left .title .text{
+          max-width: calc(100vw* 192 / 430);
+          color: #FFF;
+          font-family: Outfit;
+          font-size: calc(100vw* 18 / 430);
+          font-style: normal;
+          font-weight: 400;
+          line-height: calc(100vw* 22 / 430); /* 137.5% */
+           margin: 0;
+          margin-top: calc(100vw* 14 / 430);
+          text-transform: none;
+          color: rgba(255, 255, 255, 0.80);
+      }
+
+
+      .shane-pro-block03pd .columns>.equal-six3{
+          border: none;
+      }
+      .shane-pro-block03pd .equal-six3{
+          {% comment %} width: 55%; {% endcomment %}
+      }
+      .shane-pro-block03pd .equal-six3>img{
+          z-index: 2;
+  		width: 100%;
+          height: 100%;
+  	}
+      .shane-pro-block03pd .equal-six3 .text{
+          width: 100%;
+          text-align: left;
+          margin-top: calc(100vw* 16 / 430);
+          max-width: calc(100vw* 173 / 430);
+          margin-left: 0;
+          font-size: 3vw;
+      }
+      .shane-pro-block03pd .equal-six3 .right{
+          position: absolute;
+          left: calc(100vw* 0 / 430);
+          width: calc(100vw* 299 / 430);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          margin-top: calc(100vw* 0 / 768);
+          margin-bottom: calc(100vw* 0 / 768);
+          padding-right: calc(100vw* 0 / 768);
+          max-width: calc(100vw* 182 / 430);
+           margin-top: calc(100vw* 6 / 430);
+      }
+      .shane-pro-block03pd .equal-six3 .right .title{
+          font-size: calc(100vw* 24 / 430);
+      }
+      .shane-pro-block03pd .equal-six3 .right .probability{
+          margin: 0;
+
+      }
+      .shane-pro-block03pd .equal-six3 .right .probability>div:first-child{
+          text-align: left;
+          font-size: calc(100vw* 20 / 768);
+      }
+      .shane-pro-block03pd .equal-six3 .right .probability>div:last-child{
+
+          line-height: calc(100vw* 87 / 768);
+          font-size: calc(100vw* 87 / 768);
+          margin-top: 0;
+          width: fit-content;
+          padding: calc(100vw* 6 / 430) calc(100vw* 25 / 430);
+      }
+      .shane-pro-block03pd .equal-six3 .left{
+          position: absolute;
+          top: 0%;
+          left: 0%;
+          width: 100%;
+          text-align: left;
+          height: -webkit-fill-available;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+      }
+      .shane-pro-block03pd .equal-six3 .left .title{
+          display: flex;
+          flex-direction: row-reverse;
+          margin-top: calc(100vw* 0 / 430);
+          color: #FFF;
+          font-family: Outfit;
+          font-size: calc(100vw* 40 / 430);
+          font-style: normal;
+          font-weight: 700;
+          line-height: calc(100vw* 46 / 430);
+          text-transform: uppercase;
+      }
+      .shane-pro-block03pd .equal-six3 .left .title img{
+          margin-left: calc(100vw* 20 / 430);
+          width: calc(100vw* 40 / 430);
+      }
+      .shane-pro-block03pd .equal-six3 .left .grop{
+          display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      width: 100%;
+          /* margin-bottom: calc(100vw* 26 / 430); */
+          margin-bottom: 0;
+      }
+      .shane-pro-block03pd .equal-six3 .left .item{
+          display: flex;
+          width: fit-content;
+          padding-left: calc(100vw* 16 / 430);
+          padding-right: calc(100vw* 40 / 430);
+          padding-top: calc(100vw* 7 / 430);
+          padding-bottom: calc(100vw* 7 / 430);
+          background-image: url(//blokees.com/cdn/shop/t/11/assets/../assets/10.png?6629);
+          background-size: 100% 100%;
+          margin-top: calc(100vw* 17 / 430);
+          color: #FFF;
+          font-family: Outfit;
+          font-size: calc(100vw* 16 / 430);
+          font-style: normal;
+          font-weight: 500;
+          line-height: normal;
+      }
+  }
+</style>
+<div>
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="stitle">{{ section.settings.subheadingheading }}</div>
+  <div class="info">
+    {{ section.settings.text }}
+    {% if section.settings.yc_checkbox == false %}
+      <div class="more">
+        <a>Read More&nbsp;&nbsp;<span class="fa fa-arrow-circle-down"></span></a>
+      </div>
+    {% endif %}
+  </div>
+  <div class="columns">
+    {%- assign my_variable = 0 -%}
+    {%- for block in section.blocks -%}
+      {% assign my_variable = my_variable | plus: 1 %}
+      {% if my_variable > 6 %}
+        {% assign delay = my_variable | minus: 6 %}
+      {% else %}
+        {% assign delay = my_variable | minus: 1 %}
+      {% endif %}
+      {% if block.settings.stylewidth == '1' %}
+        <div
+          class="equal-two wow fadeInUp"
+          data-wow-duration=".5s"
+          data-wow-delay=".{{ delay }}s"
+          data-wow-offset="100"
+        >
+          <div class="columns-img">
+            {% comment %} <img src="{{ block.settings.block_image | image_url }}" loading="lazy"> {% endcomment %}
+            <picture>
+              <source
+                media="(max-width: 800px)"
+                srcset="{{ block.settings.block_image | image_url: width: 208 }}"
+              >
+              <img src="{{ block.settings.block_image | image_url: width: 540 }}" loading="lazy">
+            </picture>
+          </div>
+          <div class="columns-context">
+            <div class="title">
+              {% if block.settings.block_image_icon != blank %}
+                <img src="{{ block.settings.block_image_icon | image_url }}">
+              {% endif %}
+              {{ block.settings.block_title }}
+            </div>
+            <div class="probability">
+              <div>
+                Probability<br>
+                <span>(Math.)</span>
+              </div>
+              <div>{{ block.settings.block_text }}</div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+      {% if block.settings.stylewidth == '2' %}
+        <div class="equal-six wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".5s" data-wow-offset="100">
+          <img src="{{ block.settings.block_image | image_url }}">
+          <div>
+            <div class="top-title">{{ block.settings.block_top_title }}</div>
+            <div class="title">{{ block.settings.block_title }}</div>
+            <div class="probability">
+              <div>Probability (Math.)</div>
+              <div>{{ block.settings.block_text }}</div>
+            </div>
+            <div class="text">{{ block.settings.block_text_02 }}</div>
+          </div>
+        </div>
+      {% endif %}
+      {% if block.settings.stylewidth == '3' %}
+        <div
+          class="equal-six equal-six2 wow fadeInUp"
+          data-wow-duration=".5s"
+          data-wow-delay=".5s"
+          data-wow-offset="100"
+        >
+          <img class="pc_show" src="{{ block.settings.block_image | image_url }}">
+          <img class="mobile_show" src="{{ block.settings.block_mb_image | image_url }}">
+          <div class="left">
+            <div class="title">
+              <div class="mtitle">{{ block.settings.block_title }}</div>
+              <div class="text">{{ block.settings.block_text_02 }}</div>
+            </div>
+            <div class="grop">
+              <div class="item">
+                {{ block.settings.block_big_text1 }}
+              </div>
+              <div class="item">
+                {{ block.settings.block_big_text2 }}
+              </div>
+              <div class="item">
+                {{ block.settings.block_big_text3 }}
+              </div>
+            </div>
+          </div>
+          {% comment %}
+            <div class='right'>
+                <div class='top-title'>{{ block.settings.block_top_title }}</div>
+                <div class="title">{{ block.settings.block_title }}</div>
+                <div class="probability">
+                    <div>Probability (Math.)</div>
+                    <div>{{ block.settings.block_text }}</div>
+                </div>
+                <div class="text">{{ block.settings.block_text_02 }}</div>
+            </div>
+          {% endcomment %}
+        </div>
+      {% endif %}
+      {% if block.settings.stylewidth == '4' %}
+        <div
+          class="equal-six equal-six3 wow fadeInUp"
+          data-wow-duration=".5s"
+          data-wow-delay=".5s"
+          data-wow-offset="100"
+        >
+          <img class="pc_show" src="{{ block.settings.block_image | image_url }}">
+          <img class="mobile_show" src="{{ block.settings.block_mb_image | image_url }}">
+          <div class="left">
+            <div class="title">
+              {% if block.settings.block_image_icon != blank %}
+                <img src="{{ block.settings.block_image_icon | image_url }}">
+              {% endif %}
+              {{ block.settings.block_new_text }}
+            </div>
+            <div class="grop">
+              <div class="item">
+                {{ block.settings.block_big_text1 }}
+              </div>
+              <div class="item">
+                {{ block.settings.block_big_text2 }}
+              </div>
+              <div class="item">
+                {{ block.settings.block_big_text3 }}
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="top-title">{{ block.settings.block_top_title }}</div>
+            <div class="title">{{ block.settings.block_title }}</div>
+            <div class="probability">
+              <div>Probability (Math.)</div>
+              <div>{{ block.settings.block_text }}</div>
+            </div>
+            <div class="text">{{ block.settings.block_text_02 }}</div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Pro block03pd",
+  "class": "shane-pro-block03pd",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "yc_checkbox",
+      "label": "Checkbox"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "id": "text",
+      "type": "textarea",
+      "label": "Text"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "stylewidth",
+          "options": [
+            {
+              "value": "1",
+              "label": "small"
+            },
+            {
+              "value": "2",
+              "label": "Big"
+            },
+            {
+              "value": "3",
+              "label": "Big 2"
+            },
+            {
+              "value": "4",
+              "label": "Big 3"
+            }
+          ],
+          "default": "1",
+          "label": "Width"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_mb_image",
+          "label": "mb Image"
+        },
+
+        {
+          "type": "image_picker",
+          "id": "block_image_icon",
+          "label": "Image icon",
+          "info": "icon"
+        },
+        {
+          "type": "text",
+          "id": "block_top_title",
+          "label": "Top Title"
+        },
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Title",
+          "default": "Add a title"
+        },
+        {
+          "type": "text",
+          "id": "block_text",
+          "label": "Probability",
+          "default": "4/36"
+        },
+        {
+          "type": "text",
+          "id": "block_text_02",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "block_new_text",
+          "label": "Big * Text"
+        },
+        {
+          "type": "text",
+          "id": "block_big_text1",
+          "label": "Big * Content1"
+        },
+        {
+          "type": "text",
+          "id": "block_big_text2",
+          "label": "Big * Content2"
+        },
+        {
+          "type": "text",
+          "id": "block_big_text3",
+          "label": "Big * Content3"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pro block03pd"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  $(document).ready(function () {
+    $('.shane-pro-block03pd .more').click(function () {
+      $(this).css('display', 'none');
+      $('.shane-pro-block03pd .info').css('height', 'auto');
+    });
+  });
+</script>
+<script>
+  fetch('https://ipapi.co/json/') // 使用 IP API 获取地理位置
+    .then((response) => response.json())
+    .then((data) => {
+      const country = data.country_name; // 获取用户的国家名称
+      console.log(country);
+      // 如果国家不是英国，显示按钮
+      if (country !== 'United Kingdom') {
+      }
+    })
+    .catch((error) => {
+      console.error('GeoIP 请求失败：', error);
+    });
+</script>

@@ -1,0 +1,261 @@
+
+<style>
+    #{{ section.id }}-product-comic-series {
+        background-color: {{ section.settings.background_color }};
+        padding: 0 calc(100vw * {{ section.settings.padding_pc_left_right }} / var(--base-width));
+        padding-top:calc(100vw * {{ section.settings.padding_pc_top }} / var(--base-width));
+        padding-bottom: calc(100vw * {{ section.settings.padding_pc_bottom }} / var(--base-width));
+        margin-top:-1px;
+    }
+    #{{ section.id }}-product-comic-series  .product-comic-series-h2{
+        color: {{ section.settings.text_color }};
+        text-align: center;
+        font-family: Outfit;
+        font-size: {{ section.settings.title_pc_size }}px;
+        font-style: normal;
+        margin: 0 auto;
+        font-weight: 700;
+        line-height: {{ section.settings.title_pc_size | plus: 4 }}px;
+        margin-bottom: 10px;
+        max-width: 574px;
+       
+    }
+    #{{ section.id }}-product-comic-series .product-comic-series-sub-title{
+        color: #FFF;
+        font-family: Outfit;
+        font-size: {{ section.settings.sub_title_pc_size }}px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: {{ section.settings.sub_title_pc_size }}px;
+        max-width: 585px;
+     
+        margin: 0 auto; 
+        margin-bottom: 20px;
+        opacity: 0.8;
+        text-align:center;
+    }
+
+    #{{ section.id }}-product-comic-series  .product-comic-series-desc{ 
+        max-width: calc(100vw * 850 / var(--base-width));
+        margin:0 auto;
+    }
+    #{{ section.id }}-product-comic-series  .product-comic-series-desc{
+        color: {{ section.settings.text_color }};
+        text-align: center;
+        font-family: Outfit;
+        font-size: {{ section.settings.desc_pc_size }}px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: {{ section.settings.desc_pc_size | plus: 4 }}px;
+        margin-bottom:0px;
+        opacity: 0.8;
+    }
+    #{{ section.id }}-product-comic-series .product-comic-series-img{
+        margin-top: 40px
+    }
+    #{{ section.id }}-product-comic-series .product-comic-series-img img{
+        width:100%;
+    }
+    @media(max-width:768px){
+        #{{ section.id }}-product-comic-series {
+            padding: 0 calc(100vw * {{ section.settings.padding_h5_left_right }} / var(--base-width));
+            padding-top:calc(100vw * {{ section.settings.padding_h5_top }} / var(--base-width));
+            padding-bottom: calc(100vw * {{ section.settings.padding_h5_bottom }} / var(--base-width));
+            margin-top:-1px;
+        }
+        #{{ section.id }}-product-comic-series  .product-comic-series-h2{
+            font-size: {{ section.settings.title_h5_size }}px;
+            line-height: {{ section.settings.title_h5_size | plus:6 }}px;
+            margin-bottom: 20px;
+            max-width: 100%;
+        }
+        #{{ section.id }}-product-comic-series  .product-comic-series-desc{
+            font-size: {{ section.settings.desc_h5_size }}px;
+            line-height: {{ section.settings.desc_h5_size | plus:6 }}px;
+            max-width:100%;
+        }
+        #{{ section.id }}-product-comic-series .product-comic-series-sub-title{
+            font-size: {{ section.settings.sub_title_h5_size }}px;
+            line-height: {{ section.settings.sub_title_h5_size }}px;
+            max-width:100%; 
+            margin-bottom: 20px
+        }
+    }
+</style>
+<div class="product-comic-series" id="{{ section.id }}-product-comic-series">
+    <h2 class="product-comic-series-h2">{{ section.settings.title }}</h2>
+    {% if  section.settings.sub_title %}
+      <p class="product-comic-series-sub-title">{{ section.settings.sub_title }}</p>
+    {% endif %}
+    {% if section.settings.desc %}
+        <p class="product-comic-series-desc">{{ section.settings.desc }}</p>
+    {% endif %}
+    <div class="product-comic-series-img">
+        <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="{{ section.settings.image_h5 | image_url }}"
+            >
+            <img
+              class="main-image"
+              src="{{ section.settings.image_pc |  image_url }}"
+              alt="{{ section.settings.image_alt }}"
+              loading="lazy"
+            >
+        </picture>
+    </div>
+</div>
+{% schema %}
+{
+    "name": "Product comic series",
+    "class": "product-comic-series",
+    "settings": [
+        {
+            "type": "range",
+            "id": "padding_pc_left_right",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 20,
+            "label": "PC padding left right"
+        },
+        {
+            "type": "range",
+            "id": "padding_h5_left_right",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "default": 25,
+            "label": "H5 padding left right"
+        },
+        {
+            "type": "number",
+            "id": "padding_pc_top",
+            "default": 70,
+            "label": "PC padding top"
+        },
+        {
+            "type": "number",
+            "id": "padding_h5_top",
+            "default": 106,
+            "label": "H5 padding top"
+        },
+        {
+            "type": "number",
+            "id": "padding_pc_bottom",
+            "default": 94,
+            "label": "pc padding bottom"
+        },
+        {
+            "type": "number",
+            "id": "padding_h5_bottom",
+            "default": 140,
+            "label": "H5 padding bottom"
+        },
+        {
+            "id": "background_color",
+            "type": "color",
+            "default": "#160F37",
+            "label": "background color"
+        },
+        {
+            "id": "text_color",
+            "type": "color",
+            "default": "#FFF",
+            "label": "text color"
+        },
+        {
+            "id": "title_pc_size",
+            "type": "range",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "default": 40,
+            "label": "title pc text size"
+        },
+        {
+            "id": "title_h5_size",
+            "type": "range",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "default": 60,
+            "label": "title mobile text size"
+        },
+        {
+            "id": "sub_title_pc_size",
+            "type": "range",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "default": 24,
+            "label": "subtitle pc text size"
+        },
+        {
+            "id": "sub_title_h5_size",
+            "type": "range",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "default": 30,
+            "label": "subtitle mobile text size"
+        },
+        {
+            "id": "desc_pc_size",
+            "type": "range",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "default": 20,
+            "label": "desc pc text size"
+        },
+        {
+            "id": "desc_h5_size",
+            "type": "range",
+            "min": 10,
+            "max": 100,
+            "step": 1,
+            "default": 30,
+            "label": "desc mobile text size"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "text",
+            "id": "sub_title",
+            "label": "SubTitle"
+        },
+        {
+            "id": "desc",
+            "type": "textarea",
+            "label": "Description"
+        },
+        {
+            "id": "image_pc",
+            "type": "image_picker",
+            "label": "pc Image"
+        },
+        {
+            "id": "image_h5",
+            "type": "image_picker",
+            "label": "Image Mobile"
+        },
+        {
+            "id": "image_alt",
+            "type": "text",
+            "label": "image alt"
+        }
+        
+    ],
+    "presets": [
+        {
+            "name": "Product comic series"
+        }
+    ]
+}
+{% endschema %}
+
+

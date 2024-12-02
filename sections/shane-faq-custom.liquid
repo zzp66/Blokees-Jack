@@ -1,0 +1,244 @@
+<style>
+  #{{ section.id }}-faq-custom {
+    background: {{ section.settings.background_color }};
+    width: 100%;
+    padding-top: 7vw;
+    color: #006DE5;
+  }
+  #{{ section.id }}-faq-custom{
+    width: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-start;
+  }
+  #{{ section.id }}-faq-custom h2{
+    max-width: calc(40500vw/var(--base-width));
+  	width: 35%;
+    font-family: Outfit-Bold;
+    font-size: calc(5000vw/var(--base-width));
+    margin:0;
+    line-height: 1.12;
+    color: {{ section.settings.title_color }};
+  }
+  #{{ section.id }}-faq-custom .faq-container{
+  	width: 65%;
+    border-top: 1px solid {{ section.settings.title_color }};
+  }
+  #{{ section.id }}-faq-custom .shane-faq-list{
+  	width: 100%;
+    padding: 0.6vw 0 1vw;
+    cursor: pointer;
+    border-bottom: 1px solid {{ section.settings.title_color }};
+  }
+  #{{ section.id }}-faq-custom .faq-ask{
+  	font-size: 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  #{{ section.id }}-faq-custom .faq-ask .title{
+  	transition: 0.1s;
+    font-weight:400;
+    font-size: 1vw;
+    margin:0;
+    line-height: normal;
+    color: {{ section.settings.title_color }};
+  }
+  #{{ section.id }}-faq-custom .faq-ask .faq-icon{
+  	width: 1.2vw;
+    transition: 0.1s;
+  }
+  #{{ section.id }}-faq-custom .faq-questions{
+  	width: 55%;
+    margin: 1vw 0 0 auto;
+    padding: 1vw;
+    font-size: 0.9vw;
+    background-color: {{ section.settings.title_color }};
+    opacity: 0.5; color: #fff;
+    border-radius: 1.5vw;
+    display: none;
+  }
+  #{{ section.id }}-faq-custom .shane-faq-list .active .faq-icon{
+  	transform: rotate(90deg);
+  }
+  #{{ section.id }}-faq-custom .shane-faq-list .active .title{
+  	color: #fff;
+    padding: 0.6vw 1vw;
+    border-radius: 2vw;
+    background-color: {{ section.settings.title_color }};
+    font-size: calc(1800vw / var(--base-width));
+  }
+  /* 富文本定制开发 start */
+  #{{ section.id }}-faq-custom ul,
+  #{{ section.id }}-faq-custom ol{
+    display: flex;
+    flex-direction: column;
+    gap: calc(1000vw/var(--base-width));
+  }
+  #{{ section.id }}-faq-custom ul li,
+  #{{ section.id }}-faq-custom ol li{
+    font-size: calc(1800vw/var(--base-width));
+    line-height: 1.33;
+    margin-bottom: 0;
+  }
+  #{{ section.id }}-faq-custom p{
+    font-size: calc(1800vw/var(--base-width));
+    line-height: 1.33;
+    margin-bottom: calc(2000vw/var(--base-width));
+  }
+  #{{ section.id }}-faq-custom p:last-of-type{
+    margin-bottom: 0;
+  }
+  /* 富文本定制开发 end */
+  @media (max-width: 1300px){
+    #{{ section.id }}-faq-custom .faq-ask{
+      font-size: 14px;
+    }
+    #{{ section.id }}-faq-custom .faq-ask .title{
+      font-size: 14px;
+    }
+    #{{ section.id }}-faq-custom .faq-questions{
+      width: 65%;
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 768px){
+    #{{ section.id }}-faq-custom {
+      display: block;
+      padding-top: calc(5000vw/var(--base-width));
+    }
+    #{{ section.id }}-faq-custom h2{
+      max-width: 100%;
+      width: 100%;
+      font-size: 6vw;
+      margin-bottom: 5vw;
+    }
+    #{{ section.id }}-faq-custom .faq-container{
+      width: 100%;
+    }
+    #{{ section.id }}-faq-custom .shane-faq-list{
+      padding: 3vw 0 2vw;
+    }
+    #{{ section.id }}-faq-custom .faq-ask{
+      font-size: 3.6vw;
+      line-height: 4vw;
+    }
+    #{{ section.id }}-faq-custom .faq-ask .title{
+      max-width: calc(30000vw/var(--base-width));
+      transition: 0.1s;
+      width: 100%;
+      font-size: calc(1500vw/var(--base-width));
+      line-height: 1.2;
+
+    }
+    #{{ section.id }}-faq-custom .faq-ask .faq-icon{
+      width:3vw;
+    }
+    #{{ section.id }}-faq-custom .faq-questions{
+      width: 86%;
+      margin: 2vw 0 0 auto;
+      padding: calc(1500vw/var(--base-width));
+      font-size: calc(1500vw/var(--base-width));
+      line-height: 1.2;
+      border-radius: 2vw;
+    }
+    #{{ section.id }}-faq-custom .shane-faq-list .active .faq-icon{
+      transform: rotate(90deg);
+    }
+    #{{ section.id }}-faq-custom .shane-faq-list .active .title{
+      padding: calc(1000vw/var(--base-width)) calc(2900vw/var(--base-width)) calc(1000vw/var(--base-width)) calc(1700vw/var(--base-width));
+      width: 73.4%;
+      font-size: calc(1600vw / var(--base-width));
+      line-height:  calc(1800vw / var(--base-width));
+    }
+    #{{ section.id }}-faq-custom p{
+      font-size: calc(1400vw / var(--base-width));
+      line-height:  calc(1600vw / var(--base-width));
+    }
+  }
+</style>
+<div id="{{ section.id }}-faq-custom">
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="faq-container">
+    {%- for block in section.blocks -%}
+      <div class="shane-faq-list">
+        <div class="faq-ask">
+          <h3 class="title">{{ block.settings.block_title }}</h3>
+          <img
+            class="faq-icon"
+            src="{{ section.settings.icon |  image_url: width: 24 }}"
+            alt="{{ section.settings.icon.alt }}"
+          >
+        </div>
+        <div class="faq-questions">
+          {{ block.settings.block_text }}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Shane FAQ Custom",
+  "class": "shane-faq-custom",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#006de5"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Title",
+          "default": "Add a title"
+        },
+        {
+          "type": "richtext",
+          "id": "block_text",
+          "label": "Questions"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shane FAQ Custom"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  $(document).ready(function () {
+    $('.shane-faq-list .faq-ask').click(function () {
+      $(this).toggleClass('active');
+      $(this).parent().find('.faq-questions').slideToggle(100);
+    });
+  });
+</script>

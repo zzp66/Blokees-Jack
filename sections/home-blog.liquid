@@ -1,0 +1,237 @@
+<style>
+	.shane-home-blog{
+		width: 100%; min-height: 10vw; background-color: #1A1A1A; padding-top: 80px; padding-bottom: 60px;
+	}
+	.shane-home-blog>div{
+		width: 94%; margin: auto; position: relative; height: auto; color: #F4F0E6;
+	}
+	.home-blog-title{
+		width: 100%; display: flex; justify-content: space-between; align-items: center;
+	}
+	.home-blog-title>div:first-child{
+		width: 70%;
+	}
+	.home-blog-title .blog-subheading{
+		display: flex; justify-content: flex-start; align-items: center; font-family: Outfit-Bold; font-size: 1vw; line-height: 1vw; margin-bottom: 0.5vw;
+	}
+	.home-blog-title .blog-subheading>div{
+		width: 0.9vw; height: 0.9vw; background-color: #F4F0E6; margin-right: 0.8vw;
+	}
+	.home-blog-title h2{
+		text-transform: uppercase; margin: 0;
+	}
+	.home-blog-link{
+		width: 160px;
+	}
+	.home-blog-link a{
+		width: 100%; background-color: #1A1A1A;
+	}
+	.home-blog-columns{
+		width:100%; display: flex; justify-content: space-between; align-items: flex-start; margin-top: 1vw;
+	}
+	.home-blog-columns>div:first-child{
+		width:52%;
+	}
+	.home-blog-columns>div:last-child{
+		width:48%;
+	}
+	.home-blog-list{
+		width:100%; display: flex; justify-content: flex-start; align-items: flex-start; margin-bottom: 1vw;
+	}
+	.home-blog-list>div:first-child{
+		width:45%;
+	}
+	.home-blog-list>div:last-child{
+		width:45%; padding-left: 1vw; color: #F4F0E6;
+	}
+	.home-blog-columns .blog-subheading{
+		display: flex; justify-content: flex-start; align-items: center; font-family: Outfit-Bold; font-size: 0.8vw; line-height: 0.8vw; margin-bottom: 0.8vw;
+	}
+	.home-blog-columns .blog-subheading>div{
+		width: 0.7vw; height: 0.7vw; background-color: #F4F0E6; margin-right: 0.8vw;
+	}
+	.home-blog-columns .blog-list-title{
+		font-family: Outfit-Bold; font-size: 1.4vw; line-height: 1.6vw; margin-bottom: 0.8vw;
+	}
+	.home-blog-columns .blog-list-text{
+		font-size: 0.8vw;
+	}
+@media (max-width: 768px){
+	.home-blog-title>div:first-child{
+		width: 100%; margin-bottom: 2vw;
+	}
+	.home-blog-title .blog-subheading{
+		font-size: 2vw; line-height: 2vw;
+	}
+	.home-blog-title .blog-subheading>div{
+		width: 1.9vw; height: 1.9vw; margin-right: 1.3vw;
+	}
+	.home-blog-columns {
+		display: block;
+	}
+	.home-blog-columns>div:first-child, .home-blog-columns>div:last-child {
+		width: 100%;
+	}
+	.home-blog-list {
+		display: block; margin-bottom: 6vw;
+	}
+	.home-blog-list>div:first-child{
+		width:100%; margin-bottom: 3vw;
+	}
+	.home-blog-list>div:last-child{
+		width:100%;
+	}
+	.home-blog-columns .blog-subheading{
+		font-size: 3.2vw; line-height: 3vw; margin-bottom: 1vw;
+	}
+	.home-blog-columns .blog-subheading>div{
+		width: 2vw; height: 2vw; margin-right: 1vw;
+	}
+	.home-blog-columns .blog-list-title{
+		font-size: 4.2vw; line-height: 5.2vw; margin-bottom: 2vw;
+	}
+	.home-blog-columns .blog-list-text{
+		font-size: 3.2vw;
+	}
+}
+</style>
+
+	<div>
+		<div class="home-blog-title">
+			<div>
+				<div class="blog-subheading">
+					<div></div> BLOG
+				</div>
+				<h2>{{ section.settings.heading }}</h2>
+			</div>
+            {%- if section.settings.buttontext != blank -%}
+			<div class="home-blog-link pc_show">
+				<a class="shane-button-02" href="{{ section.settings.link }}" target="_blank">
+					<div class="btn__bg"></div>
+					<div class="btn__label-02">{{ section.settings.buttontext }}</div>
+					<div class="btn__circle-02">
+						<span class="fa fa-arrow-up"></span>
+					</div>
+				</a>
+			</div>
+            {% endif %}
+		</div>
+		<div class="home-blog-columns">
+			<div>
+            {% comment %}
+            {%- for block in section.blocks -%}  
+				<a href="{{ block.settings.block_link }}" target="_blank">
+				<div class="home-blog-list">
+					<div><img src="{{ block.settings.block_image  | image_url }}" style="width: 100%;"></div>
+					<div>
+						<div class="blog-subheading">
+							<div></div> BLOG
+						</div>
+						<div class="blog-list-title">{{ block.settings.block_title }}</div>
+						<div class="blog-list-text">{{ block.settings.block_text }}</div>
+					</div>
+				</div>
+				</a>
+            {% endfor %}
+            {% endcomment %}
+            {% assign section_blog = section.settings.blog %}
+             {% for article in blogs[section_blog].articles limit: 3  %}
+                <a href="{{ article.url }}" title="{{ article.title | escape }}" target="_blank">
+				<div class="home-blog-list">
+					<div><img src="{{ article.image | image_url }}"" style="width: 100%;"></div>
+					<div>
+						<div class="blog-subheading">
+							<div></div> BLOG
+						</div>
+						<div class="blog-list-title">{{ article.title }}</div>
+						<div class="blog-list-text">{{ article.excerpt_or_content | strip_html | truncatewords: 20 }}</div>
+					</div>
+				</div>
+				</a>
+            {% endfor %}
+			</div>
+			<div>
+				<a href="{{ section.settings.img_link }}" target="_blank"><img src="{{ section.settings.image  | image_url }}" style="width: 100%; margin-bottom: 1vw;"></a>
+				<div class="blog-subheading">
+				  <div></div> BLOG
+			  </div>
+		  </div>
+		</div>
+	</div>
+
+{% schema %}
+  {
+    "name": "Home Blog",
+    "class": "shane-home-blog",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },   
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+      },
+      {
+        "type": "text",
+        "id": "buttontext",
+        "label": "Button Text",
+        "default": "Join Now"
+      },      
+      {
+        "type": "url",
+        "id": "img_link",
+        "label": "Img Link"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+         "type": "blog",
+         "id": "blog",
+         "label": "Blog"
+      }
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+            {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image",
+              "info": "Img"
+            },
+            {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "text",
+              "id": "block_text",
+              "label": "Text",
+              "default": "text"
+			},
+           	{
+              "id": "block_link",
+              "type": "url",
+              "label": "link"
+            }
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Home Blog"          
+       }
+    ]
+  }
+{% endschema %}

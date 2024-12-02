@@ -1,0 +1,127 @@
+{%- liquid
+	if sticky
+		assign appended = '--sticky'
+	endif
+
+	assign handle = option.name | replace: ' ', '-' | downcase | escape
+-%}
+{%- case option_type -%}
+{%- when 'dropdown' -%}
+	<fieldset class="product-form__input product-form__input--dropdown" data-index="option{{ forloop.index }}" data-handle="{{ handle }}" {% if my_option_num==1 %}style="display:none;"{% endif %}>
+		<div class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}">
+		  {{ option.name }}{{ sizing_link }}
+		</div>
+		<div class="select">
+		  <select
+				id="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}"
+				name="options[{{ option.name | escape | append: appended }}]"
+				form="{{ product_form_id }}"
+			>
+		    {%- for value in option.values -%}
+		      <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+		        {{ value }}
+		      </option>
+		    {%- endfor -%}
+		  </select>
+			<div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
+		</div>
+	</fieldset>
+{%- when 'button' -%}
+	<fieldset class="product-form__input product-form__input--block" data-index="option{{ forloop.index }}" data-handle="{{ handle }}" {% if my_option_num==1 %}style="display:none;"{% endif %}>
+		<div class="form__label">{{ option.name }}{{ sizing_link }}</div>
+		{%- for value in option.values -%}
+			<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
+						name="{{ option.name | append: appended }}"
+						value="{{ value | escape }}"
+						form="{{ product_form_id }}"
+						{% if option.selected_value == value %}checked{% endif %}
+			>
+			<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}">
+				<span>{{ value }}</span>
+			</label>
+		{%- endfor -%}
+	</fieldset>
+{%- when 'color' -%}
+	{%- liquid
+	assign custom_colors = settings.color_swatches | newline_to_br | split: '<br />'
+	assign key_array = ''
+	assign val_array = ''
+
+	for color in custom_colors
+		assign key = color | split: ':' | first | rstrip
+		assign value = color | split: ':' | last | lstrip
+		assign key_array = key_array | append: ',' | append: key
+		assign val_array = val_array | append: ',' | append: value
+	endfor
+
+	assign key_array = key_array | remove_first: ',' | strip_newlines | downcase | split: ','
+	assign val_array = val_array | remove_first: ',' | split: ','
+	-%}
+	<fieldset class="product-form__input product-form__input--color" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
+		<div class="form__label shane-show-pro-name">{{ option.name }}: <span></span></div>
+		{%- for value in option.values -%}
+          {%- liquid
+								assign active = ''
+								assign variant_image = blank
+								assign variant_url = ''
+								assign srcset = ''
+
+								for variant in product.variants
+									if variant.title contains value
+										if variant.image.id == product.featured_image.id
+											assign active = 'active'
+										endif
+										if variant.image
+											assign variant_image = variant.image
+										endif
+										assign variant_url = variant.url
+									endif
+								endfor
+								assign image_sizes = sizes | split: ","
+							-%}
+							{%- capture srcset -%}
+								{%- if variant_image != blank -%}
+								  {%- for size in image_sizes -%}
+								    {%- assign small_size = '20x' -%}
+								    {%- assign size_array = size | split: "x" -%}
+								    {%- assign size_x = size_array[0] | append: 'x' -%}
+								    {% if size_array[1] != "0" %}
+								      {%- assign size_x = size -%}
+								      {%- assign small_x = size_array[1] | times: 20 | divided_by: size_array[0] | floor -%}
+								      {%- assign small_size = small_size | append: small_x -%}
+								    {% endif %}
+								    {{- variant_image.src | img_url: size_x, crop: 'center' }} {{ size_array[0] }}w,
+								  {%- endfor -%}
+								{%- endif -%}
+							{%- endcapture -%}
+							{% assign l = srcset | size | minus: 1 %}
+			<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
+						name="{{ option.name | append: appended }}"
+                        class="shane-input-radio" 
+						value="{{ value | escape }}"
+						form="{{ product_form_id }}"
+						{% if option.selected_value == value %}checked{% endif %}
+			>
+			{%- liquid
+				assign color_value = value | downcase | escape
+
+				for custom_color in key_array
+					if custom_color == color_value
+						assign color_value = val_array[forloop.index0]
+					endif
+				endfor
+				assign bg_value = empty
+				if color_value contains '.'
+					assign bg_value = color_value | file_url
+					assign color_value = 'var(--bg-body)'
+				endif
+                 assign imageUrl = shop.url
+                assign variant_images_src = variant_image.src
+                assign pro_img_url = imageUrl | append: "/cdn/shop/" | append: variant_images_src
+			-%}
+			<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}">
+                <img src="{{ pro_img_url }}" style="width:80%; margin:auto;">
+			</label>
+		{%- endfor -%}
+	</fieldset>
+{%- endcase -%}

@@ -1,0 +1,539 @@
+<style>
+	.shane-pro-swiper{
+		background-color: #1A1A1A; padding-top: 6vw; color: #fff;
+	}
+	.shane-pro-swiper>div{
+		position: relative; width: 100%;
+	}
+	.shaneProSwiper .context{
+		width: 46%; position: absolute; top: 0; left: 27%; text-align: center; z-index: 99;
+	}
+	.shaneProSwiper .context h2{
+		margin: 0; font-size: 2.6vw; color:#fff; line-height:3.2vw;
+	}
+	.shaneProSwiper .context div{
+		width: 85%; margin: 1vw auto; font-size: 1vw; opacity: 0.8;
+	}
+	.shaneProSwiper .swiper-slide{
+		position: relative;
+	}
+	.shaneProSwiper .swiper-slide .slide-bg{
+		width:100%;
+	}
+	.shaneProSwiper .swiper-slide .slide-img1{
+		width:38.3vw; position: absolute; bottom: 0; left: 3vw;
+	}
+	.shaneProSwiper .slide-context{
+		position: absolute; width:50vw; bottom: 2.4vw; left: 45%; height: 35vw; display: flex; flex-wrap: wrap; align-content: space-between;
+	}
+	.slide-context>div{
+		width:100%;
+	}
+	.shaneProSwiper .slide-type{
+		width: fit-content; display:flex; justify-content: flex-start; align-items: center; border-radius: 8px;
+		height: calc(100vw * 56 / 1920);
+	}
+	.shaneProSwiper .slide-type img{
+		width: 2.9vw;
+	}
+	.shaneProSwiper .slide-type div{
+		font-size:1.4vw; text-transform: uppercase; padding: 0 1vw; font-family: Outfit-Bold;
+	}
+	.shaneProSwiper .slide-title{
+		 font-family: Outfit-Bold; font-size: 5vw; text-transform: uppercase;
+	}
+	.shaneProSwiper .slide-cs{
+		display:flex; justify-content: flex-start; align-items: flex-start; width: fit-content; height:fit-content; 
+		border-radius: 0.94vw; line-height: 1.7vw; font-size: 1vw; margin-bottom: 0.5vw; text-transform: capitalize;
+		
+	}
+	.shaneProSwiper .slide-cs>div:first-child{
+		width: 7.8vw; height: 100%; text-align: center; border-radius: 0.94vw;
+	}
+	.shaneProSwiper .slide-cs>div:last-child{
+		height: 100%; padding: 0 1.5vw 0 1vw;
+	}
+	.shaneProSwiper .swiper-ps{
+		font-size: 0.9vw;
+	}
+	.shaneProSwiper .swiper-ps span{
+		font-size:1vw; font-family: Outfit-Bold;
+	}
+	.shaneProSwiper .purple .slide-type{
+		background-color: #561C7F;
+	}
+	.shaneProSwiper .purple .slide-cs{
+		border: 2px solid #561C7F;
+	}
+	.shaneProSwiper .purple .slide-cs>div:first-child{
+		background-color: #561C7F;
+	}
+	.shaneProSwiper .red .slide-type{
+		background-color: #D60023;
+	}
+	.shaneProSwiper .red .slide-cs{
+		border: 2px solid #D60023;
+	}
+	.shaneProSwiper .red .slide-cs>div:first-child{
+		background-color: #D60023;
+	}
+	.shaneProSwiper-next, .shaneProSwiper-prev{
+		width: 3vw; height: 3vw; border-radius: 50%; background-color: #fff; position: absolute; top: 55%; z-index: 9; display: flex; justify-content: center; align-items: center;
+	}
+	.shaneProSwiper-next img, .shaneProSwiper-prev img{
+		width: 40%;
+	}
+	.shaneProSwiper-next{
+		left: 3vw;
+	}	
+	.shaneProSwiper-next .img-np{
+		transform: scaleX(-1);
+	}
+	.shaneProSwiper-prev{
+		right:3vw;
+	}
+	.shaneProSwiper-prev .img-np-hover{
+		transform: scaleX(-1);
+	}
+	.shaneProSwiper .img-np-hover{
+		display: none;
+	}
+	.shaneProSwiper-next:hover, .shaneProSwiper-prev:hover{
+		background-color: #FF5F00;
+	}
+	.shaneProSwiper-next:hover .img-np, .shaneProSwiper-prev:hover .img-np{
+		display: none;
+	}
+	.shaneProSwiper-next:hover .img-np-hover, .shaneProSwiper-prev:hover .img-np-hover{
+		display: block;
+	}
+	.shaneProSwiper .info{
+		width:70%; margin: auto; font-size: 0.9vw;opacity: 0.8; text-align: center; overflow: hidden; height: 5vw; position: relative;
+	}
+	.shaneProSwiper .more{
+		width:100%; position: absolute; bottom: 0; left: 0; height: 3vw; text-align: center;
+		 background-image: linear-gradient(#00000000,
+			 {{ section.settings.icon_color }}{{ section.settings.icon_color_tt }}, 
+			 {{ section.settings.icon_color}});
+		  font-family: Outfit-Bold;
+	}
+	.shaneProSwiper a{
+		color:#fff; line-height: 3vw; display: flex; justify-content: center; align-items: center;
+	}
+	.shaneProSwiper .more span{
+		color: #FF5F00; font-size: 1.4vw;
+	}
+@media (max-width: 1300px){
+    .shaneProSwiper .context{
+		width: 56%; left: 22%;
+	}
+	.shaneProSwiper .context div{
+		width: 100%; font-size: 1.4vw;
+	}
+}
+@media (max-width: 768px){
+	.shane-pro-swiper{
+		padding-top: 60vw; color: #fff;
+	}
+	.shaneProSwiper{
+		overflow-x: clip;
+		overflow-y:visible;
+	}
+	.shaneProSwiper .context{
+		width: 90%;left: 5%; top: -40vw;
+	}
+	.shaneProSwiper .context h2{
+		margin: 0; font-size: 8vw; line-height:9vw;
+	}
+	.shaneProSwiper .context div{
+		width: 90%; margin: 2vw auto; font-size: 3.6vw;
+	}
+	.shaneProSwiper .swiper-slide .slide-img1{
+		width:70vw; left: 0;
+	}
+	.shaneProSwiper .slide-context{
+		width:90vw; bottom: 16vw; left: 5vw; height: 140vw;
+	}
+	.shaneProSwiper .slide-type{
+		width: fit-content; border-radius: 8px;
+		height: fit-content;
+	}
+	.shaneProSwiper .slide-type img{
+		width: 6vw;
+	}
+	.shaneProSwiper .slide-type div{
+		font-size:3.4vw; padding: 0 2vw;
+	}
+	.shaneProSwiper .slide-title{
+		 font-size: 8vw; line-height: normal;
+	}
+	.shaneProSwiper .slide-cs{
+		width: 100%; height: fit-content; border-radius: 4.5vw; line-height: 7vw; font-size: 3.2vw; margin-bottom: 2vw; text-transform: capitalize;
+	}
+	.shaneProSwiper .slide-cs>div:first-child{
+		width: 28%; height: 100%; text-align: center; border-radius: 4.2vw; line-height: 8vw;
+	}
+	.shaneProSwiper .slide-cs>div:last-child{
+		width:72%;height: 100%; padding: 0 1.5vw 0 2vw; line-height: 3.6vw; display: flex; justify-content: flex-start; align-items: center;
+		padding-top: 2.2vw;
+        padding-bottom: 2.2vw;
+	}
+	.shaneProSwiper .swiper-ps{
+		font-size: 3vw; padding-left: 65%;
+	}
+	.shaneProSwiper .swiper-ps span{
+		font-size:3.2vw;
+	}
+	.shaneProSwiper .purple .slide-cs{
+		border: 1px solid #561C7F;
+	}
+	.shaneProSwiper .red .slide-cs{
+		border: 1px solid #D60023;
+	}
+	.shaneProSwiper-next, .shaneProSwiper-prev{
+		width: 6vw; height: 6vw;top: 64%;
+	}
+	.shaneProSwiper .info{
+		 height: 15vw; 
+	}
+	.shaneProSwiper .more{
+		height: 4vw; 
+	}
+	.shaneProSwiper .more span{
+		font-size: 3.6vw;
+	}
+
+}
+
+
+</style>
+	<div class="swiper shaneProSwiper">
+		<div class="context">
+			<h2>{{ section.settings.heading }}</h2>
+
+			{% if section.settings.show_mb_text %}
+				<div class="info">
+					{{ section.settings.text }}
+					<div class="more" style='  margin: 0;
+						opacity: 1;  width: 100%;'>
+						<a>Read More&nbsp;&nbsp;
+						<span class="fa fa-arrow-circle-down">
+						</span></a></div>
+				</div>
+			{% else %}
+				<div class="">{{ section.settings.text }}</div>
+			{% endif %}
+		</div>
+		<div class="swiper-wrapper">
+            {%- for block in section.blocks -%}
+			<div class="swiper-slide">
+				<img src="{{ block.settings.block_image_bg | image_url }}" class="slide-bg pc_show">
+				<img src="{{ block.settings.block_image_bg_m | image_url }}" class="slide-bg mobile_show">
+				<img src="{{ block.settings.block_image | image_url }}" class="slide-img1 ani pc_show" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s">
+				<img src="{{ block.settings.block_image_mb | image_url }}" class="slide-img1 ani mobile_show" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s">
+				<div class="slide-context {{ block.settings.color }}">
+					<div>
+						<div class="slide-type">
+							{% if block.settings.block_checkbox == false %}
+								<img src="{{ block.settings.block_image_icon | image_url }}">
+								<div>{{ block.settings.block_subtitle }}</div>
+							{% endif %}
+						</div>
+						<div class="slide-title">{{ block.settings.block_title }}</div>
+                        {% if block.settings.text_disguise != blank %}
+						<div class="slide-cs">
+							<div>Disguise:</div><div>{{ block.settings.text_disguise }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_height != blank %}
+						<div class="slide-cs">
+							<div>Height:</div><div>{{ block.settings.text_height }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_strengths != blank %}
+						<div class="slide-cs">
+							<div>Strengths:</div><div>{{ block.settings.text_strengths }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_weaknesses != blank %}
+						<div class="slide-cs">
+							<div>Weaknesses:</div><div>{{ block.settings.text_weaknesses }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_position != blank %}
+						<div class="slide-cs">
+							<div>Position:</div><div>{{ block.settings.text_position }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.text_features != blank %}
+						<div class="slide-cs">
+							<div>Features:</div><div>{{ block.settings.text_features }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_1 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_1 }}:</div><div>{{ block.settings.custom_text_1 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_2 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_2 }}:</div><div>{{ block.settings.custom_text_2 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_3 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_3 }}:</div><div>{{ block.settings.custom_text_3 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_4 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_4 }}:</div><div>{{ block.settings.custom_text_4 }}</div>
+						</div>
+                        {% endif %}
+                        {% if block.settings.custom_title_5 != blank %}
+						<div class="slide-cs">
+							<div>{{ block.settings.custom_title_5 }}:</div><div>{{ block.settings.custom_text_5 }}</div>
+						</div>
+                        {% endif %}
+                        
+					</div>
+					<div class="swiper-ps"><span>P.S.</span> {{ block.settings.block_ps }}</div>
+				</div>
+			</div>
+            {% endfor %}
+		</div>
+		<div class="shaneProSwiper-next">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="img-np">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="img-np-hover">
+		</div>
+		<div class="shaneProSwiper-prev">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="img-np">
+			<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="img-np-hover">
+		</div>
+	</div>
+{% schema %}
+  {
+    "name": "Pro swiper",
+    "class": "shane-pro-swiper",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "id": "text",
+        "type": "textarea",
+        "label": "Text"
+      } ,
+	  {
+		"type": "checkbox",
+		"id": "show_mb_text",
+		"label": "Show Read More",
+		"default": false
+	  },
+	  {
+		"type": "color",
+		"id": "icon_color",
+		"label": "Show Read More Color",
+		"default": "#1A1A1A",
+		"info": "icon color"
+	  },
+	  {
+        "type": "text",
+        "id": "icon_color_tt",
+        "label": "颜色透明度",
+	  },
+
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+           {
+              "type": "select",
+              "id": "color",
+              "options": [
+                {
+                  "value": "red",
+                  "label": "red"
+                },
+                {
+                  "value": "purple",
+                  "label": "purple"
+                }
+              ],
+              "default": "red",
+              "label": "Color"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image"
+            },
+			
+			{
+				"type": "image_picker",
+				"id": "block_image_mb",
+				"label": "Image mb"
+			  },
+           {
+              "type": "image_picker",
+              "id": "block_image_bg",
+              "label": "Image bg"
+            },
+           {
+              "type": "image_picker",
+              "id": "block_image_bg_m",
+              "label": "Image bg mobile"
+            },
+			{
+			  "type": "checkbox",
+			  "id": "block_checkbox",
+			  "label": "Image icon checkbox"	
+			},
+           {
+              "type": "image_picker",
+              "id": "block_image_icon",
+              "label": "Image icon"
+            },
+           {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "text",
+              "id": "block_subtitle",
+              "label": "Subtitle"
+			},
+           {
+              "type": "text",
+              "id": "text_disguise",
+              "label": "Disguise"
+			},
+           {
+              "type": "text",
+              "id": "text_height",
+              "label": "Height"
+			},
+           {
+              "type": "text",
+              "id": "text_strengths",
+              "label": "Strengths"
+			},
+           {
+              "type": "text",
+              "id": "text_weaknesses",
+              "label": "Weaknesses"
+			},
+           {
+              "type": "text",
+              "id": "text_position",
+              "label": "Position"
+			},
+           {
+              "type": "text",
+              "id": "text_features",
+              "label": "Features"
+			},
+           {
+             "type": "header",
+             "content": "自定义标题和内容"
+           },
+           {
+              "type": "text",
+              "id": "custom_title_1",
+              "label": "Custom Title 1"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_1",
+              "label": "Custom Text 1"
+			},
+           {
+              "type": "text",
+              "id": "custom_title_2",
+              "label": "Custom Title 2"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_2",
+              "label": "Custom Text 2"
+			},
+           {
+              "type": "text",
+              "id": "custom_title_3",
+              "label": "Custom Title 3"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_3",
+              "label": "Custom Text 3"
+			},
+            {
+              "type": "text",
+              "id": "custom_title_4",
+              "label": "Custom Title 4"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_4",
+              "label": "Custom Text 4"
+			},
+           {
+              "type": "text",
+              "id": "custom_title_5",
+              "label": "Custom Title 5"
+			},
+           {
+              "type": "text",
+              "id": "custom_text_5",
+              "label": "Custom Text 5"
+			},
+           {
+              "type": "text",
+              "id": "block_ps",
+              "label": "P.S.",
+              "default": "Don't forget to share your epic loot on social media using #BlindBoxBattle!"
+			}
+           
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Pro swiper"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+    var shaneProswiper = new Swiper(".shaneProSwiper", {
+	  loop: true,
+      speed:200,
+      navigation: {
+        nextEl: ".shaneProSwiper-prev",
+        prevEl: ".shaneProSwiper-next",
+      },
+	  on:{
+		  init: function(){
+			swiperAnimateCache(this); //隐藏动画元素 
+			swiperAnimate(this); //初始化完成开始动画
+		  }, 
+		  slideChangeTransitionEnd: function(){ 
+			swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+			//this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+		  } 
+		}
+    });
+	$(document).ready(function() {
+		$(".shaneProSwiper .more").click(function(){
+			$(this).css("display","none");
+			$(".shaneProSwiper .info").css("height","auto");
+		});
+	});
+</script>

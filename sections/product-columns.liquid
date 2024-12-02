@@ -1,0 +1,345 @@
+<style>
+  #{{ section.id }} {
+    width: 100%;
+    margin-right: 0;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: calc(5000vw / var(--base-width)) calc(3500vw / var(--base-width)) calc(7700vw / var(--base-width)) calc(3500vw / var(--base-width));
+    color: #006de5;
+    font-family: Outfit-Regular;
+    z-index: 2;
+    position: relative;
+    background: {{ section.settings.background_color }};
+    gap: calc(4000vw / var(--base-width));
+  }
+  #{{ section.id }} .title{
+    font-size: calc(4000vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    color: {{ section.settings.title_color }};
+  }
+  .pro-columns-right {
+    width: 100%;
+    font-family: Outfit-Bold;
+  }
+  .pro-columns-right .swiper-slide {
+    border-top: initial;
+  }
+  .pro-columns-right .swiper-slide .product-card {
+    background-color: #fff;
+    border: 1px solid {{ section.settings.card_background_color }};
+    margin-bottom: 0;
+  }
+  .pro-columns-right .swiper-slide > img {
+    width: 100%;
+  }
+  .pro-columns-right .swiper-slide .product-card-info {
+    position: relative;
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .product-card-metafield {
+    border: 1px solid #fff;
+    background: {{ section.settings.main_color }};
+  }
+  .pro-columns-right .swiper-slide .product-card-info .product-card-title {
+    color: #fff;
+    /* min-height: 70px; */
+    min-height: 3.8vw;
+    font-family: Outfit-Bold;
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .price {
+    font-size: 22px;
+    color: #fff;
+    font-family: Outfit-Bold;
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent {
+    background: #fff;
+    color: {{ section.settings.main_color }};
+    position: absolute;
+    right: calc(100vw * 20 / 1920);
+    bottom: calc(100vw * 20 / 1920);
+    width: fit-content;
+    min-width: calc(100vw * 120 / 1920);
+    padding: calc(100vw * 10 / 1920);
+    font-size: calc(100vw * 14 / 1920);
+    border-radius: calc(100vw * 18 / 1920);
+    font-family: Outfit-Bold;
+    text-align: center;
+    height: fit-content;
+    line-height: calc(100vw * 16 / 1920);
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .product-card--add-to-cart-text {
+    text-align: center;
+    display: block;
+    width: 80%;
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .icon-shopping-cart {
+    background: {{ section.settings.main_color }};
+  }
+  .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent svg circle {
+    stroke: {{ section.settings.main_color }};
+  }
+  .pro-columns-right .s-title {
+    text-transform: uppercase;
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 60px;
+  }
+  .pro-columns-right .s-title img {
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+  }
+  .pro-columns-link {
+    margin-top: 20px;
+  }
+  #{{ section.id }} .product-v-name{
+    color: {{ section.settings.main_color }};
+  }
+  #{{ section.id }} .product-card .product-card-swatches .product-card-swatch{
+    border-color:{{ section.settings.main_color }};
+  }
+  #{{ section.id }} .product-card .product-card-swatches .product-card-swatch.active{
+    background-color:{{ section.settings.main_color }};
+  }
+  #{{ section.id }} .product-card--content-spacing-true .product-card-info{
+    background-color:{{ section.settings.main_color }};
+    padding-bottom: calc(4000vw / var(--base-width));
+  }
+  #{{ section.id }} .shane-coming{
+    color: {{ section.settings.main_color }};
+    bottom: calc(4000vw / var(--base-width));
+    margin-bottom: -8px;
+  }
+  #{{ section.id }}  .product-card .product-card-info .button.accent{
+    bottom: calc(4000vw / var(--base-width));
+    margin-bottom: -8px;
+  }
+  #{{ section.id }} .swiper-l-r{
+    margin-top: calc(4400vw / var(--base-width));
+    padding-top: 0;
+  }
+  #{{ section.id }} .swiper-l-r>div{
+    border-color:{{ section.settings.main_color }};
+    background-color: #fff;
+  }
+  #{{ section.id }} .swiper-l-r>div:hover{
+    background-color:{{ section.settings.main_color }};
+  }
+  /* @media (max-width: 1660px) {
+    .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent {
+      width: 50%;
+    }
+  } */
+  @media (max-width: 768px) {
+    #{{ section.id }} {
+      padding: calc(3700vw / var(--base-width)) 0 calc(5600vw / var(--base-width)) calc(1250vw / var(--base-width));
+      gap: calc(2500vw / var(--base-width));
+    }
+    #{{ section.id }} .title{
+      font-size: 6vw;
+    }
+    #{{ section.id }} .swiper-l-r{
+      display: none;
+    }
+    #{{ section.id }} .product-card--content-spacing-true .product-card-info{
+
+    }
+    .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent {
+      width: fit-content !important;
+      padding: calc(100vw * 5 / 430);
+      font-size: calc(100vw * 12 / 430);
+      min-width: calc(100vw * 100 / 430);
+      right: 20px;
+      bottom: 20px;
+      width: fit-content;
+      border-radius: 18px;
+      font-family: Outfit-Bold;
+      text-align: center;
+      height: fit-content;
+      line-height: 16px;
+    }
+    .pro-columns-right {
+      width: 100%;
+      margin-top: 0;
+    }
+    .pro-columns-right .swiper-slide .product-card .product-card-info .button.accent {
+      width: 55%;
+    }
+    .shane-pro-columns .shane-button-02 {
+      width: 130px;
+      height: 36px;
+      font-size: 14px;
+    }
+    .pro-columns-right .swiper-slide .product-card-info .product-card-title {
+      min-height: 22vw;
+    }
+    #{{ section.id }} .shane-coming{
+      bottom: calc(100vw* 14/ 430);
+      margin-bottom: 0;
+    }
+  }
+</style>
+<div id="{{ section.id }}">
+  <div class="title">{{ section.settings.title }}</div>
+  <div class="pro-columns-right">
+    <div class="swiper pro-column-swiper">
+      <div class="swiper-wrapper">
+        {% assign featured_collection = section.settings.collection %}
+        {%- for product in featured_collection.products -%}
+          <div class="swiper-slide">
+            {% render 'product-card', product_card_product: product %}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    {% if section.settings.collection.products_count > 4 %}
+      <div class="swiper-l-r">
+        <div class="columns-next">
+          <img
+            src="{{ section.settings.left_icon |  image_url: width: 24 }}"
+            alt="{{ section.settings.left_icon.alt }}"
+            class="icon-next"
+          >
+          <img
+            src="{{ section.settings.right_icon |  image_url: width: 24 }}"
+            alt="{{ section.settings.right_icon.alt }}"
+            class="icon-next-hover"
+          >
+        </div>
+        <div class="columns-prev">
+          <img
+            src="{{ section.settings.left_icon |  image_url: width: 24 }}"
+            alt="{{ section.settings.left_icon.alt }}"
+            class="icon-prev"
+          >
+          <img
+            src="{{ section.settings.right_icon |  image_url: width: 24 }}"
+            alt="{{ section.settings.right_icon.alt }}"
+            class="icon-prev-hover"
+          >
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Columns",
+  "class": "shane-pro-columns",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "link",
+      "info": "Adds a link"
+    },
+    {
+      "type": "text",
+      "id": "buttontext",
+      "label": "Button Text",
+      "default": "View More"
+    },
+    {
+      "type": "image_picker",
+      "id": "left_icon",
+      "label": "Icon With Main Color"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_icon",
+      "label": "Icon With White"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#006de5"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card Border Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "main_color",
+      "label": "Main Color",
+      "default": "#006de5"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Banner Img"
+        },
+        {
+          "type": "image_picker",
+          "id": "imageicon",
+          "label": "Image icon",
+          "info": "Banner Img icon"
+        },
+        {
+          "type": "text",
+          "id": "stitle",
+          "label": "Title",
+          "default": "Add a title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Columns"
+    }
+  ]
+}
+{% endschema %}
+<script>
+  let domC = document.querySelector('#{{ section.id }} .pro-column-swiper');
+  var swiperColumn = new Swiper('#{{ section.id }} .pro-column-swiper', {
+    slidesPerView: 1.7,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: '.shane-pro-columns .columns-prev',
+      prevEl: '.shane-pro-columns .columns-next',
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 3,
+        spaceBetween: 15,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 15,
+      },
+    },
+  });
+</script>

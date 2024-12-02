@@ -1,0 +1,282 @@
+<style>
+  #{{section.id}}-product-advantage {
+  	width: 100%;
+      padding-top: calc(10000vw/var(--base-width));
+      padding-bottom:0;
+      padding-left:calc(12000vw/var(--base-width));
+      padding-right:calc(12000vw/var(--base-width));
+      background-color: {{ section.settings.background_color }};
+      /* 去除白边 */
+      margin-top: -1px;
+  }
+   #{{section.id}}-product-advantage .equal-two{
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       margin-bottom: calc(6000vw/var(--base-width));
+       gap: calc(2000vw/var(--base-width));
+   }
+   #{{section.id}}-product-advantage .equal-two .title{
+       color: {{ section.settings.heading_color }};
+       text-align: center;
+       font-size: 2.8vw;
+       font-style: normal;
+       font-weight: 700;
+       line-height: 1;
+      margin-top: 0;
+      margin-bottom: 0;
+   }
+   #{{section.id}}-product-advantage .equal-two .text{
+       color: {{ section.settings.text_color }};
+       font-size: calc(2400vw/var(--base-width));
+       line-height: 1;
+       text-align: center;
+   }
+   /* 适配一行4个或5个的样式 start */
+   {% if section.settings.display_quantity == '4' %}
+        #{{section.id}}-product-advantage .line{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: calc(1800vw/var(--base-width));
+        }
+        #{{section.id}}-product-advantage .line .item{
+            width:100%;
+            border-radius: calc(1000vw/var(--base-width));
+            padding: calc(2000vw/var(--base-width)) calc(5300vw/var(--base-width))  calc(5900vw/var(--base-width))  calc(2000vw/var(--base-width));
+        }
+        #{{section.id}}-product-advantage .line .item img{
+            width: calc(6100vw/var(--base-width));
+            height: auto;
+            flex-shrink: 0;
+            margin-bottom: calc(3500vw/var(--base-width));
+        }
+        #{{section.id}}-product-advantage .line .item .contentFlex{
+            display:flex;
+            flex-direction: column;
+            }
+        #{{section.id}}-product-advantage .line .item .contentFlex .title{
+            max-width: 100%;
+            font-size: calc(2600vw/var(--base-width));
+            font-weight: 700;
+            line-height: 1.23;
+            margin-top: 0;
+            margin-bottom: calc(3000vw/var(--base-width));
+        }
+        #{{section.id}}-product-advantage .line .item .contentFlex .text{
+            max-width: 100%;
+            font-size: calc(1800vw/var(--base-width));
+            line-height: 1.33;
+        }
+    {% else %}
+        #{{section.id}}-product-advantage .line{
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: calc(1200vw/var(--base-width));
+        }
+        #{{section.id}}-product-advantage .line .item{
+            width:100%;
+            border-radius: calc(1000vw/var(--base-width));
+            padding: calc(1700vw/var(--base-width)) calc(2000vw/var(--base-width))  calc(1500vw/var(--base-width));
+        }
+        #{{section.id}}-product-advantage .line .item img{
+            width: calc(5000vw/var(--base-width));
+            height: auto;
+            flex-shrink: 0;
+            margin-bottom: calc(3300vw/var(--base-width));
+        }
+        #{{section.id}}-product-advantage .line .item .contentFlex{
+            display:flex;
+            flex-direction: column;
+        }
+        #{{section.id}}-product-advantage .line .item .contentFlex .title{
+            max-width: 100%;
+            font-size: calc(2000vw/var(--base-width));
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: calc(1500vw/var(--base-width));
+        }
+        #{{section.id}}-product-advantage .line .item .contentFlex .text{
+            max-width: 100%;
+            font-size: calc(1600vw/var(--base-width));
+            line-height: 1.25;
+        }
+    {% endif %}
+   /* 适配一行5个的样式 end */
+  @media (max-width: 1728px){
+    #{{section.id}}-product-advantage {
+      padding-left: calc(8000vw/var(--base-width));
+      padding-right: calc(8000vw/var(--base-width));
+    }
+  }
+  @media (max-width: 1440px){
+    #{{section.id}}-product-advantage {
+      padding-left: calc(3500vw/var(--base-width));
+      padding-right: calc(3500vw/var(--base-width));
+    }
+  }
+  @media (max-width: 1194px){
+    #{{section.id}}-product-advantage .line{
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+   @media (max-width: 768px){
+    #{{section.id}}-product-advantage {
+        padding-top: calc(5000vw/var(--base-width));
+        padding-left:calc(1250vw/var(--base-width));
+        padding-right:calc(1250vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantage .equal-two{
+        margin-bottom: calc(2500vw/var(--base-width));
+        gap: calc(1000vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantage .equal-two .title{
+        max-width: calc(28000vw/var(--base-width));
+        font-size: 6vw;
+        line-height: 1.1;
+    }
+    #{{section.id}}-product-advantage .equal-two .text{
+        max-width: calc(28800vw/var(--base-width));
+        font-size: calc(1500vw/var(--base-width));
+        line-height: 1.1;
+        text-align: center;
+    }
+    /* 一行展示两个 start */
+    #{{section.id}}-product-advantage .line{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: calc(800vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantage .line .item{
+        border-radius: calc(500vw/var(--base-width));
+        padding: calc(1750vw/var(--base-width)) calc(1500vw/var(--base-width))  calc(3500vw/var(--base-width))  calc(1250vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantage .line .item img{
+        width: calc(2500vw/var(--base-width));
+        margin-bottom: calc(1500vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantage .line .item .contentFlex .title{
+        font-size: calc(1500vw/var(--base-width));
+        line-height: 1.06;
+        margin-bottom: calc(1500vw/var(--base-width));
+    }
+    #{{section.id}}-product-advantage .line .item .contentFlex .text{
+        font-size: calc(1300vw/var(--base-width));
+        line-height: 1.23;
+    }
+  }
+</style>
+<div id="{{section.id}}-product-advantage">
+  <div class="equal-two">
+    <h2 class="title">{{ section.settings.heading }}</h2>
+    <div class="text">{{ section.settings.text }}</div>
+  </div>
+  <div class="line">
+    {%- for block in section.blocks -%}
+      <div class="item" style="background-color: {{ block.settings.block_background_color }};">
+        <img src="{{ block.settings.block_image | image_url }}">
+        <div class="contentFlex">
+          <h3 class="title" style="color: {{ block.settings.block_text_color }};">
+            {{ block.settings.block_title }}
+          </h3>
+          <div class="text" style="color: {{ block.settings.block_text_color }};">{{ block.settings.block_text }}</div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Product Advantage",
+  "class": "product-advantage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#fff"
+    },
+    {
+      "type": "select",
+      "id": "display_quantity",
+      "label": "Display Quantity",
+      "options": [
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        }
+      ],
+      "default": "4"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "block_image",
+          "label": "Image icon"
+        },
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Title",
+          "default": "Add a title"
+        },
+        {
+          "type": "text",
+          "id": "block_text",
+          "label": "Text",
+          "default": "text"
+        },
+        {
+          "type": "color",
+          "id": "block_background_color",
+          "label": "BLock Background Color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "block_text_color",
+          "label": "Block Text Color",
+          "default": "#006DE5"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Advantage"
+    }
+  ]
+}
+{% endschema %}

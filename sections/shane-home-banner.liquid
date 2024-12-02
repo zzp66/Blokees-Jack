@@ -1,0 +1,234 @@
+<style>
+  .shane-home-banner {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    min-height: 800px;
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    position: relative;
+  }
+
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .homebannerSwiper .autoplay-progress {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--swiper-theme-color);
+  }
+
+  .homebannerSwiper .autoplay-progress svg {
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: var(--swiper-theme-color);
+    fill: none;
+    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+    stroke-dasharray: 125.6;
+    transform: rotate(-90deg);
+  }
+  .home-banner-context {
+    position: absolute;
+    top: 25%;
+    left: 4%;
+    width: 40%;
+    color: #c9c5cc;
+    text-align: left;
+  }
+  @media(max-width:1700px){
+    .shane-home-banner {
+      min-height: 500px;
+    }
+  }
+  @media(max-width:1500px){
+    .shane-home-banner {
+      min-height: 400px;
+    }
+  }
+  @media only screen and (max-width: 1068px) {
+    .shane-home-banner {
+      min-height: 400px;
+    }
+    .home-banner-context {
+      width: 60%;
+      min-height: 300px;
+    }
+    .banner-text {
+      padding: calc(100vw * 21 / 1920) 0 calc(100vw * 46 / 1920);
+      line-height: calc(100vw * 46 / 1920);
+      font-size: 18px;
+    }
+  }
+  .banner-title {
+    color: #ffffff;
+    font-size: 3.2vw;
+    font-family: Outfit-Bold;
+    line-height: 3.8vw;
+    margin-top: calc(100vw * 0 / 1920);
+    margin-bottom: calc(100vw * 0 / 1920);
+  }
+  .banner-title h1 {
+    color: #ffffff;
+    font-size: 3.2vw;
+    font-family: Outfit-Bold;
+    line-height: 3.8vw;
+  }
+  .banner-text {
+    padding: 20px 0 50px;
+    line-height: 25px;
+    font-size: 18px;
+  }
+  .swiper-pagination-bullet-active {
+    background: #ff5f00;
+  }
+  @media (max-width: 768px) {
+    .shane-home-banner {
+      min-height: 700px;
+    }
+    .home-banner-context {
+      bottom: 15%;
+      top: auto;
+      left: 4%;
+      width: 70%;
+    }
+    .banner-title {
+      font-size: 9vw;
+      line-height: 9vw;
+    }
+    .banner-title h1 {
+      line-height: 9vw;
+      margin: 0;
+      font-size: 9vw;
+    }
+    .banner-text {
+      padding: 10px 0 20px;
+      line-height: 4vw;
+      font-size: 3.6vw;
+    }
+  }
+</style>
+<div class="swiper homebannerSwiper">
+  <div class="swiper-wrapper">
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign image = block.settings.image
+        assign image_m = block.settings.image_m
+      -%}
+      <div class="swiper-slide">
+        <a href="{{ block.settings.slide_link }}"><img src="{{ image | image_url: width: 1920, height:890   }}" class="pc_show" alt="{{ image.alt }}"></a>
+        <a href="{{ block.settings.slide_link }}"><img src="{{ image_m | image_url: width:750 }}" class="mobile_show" alt="{{ image_m.alt }}"></a>
+        <div class="wow fadeInUp home-banner-context">
+          <h1 class="banner-title">{{ block.settings.heading }}</h1>
+          <div class="banner-text">{{ block.settings.text }}</div>
+          {% if block.settings.buttontext != blank %} 
+            <a class="shane-button" href="{{ block.settings.slide_link }}">
+              <div class="btn__label">{{ block.settings.buttontext }}</div>
+              <div class="btn__circle">
+                <div>
+                  <svg
+                    class="bi bi-arrow-right-short"
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path fill-rule="evenodd" d="M8.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.793 8 8.146 5.354a.5.5 0 0 1 0-.708z"/>
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5H11a.5.5 0 0 1 0 1H4.5A.5.5 0 0 1 4 8z"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="swiper-pagination"></div>
+  <div class="autoplay-progress">
+    <svg viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="20"></circle>
+    </svg>
+    <span></span>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Home Banner",
+  "class": "shane-home-banner",
+  "max_blocks": 4,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Banner Img"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_m",
+          "label": "Image Mobile",
+          "info": "Banner Img Mobile"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Add a heading"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "text",
+          "default": "Slide text"
+        },
+        {
+          "id": "slide_link",
+          "type": "url",
+          "label": "Slide link",
+          "info": "Adds a link to slide image"
+        },
+        {
+          "type": "text",
+          "id": "buttontext",
+          "label": "Button Text",
+          "default": "Shop Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Banner"
+    }
+  ]
+}
+{% endschema %}

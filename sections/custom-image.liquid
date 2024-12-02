@@ -1,0 +1,78 @@
+<style>
+  #{{ section.id }}-custom-image{
+    width: 100%;
+    display: flex;
+    background: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.padding_top }}vw;
+    padding-bottom: {{ section.settings.padding_bottom }}vw;
+    margin-top: -2px;
+  }
+
+
+  #{{ section.id }}-custom-image picture,
+  #{{ section.id }}-custom-image .mian-img{
+    width: 100%;
+  }
+</style>
+<div id="{{ section.id }}-custom-image">
+  <picture>
+    <source
+      media="(max-width: 768px)"
+      srcset="{{ section.settings.main_img_mobile | image_url }}"
+    >
+    <img
+      class="mian-img"
+      src="{{ section.settings.main_img | image_url }}"
+      alt="{{ section.settings.main_img.alt }}"
+      loading="lazy"
+    >
+  </picture>
+</div>
+{% schema %}
+{
+  "name": "Custom Image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "main_img",
+      "label": "Main Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_img_mobile",
+      "label": "Main Image Mobile"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#D21517"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "vw"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "default": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "vw"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Image"
+    }
+  ]
+}
+{% endschema %}

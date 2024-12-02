@@ -1,0 +1,295 @@
+<style>
+	.shane-pro-comment{
+		width:100%; min-height: 30vw; background-color: #006DE5; color: #fff; padding-top: 7vw; padding-bottom: 7vw;
+	}
+	.shane-pro-comment>div{
+		width: 100%;
+	}
+	.pro-comment-context{
+		width: 94%; margin: auto;
+	}
+	.pro-comment-context .stitle{
+		font-size: 1.4vw; text-transform: capitalize; opacity: 0.9;
+	}
+	.pro-comment-context .title{
+		font-size: 3vw; text-transform: uppercase; font-family: Outfit-Bold;
+	}
+	.pro-comment-columns{
+		width: 100%; margin-top: 1.2vw;
+	}
+	.pro-comment-columns .text-img{
+		width: 100%; position: relative; background-color: #fff; overflow: hidden;
+	}
+	.pro-comment-columns .text-img>div{
+		width: 100%; position: absolute; height: 100%; left: 0; top: 0; background-color: #00000080; padding: 1.2vw; justify-content: start; align-content: flex-end; flex-wrap: wrap; display: none;
+	}
+	.pro-comment-columns .active .text-img>div{
+		display: flex;
+	}
+	.pro-comment-columns .text-img-title{
+		font-size: 1.4vw; font-family: Outfit-Bold; width: 100%;
+	}
+	.pro-comment-columns .text-img-date{
+		font-size: 1vw; margin-bottom: 1.2vw; width: 100%;
+	}
+	.pro-comment-columns .text-img-text{
+		font-size: 0.8vw; color: #fff; opacity: 0.9; font-family: Outfit-Light; padding-bottom: 0.8vw; width: 90%;
+	}
+	.pro-comment-columns .text-img-score{
+		width: 100%; display: flex; justify-content: space-between; align-items: center; color: #fff;
+	}
+	.pro-comment-columns .text-img-score>div:first-child{
+		width: 30%;
+	}
+	.pro-comment-columns .text-img-score>div:last-child{
+		width: 70%; font-family: Outfit-Bold; font-size: 1.4vw; line-height: 2vw;
+	}
+	.pro-comment-columns .text-img-score>div:first-child{
+		display: flex; justify-content: space-between; align-items: center; 
+	}
+	.pro-comment-columns .text-img-score .score-star{
+		width: 100%; font-size: 1vw; color: #FECA1F;
+	}
+	.pro-comment-columns .comment-columns-title{
+		font-size: 1.2vw; margin-top: 0.6vw;
+	}
+	.pro-comment-columns .comment-columns-date{
+		font-size: 1vw; color: #FFBF99;
+	}
+	.shane-pro-comment .swiper-l-r{
+		padding: 15px 3% 0 3%;
+	}
+	.shane-pro-comment .swiper-l-r>div {
+		border: 1px solid #ffffff;
+		background-color: #006DE5;
+	}
+	.shane-pro-comment .swiper-l-r>div:hover {
+		background-color: #ffffff;
+	}
+	.shane-pro-comment .columns-next .icon-next{
+		transform:scaleX(1);
+	}
+	.shane-pro-comment .columns-next .icon-next-hover{
+		transform:scaleX(-1);
+	}
+	.shane-pro-comment .columns-prev .icon-prev{
+		transform:scaleX(-1);
+	}
+	.shane-pro-comment .columns-prev .icon-prev-hover{
+		transform:scaleX(1);
+	}
+@media (max-width: 768px){
+	.pro-comment-context .stitle{
+		font-size: 4.2vw;
+	}
+	.pro-comment-context .title{
+		font-size: 5.6vw;
+	}
+	.pro-comment-columns{
+		width: 97%; margin-top: 3vw; margin-right: 0; margin-left: auto;
+	}
+	.pro-comment-columns .comment-columns-title {
+		font-size: 4.4vw;
+		margin-top: 1.6vw;
+	}
+	.pro-comment-columns .text-img>div{
+		{% comment %} padding: 2vw; {% endcomment %}
+		padding: 0vw;
+		padding-left:2vw; 
+	}
+    .pro-comment-columns .active .text-img>div{
+      display:none;
+    }
+    .pro-comment-columns .swiper-slide-active .text-img>div{
+      display:flex;
+    }
+	.pro-comment-columns .text-img-title{
+		font-size: 4.2vw;
+	}
+	.pro-comment-columns .text-img-date{
+		font-size: 3.2vw; margin-bottom: 2vw;
+	}
+	.pro-comment-columns .text-img-text{
+		font-size: 3.2vw; padding-bottom: 2vw; line-height:4vw;
+	}
+	.pro-comment-columns .text-img-score>div:first-child{
+		width: 40%;
+	}
+	.pro-comment-columns .text-img-score>div:last-child{
+		width: 60%;font-size: 6.4vw; line-height: 7vw;
+	}
+	.pro-comment-columns .text-img-score .score-star{
+		width: 100%; font-size: 4vw; color: #FECA1F;
+	}
+}
+</style>
+	<div>
+		<div class="pro-comment-context">
+			<div class="title">{{ section.settings.heading }}</div>
+			<div class="stitle">{{ section.settings.subtitle }}</div>			
+		</div>
+		<div class="pro-comment-columns">
+			<div class="swiper procommentSwiper">
+				<div class="swiper-wrapper">
+                  {%- assign my_variable = 0 -%} 
+                  {%- for block in section.blocks -%}
+                   {%- liquid
+        			assign image = block.settings.image
+                    assign my_variable = my_variable | plus: 1
+                    assign num1 = block.settings.num1 | plus: 0
+        		   -%}
+					<div class="swiper-slide {% if my_variable==1 %}active{% endif %}">
+						<div class="text-img">
+							<img src="{{ image | image_url }}" style="width: 100%;" alt="{{image.alt }}">
+							<div>
+								<div class="text-img-title">{{ block.settings.title_img }}</div>
+								<div class="text-img-date">{{ block.settings.text_date }}</div>
+								<div class="text-img-text">
+									{{ block.settings.context }}
+								</div>
+								<div class="text-img-score">
+									<div>
+										<div class="score-star">
+											{% if num1>1 %}<span class="fa fa-star"></span>{% endif %}
+											{% if num1>2 %}<span class="fa fa-star"></span>{% endif %}
+											{% if num1>3 %}<span class="fa fa-star"></span>{% endif %}
+											{% if num1>4 %}<span class="fa fa-star"></span>{% endif %}
+											{% if num1==5 %}<span class="fa fa-star"></span>{% endif %}
+										</div>
+									</div>
+									<div>{{ block.settings.score }}</div>
+								</div>
+							</div>
+						</div>
+						<div class="comment-columns-title">{{ block.settings.title }}</div>
+					</div>
+                  {% endfor %}
+				</div>
+			</div>
+			<div class="swiper-l-r">
+				<div class="columns-next">
+                    <img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="icon-next">
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="icon-next-hover">
+				</div>
+				<div class="columns-prev">
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-left.svg?v=1705634939" class="icon-prev">
+					<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/icon-right.svg?v=1705634939" class="icon-prev-hover">
+				</div>
+			</div>
+		</div>
+	</div>
+ {% schema %}
+  {
+    "name": "Pro comment",
+    "class": "shane-pro-comment",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Add a subtitle"
+      }    
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+            {
+              "type": "image_picker",
+              "id": "image",
+              "label": "Image"
+            },
+            {
+              "type": "text",
+              "id": "title",
+              "label": "Title"
+			},
+            {
+              "type": "text",
+              "id": "title_img",
+              "label": "Title img"
+			},
+            {
+              "type": "text",
+              "id": "text_date",
+              "label": "Date"
+			},
+            {
+              "type": "textarea",
+              "id": "context",
+              "label": "Text"
+            },
+            {
+              "type": "select",
+              "id": "num1",
+              "options": [
+                {
+                  "value": "1",
+                  "label": "1"
+                },
+                {
+                  "value": "2",
+                  "label": "2"
+                },
+                {
+                  "value": "3",
+                  "label": "3"
+                },
+                {
+                  "value": "4",
+                  "label": "4"
+                },
+                {
+                  "value": "5",
+                  "label": "5"
+                }
+              ],
+              "default": "5",
+              "label": "Star Num1"
+            },
+           {
+              "type": "text",
+              "id": "score",
+              "label": "Score"
+			}
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Pro comment"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+$(document).ready(function() {
+    $(".procommentSwiper .swiper-slide").mouseenter(function(){
+		$(".procommentSwiper .swiper-slide").removeClass("active");
+		$(this).addClass("active");			
+	});
+  var procommentSwiper = new Swiper(".procommentSwiper", {
+      slidesPerView: 1.4,
+      spaceBetween: 30,
+      speed:200,
+	  loop: true,
+	  navigation: {
+        nextEl: ".shane-pro-comment .columns-prev",
+        prevEl: ".shane-pro-comment .columns-next",
+      },
+	  breakpoints: {
+        769: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+	  },
+    });	
+});
+</script>

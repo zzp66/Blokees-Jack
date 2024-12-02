@@ -1,0 +1,259 @@
+{{ 'login-register.css' | asset_url | stylesheet_tag }}
+<style>	
+  .template-customers-login #wrapper #main-content{
+    background-color: #fff;
+  }
+	.shane-login-con h4{
+		color: #FF5F00; font-size: 110px; font-weight: 600; line-height: 120px; font-family: Outfit-Bold; text-align:left; text-transform: capitalize; margin-bottom: 20px;
+	}
+	.shane-login-con{
+		display: flex; justify-content: flex-start; align-items:stretch; position: relative; width:100%; padding:0 50px;
+	}
+	.shane-login-con .thb-login-form{
+		width: 100%; padding: 0 0 20px 0; margin:0; max-width:100%; position: relative;
+	}
+    .shane-field-title{
+      font-family: Outfit-Bold; color: #191C1F; font-size: 24px; font-weight: bold; line-height: 60px;
+    }
+    .thb-login-form .field input{
+      height: 60px; border:1px solid #DADADA; border-radius:15px;
+    }
+    .thb-login-form .field input::placeholder {
+    font-size:16px; color:#757779;
+  }
+    .thb-login-form .field label{
+      height: 60px;
+    }
+    .shane-lr{
+      display: flex; justify-content: flex-start; align-items:stretch;
+    }
+    .shane-login-left{
+      width: 35%; margin-right: 40px; padding: 0 40px 20px 0; border-right: 2px solid #DADADA;
+    }
+    .shane-login-left .shane-sub{
+      width: 153px; height: 43px; background: #FF5F00; font-size: 22px;
+    }
+    .shane-forgot-password .text-button, .switch-login-section .text-button{
+      color:#191C1F; font-size: 16px; text-decoration: underline;
+    }
+    .shane-forgot-password span, .switch-login-section span{
+      display:none;
+    }
+	.shane-login-con .shane-login-right{
+		width: 35%; padding: 37px 0 20px 0;
+	}
+	.shane-login-right>div{
+		border:1px solid #CFCFCF; border-radius: 20px; padding: 35px 40px; color: #FF5F00; font-size: 12px; line-height: 16px;
+	}
+	.shane-login-right h2{
+		margin: 0; font-size: 26px; line-height: 37px; font-weight: bold; font-family: Outfit-Bold; position: relative; z-index: 2;
+	}
+	.login-right-list{
+		margin-top: 20px; display: flex; justify-content: flex-start; align-items: flex-start; position: relative; z-index: 2;
+	}
+	.login-icon{
+		width: 30px; height: 30px; background: #FF5F00; border-radius: 50%; margin-right: 22px; flex-shrink: 0;text-align: center; line-height: 30px; color:#fff; font-size: 18px;
+	}
+	.shane-login-right h4{
+		font-family: Outfit-Bold; font-size: 20px; font-weight: bold; line-height: 20px; margin: 5px 0;
+	}
+    .shane-login-img{
+		position: absolute; top: 30px; right: 0; width: 30%; z-index: 1;
+	}
+  #recover h4{
+        text-align: center; margin-top:5vw;
+  }
+  #recover p{
+    font-size:18px;
+  }
+  #recover form{
+    max-width:560px; margin:auto;
+  }
+  #recover .button{
+    background: #FF5F00;
+  }
+@media (max-width: 1525px){
+    .shane-login-con .shane-login-right{
+		width: 40%;
+	}
+}
+@media (max-width: 1280px){
+    .shane-login-con .thb-login-form>h4{
+		font-size: 80px;
+	}
+    .shane-login-con .shane-login-right{
+		width: 60%;
+	}
+    .shane-login-img{
+		display:none;
+	}
+}
+@media (max-width: 1092px){
+    .shane-login-left{
+      width: 45%; margin-right: 20px; padding: 0 20px 20px 0;
+    }
+    .shane-login-con .shane-login-right{
+		width: 50%;
+	}
+}
+@media (max-width: 768px){
+   .shane-login-con .thb-login-form>h4{
+		font-size: 60px; line-height: 80px;
+	}
+  .shane-login-con{
+		padding:0 15px;
+	}
+  .shane-lr{
+    display:block;
+  }
+    .shane-login-left{
+      width: 100%; margin-right: 0; padding:0; border:0;
+    }
+    .shane-login-con .shane-login-right{
+		width: 100%;
+	}
+  .shane-login-right>div{
+    padding:20px;
+  }
+  .shane-field-title{
+    font-size: 20px; font-weight: bold; line-height: 30px;
+  }
+  .thb-login-form .field input{
+    height: 50px; border-radius:10px;
+  }
+  .thb-login-form  .shane-forgot-password{
+    width:100%;
+  }
+  .thb-login-form  .shane-login-left .shane-sub{
+    width:100%;
+  }
+  .shane-login-right h2{
+		font-size: 22px; line-height: 28px;
+	}
+}
+</style>
+<div class="row">
+	<div class="small-12 columns">
+    <div class="thb-form-container shane-login-con">
+		<div class="thb-login-form" id="recover">
+					<h4>{{ 'customer.recover_password.title' | t }}</h4>
+					<p>{{ 'customer.recover_password.subtext' | t }}</p>
+					{%- form 'recover_customer_password' -%}
+
+						{%- if form.errors -%}
+							<div class="form-notification error" id="RecoverEmail-email-error">
+			          {% render 'svg-icons' with 'thb-error' %} {{ form.errors.messages['form'] }}
+			        </div>
+			      {%- endif -%}
+			      <div class="field">
+			        <input type="email"
+			          value=""
+			          name="email"
+			          id="RecoverEmail"
+			          autocorrect="off"
+			          autocapitalize="off"
+			          autocomplete="email"
+								placeholder="{{ 'customer.login_page.email' | t | escape }}"
+			          {% if form.errors %}
+			            aria-invalid="true"
+			            aria-describedby="RecoverEmail-email-error"
+			            autofocus
+			          {% endif %}
+								class="full"
+			          placeholder="{{ 'customer.login_page.email' | t }}"
+			        >
+			        <label for="RecoverEmail">
+			          {{ 'customer.login_page.email' | t }}
+			        </label>
+			      </div>
+			      <button type="submit" class="button full"><span>{{ 'customer.login_page.submit' | t | escape }}</span></button>
+						<div class="switch-login-section">
+							{% assign text_button_title = 'customer.login_page.cancel' | t %}
+							{% render 'text-button', url: '#login', title: text_button_title %}
+						</div>
+			    {%- endform -%}
+				</div>
+        <div class="thb-login-form" id="login" style="po">
+          <h4>{{ 'customer.login_page.login' | t }}</h4>
+          <div class="shane-lr">            
+            <div class="shane-login-left">
+            {% form 'customer_login', novalidate: 'novalidate' %}						
+  						<p style="display:none;">{{ 'customer.login_page.login_description' | t }}</p>
+  						{% if form.errors %}
+  						<div class="form-notification error">
+  							{% render 'svg-icons' with 'thb-error' %} {{ form.errors | default_errors }}
+  						</div>
+  						{% endif %}
+              <div class="shane-field-title">Email</div>
+              <div class="field">
+                <input type="email" name="customer[email]" class="full {% if form.errors contains 'form' %}invalid{% endif %}" value=""
+  								autocomplete="email"
+  								autocorrect="off"
+  								autocapitalize="off"
+  								placeholder="{{ 'customer.login_page.email' | t }}"
+  							 />
+              </div>
+              <div class="shane-field-title">Password</div>
+              <div class="field">
+  							<input type="password" name="customer[password]" class="full {% if form.errors contains 'form' %}invalid{% endif %}" value="" placeholder="{{ 'customer.login_page.password' | t }}" />
+              </div>
+              <div class="field" style="display: flex; justify-content: space-between; align-items: flex-start;flex-wrap: wrap; align-content: flex-start;">
+                <div class="shane-forgot-password">
+                  {% assign text_button_title = 'customer.login_page.forgot_password' | t %}
+                  {% render 'text-button', url: '#recover', title: 'Forgot password' %}
+      		  </div>
+                <button type="submit" class="button full shane-sub"><span>Login <span class="fa fa-angle-right"></span></span></button>
+              </div>
+  						<div class="switch-login-section">
+  							{{ 'customer.login_page.dont_have_an_account' | t }}
+  							{% assign text_button_title = 'customer.login_page.create_account' | t %}
+  							{% render 'text-button', url: routes.account_register_url, title: text_button_title %}							
+  						</div>
+            {% endform %}
+            </div>
+            <div class="shane-login-right">
+  			<div>
+  				<h2>With Your Blokees Account, You Can:</h2>
+  				<div class="login-right-list">
+  					<div class="login-icon"><span class="fa fa-check"></span></div>
+  					<div>
+  						<h4>Track Your Order:</h4>
+  						<div class="text">Keep a close eye on your exciting new Blokees play sets as they make their way from our door to yours. Feel the anticipation building as your toys get closer to arrival!</div>
+  					</div>
+  				</div>
+  				<div class="login-right-list">
+  					<div class="login-icon"><span class="fa fa-check"></span></div>
+  					<div>
+  						<h4>Access Exclusive Content: </h4>
+  						<div class="text">Discover a world of exclusive online content. Dive into detailed character stories, interactive building guides, and creative tips to enhance your playtime.</div>
+  					</div>
+  				</div>
+  				<div class="login-right-list">
+  					<div class="login-icon"><span class="fa fa-check"></span></div>
+  					<div>
+  						<h4>Join the Blokees Community:</h4>
+  						<div class="text">Engage with a community of fellow builders and enthusiasts. Share your creations, participate in challenges, and get inspired by others’ imaginative construction</div>
+  					</div>
+  				</div>
+  				<div class="login-right-list">
+  					<div class="login-icon"><span class="fa fa-check"></span></div>
+  					<div>
+  						<h4>Receive Personalized Recommendations:</h4>
+  						<div class="text">Based on your interests and previous purchases, receive tailored suggestions for new play sets and additions that you and your family will love!</div>
+  					</div>
+  				</div>
+  				<div class="login-right-list">
+  					<div class="login-icon"><span class="fa fa-check"></span></div>
+  					<div>
+  						<h4>Stay Informed About New Releases and Events:</h4>
+  						<div class="text">Be the first to know about new play set launches, special editions, and Blokees events. Never miss out on the latest additions to the Blokees universe.</div>
+  					</div>
+  				</div>
+  			</div>
+      		</div>
+          </div>
+          <img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/login-img.png?v=1710753692" class="shane-login-img">
+        </div>
+      </div>
+  </div>
+</div>

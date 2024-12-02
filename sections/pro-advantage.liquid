@@ -1,0 +1,215 @@
+<style>
+	.shane-pro-advantage{
+		width: 100%; padding-top: 6vw; color: #fff; background-color: #006DE5;
+	}
+	.shane-pro-advantage>div{
+		width: 94%; margin: auto; display:flex; justify-content: space-between; align-items: stretch; flex-wrap: wrap; color: #fff;
+	}
+	.shane-pro-advantage>div>div{
+		padding: 1vw;
+	}
+	.shane-pro-advantage .equal-two{
+		border:1px solid #fff; border-radius: 10px; min-height: 13.2vw; margin-bottom: 0.5vw; width: 32.8%;
+	}
+	.shane-pro-advantage .equal-one{
+		border:1px solid #fff; border-radius: 10px; width: 16.1%; min-height: 13.2vw; margin-bottom: 0.6vw;
+	}
+	.shane-pro-advantage .active{
+		background-color: #FF5F00;
+	}
+	.equal-one img{
+		width: 3.6vw; margin-bottom: 0.8vw;
+	}
+	.shane-pro-advantage .title{
+		font-family: Outfit-Bold; font-size: 1.2vw;
+	}
+	.shane-pro-advantage .text{
+		font-size: 0.75vw; line-height: 1vw;
+	}
+	.shane-pro-advantage .equal-two .title{
+		font-size: 2vw;
+	}
+	.shane-pro-advantage .equal-two .text{
+		font-size: 1vw;
+	}
+	.shane-pro-advantage .equal-empty{
+		border:1px solid #FF5F0000; background-color: #FF5F0000;
+	}
+@media (max-width: 768px){
+	.shane-pro-advantage{
+		padding-top: 8vw;
+	}
+	.shane-pro-advantage>div>div{
+		padding: 1.5vw; overflow: hidden;
+	}
+	.shane-pro-advantage .equal-two{
+		height: 26vw; margin-bottom: 1.5vw; width: 65.9%;
+	}
+	.shane-pro-advantage .equal-one{
+		width: 32.3%; height: 26vw; margin-bottom: 1.5vw;
+	}
+	.equal-one img{
+		width: 12vw; margin-bottom: 1vw;
+	}
+	.shane-pro-advantage .title{
+		font-size: 3.8vw; line-height: 4.2vw;
+	}
+	.shane-pro-advantage .equal-one .text{
+		font-size: 2.4vw; line-height: 2.6vw; display: none; margin-top: 0;
+	}
+	.shane-pro-advantage .active img, .shane-pro-advantage .active .title{
+		display: none;
+	}
+	.shane-pro-advantage .active .text{
+		display: block; animation: moveadvantage 0.4s ease-out;
+	}
+	@keyframes moveadvantage {
+	  from {
+		margin-top: 60px;
+	  }
+	  to {
+		margin-top: 0;
+	  }
+	}
+	.shane-pro-advantage .equal-two .title{
+		font-size: 4.2vw; line-height: 5vw;
+	}
+	.shane-pro-advantage .equal-two .text{
+		font-size: 3.2vw; line-height: 4vw; display: block;
+	}
+	.shane-pro-advantage .equal-empty{
+		border:1px solid #FF5F0000; background-color: #FF5F0000;
+	}
+}
+@media (max-width: 500px){
+    .shane-pro-advantage>div{
+        align-items: stretch;
+    }
+	.shane-pro-advantage .equal-two{
+		height: auto; margin-bottom: 2vw; width: 100%;
+	}
+	.shane-pro-advantage .equal-one{
+		width: 49%; height: auto; min-height:40vw; margin-bottom: 2vw;
+	}
+    .equal-one img{
+		width: 10vw; margin-bottom: 10px;
+	}
+    .shane-pro-advantage .equal-empty{
+      display:none;
+    }
+    .shane-pro-advantage>div>div {
+        padding: 2vw;
+    }
+    .shane-pro-advantage .equal-one .text{
+		 font-size: 3.6vw; line-height: 4.2vw; display: block; margin-top: 10px;
+	}
+	.shane-pro-advantage .active img, .shane-pro-advantage .active .title{
+		display: block;
+	}
+}
+</style>
+	<div>
+		<div class="equal-two">
+			<div class="title">{{ section.settings.heading }}</div>
+			<div class="text">{{ section.settings.context }}</div>
+		</div>
+        {%- assign my_variable = 0 -%} 
+        {%- for block in section.blocks -%}
+        {% assign my_variable = my_variable | plus: 1 %}
+        {%- if block.settings.display == "1" -%}   
+		<div class="equal-one {% if my_variable==1 %}active{% endif %}">
+			<img src="{{ block.settings.block_image | image_url }}">
+			<div class="title">{{ block.settings.block_title }}</div>
+			<p class="text">{{ block.settings.block_text }}</p>
+		</div>
+        {% elsif block.settings.display == "2" %}
+         <div class="equal-one equal-empty"></div>
+        {% elsif block.settings.display == "3" %}
+		<div class="equal-one equal-empty pc_show"></div>
+        {% elsif block.settings.display == "4" %}
+		<div class="equal-one equal-empty mobile_show"></div>
+        {% endif %}
+        {% endfor %}
+	</div>
+{% schema %}
+  {
+    "name": "Pro advantage",
+    "class": "shane-pro-advantage",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading"
+	  },
+      {
+        "type": "textarea",
+        "id": "context",
+        "label": "Text"
+      }     
+    ],
+    "blocks": [
+       {
+         "type": "item",
+         "name": "item",
+         "settings": [
+           {
+              "type": "select",
+              "id": "display",
+              "options": [
+                {
+                  "value": "1",
+                  "label": "Visible"
+                },
+                {
+                  "value": "2",
+                  "label": "Invisible, PC,Mobile seize a seat"
+                },
+                {
+                  "value": "3",
+                  "label": "Invisible, Only PC seize a seat"
+                },
+                {
+                  "value": "4",
+                  "label": "Invisible, Only Mobile seize a seat"
+                }
+              ],
+              "default": "1",
+              "label": "Is the content visible?"
+            },
+            {
+              "type": "image_picker",
+              "id": "block_image",
+              "label": "Image icon"
+            },
+            {
+              "type": "text",
+              "id": "block_title",
+              "label": "Title",
+              "default": "Add a title"
+			},
+           {
+              "type": "text",
+              "id": "block_text",
+              "label": "Text",
+              "default": "text"
+			}
+         ]
+       }
+    ],
+    "presets": [
+       {
+        "name": "Pro advantage"
+          
+       }
+    ]
+  }
+{% endschema %}
+<script>
+$(document).ready(function() {
+	$(".shane-pro-advantage .equal-one").mouseenter(function(){
+		var shane_width = $(window).width();
+		$(".shane-pro-advantage .equal-one").removeClass("active");
+		$(this).addClass("active");	
+	});
+});
+</script>

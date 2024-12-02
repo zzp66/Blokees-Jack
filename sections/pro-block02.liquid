@@ -1,0 +1,297 @@
+<style>
+  .shane-pro-block02 {
+    background-color: #1a1a1a;
+    padding-top: 6vw;
+  }
+  .shane-pro-block02 > div {
+    width: 90%;
+    margin: auto;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .shane-pro-block02 .shane-left {
+    width: 46.5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .shane-pro-block02 .shane-left > div {
+    width: 50%;
+  }
+  .shane-pro-block02 .shane-left > div:first-child {
+    padding-right: 2vw;
+  }
+  .shane-pro-block02 .shane-left > div:last-child {
+    padding-left: 2vw;
+  }
+  .shane-pro-block02 .pro-name {
+    width: 80%;
+    height: 2.4vw;
+    line-height: 2.4vw;
+    text-align: center;
+    font-size: 1vw;
+    text-transform: capitalize;
+    font-family: Outfit-Bold;
+    margin-top: 1vw;
+    border-radius: 1.2vw;
+    display: none;
+  }
+  .pro-name .shane-button {
+    width: 100%;
+    background-color: #ff5f00;
+  }
+  .shane-button:hover {
+    color: #ffffff;
+  }
+  .btn__circle {
+    background-color: #ffffff;
+  }
+  .bi-arrow-right-short {
+    color: #ff5f00;
+  }
+  .shane-pro-block02 .shane-left > div:last-child .pro-name {
+    margin: 1vw auto 0;
+  }
+  .shane-pro-block02 .shane-left > div:first-child .pro-name {
+    margin: 1vw auto 0 0;
+  }
+  .shane-pro-block02 a {
+    color: #fff;
+  }
+  .shane-pro-block02 .shane-right {
+    width: 46.5%;
+  }
+  .shane-pro-block02 .shane-right h2 {
+    margin: 0 0 1vw 0;
+    color: #fff;
+    font-size: 2.2vw;
+    line-height: 2.8vw;
+  }
+  .shane-pro-block02 .shane-right > div {
+    width: 100%;
+    padding: 0.6vw 0;
+    border-bottom: 1px solid #8c8c8c;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 1.1vw;
+  }
+  .shane-pro-block02 .parameter-title {
+    width: 35%;
+    font-family: Outfit-Bold;
+  }
+  .shane-pro-block02 .parameter-text {
+    width: 65%;
+  }
+  @media (max-width: 1300px) {
+    .shane-pro-block02 .shane-right h2 {
+      font-size: 3vw;
+      line-height: 4vw;
+    }
+  }
+  @media (max-width: 768px) {
+    .shane-pro-block02 {
+      padding-top: 10vw;
+    }
+    .shane-pro-block02 > div {
+      display: block;
+    }
+    .shane-pro-block02 .shane-left {
+      width: 100%;
+      justify-content: center;
+    }
+    .shane-pro-block02 .shane-left > div {
+      width: 46%;
+      margin-right: 8%;
+    }
+    .shane-pro-block02 .shane-left > div:first-child {
+      padding-right: 0;
+    }
+    .shane-pro-block02 .shane-left > div:last-child {
+      padding-left: 0;
+      margin-right: 0;
+    }
+    .shane-pro-block02 .pro-name {
+      height: 20vw;
+      margin: 5vw auto 0;
+      width: 90%;
+    }
+    .shane-pro-block02 .shane-left > div:last-child .pro-name {
+      margin: 5vw auto 0;
+    }
+    .shane-pro-block02 .shane-left > div:first-child .pro-name {
+      margin: 5vw auto 0 0;
+    }
+    .shane-pro-block02 .shane-button {
+      height: 7vw;
+      border-radius: 3.5vw;
+      font-size: 2.4vw;
+    }
+    .shane-pro-block02 .shane-button:hover .btn__circle {
+      width: 5vw;
+      height: 5vw;
+    }
+    .shane-pro-block02 .btn__circle > div {
+      height: 5vw;
+      width: 5vw;
+    }
+    .shane-pro-block02 .shane-button:hover .btn__circle > div {
+      width: 5vw;
+    }
+    .shane-pro-block02 .shane-right {
+      width: 100%;
+    }
+    .shane-pro-block02 .shane-right h2 {
+      margin: 0 0 5vw 0;
+      font-size: 5vw;
+      line-height: 6.4vw;
+    }
+    .shane-pro-block02 .shane-right > div {
+      padding: 2vw 0;
+      font-size: 3.6vw;
+    }
+  }
+</style>
+<div>
+  <div class="shane-left">
+    <div>
+      <img src="{{ section.settings.image | image_url }}" style="width: 100%;" alt="{{ section.settings.image.alt }}">
+      {% if 1 == 2 %}
+        <div class="pro-name">
+          <a class="shane-button" href="{{ section.settings.link }}">
+            <div class="btn__label">{{ section.settings.buttontext }}</div>
+            <div class="btn__circle">
+              <div>
+                <svg
+                  class="bi bi-arrow-right-short"
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill-rule="evenodd" d="M8.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.793 8 8.146 5.354a.5.5 0 0 1 0-.708z"/>
+                  <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5H11a.5.5 0 0 1 0 1H4.5A.5.5 0 0 1 4 8z"/>
+                </svg>
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+    {% if section.settings.image02 != blank %}
+      <div>
+        <img
+          src="{{ section.settings.image02 | image_url }}"
+          style="width: 100%;"
+          alt="{{ section.settings.image02.alt }}"
+        >
+        {% if 1 == 2 %}
+          <div class="pro-name">
+            <a class="shane-button" href="{{ section.settings.link02 }}">
+              <div class="btn__label">{{ section.settings.buttontext02 }}</div>
+              <div class="btn__circle">
+                <div>
+                  <svg
+                    class="bi bi-arrow-right-short"
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 16 16"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path fill-rule="evenodd" d="M8.146 4.646a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.793 8 8.146 5.354a.5.5 0 0 1 0-.708z"/>
+                    <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5H11a.5.5 0 0 1 0 1H4.5A.5.5 0 0 1 4 8z"/>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+  <div class="shane-right">
+    <h2>{{ section.settings.heading }}</h2>
+    {%- for block in section.blocks -%}
+      <div>
+        <div class="parameter-title">{{ block.settings.block_title }}</div>
+        <p class="parameter-text">{{ block.settings.block_text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Pro block02",
+  "class": "shane-pro-block02",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "link",
+      "info": "Adds a link"
+    },
+    {
+      "type": "text",
+      "id": "buttontext",
+      "label": "Button Text",
+      "default": "Single box packaging"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "id": "link02",
+      "type": "url",
+      "label": "link 02",
+      "info": "Adds a link"
+    },
+    {
+      "type": "text",
+      "id": "buttontext02",
+      "label": "Button Text 02",
+      "default": "End box packaging"
+    },
+    {
+      "type": "image_picker",
+      "id": "image02",
+      "label": "Image 02"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "block_title",
+          "label": "Title",
+          "default": "Add a title"
+        },
+        {
+          "type": "text",
+          "id": "block_text",
+          "label": "Text",
+          "default": "text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pro block02"
+    }
+  ]
+}
+{% endschema %}

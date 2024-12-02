@@ -1,0 +1,435 @@
+<style>
+  #{{ section.id }}-hero-detail3 {
+    font-family: Outfit;
+    width: 100%;
+    background: {{ section.settings.background_color }};
+    margin-top: -1px;
+    padding: calc(8000vw / var(--base-width)) calc(12000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail3 .container {
+    width: 100%;
+    padding: 0;
+  }
+
+  #{{ section.id }}-hero-detail3 .title-container{
+    display: flex;
+    flex-direction: column;
+    gap:  calc(2000vw / var(--base-width));
+    margin-bottom: calc(4000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail3 .main-title {
+    color: {{ section.settings.title_color }};
+    font-size: calc(5000vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+  }
+
+  #{{ section.id }}-hero-detail3 .sub-title {
+    color: {{ section.settings.title_color }};
+    text-align: center;
+    font-size: calc(2400vw / var(--base-width));
+    line-height: 1;
+  }
+
+  #{{ section.id }}-hero-detail3 .content {
+    width: 100%;
+    display: flex;
+    gap: calc(1500vw / var(--base-width));
+    align-items: stretch;
+  }
+
+  #{{ section.id }}-hero-detail3 .tab-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: calc(1600vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail3 .tab-item {
+    border-radius: calc(1500vw / var(--base-width));
+    background: {{ section.settings.tab_background_color }};
+    display: flex;
+    align-items: center;
+    gap: calc(2000vw / var(--base-width));
+    padding: calc(2200vw / var(--base-width)) calc(2000vw / var(--base-width)) calc(2200vw / var(--base-width))
+      calc(2200vw / var(--base-width));
+    cursor: pointer;
+  }
+
+  #{{ section.id }}-hero-detail3 .tab-item.tab-item-active {
+    background: {{ section.settings.tab_background_color_active }};
+  }
+
+  #{{ section.id }}-hero-detail3 .tab-item .number {
+    width: calc(4600vw / var(--base-width));
+    height: calc(4600vw / var(--base-width));
+    color: {{ section.settings.tab_main_color }};
+    font-size: calc(3000vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1;
+    text-transform: capitalize;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: {{ section.settings.tab_background_color_active }};
+    border-radius: calc(500vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail3 .tab-item.tab-item-active .number {
+    background-color: {{ section.settings.tab_main_color }};
+    color:{{ section.settings.tab_background_color_active }};
+  }
+
+  #{{ section.id }}-hero-detail3 .text {
+    color: {{ section.settings.tab_background_color_active }};
+    font-size: calc(2600vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1.23;
+  }
+
+  #{{ section.id }}-hero-detail3 .tab-item.tab-item-active .text {
+    color: {{ section.settings.tab_main_color }};
+  }
+
+  #{{ section.id }}-hero-detail3 .content-box {
+    flex: 1;
+    background-color: {{ section.settings.content_bg_color }};
+    border-radius: calc(1500vw / var(--base-width));
+    padding: calc(4500vw / var(--base-width)) calc(3800vw / var(--base-width));
+    min-height: calc(61000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail3 .content-item {
+    display: none;
+    flex-direction: column;
+    gap: calc(5000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail3 .content-item.content-active {
+    display: flex;
+  }
+
+  #{{ section.id }}-hero-detail3 .content-item img {
+    width: 100%;
+    gap: calc(5000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail3 .text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: calc(1000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail3 .text-box .title {
+    color: {{ section.settings.content_font_color }};
+    font-size: calc(3000vw / var(--base-width));
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  #{{ section.id }}-hero-detail3 .text-box .rich-text-box {
+    color: {{ section.settings.content_font_color }};
+    font-size: calc(2000vw / var(--base-width));
+    line-height: 1.4;
+    display: flex;
+    gap: calc(2000vw / var(--base-width));
+  }
+
+  #{{ section.id }}-hero-detail3 .text-box .rich-text-box .text{
+    flex: 1;
+  }
+
+  /* 适配富文本 start */
+  #{{ section.id }}-hero-detail3 .rich-text-box ul,
+  #{{ section.id }}-hero-detail3 .rich-text-box ol{
+    padding-left: calc(2000vw / var(--base-width));
+  }
+  #{{ section.id }}-hero-detail3 .rich-text-box ul li,
+  #{{ section.id }}-hero-detail3 .rich-text-box ol li,
+  #{{ section.id }}-hero-detail3 .rich-text-box p{
+    font-size: calc(2000vw / var(--base-width));
+    line-height: 1.4;
+    font-weight: 400;
+  }
+  /* 适配富文本 end */
+  @media (max-width: 1728px){
+    #{{ section.id }}-hero-detail3 {
+      padding-left: calc(8000vw/var(--base-width));
+      padding-right: calc(8000vw/var(--base-width));
+    }
+  }
+  @media (max-width: 1440px){
+    #{{ section.id }}-hero-detail3 {
+      padding-left: calc(3500vw/var(--base-width));
+      padding-right: calc(3500vw/var(--base-width));
+    }
+  }
+  @media (max-width: 768px){
+    #{{ section.id }}-hero-detail3 {
+      background: {{ section.settings.background_color }};
+      padding: calc(7000vw / var(--base-width)) calc(1250vw / var(--base-width)) calc(2000vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail3 .title-container{
+      gap: calc(1000vw / var(--base-width));
+      margin-bottom: calc(2000vw / var(--base-width));
+      align-items: center;
+    }
+
+    #{{ section.id }}-hero-detail3 .main-title {
+      font-size: calc(3000vw / var(--base-width));
+      line-height: 1.2;
+      max-width: 86%;
+    }
+
+    #{{ section.id }}-hero-detail3 .sub-title {
+      font-size: calc(1500vw / var(--base-width));
+      line-height: 1.2;
+    }
+
+    #{{ section.id }}-hero-detail3 .content {
+      flex-direction: column;
+      gap: calc(500vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail3 .tab-container {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: calc(400vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail3 .tab-item {
+      border-radius: calc(500vw / var(--base-width));
+      gap: calc(1000vw / var(--base-width));
+      padding: calc(1000vw / var(--base-width)) calc(750vw / var(--base-width));
+      width: calc(50% - calc(200vw / var(--base-width)));
+    }
+
+    #{{ section.id }}-hero-detail3 .tab-item .number {
+      width: calc(2300vw / var(--base-width));
+      height: calc(2300vw / var(--base-width));
+      font-size: calc(1500vw / var(--base-width));
+      border-radius: calc(250vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail3 .text {
+      font-size: calc(1500vw / var(--base-width));
+      line-height: 1.2;
+    }
+
+    #{{ section.id }}-hero-detail3 .content-box {
+      border-radius: calc(750vw / var(--base-width));
+      padding: calc(2000vw / var(--base-width)) calc(1000vw / var(--base-width)) calc(1500vw / var(--base-width));
+      min-height: calc(33200vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail3 .content-item {
+      gap: calc(2500vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail3 .content-item img {
+      width: 100%;
+    }
+
+    #{{ section.id }}-hero-detail3 .text-box {
+      gap: calc(1100vw / var(--base-width));
+    }
+
+    #{{ section.id }}-hero-detail3 .text-box .title {
+      font-size: calc(1800vw / var(--base-width));
+      line-height: 1.2;
+    }
+
+    #{{ section.id }}-hero-detail3 .text-box .rich-text-box {
+      font-size: calc(1200vw / var(--base-width));
+      line-height: 1.25;
+      gap: calc(900vw / var(--base-width));
+    }
+    /* 适配富文本 start */
+    #{{ section.id }}-hero-detail3 .rich-text-box ul,
+    #{{ section.id }}-hero-detail3 .rich-text-box ol{
+      padding-left: calc(1000vw / var(--base-width));
+    }
+    #{{ section.id }}-hero-detail3 .rich-text-box ul li,
+    #{{ section.id }}-hero-detail3 .rich-text-box ol li,
+    #{{ section.id }}-hero-detail3 .rich-text-box p{
+      font-size: calc(1200vw / var(--base-width));
+      line-height: 1.25;
+    }
+    /* 适配富文本 end */
+  }
+</style>
+<div id="{{ section.id }}-hero-detail3">
+  <div class="container">
+    <div class="title-container">
+      <div class="main-title">{{ section.settings.title }}</div>
+      <div class="sub-title">{{ section.settings.sub_title }}</div>
+    </div>
+    <div class="content">
+      <div class="tab-container">
+        {% for block in section.blocks %}
+          {% if forloop.index < 5 %}
+            <div
+              class="tab-item {% if forloop.index == 1 %} tab-item-active{% endif %}"
+              data-content-number="{{ forloop.index }}"
+            >
+              <div class="number">{{ block.settings.number }}</div>
+              <div class="text">{{ block.settings.text }}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="content-box">
+        {% for block in section.blocks %}
+          {% if forloop.index < 5 %}
+            <div
+              class="content-item {% if forloop.index == 1 %}content-active{% endif %}"
+              id="content-number-{{ forloop.index }}"
+            >
+              <img
+                src="{{ block.settings.block_img |  image_url }}"
+                alt="{{ block.settings.block_img.alt }}"
+              >
+              <div class="text-box">
+                <div class="title">{{ block.settings.title }}</div>
+                <div class="rich-text-box">
+                  <div class="text">{{ block.settings.text_1 }}</div>
+                  {% if block.settings.text_2 != blank %}
+                    <div class="text">{{ block.settings.text_2 }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Detail Unit3",
+  "class": "product-detail-03",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Hero Battle Card Game - Quick Rules"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "label": "Sub Title",
+      "default": "The More You Collect, the More Epic the Battles!"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color_background",
+      "id": "tab_background_color",
+      "label": "Tab Background Color",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "tab_background_color_active",
+      "label": "Tab Background Color Active",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "tab_main_color",
+      "label": "Tab Main Color",
+      "default": "#006DE5"
+    },
+    {
+      "type": "color",
+      "id": "content_bg_color",
+      "label": "Content Background Color",
+      "default": "#0054B1"
+    },
+    {
+      "type": "color",
+      "id": "content_font_color",
+      "label": "Content Font Color",
+      "default": "#FFF"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "block_img",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text_1",
+          "label": "Text 1"
+        },
+        {
+          "type": "richtext",
+          "id": "text_2",
+          "label": "Text 2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Detail Unit3"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  document.querySelectorAll('#{{ section.id }}-hero-detail3 .tab-item').forEach((button) => {
+    button.addEventListener('click', () => {
+      const tabNumber = button.getAttribute('data-content-number');
+      // 移除所有按钮的 active 类
+      document.querySelectorAll('.tab-item').forEach((btn) => btn.classList.remove('tab-item-active'));
+      // 为点击的按钮添加 active 类
+      button.classList.add('tab-item-active');
+      // 隐藏所有内容
+      document.querySelectorAll('.content-item').forEach((content) => content.classList.remove('content-active'));
+      // 显示相应的内容
+      document.getElementById(`content-number-${tabNumber}`).classList.add('content-active');
+    });
+  });
+</script>

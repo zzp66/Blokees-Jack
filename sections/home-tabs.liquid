@@ -1,0 +1,348 @@
+<style>
+#{{section.id}}-home-tabs{
+    background-color: {{ section.settings.color_bg }};
+    padding-top: calc(100vw * {{  section.settings.padding_top }} / var(--base-size));
+    padding-bottom:  calc(100vw * {{  section.settings.padding_bottom }} / var(--base-size));
+}
+#{{section.id}}-home-tabs .home-tabs-title{
+    color: {{ section.settings.color_one }};
+    text-align: center;
+    font-family: Outfit;
+    font-size: calc(100vw * 48 / var(--base-size));
+    line-height: calc(100vw * 48 / var(--base-size));
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: calc(100vw * 20 / var(--base-size));
+    margin-top:0px;
+}
+#{{section.id}}-home-tabs .home-tabs-desc{
+    max-width: calc(100vw * 700 / var(--base-size));
+    margin: 0 auto;
+    margin-bottom: calc(100vw * 20 / var(--base-size));
+}
+#{{section.id}}-home-tabs .home-tabs-desc *{
+    color: {{ section.settings.color_one }};
+    text-align: center;
+    font-family: Outfit;
+    font-size: calc(100vw * 18 / var(--base-size));
+    font-style: normal;
+    font-weight: 300;
+    line-height: calc(100vw * 20 / var(--base-size)); 
+    margin-bottom: 0px;
+}
+#{{section.id}}-home-tabs .home-tabs-swich{
+    background: {{ section.settings.color_one }};
+    border-radius: calc(100vw * 35 / var(--base-size));
+    padding: calc(100vw * 2 / var(--base-size));
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+    height: calc(100vw * 40 / var(--base-size));
+    box-sizing: border-box;
+}
+#{{section.id}}-home-tabs .home-tabs-button{
+    padding: 0 calc(100vw * 10 / var(--base-size));
+    height: 100%;
+    min-width: calc(100vw * 180 / var(--base-size));
+    box-sizing: border-box;
+    text-align: center;
+    color: {{ section.settings.color_two }};
+    font-family: Outfit;
+    font-size: calc(100vw * 18 / var(--base-size));
+    font-style: normal;
+    font-weight: 700;
+    border-radius: calc(100vw * 35 / var(--base-size));
+    margin-top:0px;
+    margin-bottom:0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+#{{section.id}}-home-tabs .home-tabs-button-active{
+    background: {{ section.settings.tab_hover_color }};
+    font-size: calc(100vw * 20 / var(--base-size));
+    line-height: calc(100vw * 20 / var(--base-size));
+   color: {{ section.settings.color_one }};
+}
+#{{section.id}}-home-tabs .tab-content {
+    display: none;
+  }
+  #{{section.id}}-home-tabs .home-tabs-content-active{
+    display: block;
+  
+}
+.home-tabs-top{
+    position: relative;
+}
+.home-tabs-viewMore{
+    position: absolute;
+    right:0px;
+    bottom:0px;
+}
+.tab-contents{
+    overflow: hidden;
+    margin-top: calc(100vw * 50 / var(--base-size));
+}
+.tab-content-swiper-container{
+    {% comment %} height: 1200px; {% endcomment %}
+}
+</style>
+
+<div id="{{section.id}}-home-tabs" class="home-tabs">
+    <div class="home-tabs-top">
+        <h2 class="home-tabs-title">{{ section.settings.title }}</h2>
+        <div class="home-tabs-desc">{{ section.settings.description }}</div>
+        <div class="home-tabs-swich">
+            {% for tab in section.blocks %}
+             <h3 class="home-tabs-button {% if forloop.index == 1 %} home-tabs-button-active {% endif %}" data-swiper="{{ tab.settings.className }}"  data-tab="tab{{ forloop.index }}">{{ tab.settings.name }}</h3>
+            {% endfor %}
+        
+        </div>
+        <div class="home-tabs-viewMore">
+            {% render 'link-button', text: section.settings.button_text,font_color: section.settings.color_two,hover_font_color: section.settings.color_one ,url: section.settings.button_link %}
+        </div>
+    </div>
+    <div class="tab-contents">
+         <!-- Tab Contents -->
+            {% for block in section.blocks %}
+                <div class="tab-content {% if forloop.first %}home-tabs-content-active{% endif %}" id="tab{{ forloop.index }}">
+                <!-- Swiper -->
+                <div class="swiper-container  tab-content-swiper-container {{ block.settings.className }}" data-class="{{ block.settings.className }}">
+                    <div class="swiper-wrapper">
+                    {% for product in collections[block.settings.collection].products %}
+                        <div class="swiper-slide">
+                            {% render 'product-card-two', product_card_product: product %}
+                        </div>
+                    {% endfor %}
+                    </div>
+     
+                </div>
+                </div>
+            {% endfor %}
+      </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Swipers for all .swiper-container
+        const swipers = [];
+        document.querySelectorAll('.tab-content-swiper-container').forEach((swiperContainer) => {
+            //获取 data-class 属性值
+            const className = swiperContainer.getAttribute('data-class');
+          const swiper = new Swiper(swiperContainer, {
+            spaceBetween: 5,
+            slidesPerView: 2,
+            grid: {
+                rows: 2,
+                fill: 'row',
+              },
+              breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    grid: {
+                      rows: 2,
+                    },
+                },
+                800: {
+                    slidesPerView: 3,
+                    grid: {
+                      rows: 2,
+                    },
+                },
+                1024: {
+                    slidesPerView: 3, 
+                    grid: {
+                      rows: 2, 
+                    },
+                },
+                1200: {
+                    slidesPerView: 4,
+                    grid: {
+                      rows: 2, 
+                    },
+                },
+                1440: {
+                    slidesPerView: 4,
+                    grid: {
+                      rows: 2,
+                    },
+                  },
+                1600: {
+                    slidesPerView: 5,
+                    grid: {
+                      rows: 2,
+                    },
+                },
+              }
+          });
+          swipers.push(swiper);
+        });
+      
+        // Tab switching logic
+        const tabs = document.querySelectorAll(".home-tabs-button");
+        const contents = document.querySelectorAll(".tab-content");
+      
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function () {
+            const targetTab = this.dataset.tab;
+      
+            // Update Tabs
+            tabs.forEach((t) => t.classList.remove("home-tabs-button-active"));
+            this.classList.add("home-tabs-button-active");
+      
+            // Update Tab Contents
+            contents.forEach((content) => {
+              content.classList.toggle("home-tabs-content-active", content.id === targetTab);
+            });
+      
+            // Refresh Swiper in the active tab
+            const activeContent = document.getElementById(targetTab);
+            const swiperInstance = activeContent.querySelector('.swiper-container').swiper;
+            if (swiperInstance) {
+              swiperInstance.update();
+            }
+          });
+        });
+      });
+      
+    {% comment %} //页面加载完成后执行
+    document.addEventListener('DOMContentLoaded', function() {
+        //获取所有的tab按钮
+        var tabButtons = document.querySelectorAll('.home-tabs-button');
+        //获取所有的tab内容
+        var tabContents = document.querySelectorAll('.tab-content');
+        //遍历所有的tab按钮
+        tabButtons.forEach(function(button) {
+            //给每个tab按钮添加点击事件
+            button.addEventListener('click', function() {
+                //移除所有tab按钮的active类名
+                tabButtons.forEach(function(button) {
+                    button.classList.remove('home-tabs-button-active');
+                });
+                //给当前点击的tab按钮添加active类名
+                button.classList.add('home-tabs-button-active');
+                //获取当前点击的tab按钮的data-tab属性值
+                var tab = button.getAttribute('data-tab');
+                //遍历所有的tab内容
+                tabContents.forEach(function(content) {
+                    //移除所有tab内容的active类名
+                    content.classList.remove('active');
+                    //如果当前tab内容的id等于当前点击的tab按钮的data-tab属性值
+                    if (content.id === tab) {
+                        //给当前tab内容添加active类名
+                        content.classList.add('active');
+                    }
+                });
+            });
+            //每个swiper实例
+            
+        });
+    }); {% endcomment %}
+</script>
+{% schema %}
+{
+    "name": "Home tabs",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Content"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "title",
+            "default": "New Arrivals"
+        },
+        {
+            "type": "richtext",
+            "id": "description",
+            "label": "Description"
+       },
+        {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Button"
+        },
+        {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+        },
+        
+        {
+            "type": "header",
+            "content": "color"
+        },
+        {
+            "type": "color",
+            "id": "color_bg",
+            "label": "Background",
+            "default": "#F4F0E6"
+        },
+        {
+            "type": "color",
+            "id": "color_one",
+            "label": "Text color one",
+            "default": "#FF5F00"
+        },
+        {
+            "type": "color",
+            "id": "color_two",
+            "label": "Text color two",
+            "default": "#ffffff"
+        },
+        {
+            "type": "color",
+            "id": "tab_hover_color",
+            "label": "tab hover color",
+            "default": "#ffffff"
+        },
+        {
+            "type": "header",
+            "content": "padding"
+        },
+        {
+            "type": "number",
+            "id": "padding_top",
+            "label": "Padding top",
+            "default": 20
+        },
+        {
+            "type": "number",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "default": 20
+        }
+    ],
+    "blocks": [
+        {
+            "type": "list",
+            "name": "Tab",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "className",
+                    "label": "class name"
+                },
+                {
+                    "type": "text",
+                    "id": "name",
+                    "label": "tab name"
+                },
+                {
+                   "type": "collection",
+                   "id": "collection",
+                   "label": "choose a collection"
+                }
+            ]
+        }
+    ],
+    "presets": [
+      {
+        "name": "Home Tabs"
+      }
+    ]
+}
+{% endschema %}

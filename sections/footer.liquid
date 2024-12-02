@@ -1,0 +1,239 @@
+<style>
+  .shane-footer {
+    background-image: url({{ section.settings.image | image_url}});
+  }
+  .footer-menu .item-title {
+    font-size: 1.2vw;
+    text-transform: uppercase;
+    font-family: Outfit-Bold;
+    margin: 0 0 0.6vw;
+    color: #ff5f00;
+  }
+  .footer-sign .item-title {
+    font-size: 1vw;
+    font-family: Outfit-Bold;
+    margin: 0;
+    line-height: 1.5vw;
+    color: #ff5f00;
+  }
+  .footer-info .item-title {
+    font-size: 1vw;
+    font-family: Outfit-Bold;
+    margin: 0;
+    line-height: 1.5vw;
+    color: #ff5f00;
+  }
+  @media (min-width: 768px) {
+    .footer-menu .col-four {
+      margin: 0;
+      padding: 0;
+      flex: 20%;
+    }
+    .footer-menu .col-four.active {
+      flex: 40%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer-menu .col-four {
+      margin: 0;
+      padding: 0;
+      flex: 20%;
+    }
+    .footer-menu .col-four.active {
+      flex: 100%;
+    }
+    .footer-menu .col-four.mbactive {
+      flex: 33%;
+    }
+    .footer-menu .item-title,
+    .footer-sign .item-title,
+    .footer-info .item-title{
+      font-size: 6vw;
+      line-height: 7vw;
+    }
+  }
+</style>
+<div class="footer-block01">
+  <div class="footer-menu">
+    {%- for block in section.blocks -%}
+      {% if forloop.index == 1 %}
+        {% assign variable = 'active' %}
+      {% else %}
+        {% assign variable = '' %}
+      {% endif %}
+      {% if forloop.index == 2 %}
+        {% assign variables = 'mbactive' %}
+      {% else %}
+        {% assign variables = '' %}
+      {% endif %}
+      <div class="col-four {{ variable }} {{ variables }}">
+        {% comment %} <h3>{{ block.settings.title }}</h3> {% endcomment %}
+        <div class="item-title">{{ block.settings.title }}</div>
+        {% for link in block.settings.menu.links %}
+          <div>
+            <a href="{{ link.url }}" title="{{ link.title | escape }}">{{- link.title -}}</a>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+    <div class="col-twelve" style="display:none;">
+      <a href="https://www.facebook.com/people/Blokees/61555348173085/" target="_blank"
+        ><span class="fa fa-facebook"></span
+      ></a>
+      &nbsp;
+      <a href="https://www.instagram.com/blokeesofficial/" target="_blank"><span class="fa fa-instagram"></span></a>
+      &nbsp;
+      <a href="https://www.youtube.com/channel/UCb9TwlHyFRcC12-pzbaQdfA" target="_blank"
+        ><span class="fa fa-youtube-play"></span
+      ></a>
+      &nbsp;
+      <a href="https://twitter.com/BlokeesOfficial" target="_blank"><span class="fa fa-twitter"></span></a> &nbsp;
+      <a href="https://www.tiktok.com/@blokees_official" target="_blank"
+        ><img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/tiktok.svg?v=1705733486"
+      ></a>
+    </div>
+  </div>
+  <div class="footer-sign">
+    <div>
+      {% comment %} <h3>{{ section.settings.signtitle }}</h3> {% endcomment %}
+      <div class="item-title">{{ section.settings.signtitle }}</div>
+      <div class="sign-text">{{ section.settings.signtext }}</div>
+    </div>
+    <div class="sign-from">
+      {% form 'customer', class: 'signup-form' %}
+        {% if form.posted_successfully? %}
+          <div class="form-notification success">
+            {{ 'newsletter.success' | t }}
+          </div>
+        {%- elsif form.errors %}
+          <div class="form-notification error">
+            {{ form.errors.translated_fields.email | capitalize }}
+            {{ form.errors.messages.email }}
+          </div>
+        {% endif %}
+        <div>
+          <input
+            placeholder="Email:"
+            class="sign-email"
+            type="email"
+            id="NewsletterForm--{{ section.id }}"
+            name="contact[email]"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            value="{{ form.email }}"
+            pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
+            title="xxx@xxx.xxx"
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="Newsletter-error--{{ section.id }}"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="Newsletter-success--{{ section.id }}"
+            {% endif %}
+            required
+
+          ><span class="sign-icon fa fa-mail-forward"></span>
+        </div>
+        <div>
+          <input type="submit" class="sign-submit" value="SUBSCRIBE">
+          <div class="sign-info">
+            <input type="checkbox" required>
+            <div class="sign-text">
+              We are committed to protecting the security and privacy of your mailbox information.
+            </div>
+          </div>
+        </div>
+      {% endform %}
+    </div>
+    <div></div>
+  </div>
+  <div class="footer-info">
+    <div>
+      {% comment %} <h3>{{ section.settings.title }}</h3> {% endcomment %}
+      <div class="item-title">{{ section.settings.title }}</div>
+      <div class="info-text">{{ section.settings.text1 }}</div>
+    </div>
+    <div>
+      <a href="#"
+        >Back to top &nbsp;<img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/arrow-up-long-solid.svg?v=1705733486"
+      ></a>
+    </div>
+  </div>
+</div>
+<div class="footer-block02">
+  <img src="https://cdn.shopify.com/s/files/1/0679/6538/6990/files/footer-icon2.png?v=1705733486">
+  <div class="footer-copyright">{{ section.settings.copyright }}</div>
+  <div class="footer-privacy">{{ section.settings.cookies }}</div>
+</div>
+{% schema %}
+{
+  "name": "Footer",
+  "class": "shane-footer",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "text1",
+      "label": "Info."
+    },
+    {
+      "type": "text",
+      "id": "signtitle",
+      "label": "Sign Title",
+      "default": "Sign up now & get free shipping on your first order!"
+    },
+    {
+      "type": "text",
+      "id": "signtext",
+      "label": "Sign Info.",
+      "default": "Join our email list and receive free shipping when you make your first order!"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright Info."
+    },
+    {
+      "type": "text",
+      "id": "cookies",
+      "label": "Cookies Info."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "Menu",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "Menu",
+          "info": "Select navigation to display"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shane Footer"
+    }
+  ]
+}
+{% endschema %}

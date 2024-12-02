@@ -1,0 +1,20 @@
+@media only screen and (min-width: 768px) {
+  .toggle-boxes-swiper .section-header {
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+    grid-gap: 30px;
+  }
+  .toggle-boxes-swiper .section-header--content {
+    text-align: center;
+    width: 685px;
+  }
+  .toggle-boxes-swiper{
+    padding-bottom: 60px;
+  }
+}
+  @media only screen and (max-width: 767px) {
+    .toggle-boxes-swiper .toggle-box--button {
+      font-size:14px
+    }
+ }

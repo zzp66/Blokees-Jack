@@ -1,0 +1,283 @@
+{{- 'fold-container.css' | asset_url | stylesheet_tag -}}
+<script src="{{ 'fold-containe.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign section_heading = section.settings.heading
+  assign open = section.settings.open
+  assign marker_style = section.settings.marker_style
+  assign section_description = section.settings.description
+  assign image_ratio = section.settings.image_ratio
+
+  assign color_bg = section.settings.color_bg | downcase
+  assign color_heading = section.settings.color_heading
+  assign marker_color = section.settings.marker_color
+  assign color_text = section.settings.color_text
+  assign color_links = section.settings.color_links
+  assign color_border = section.settings.color_border
+  assign color_body_bg = settings.color_body_bg | downcase
+  assign columns_desktop = section.settings.columns_desktop
+
+  assign disable_top_spacing = section.settings.disable_top_spacing
+  assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+  assign has_bg = true
+  if color_body_bg == color_bg or color_bg == 'transparent' or color_bg == 'rgba(0,0,0,0)'
+    assign has_bg = false
+  endif
+
+  case columns_desktop
+    when 2
+      assign columns_desktop_class = 'medium-6'
+    when 3
+      assign columns_desktop_class = 'medium-4'
+    when 4
+      assign columns_desktop_class = 'medium-3'
+    when 5
+      assign columns_desktop_class = 'medium-1/5 large-1/5'
+  endcase
+-%}
+<div class="row">
+  <div class="small-12 columns flodF">
+    <div
+      class="fold-container {% if has_bg -%}fold-container--has-bg{% endif %} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}"
+      style="--color-bg: {{ color_bg }}; --color-heading: {{ color_heading }}; --color-text: {{ color_text }}; --color-links: {{ color_links }}; --color-border: {{ color_border }};"
+    >
+      <div class="fold-container__inner accordion">
+        <details
+          id="Details-{{ block.id }}-{{ section.id }}"
+          {% if open %}
+            open
+          {% endif %}
+        >
+          <summary class="summaryBox">
+            <p class="summaryLestp">{{ section_heading }}</p>
+
+            <span class="foldLan"></span>
+            <span class="minus">{%- render 'svg-icons' with 'minus' -%}</span>
+            <span class="plus">{%- render 'svg-icons' with 'plus' -%}</span>
+          </summary>
+          <div
+            class="collapsible__content accordion__content rte"
+            style="
+              flex-wrap: wrap;
+              display: flex;
+            "
+            id="Accordion-{{ block.id }}-{{ section.id }}"
+          >
+            {%- for block in section.blocks -%}
+              {% if block.settings.con != blank %}
+                <div class="small-6 medium-6 large-3 columns carousel__slide foldbox" style="padding:0">
+                  <h5>{{- block.settings.title -}}</h5>
+                  <p>
+                    {{- block.settings.con -}}
+                  </p>
+                  <span>
+                    {{- block.settings.rex -}}
+                  </span>
+                </div>
+              {% endif %}
+            {%- endfor -%}
+          </div>
+          <div class="row align-stretch no-padding">
+            {%- for block in section.blocks -%}
+              {% if block.settings.image != blank %}
+                <div class="multicolumn__column small-6 {{ columns_desktop_class }} columns">
+                  {%- liquid
+                    assign ratio = 1
+                    assign image_link = block.settings.image_link
+
+                    assign max_width = block.settings.image.width | divided_by: 2 | append: 'px'
+                    if image_ratio == 'adapt'
+                      assign ratio = block.settings.image.aspect_ratio
+                    endif
+                    if block.settings.image_full_width
+                      assign max_width = '100%'
+                    endif
+                  -%}
+                  <figure class="multicolumn__image" style="width: {{ max_width }};">
+                    <div
+                      class="multicolumn__image--inner aspect-ratio aspect-ratio--{{ image_ratio }}"
+                      style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
+                    >
+                      {% if image_link != blank %}
+                        <a href="{{ image_link }}">
+                      {% endif %}
+                      {%- render 'responsive-image', image: block.settings.image, sizes: '407x0,814x0', retina: true -%}
+                      {% if image_link != blank %}
+                        </a>
+                      {% endif %}
+                    </div>
+                  </figure>
+                </div>
+              {% endif %}
+            {%- endfor -%}
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Fold Container",
+    "class": "Fold Container",
+
+  "settings": [
+    	{
+				"type": "text",
+				"id": "heading",
+				"label": "Heading",
+				"default": "Fold Container",
+				"info": "Wrap your text between | to add animated markers. For example: Animated |marker| will underline marker text."
+	    },
+     {
+          "type": "checkbox",
+          "id": "open",
+          "default": false,
+          "label": "Open by default"
+        },
+        {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 3,
+      "max": 5,
+      "step": 1,
+      "default": 3,
+      "label": "Number of columns on desktop"
+    },
+{
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        },
+        {
+          "value": "circle",
+          "label": "Circle"
+        }
+      ],
+      "default": "adapt",
+      "label": "Image ratio"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "color_heading",
+      "label": "Heading",
+      "default": "#1a1c1d"
+    },
+    {
+      "type": "color",
+      "id": "marker_color",
+      "label": "Marker",
+      "default": "#FD6262"
+    }, {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text",
+      "default": "#2c2d2e"
+    }, {
+      "type": "color",
+      "id": "color_links",
+      "label": "Links",
+      "default": "#2c2d2e"
+    }, {
+      "type": "color",
+      "id": "color_border",
+      "label": "Border",
+      "default": "#DADCE0"
+    }, {
+      "type": "header",
+      "content": "Spacing"
+    }, {
+      "type": "checkbox",
+      "id": "disable_top_spacing",
+      "default": false,
+      "label": "Remove top spacing"
+    }, {
+      "type": "checkbox",
+      "id": "disable_bottom_spacing",
+      "default": false,
+      "label": "Remove bottom spacing"
+    }
+  ],
+  "blocks": [
+  {
+      "type": "content",
+      "name": "content",
+      "settings": [
+
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Battery Model",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "con",
+          "default": "DP.6C Battery",
+          "label": "Conten"
+        }, {
+          "type": "text",
+          "id": "rex",
+          "label": "Description"
+        }
+      ]
+    },{
+        "type": "box",
+        "name": "Img Box",
+        "settings": [
+					{
+						"type": "image_picker",
+						"id": "image",
+						"label": "Image",
+						"info": "690 x 800 .jpg recommended. Depends on your block content size."
+					},
+            {
+          "type": "checkbox",
+          "id": "image_full_width",
+          "label": "Fit image to column",
+          "default": true
+        },
+             {
+	          "type": "url",
+	          "id": "image_link",
+	          "label": "Image link"
+	        }
+        ]
+      }
+  ],
+  "presets": [
+    {
+      "name": "Fold Container",
+      "blocks": [
+        {
+          "type": "content",
+          "type": "box"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

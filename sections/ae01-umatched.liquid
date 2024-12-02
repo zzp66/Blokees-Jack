@@ -1,0 +1,912 @@
+
+<style>
+    
+    @media (min-width: 768px){
+        .ae01-Umatched>div{
+            position:relative;
+            width: 100%;
+            
+        }
+    
+        .ae01-Umatched .top-line{
+            position: absolute; width: 100%; top: 0; left: 0; display: flex;justify-content: space-between;padding: 0 calc(100vw* 60/ 1920);
+            
+        }
+        .ae01-Umatched .top-line .left{
+            
+        }
+        .ae01-Umatched .top-line .left .title{
+            color: #FFF;
+            font-family: Outfit-Bold;
+            font-size: calc(100vw* 50/ 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 65/ 1920); /* 130% */
+            margin-bottom: calc(100vw* 35/ 1920);
+        }
+        .ae01-Umatched .top-line .left .info{
+    
+        
+        }
+        .ae01-Umatched .top-line .left .info img{
+            {% comment %} width: calc(100vw* 185/ 1920); {% endcomment %}
+            height: calc(100vw* 133/ 1920);
+    
+        }
+        .ae01-Umatched .top-line .left .info .text02{
+            color: #006DE5;
+            font-family: Outfit-Regular;
+            font-size: calc(100vw* 52/ 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 54/ 1920); /* 103.846% */
+    
+        }
+        .ae01-Umatched .top-line .right{
+            margin-top:calc(100vw* 206/ 1920);
+            margin-right: calc(100vw* 142 / 1920);
+        }
+        .ae01-Umatched .top-line .right .text{
+            max-width: calc(100vw* 682/ 1920);
+            color: #FFF;
+            font-family: Outfit-Regular;
+            font-size: calc(100vw* 24/ 1920);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 30/ 1920); /* 125% */
+        }
+    
+        
+        .ae01-Umatched .center-line{
+            position: absolute;
+            top: calc(100vw* 330/ 1920);
+            left: 0;
+            padding: 0 calc(100vw* 82/ 1920);
+            width: 100%;
+        }
+        .ae01-Umatched .center-line .line-left{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .ae01-Umatched .top{
+            display: flex;
+            align-items: center;
+            background: #fff;
+            width: fit-content;
+            padding-right: calc(100vw* 25/ 1920);
+            padding-left: calc(100vw* 2/ 1920);
+            padding-top: calc(100vw* 1/ 1920);
+            padding-bottom: calc(100vw* 1/ 1920);
+            border-radius: calc(100vw* 9/ 1920);
+            margin-bottom: calc(100vw* 30/ 1920);
+        }
+        .ae01-Umatched .center-line  .top img{
+            width: calc(100vw* 57/ 1920);
+            height: calc(100vw* 57/ 1920);
+        }
+        .ae01-Umatched .center-line  .top .text{
+            display: flex;
+            align-items: flex-end;
+            margin-left: calc(100vw* 22/ 1920);
+            font-family: Outfit-Bold;
+    }
+        .ae01-Umatched .center-line .top .text .son1{
+            color: #FF5F00;
+            font-family: Outfit-Bold;
+            font-size: calc(100vw* 35/ 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+    
+        }
+        .ae01-Umatched .center-line  .top .text .son2{
+            color: #FF5F00;
+            font-family: Outfit-Bold;
+            font-size: calc(100vw* 25/ 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            text-transform: uppercase;
+    
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg {
+            display: flex;
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg  .lins{
+            margin-left: calc(100vw* 45/ 1920);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .list{
+            width: fit-content;
+            /* display: flex; */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: calc(100vw* 20 / 1920);
+            margin-bottom: calc(100vw* 30/ 1920);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .list img{
+            width: calc(100vw* 220/ 1920);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .list img:last-child{
+            margin-top: calc(100vw* 10 / 1920);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .title{
+            color: #FFF;
+            font-family: Outfit-Bold;
+            font-size: calc(100vw* 36/ 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 42/ 1920);
+            margin-bottom: calc(100vw* 10/ 1920);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .text{
+            max-width: calc(100vw* 463/ 1920);
+            color: #FFF;
+            font-family: Outfit-Regular;
+            font-size: calc(100vw* 18/ 1920);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 24/ 1920);
+        }
+    
+        .ae01-Umatched .center-line .line-left .right-grop .msg {
+            display: flex;
+            width: fit-content;
+        }
+        .ae01-Umatched .center-line .line-left .right-grop .msg .lins{
+            margin-left: calc(100vw* 71/ 1920);
+        }
+        
+        .ae01-Umatched .center-line .line-left .right-grop .msg .lins .title{
+            color: #FFF;
+            font-family: Outfit-Bold;
+            font-size: calc(100vw* 36/ 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 42/ 1920);
+            margin-top: calc(100vw* 32/ 1920);
+            margin-bottom: calc(100vw* 10/ 1920);
+        }
+        .ae01-Umatched .center-line .line-left .right-grop .msg .lins .text{
+            max-width: calc(100vw* 463/ 1920);
+            color: #FFF;
+            font-family: Outfit-Regular;
+            font-size: calc(100vw* 18/ 1920);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 24/ 1920);
+        }
+        .ae01-Umatched .center-line .line-right{
+            margin-top: calc(100vw* 40/ 1920);
+        }
+    
+        .ae01-Umatched .bottom-line{
+            position: absolute;
+            display: flex;
+            top:  calc(100vw* 1190/ 1920);
+            left: 0;
+            width: 100%;
+            padding: 0  calc(100vw* 87/ 1920);
+            justify-content: space-between;
+        }
+        .ae01-Umatched .bottom-line .lins-left{
+            display: flex;
+            flex-direction: column;
+        }
+        .ae01-Umatched .bottom-line .lins-left img{
+            width:  calc(100vw* 389/ 1920);
+        }
+    
+        .ae01-Umatched .bottom-line .lins-left .title{
+            color: #FFF;
+            font-family: Outfit-Bold;
+            font-size:  calc(100vw* 36/ 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height:  calc(100vw* 42/ 1920);
+            max-width:  calc(100vw* 315/ 1920);
+            margin-top:  calc(100vw* 20/ 1920);
+            margin-bottom:  calc(100vw* 10/ 1920);
+        }
+        .ae01-Umatched .bottom-line .lins-left .text{
+            max-width:  calc(100vw* 430/ 1920);
+            color: #FFF;
+            font-family: Outfit-Regular;
+            font-size:  calc(100vw* 18/ 1920);
+            font-style: normal;
+            font-weight: 300;
+            line-height:  calc(100vw* 26/ 1920);
+        }
+        
+        .ae01-Umatched .bottom-line .lins-right{
+            margin-right:  calc(100vw* 43/ 1920);
+        }
+    
+        .ae01-Umatched .bottom-line .lins-right img{
+            width:  calc(100vw* 389/ 1920);
+        }
+        .ae01-Umatched .bottom-line .lins-right .title{
+            color: #FFF;
+            font-family: Outfit;
+            font-size:  calc(100vw* 36/ 1920);
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-top:  calc(100vw* 20/ 1920);
+            margin-bottom:  calc(100vw* 10/ 1920);
+        }
+        .ae01-Umatched .bottom-line .lins-right .text{
+            max-width:  calc(100vw* 390/ 1920);
+            color: #FFF;
+            font-family: Outfit;
+            font-size:  calc(100vw* 18/ 1920);
+            font-style: normal;
+            font-weight: 300;
+            line-height:  calc(100vw* 26/ 1920);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg img{
+            width: calc(100vw* 359 / 1920);
+        }
+        .ae01-Umatched .center-line .line-left .right-grop .msg img{
+            width: calc(100vw* 287 / 1920);
+        }
+    }
+    
+    @media (max-width: 768px){
+        .ae01-Umatched>div{
+            position:relative;
+            width: 100%;
+            
+        }
+    
+        .ae01-Umatched .top-line{
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 calc(100vw* 20 / 430);
+            flex-direction: column;
+            
+        }
+        .ae01-Umatched .top-line .left{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            margin-top: calc(100vw* 51 / 430);
+            
+        }
+        .ae01-Umatched .top-line .left .title{
+            color: #FFF;
+            font-family: Outfit-Bold;
+        font-size: calc(100vw* 30 / 430);
+        font-style: normal;
+        font-weight: 700;
+        line-height: calc(100vw* 34 / 430);
+        margin-bottom: calc(100vw* 20 / 430);
+        }
+        .ae01-Umatched .top-line .left .info{
+            width: calc(100vw* 233 / 430);
+        
+        }
+        .ae01-Umatched .top-line .left .info .img{
+            width: calc(100vw* 185/ 430);
+            height: calc(100vw* 133/ 430);
+    
+        }
+        .ae01-Umatched .top-line .left .info .text02{
+            color: #006DE5;
+            font-family: "Outfit";
+            font-size: calc(100vw* 52/ 430);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 54/ 430); /* 103.846% */
+    
+        }
+        .ae01-Umatched .top-line .right{
+            display: flex;
+            margin-top: calc(100vw* 92 / 430);
+            margin-right: calc(100vw* 0 / 430);
+            justify-content: center;
+            align-items: center;
+        }
+        .ae01-Umatched .top-line .right .text{
+            max-width: calc(100vw* 378 / 430);
+            color: #FFF;
+            font-family: Outfit-Regular;
+            font-size: calc(100vw* 24 / 430);
+            font-style: normal;
+            text-align: center;
+            font-weight: 400;
+            line-height: calc(100vw* 30 / 430);
+        }
+    
+        
+        .ae01-Umatched .center-line{
+            position: absolute;
+            top: calc(100vw* 407 / 430);
+            left: 0;
+            padding: 0 calc(100vw* 20 / 430);
+            width: 100%;
+        }
+        .ae01-Umatched .center-line .line-left{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .ae01-Umatched .center-line .line-left .left-grop{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        
+        
+        }
+        .ae01-Umatched  .top{
+            display: flex;
+        align-items: center;
+        background: #fff;
+        width: fit-content;
+        padding-right: calc(100vw* 25 / 430);
+        padding-left: calc(100vw* 2 / 430);
+        padding-top: calc(100vw* 1 / 430);
+        padding-bottom: calc(100vw* 1 / 430);
+        border-radius: calc(100vw* 9 / 430);
+        margin-bottom: calc(100vw* 0 / 430);
+        }
+        .ae01-Umatched .center-line  .top img{
+            height: calc(100vw* 42 / 430);
+            width: calc(100vw* 42 / 430);
+        }
+        .ae01-Umatched .center-line  .top .text{
+            display: flex;
+        align-items: center;
+        margin-left: calc(100vw* 22 / 430);
+    }
+        .ae01-Umatched .center-line .top .text .son1{
+            color: #FF5F00;
+        font-family: Outfit-Bold;
+        font-size: calc(100vw* 20 / 430);
+        font-style: normal;
+        font-weight: 700;
+        line-height: calc(100vw* 24 / 430);
+        text-transform: uppercase;
+    
+        }
+        .ae01-Umatched .center-line  .top .text .son2{
+            color: #FF5F00;
+            font-family: Outfit-Bold;
+        font-size: calc(100vw* 20 / 430);
+        font-style: normal;
+        font-weight: 700;
+        line-height: calc(100vw* 24 / 430);
+        text-transform: uppercase;
+    
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg img{
+            width: calc(100vw* 207 / 430);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins{
+                    margin-left: calc(100vw* 0 / 430);
+        margin-top: calc(100vw* 20 / 430);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .list{
+            width: fit-content;
+            /* display: flex; */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: calc(100vw* 5 / 430);
+            margin-bottom: calc(100vw* 30 / 430);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .list img{
+            width: calc(100vw* 220/ 430);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .list .mobile_stlye{
+            margin-top: calc(100vw* 10/ 430);
+        } 
+        
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .title{
+            color: #FFF;
+            font-family: Outfit-Bold;
+            font-size: calc(100vw* 30 / 430);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 34 / 430);
+            margin-bottom: calc(100vw* 10 / 430);
+        }
+        .ae01-Umatched .center-line .line-left .left-grop .msg .lins .text{
+            max-width: calc(100vw* 360 / 430);
+            color: #FFF;
+            font-family: Outfit-Regular;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 24 / 430);
+        }
+        .ae01-Umatched .center-line .line-left .right-grop{
+            display: flex;
+            flex-direction: column;
+            margin-top: calc(100vw* 60 / 430);
+            justify-content: center;
+            align-items: center;
+        }
+        .ae01-Umatched .center-line .line-left .right-grop .msg {
+            display: flex;
+            width: fit-content;
+            flex-direction: column;
+        }
+        .ae01-Umatched .center-line .line-left .right-grop .msg img{
+            width: calc(100vw* 167 / 430);
+        }
+        .ae01-Umatched .center-line .line-left .right-grop .msg .lins{
+            margin-left: calc(100vw* 0/ 430);
+        }
+        
+        .ae01-Umatched .center-line .line-left .right-grop .msg .lins .title{
+            color: #FFF;
+            font-family: Outfit-Bold;
+            font-size: calc(100vw* 30 / 430);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 34 / 430);
+            margin-top: calc(100vw* 32 / 430);
+            margin-bottom: calc(100vw* 10 / 430);
+        }
+        .ae01-Umatched .center-line .line-left .right-grop .msg .lins .text{
+            max-width: calc(100vw* 360 / 430);
+            color: #FFF;
+            font-family: Outfit-Regular;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 400;
+            line-height: calc(100vw* 24 / 430);
+        }
+        .ae01-Umatched .center-line .line-right{
+            margin-top: calc(100vw* 40 / 430);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .ae01-Umatched .bottom-line{
+            position: absolute;
+            display: flex;
+            top: calc(100vw* 2323 / 430);
+            left: 0;
+            width: 100%;
+            padding: 0 calc(100vw* 22 / 430);
+            justify-content: space-between;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 0 calc(100vw* 10 / 430);
+        }
+        .ae01-Umatched .bottom-line .lins-left{
+            display: flex;
+            flex-direction: column;
+        }
+        .ae01-Umatched .bottom-line .lins-left img{
+            width: 100%;
+        }
+    
+        .ae01-Umatched .bottom-line .lins-left .title{
+            color: #FFF;
+            font-family: Outfit-Bold;
+            font-size: calc(100vw* 30 / 430);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 34 / 430);
+            max-width: calc(100vw* 346 / 430);
+            margin-top: calc(100vw* 20 / 430);
+            margin-bottom: calc(100vw* 10 / 430);
+        }
+        .ae01-Umatched .bottom-line .lins-left .text{
+            max-width: calc(100vw* 370 / 430);
+            color: #FFF;
+            font-family: Outfit-Regular;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 300;
+            line-height: calc(100vw* 24 / 430);
+        }
+        
+        .ae01-Umatched .bottom-line .lins-right{
+            margin-right:  calc(100vw* 0/ 430);
+        }
+    
+        .ae01-Umatched .bottom-line .lins-right img{
+            width:  auto;
+        }
+        .ae01-Umatched .bottom-line .lins-right .title{
+            color: #FFF;
+             font-family: Outfit;
+            font-size: calc(100vw* 30 / 430);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 34 / 430);
+            margin-top: calc(100vw* 20 / 430);
+            margin-bottom: calc(100vw* 10 / 430);
+        }
+        .ae01-Umatched .bottom-line .lins-right .text{
+            max-width: calc(100vw* 390 / 430);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 300;
+            line-height: calc(100vw* 26 / 430);
+        }
+        .ae01-Umatched .umatched-felx-mb{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .ae01-Umatched  .lins-mb-bottom{
+            position: absolute;
+            display: flex;
+            top: calc(100vw* 2477  / 430);
+            flex-direction: column;
+            padding: 0 calc(100vw* 20 / 430);
+
+        }
+
+        .ae01-Umatched  .lins-mb-bottom .title{
+            max-width: calc(100vw* 370 / 430);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 30 / 430);
+            font-style: normal;
+            font-weight: 700;
+            line-height: calc(100vw* 34 / 430); /* 113.333% */
+            margin-bottom:calc(100vw* 10 / 430);
+        
+        }.ae01-Umatched  .lins-mb-bottom .text{
+            max-width: calc(100vw* 370 / 430);
+            color: #FFF;
+            font-family: Outfit;
+            font-size: calc(100vw* 18 / 430);
+            font-style: normal;
+            font-weight: 300;
+            line-height: calc(100vw* 24 / 430); /* 133.333% */
+            margin-bottom:calc(100vw* 20 / 430);
+        
+        }
+    }
+    
+
+</style>
+
+<div > 
+    <img src="{{ section.settings.block_image | image_url }}" style="width: 100%;" class="pc_show">
+    <img src="{{ section.settings.block_mb_image | image_url }}" style="width: 100%;" class="mobile_show">
+    <div class="top-line">
+        <div class='left'>
+            <div class="title">
+                {{ section.settings.line_text }}
+            </div>
+            <div class="info">
+                <img src="{{ section.settings.block_icon_image | image_url }}" >
+            </div>
+
+        </div>
+        <div class='right'>
+            <div class="text"> 
+            {{ section.settings.line_content }}
+            </div>
+        </div>
+    </div>
+    <div class="center-line">
+        <div class="line-left">
+            <div class="left-grop">
+                <div class="top"> 
+                    <img src="{{ section.settings.block_line_left_icon_image | image_url }}" >
+                     
+                    <div class="text"> 
+                        <div class="son1">
+                            {{ section.settings.block_line_left_icon_title_number }}
+
+                        </div>
+                        <div class="son2">
+                            {{ section.settings.block_line_left_icon_title }}
+                        </div>
+                     
+                    </div> 
+                </div>         
+                <div class="msg">
+                    <img src="{{ section.settings.block_line_left_image | image_url }}" >
+                    <div class="lins">
+                        <div class="list">
+                            <img src="{{ section.settings.block_line_left_gorw_image1 | image_url }}" >
+                        <img src="{{ section.settings.block_line_left_gorw_image2 | image_url }}" class="mobile_stlye"  >
+                        </div>
+                        <div class="title">
+                            {{ section.settings.block_line_left_gorw_title }}
+                        </div>
+                        <div class="text">
+                            {{ section.settings.block_line_left_gorw_content }}
+                        </div>
+                    </div>
+                
+                </div>       
+            </div>
+            <div class="right-grop">
+                <div class="top"> 
+                    <img src="{{ section.settings.block_line_right_icon_image | image_url }}" >
+                    <div class="text"> 
+                        <div class="son1">
+                            {{ section.settings.block_line_right_icon_title_number }}
+
+                        </div>
+                        <div class="son2">
+                            {{ section.settings.block_line_right_icon_title }}
+                        </div>
+                    </div> 
+                </div>  
+                
+                <div class="msg">
+                    <div class="umatched-felx-mb">
+                    <img src="{{ section.settings.block_line_right_image | image_url }}" >
+                    <img src="{{ section.settings.block_line_right_gorw_image1 | image_url }}"class="mobile_show" >
+                    </div>
+                    
+                    <div class="lins">
+                        <img src="{{ section.settings.block_line_right_gorw_image1 | image_url }}"class="pc_show" >
+                        <div class="title">
+                            {{ section.settings.block_line_right_gorw_title }}
+                        </div>
+                        <div class="text ">
+                            {{ section.settings.block_line_right_gorw_content }}
+                        </div>
+                    </div>    
+                </div> 
+
+            </div>
+        </div>
+        <div class="line-right">
+            {% comment %} {{ section.settings.line_content }} {% endcomment %}
+            <div class="top"> 
+            <img src="{{ section.settings.block_line_bottom_icon_image | image_url }}" >
+            <div class="text"> 
+                <div class="son1">
+                    {{ section.settings.block_line_bottom_icon_title_number }}
+                </div>
+                <div class="son2">
+                    {{ section.settings.block_line_bottom_icon_title }}
+                </div>
+            </div> 
+        </div> 
+        </div>
+
+    </div>
+    <div class="bottom-line">
+        <div class="lins-left">
+            <img src="{{ section.settings.block_lins_left_image | image_url }}" >
+            <div class="title pc_show">
+                {{ section.settings.block_lins_left_text }}
+            </div>
+            <div class="text pc_show">
+                {{ section.settings.block_lins_left_content }}
+            </div>
+        </div>  
+        <div class="lins-right">
+            <img src="{{ section.settings.block_lins_right_image | image_url }}" >
+            <div class="title pc_show">
+                {{ section.settings.block_lins_right_text }}
+            </div>
+            <div class="text pc_show">
+                {{ section.settings.block_lins_right_content }}
+            </div>
+        </div>  
+        
+    </div>
+    <div class="lins-mb-bottom mobile_show">
+        <div class="title ">
+            {{ section.settings.block_lins_left_text }}
+        </div>
+        <div class="text ">
+            {{ section.settings.block_lins_left_content }}
+        </div>
+        <div class="title ">
+            {{ section.settings.block_lins_right_text }}
+        </div>
+        <div class="text ">
+            {{ section.settings.block_lins_right_content }}
+        </div>
+    </div>
+ 
+
+</div>
+
+{% schema %}
+    {
+        "name": "Ae01 Umatched",
+        "class": "ae01-Umatched",
+        "settings": [
+            {
+				"type": "image_picker",
+				"id": "block_image",
+				"label": "Image"
+			},
+            {
+				"type": "image_picker",
+				"id": "block_mb_image",
+				"label": "mb Image"
+			},
+            {
+				"type": "text",
+				"id":"line_text",
+				"label": "Line Text"
+			},
+            {
+				"type": "image_picker",
+				"id": "block_icon_image",
+				"label": "icon Image"
+			},
+			{
+				"type": "text",
+				"id":"line_content",
+				"label": "Line Content"
+			},
+            {
+				"type": "image_picker",
+				"id": "block_line_left_icon_image",
+				"label": "line left icon Image"
+			},
+            {
+				"type": "text",
+				"id":"block_line_left_icon_title_number",
+				"label": "line left icon title number"
+			},
+            {
+				"type": "text",
+				"id":"block_line_left_icon_title",
+				"label": "line left icon title"
+			},
+            
+            {
+				"type": "image_picker",
+				"id": "block_line_left_image",
+				"label": "ry Image"
+			},
+            {
+				"type": "image_picker",
+				"id": "block_line_left_gorw_image1",
+				"label": "line left gorw Image1"
+			},
+            {
+				"type": "image_picker",
+				"id": "block_line_left_gorw_image2",
+				"label": "line left gorw Image2"
+			},
+            {
+				"type": "text",
+				"id":"block_line_left_gorw_title",
+				"label": "line left gorw title"
+			},
+            {
+				"type": "text",
+				"id":"block_line_left_gorw_content",
+				"label": "line left gorw content"
+			},
+
+            
+
+            {
+				"type": "image_picker",
+				"id": "block_line_right_icon_image",
+				"label": "line right icon Image"
+			},
+            {
+				"type": "text",
+				"id":"block_line_right_icon_title_number",
+				"label": "line right icon title number"
+			},
+            {
+				"type": "text",
+				"id":"block_line_right_icon_title",
+				"label": "line right icon title"
+			},
+            {
+				"type": "image_picker",
+				"id": "block_line_right_image",
+				"label": "ry Image"
+			},
+            {
+				"type": "image_picker",
+				"id": "block_line_right_gorw_image1",
+				"label": "line right gorw Image1"
+			},
+            {
+				"type": "text",
+				"id":"block_line_right_gorw_title",
+				"label": "line right gorw title"
+			},
+            {
+				"type": "text",
+				"id":"block_line_right_gorw_content",
+				"label": "line right gorw content"
+			},
+
+
+            {
+				"type": "image_picker",
+				"id": "block_line_bottom_icon_image",
+				"label": "line bottom icon Image"
+			},
+            {
+				"type": "text",
+				"id":"block_line_bottom_icon_title_number",
+				"label": "line bottom icon title number"
+			},
+            {
+				"type": "text",
+				"id":"block_line_bottom_icon_title",
+				"label": "line bottom icon title"
+			},
+            
+            {
+				"type": "image_picker",
+				"id": "block_lins_left_image",
+				"label": "block lins image"
+			},
+            {
+				"type": "text",
+				"id":"block_lins_left_text",
+				"label": "lins text"
+			},
+            {
+				"type": "text",
+				"id":"block_lins_left_content",
+				"label": "lins content"
+			},
+
+            {
+				"type": "image_picker",
+				"id": "block_lins_right_image",
+				"label": "block lins image"
+			},
+            {
+				"type": "text",
+				"id":"block_lins_right_text",
+				"label": "lins text"
+			},
+            {
+				"type": "text",
+				"id":"block_lins_right_content",
+				"label": "lins content"
+			},
+
+
+            
+        ],
+        "blocks": [
+            {
+                "type": "msimg",
+                "name":"msimg",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "block_line_image",
+                        "label": "Image"
+                    }
+                ]
+            }
+
+        ],
+        "presets": [
+            {
+             "name": "Ae01 Umatched"
+               
+            }
+         ]
+    }
+{% endschema %}

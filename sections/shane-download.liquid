@@ -1,0 +1,130 @@
+<style>
+  .shane-manual {
+    background-color: #f4f0e6;
+    width: 100%;
+    padding-top: 4vw;
+    color: #ff5f00;
+  }
+  .shane-manual > div {
+    width: 94%;
+    margin: auto;
+  }
+  .shane-manual h2 {
+    font-family: Outfit-Bold;
+    font-size: 2.2vw;
+    margin: 0;
+    margin-bottom: calc(1000vw / var(--base-width));
+  }
+  .shane-manual .text {
+    width: 60%;
+    font-size: 1.2vw;
+    font-size: calc(2400vw / var(--base-width));
+    line-height: 1.25;
+  }
+  .shane-manual .pdf-down {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: calc(3000vw / var(--base-width));
+  }
+  .shane-manual .pdf-down > span {
+    display: block;
+    font-size: 2vw;
+    margin-right: 1vw;
+  }
+  .shane-manual .pdf-down .link {
+    width: 9vw;
+    min-width: 160px;
+  }
+  .shane-manual .shane-button-02 {
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    .shane-manual {
+      padding-top: 7vw;
+    }
+    .shane-manual h2 {
+      font-size: 6vw;
+      margin-bottom: 3vw;
+      color: #ff5f00;
+    }
+    .shane-manual .text {
+      width: 90%;
+      font-size: 3.6vw;
+      line-height: 4vw;
+    }
+    .shane-manual .pdf-down {
+      margin-top: 5vw;
+    }
+    .shane-manual .pdf-down > span {
+      font-size: 10vw;
+      margin-right: 4vw;
+    }
+    .shane-manual .pdf-down .link {
+      width: 40vw;
+    }
+    .shane-manual .shane-button-02 {
+      width: 90%;
+      height: 8vw;
+      border-radius: 5vw;
+      font-size: 4vw;
+    }
+    .shane-manual .btn__circle-02 {
+      width: 30px;
+    }
+    .shane-manual .btn__circle-02 span {
+      font-size: 4vw;
+    }
+  }
+</style>
+<div>
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="text">{{ section.settings.context }}</div>
+  <div class="pdf-down">
+    <span class="fa fa-file-pdf-o"></span>
+    <div class="link">
+      <a class="shane-button-02" href="{{ section.settings.link }}">
+        <div class="btn__bg"></div>
+        <div class="btn__label-02">{{ section.settings.buttontext }}</div>
+        <div class="btn__circle-02">
+          <span class="fa fa-arrow-up"></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Shane download",
+  "class": "shane-manual",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "context",
+      "label": "Text"
+    },
+    {
+      "id": "link",
+      "type": "url",
+      "label": "link",
+      "info": "Adds a link"
+    },
+    {
+      "type": "text",
+      "id": "buttontext",
+      "label": "Button Text",
+      "default": "Down Load"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Shane download"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,172 @@
+{% assign default_top_icon = 'https://blokees.com/cdn/shop/files/home-2024011102.png?v=1705660848' %}
+{% assign default_icon = 'https://cdn.shopify.com/s/files/1/0679/6538/6990/files/star-icon02.png?v=1705974991' %}
+{% assign padding_top = section.settings.top_bottom_padding | times: 1.0 | divided_by: 20 %}
+{% assign final_padding_top = padding_top | plus: 1 %}
+{% assign font_size_mobile = section.settings.font_size_mobile | divided_by: 2 %}
+{% assign icon_size = section.settings.icon_size | divided_by: 2 %}
+<style>
+  #{{ section.id }}-scrolling-container {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: {{ section.settings.background_color }};
+    white-space: nowrap;
+    position: relative;
+    padding: {{ final_padding_top }}vw 0 {{ padding_top }}vw;
+    background-image: url({{section.settings.top_icon | image_url | default: default_top_icon }});
+    background-position: top;
+    background-repeat: repeat-x;
+    margin-top: -1px;
+    font-family: Outfit;
+  }
+
+  #{{ section.id }}-scrolling-container .scrolling-content {
+    display: flex;
+    align-items: center;
+    animation: scroll-left 10s linear infinite;
+    gap: {{ section.settings.left_right_padding | times: 1 |  divided_by: 20 }}vw;
+
+  }
+
+  #{{ section.id }}-scrolling-container .scrolling-text {
+    font-size: {{ section.settings.font_size | times : 1 | divided_by : 20 }}vw;
+    color: {{ section.settings.font_color }};
+    font-weight: 700;
+    line-height: 1;
+    text-transform: capitalize;
+  }
+
+  /* 滚动动画 */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @media (max-width: 768px) {
+    #{{ section.id }}-scrolling-container {
+      padding: calc(2100vw / var(--base-width)) 0 calc(700vw / var(--base-width));
+    }
+    #{{ section.id }}-scrolling-container .scrolling-img{
+      width: calc(100vw * {{ icon_size }} / var(--base-width));
+    }
+    #{{ section.id }}-scrolling-container .scrolling-content {
+      gap: calc(1500vw / var(--base-width));
+    }
+    #{{ section.id }}-scrolling-container .scrolling-text {
+      font-size: calc(100vw * {{ font_size_mobile }} / var(--base-width));
+    }
+  }
+</style>
+<div class="scrolling-container" id="{{ section.id }}-scrolling-container">
+  <div class="scrolling-content" id="{{ section.id }}-scrolling-content">
+    {% for i in (1..20) %}
+      <img
+        class="scrolling-img"
+        src="{{ section.settings.icon |  image_url  | default: default_icon }}"
+        alt="{{ section.settings.icon.alt }}"
+      >
+      <span class="scrolling-text">{{ section.settings.title }}</span>
+    {% endfor %}
+  </div>
+</div>
+<script>
+  // 计算滚动内容需要重复的次数
+  function populateText() {
+    // 获取容器和文本内容
+    let content = document.getElementById('{{ section.id }}-scrolling-content');
+    let contentWidth = content.scrollWidth;
+    // 在内容后面再添加一次完整的副本，确保无缝滚动
+    content.innerHTML += content.innerHTML;
+    // 设置动画时长，确保无缝滚动，时长取决于内容宽度
+    let duration = contentWidth / 100; // 比例缩放滚动速度
+    let speed = {{ section.settings.speed }}
+    let time = duration * speed / 10
+    content.style.animationDuration = `${time}s`;
+  }
+  // 初始化填充文本
+  populateText();
+</script>
+{% schema %}
+{
+  "name": "Circulate Custom",
+  "class": "shane-circulate-custom",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Explore The Fun Of Building"
+    },
+    {
+      "type": "number",
+      "id": "font_size",
+      "label": "Font Size",
+      "default": 40
+    },
+    {
+      "type": "number",
+      "id": "font_size_mobile",
+      "label": "Font Size Mobile",
+      "default": 40
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "font_color",
+      "label": "Font Color",
+      "default": "#FF5F00"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "number",
+      "id": "icon_size",
+      "label": "Icon Size",
+      "default": 28
+    },
+    {
+      "type": "number",
+      "id": "top_bottom_padding",
+      "label": "Top Bottom Padding",
+      "default": 13
+    },
+    {
+      "type": "number",
+      "id": "left_right_padding",
+      "label": "Left Right Padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Speed",
+      "default": 5
+    },
+    {
+      "type": "image_picker",
+      "id": "top_icon",
+      "label": "Top Icon"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Circulate Custom"
+    }
+  ]
+}
+{% endschema %}
