@@ -1,348 +1,509 @@
 <style>
-#{{section.id}}-home-tabs{
-    background-color: {{ section.settings.color_bg }};
-    padding-top: calc(100vw * {{  section.settings.padding_top }} / var(--base-size));
-    padding-bottom:  calc(100vw * {{  section.settings.padding_bottom }} / var(--base-size));
-}
-#{{section.id}}-home-tabs .home-tabs-title{
-    color: {{ section.settings.color_one }};
-    text-align: center;
-    font-family: Outfit;
-    font-size: calc(100vw * 48 / var(--base-size));
-    line-height: calc(100vw * 48 / var(--base-size));
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: calc(100vw * 20 / var(--base-size));
-    margin-top:0px;
-}
-#{{section.id}}-home-tabs .home-tabs-desc{
-    max-width: calc(100vw * 700 / var(--base-size));
-    margin: 0 auto;
-    margin-bottom: calc(100vw * 20 / var(--base-size));
-}
-#{{section.id}}-home-tabs .home-tabs-desc *{
-    color: {{ section.settings.color_one }};
-    text-align: center;
-    font-family: Outfit;
-    font-size: calc(100vw * 18 / var(--base-size));
-    font-style: normal;
-    font-weight: 300;
-    line-height: calc(100vw * 20 / var(--base-size)); 
-    margin-bottom: 0px;
-}
-#{{section.id}}-home-tabs .home-tabs-swich{
-    background: {{ section.settings.color_one }};
-    border-radius: calc(100vw * 35 / var(--base-size));
-    padding: calc(100vw * 2 / var(--base-size));
-    display: flex;
-    width: fit-content;
-    margin: 0 auto;
-    height: calc(100vw * 40 / var(--base-size));
-    box-sizing: border-box;
-}
-#{{section.id}}-home-tabs .home-tabs-button{
-    padding: 0 calc(100vw * 10 / var(--base-size));
-    height: 100%;
-    min-width: calc(100vw * 180 / var(--base-size));
-    box-sizing: border-box;
-    text-align: center;
-    color: {{ section.settings.color_two }};
-    font-family: Outfit;
-    font-size: calc(100vw * 18 / var(--base-size));
-    font-style: normal;
-    font-weight: 700;
-    border-radius: calc(100vw * 35 / var(--base-size));
-    margin-top:0px;
-    margin-bottom:0px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-#{{section.id}}-home-tabs .home-tabs-button-active{
-    background: {{ section.settings.tab_hover_color }};
-    font-size: calc(100vw * 20 / var(--base-size));
-    line-height: calc(100vw * 20 / var(--base-size));
-   color: {{ section.settings.color_one }};
-}
-#{{section.id}}-home-tabs .tab-content {
-    display: none;
+        #{{section.id}}-home-tabs{
+            background-color: {{ section.settings.color_bg }};
+            padding: 0 calc(100vw * 30 / var(--base-size));
+            padding-top: calc(100vw * {{  section.settings.padding_top }} / var(--base-size));
+            padding-bottom:  calc(100vw * {{  section.settings.padding_bottom }} / var(--base-size));
+        }
+        #{{section.id}}-home-tabs .home-tabs-title{
+            color: {{ section.settings.color_one }};
+            text-align: left;
+            font-family: Outfit;
+            font-size: calc(100vw * 48 / var(--base-size));
+            line-height: calc(100vw * 48 / var(--base-size));
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: calc(100vw * 20 / var(--base-size));
+            margin-top:0px;
+        }
+        #{{section.id}}-home-tabs .home-tabs-desc{
+            max-width: calc(100vw * 700 / var(--base-size));
+            margin: 0 auto;
+            margin-bottom: 0;
+        }
+        #{{section.id}}-home-tabs .home-tabs-desc *{
+            color: {{ section.settings.color_one }};
+            text-align: left;
+            font-family: Outfit;
+            font-size: calc(100vw * 18 / var(--base-size));
+            font-style: normal;
+            font-weight: 300;
+            line-height: calc(100vw * 20 / var(--base-size));
+            margin-bottom: 0px;
+        }
+        #{{section.id}}-home-tabs .home-tabs-swich{
+            background: {{ section.settings.color_one }};
+            border-radius: calc(100vw * 35 / var(--base-size));
+            padding: calc(100vw * 2 / var(--base-size));
+            display: flex;
+            width: fit-content;
+            height: calc(100vw * 40 / var(--base-size));
+            box-sizing: border-box;
+        }
+        #{{section.id}}-home-tabs .home-tabs-button{
+            padding: 0 calc(100vw * 10 / var(--base-size));
+            height: 100%;
+            min-width: calc(100vw * 180 / var(--base-size));
+            box-sizing: border-box;
+            text-align: center;
+            color: {{ section.settings.color_two }};
+            font-family: Outfit;
+            font-size: calc(100vw * 18 / var(--base-size));
+            font-weight: 400;
+            font-style: normal;
+            border-radius: calc(100vw * 35 / var(--base-size));
+            margin-top:0px;
+            margin-bottom:0px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        #{{section.id}}-home-tabs .home-tabs-button-active{
+          font-weight: 700;
+            background: {{ section.settings.tab_hover_color }};
+            font-size: calc(100vw * 20 / var(--base-size));
+            line-height: calc(100vw * 20 / var(--base-size));
+           color: {{ section.settings.color_one }};
+        }
+        #{{section.id}}-home-tabs .tab-content {
+            display: none;
+          }
+          #{{section.id}}-home-tabs .home-tabs-content-active{
+            display: block;
+
+        }
+        .home-tabs .product-card{
+            margin-bottom: 0;
+        }
+        .home-tabs-top{
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .home-tabs-viewall{
+        display: flex;
+        justify-content: center;
+        margin-top: calc(100vw * 40 / var(--base-size));
+      }
+        a.home-tabs-viewMore{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: calc(100vw * 10 / var(--base-size)) calc(100vw * 32 / var(--base-size));
+          background-color: #FF5F00;
+          border-radius: 22px;
+          color: #fff;
+          font-size: calc(100vw * 16 / var(--base-size));
+          line-height: 1;
+          font-weight: 700;
+      }
+      a.home-tabs-viewMore span{
+        margin-right: calc(100vw * 6 / var(--base-size));
+      }
+        .tab-contents{
+            overflow: hidden;
+            margin-top: calc(100vw * 30 / var(--base-size));
+        }
+        .tab-content-swiper-container{
+            position: relative;
+        }
+        .swiper-slide {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+    .swiper-button-next, .swiper-button-prev{
+      width: calc(100vw * 50 / var(--base-size));
+      height: calc(100vw * 50 / var(--base-size));
+      border-radius: 100%;
+    }
+    .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+      content: '';
+    }
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+      content: '';
+    }
+    @media screen and (max-width:1024px) {
+      .home-tabs-top{
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+      }
+      #{{section.id}}-home-tabs .home-tabs-swich{
+          margin-top: calc(100vw * 32 / var(--base-size));
+      }
+      a.home-tabs-viewMore{
+          font-size: calc(100vw * 30 / var(--base-size));
+          line-height: 1;
+          padding: calc(100vw * 15 / var(--base-size)) calc(100vw * 35 / var(--base-size));
+      }
+      .swiper-button-next, .swiper-button-prev {
+      width: calc(100vw* 74 / var(--base-size));
+      height: calc(100vw* 74 / var(--base-size));
+      border-radius: 100%;
   }
-  #{{section.id}}-home-tabs .home-tabs-content-active{
-    display: block;
-  
-}
-.home-tabs-top{
-    position: relative;
-}
-.home-tabs-viewMore{
-    position: absolute;
-    right:0px;
-    bottom:0px;
-}
-.tab-contents{
-    overflow: hidden;
-    margin-top: calc(100vw * 50 / var(--base-size));
-}
-.tab-content-swiper-container{
-    {% comment %} height: 1200px; {% endcomment %}
-}
+    }
 </style>
 
 <div id="{{section.id}}-home-tabs" class="home-tabs">
-    <div class="home-tabs-top">
-        <h2 class="home-tabs-title">{{ section.settings.title }}</h2>
-        <div class="home-tabs-desc">{{ section.settings.description }}</div>
-        <div class="home-tabs-swich">
-            {% for tab in section.blocks %}
-             <h3 class="home-tabs-button {% if forloop.index == 1 %} home-tabs-button-active {% endif %}" data-swiper="{{ tab.settings.className }}"  data-tab="tab{{ forloop.index }}">{{ tab.settings.name }}</h3>
-            {% endfor %}
-        
-        </div>
-        <div class="home-tabs-viewMore">
-            {% render 'link-button', text: section.settings.button_text,font_color: section.settings.color_two,hover_font_color: section.settings.color_one ,url: section.settings.button_link %}
-        </div>
+  <div class="home-tabs-top">
+    <div class="home-tabs-infos">
+      <h2 class="home-tabs-title">{{ section.settings.title }}</h2>
+      <div class="home-tabs-desc">{{ section.settings.description }}</div>
     </div>
-    <div class="tab-contents">
-         <!-- Tab Contents -->
-            {% for block in section.blocks %}
-                <div class="tab-content {% if forloop.first %}home-tabs-content-active{% endif %}" id="tab{{ forloop.index }}">
-                <!-- Swiper -->
-                <div class="swiper-container  tab-content-swiper-container {{ block.settings.className }}" data-class="{{ block.settings.className }}">
-                    <div class="swiper-wrapper">
-                    {% for product in collections[block.settings.collection].products %}
-                        <div class="swiper-slide">
-                            {% render 'product-card-two', product_card_product: product %}
-                        </div>
-                    {% endfor %}
-                    </div>
-     
-                </div>
-                </div>
+    <div class="home-tabs-swich">
+      {% for tab in section.blocks %}
+        <h3
+          class="home-tabs-button {% if forloop.index == 1 %} home-tabs-button-active {% endif %}"
+          data-swiper="{{ tab.settings.className }}"
+          data-tab="tab{{ forloop.index }}"
+        >
+          {{ tab.settings.name }}
+        </h3>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="tab-contents">
+    <!-- Tab Contents -->
+    {% for block in section.blocks %}
+      <div class="tab-content {% if forloop.first %}home-tabs-content-active{% endif %}" id="tab{{ forloop.index }}">
+        <!-- Swiper -->
+        <div
+          class="swiper-container  tab-content-swiper-container {{ block.settings.className }}"
+          data-class="{{ block.settings.className }}"
+        >
+          <div class="swiper-wrapper">
+            {% for product in collections[block.settings.collection].products %}
+              <div class="swiper-slide">
+                {% render 'product-card-two', product_card_product: product %}
+              </div>
             {% endfor %}
+          </div>
+          <!-- 如果需要导航按钮 -->
+          <div class="swiper-button-prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="69" viewBox="0 0 60 69" fill="none">
+              <g filter="url(#filter0_dddd_112_350)">
+                <path d="M30 51C43.8071 51 55 39.8071 55 26C55 12.1929 43.8071 1 30 1C16.1929 1 5 12.1929 5 26C5 39.8071 16.1929 51 30 51Z" fill="#FF5F00"/>
+                <mask id="mask0_112_350" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="19" y="16" width="23" height="20">
+                  <path d="M41.1736 16.5171H19.6366V35.6007H41.1736V16.5171Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask0_112_350)">
+                  <path d="M41.1737 26.0588V27.6037H26.072C29.7996 27.6037 31.1375 35.6002 31.1375 35.6002H27.0599C26.7729 29.8028 19.6367 27.764 19.6367 27.764V24.3545C19.6367 24.3545 26.7729 22.3157 27.0599 16.5166H31.1375C31.1375 16.5166 29.7996 24.514 26.072 24.514H41.1737V26.0588Z" fill="white"/>
+                </g>
+              </g>
+              <defs>
+                <filter id="filter0_dddd_112_350" x="0" y="0" width="60" height="69" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="1"/>
+                  <feGaussianBlur stdDeviation="1"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_112_350"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="3"/>
+                  <feGaussianBlur stdDeviation="1.5"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"/>
+                  <feBlend mode="normal" in2="effect1_dropShadow_112_350" result="effect2_dropShadow_112_350"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="7"/>
+                  <feGaussianBlur stdDeviation="2"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+                  <feBlend mode="normal" in2="effect2_dropShadow_112_350" result="effect3_dropShadow_112_350"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="13"/>
+                  <feGaussianBlur stdDeviation="2.5"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.01 0"/>
+                  <feBlend mode="normal" in2="effect3_dropShadow_112_350" result="effect4_dropShadow_112_350"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect4_dropShadow_112_350" result="shape"/>
+                </filter>
+              </defs>
+            </svg>
+          </div>
+          <div class="swiper-button-next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="62" height="71" viewBox="0 0 62 71" fill="none">
+              <g filter="url(#filter0_dddd_112_358)">
+                <path d="M31.0001 2.4314C17.4311 2.4314 6.43116 13.4313 6.43116 27.0004C6.43116 40.5694 17.4311 51.5693 31.0001 51.5693C44.5692 51.5693 55.5691 40.5694 55.5691 27.0004C55.5691 13.4313 44.5692 2.4314 31.0001 2.4314Z" fill="white" stroke="#FF5F00"/>
+                <mask id="mask0_112_358" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="20" y="17" width="23" height="20">
+                  <path d="M20.6733 36.6011L42.2103 36.6011V17.5175L20.6733 17.5175V36.6011Z" fill="white"/>
+                </mask>
+                <g mask="url(#mask0_112_358)">
+                  <path d="M20.6733 27.0597V25.5149L35.775 25.5149C32.0474 25.5149 30.7095 17.5183 30.7095 17.5183H34.7871C35.0741 23.3157 42.2103 25.3545 42.2103 25.3545V28.764C42.2103 28.764 35.0741 30.8028 34.7871 36.6011H30.7095C30.7095 36.6011 32.0474 28.6045 35.775 28.6045L20.6733 28.6045V27.0597Z" fill="#FF5F00"/>
+                </g>
+              </g>
+              <defs>
+                <filter id="filter0_dddd_112_358" x="0.931152" y="0.931641" width="60.1379" height="69.1377" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                  <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="1"/>
+                  <feGaussianBlur stdDeviation="1"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"/>
+                  <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_112_358"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="3"/>
+                  <feGaussianBlur stdDeviation="1.5"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"/>
+                  <feBlend mode="normal" in2="effect1_dropShadow_112_358" result="effect2_dropShadow_112_358"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="7"/>
+                  <feGaussianBlur stdDeviation="2"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+                  <feBlend mode="normal" in2="effect2_dropShadow_112_358" result="effect3_dropShadow_112_358"/>
+                  <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                  <feOffset dy="13"/>
+                  <feGaussianBlur stdDeviation="2.5"/>
+                  <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.01 0"/>
+                  <feBlend mode="normal" in2="effect3_dropShadow_112_358" result="effect4_dropShadow_112_358"/>
+                  <feBlend mode="normal" in="SourceGraphic" in2="effect4_dropShadow_112_358" result="shape"/>
+                </filter>
+              </defs>
+            </svg>
+          </div>
+        </div>
       </div>
+    {% endfor %}
+  </div>
+  <div class="home-tabs-viewall">
+    <a href="" class="home-tabs-viewMore">
+      <span>View All</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" viewBox="0 0 13 12" fill="none">
+        <path d="M6.45825 1L11.1724 5.88619L6.27398 10.5623" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10.775 5.91942L1.2843 5.71094" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </div>
 </div>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Initialize Swipers for all .swiper-container
-        const swipers = [];
-        document.querySelectorAll('.tab-content-swiper-container').forEach((swiperContainer) => {
-            //获取 data-class 属性值
-            const className = swiperContainer.getAttribute('data-class');
-          const swiper = new Swiper(swiperContainer, {
-            spaceBetween: 5,
-            slidesPerView: 2,
-            grid: {
-                rows: 2,
-                fill: 'row',
-              },
-              breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    grid: {
-                      rows: 2,
-                    },
-                },
-                800: {
-                    slidesPerView: 3,
-                    grid: {
-                      rows: 2,
-                    },
-                },
-                1024: {
-                    slidesPerView: 3, 
-                    grid: {
-                      rows: 2, 
-                    },
-                },
-                1200: {
-                    slidesPerView: 4,
-                    grid: {
-                      rows: 2, 
-                    },
-                },
-                1440: {
-                    slidesPerView: 4,
-                    grid: {
-                      rows: 2,
-                    },
+  document.addEventListener("DOMContentLoaded", function () {
+      // Initialize Swipers for all .swiper-container
+      const swipers = [];
+      document.querySelectorAll('.tab-content-swiper-container').forEach((swiperContainer) => {
+          //获取 data-class 属性值
+          const className = swiperContainer.getAttribute('data-class');
+        const swiper = new Swiper(swiperContainer, {
+          spaceBetween: 5,
+          slidesPerView: 1.2,
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+          grid: {
+              rows: 1,
+              fill: 'row',
+            },
+            breakpoints: {
+              640: {
+                  slidesPerView: 1.5,
+                  grid: {
+                    rows: 1,
                   },
-                1600: {
-                    slidesPerView: 5,
-                    grid: {
-                      rows: 2,
-                    },
+              },
+              800: {
+                  slidesPerView: 3,
+                  spaceBetween: 12,
+                  grid: {
+                    rows: 1,
+                  },
+              },
+              1024: {
+                  slidesPerView: 3,
+                  spaceBetween: 12,
+                  grid: {
+                    rows: 1,
+                  },
+              },
+              1200: {
+                  slidesPerView: 4,
+                  spaceBetween: 12,
+                  grid: {
+                    rows: 1,
+                  },
+              },
+              1440: {
+                  slidesPerView: 4,
+                  spaceBetween: 12,
+                  grid: {
+                    rows: 1,
+                  },
                 },
-              }
-          });
-          swipers.push(swiper);
-        });
-      
-        // Tab switching logic
-        const tabs = document.querySelectorAll(".home-tabs-button");
-        const contents = document.querySelectorAll(".tab-content");
-      
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", function () {
-            const targetTab = this.dataset.tab;
-      
-            // Update Tabs
-            tabs.forEach((t) => t.classList.remove("home-tabs-button-active"));
-            this.classList.add("home-tabs-button-active");
-      
-            // Update Tab Contents
-            contents.forEach((content) => {
-              content.classList.toggle("home-tabs-content-active", content.id === targetTab);
-            });
-      
-            // Refresh Swiper in the active tab
-            const activeContent = document.getElementById(targetTab);
-            const swiperInstance = activeContent.querySelector('.swiper-container').swiper;
-            if (swiperInstance) {
-              swiperInstance.update();
+              1600: {
+                  slidesPerView: 5,
+                  spaceBetween: 12,
+                  grid: {
+                    rows: 1,
+                  },
+              },
             }
+        });
+        swipers.push(swiper);
+      });
+
+      // Tab switching logic
+      const tabs = document.querySelectorAll(".home-tabs-button");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", function () {
+          const targetTab = this.dataset.tab;
+
+          // Update Tabs
+          tabs.forEach((t) => t.classList.remove("home-tabs-button-active"));
+          this.classList.add("home-tabs-button-active");
+
+          // Update Tab Contents
+          contents.forEach((content) => {
+            content.classList.toggle("home-tabs-content-active", content.id === targetTab);
           });
+
+          // Refresh Swiper in the active tab
+          const activeContent = document.getElementById(targetTab);
+          const swiperInstance = activeContent.querySelector('.swiper-container').swiper;
+          if (swiperInstance) {
+            swiperInstance.update();
+          }
         });
       });
-      
-    {% comment %} //页面加载完成后执行
-    document.addEventListener('DOMContentLoaded', function() {
-        //获取所有的tab按钮
-        var tabButtons = document.querySelectorAll('.home-tabs-button');
-        //获取所有的tab内容
-        var tabContents = document.querySelectorAll('.tab-content');
-        //遍历所有的tab按钮
-        tabButtons.forEach(function(button) {
-            //给每个tab按钮添加点击事件
-            button.addEventListener('click', function() {
-                //移除所有tab按钮的active类名
-                tabButtons.forEach(function(button) {
-                    button.classList.remove('home-tabs-button-active');
-                });
-                //给当前点击的tab按钮添加active类名
-                button.classList.add('home-tabs-button-active');
-                //获取当前点击的tab按钮的data-tab属性值
-                var tab = button.getAttribute('data-tab');
-                //遍历所有的tab内容
-                tabContents.forEach(function(content) {
-                    //移除所有tab内容的active类名
-                    content.classList.remove('active');
-                    //如果当前tab内容的id等于当前点击的tab按钮的data-tab属性值
-                    if (content.id === tab) {
-                        //给当前tab内容添加active类名
-                        content.classList.add('active');
-                    }
-                });
-            });
-            //每个swiper实例
-            
-        });
-    }); {% endcomment %}
+    });
+
+  {% comment %} //页面加载完成后执行
+  document.addEventListener('DOMContentLoaded', function() {
+      //获取所有的tab按钮
+      var tabButtons = document.querySelectorAll('.home-tabs-button');
+      //获取所有的tab内容
+      var tabContents = document.querySelectorAll('.tab-content');
+      //遍历所有的tab按钮
+      tabButtons.forEach(function(button) {
+          //给每个tab按钮添加点击事件
+          button.addEventListener('click', function() {
+              //移除所有tab按钮的active类名
+              tabButtons.forEach(function(button) {
+                  button.classList.remove('home-tabs-button-active');
+              });
+              //给当前点击的tab按钮添加active类名
+              button.classList.add('home-tabs-button-active');
+              //获取当前点击的tab按钮的data-tab属性值
+              var tab = button.getAttribute('data-tab');
+              //遍历所有的tab内容
+              tabContents.forEach(function(content) {
+                  //移除所有tab内容的active类名
+                  content.classList.remove('active');
+                  //如果当前tab内容的id等于当前点击的tab按钮的data-tab属性值
+                  if (content.id === tab) {
+                      //给当前tab内容添加active类名
+                      content.classList.add('active');
+                  }
+              });
+          });
+          //每个swiper实例
+
+      });
+  }); {% endcomment %}
 </script>
 {% schema %}
 {
-    "name": "Home tabs",
-    "settings": [
+  "name": "Home tabs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "New Arrivals"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Button"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+
+    {
+      "type": "header",
+      "content": "color"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background",
+      "default": "#F4F0E6"
+    },
+    {
+      "type": "color",
+      "id": "color_one",
+      "label": "Text color one",
+      "default": "#FF5F00"
+    },
+    {
+      "type": "color",
+      "id": "color_two",
+      "label": "Text color two",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "tab_hover_color",
+      "label": "tab hover color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "padding"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "Padding top",
+      "default": 20
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "list",
+      "name": "Tab",
+      "settings": [
         {
-            "type": "header",
-            "content": "Content"
+          "type": "text",
+          "id": "className",
+          "label": "class name"
         },
         {
-            "type": "text",
-            "id": "title",
-            "label": "title",
-            "default": "New Arrivals"
+          "type": "text",
+          "id": "name",
+          "label": "tab name"
         },
         {
-            "type": "richtext",
-            "id": "description",
-            "label": "Description"
-       },
-        {
-            "type": "text",
-            "id": "button_text",
-            "label": "Button Text",
-            "default": "Button"
-        },
-        {
-            "type": "url",
-            "id": "button_link",
-            "label": "Button Link"
-        },
-        
-        {
-            "type": "header",
-            "content": "color"
-        },
-        {
-            "type": "color",
-            "id": "color_bg",
-            "label": "Background",
-            "default": "#F4F0E6"
-        },
-        {
-            "type": "color",
-            "id": "color_one",
-            "label": "Text color one",
-            "default": "#FF5F00"
-        },
-        {
-            "type": "color",
-            "id": "color_two",
-            "label": "Text color two",
-            "default": "#ffffff"
-        },
-        {
-            "type": "color",
-            "id": "tab_hover_color",
-            "label": "tab hover color",
-            "default": "#ffffff"
-        },
-        {
-            "type": "header",
-            "content": "padding"
-        },
-        {
-            "type": "number",
-            "id": "padding_top",
-            "label": "Padding top",
-            "default": 20
-        },
-        {
-            "type": "number",
-            "id": "padding_bottom",
-            "label": "Padding bottom",
-            "default": 20
+          "type": "collection",
+          "id": "collection",
+          "label": "choose a collection"
         }
-    ],
-    "blocks": [
-        {
-            "type": "list",
-            "name": "Tab",
-            "settings": [
-                {
-                    "type": "text",
-                    "id": "className",
-                    "label": "class name"
-                },
-                {
-                    "type": "text",
-                    "id": "name",
-                    "label": "tab name"
-                },
-                {
-                   "type": "collection",
-                   "id": "collection",
-                   "label": "choose a collection"
-                }
-            ]
-        }
-    ],
-    "presets": [
-      {
-        "name": "Home Tabs"
-      }
-    ]
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Tabs"
+    }
+  ]
 }
 {% endschema %}
